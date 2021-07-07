@@ -1,9 +1,5 @@
-// custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
 
-// normalize CSS across browsers
-import "./src/css/normalize.css"
-
-// custom CSS styles
-import "./src/css/style.css"
+import "./src/assets/style.css"
+// import "./src/assets/style-rtl.css"
+import "./src/assets/print.css"
+import "./src/assets/style-theme.css"
