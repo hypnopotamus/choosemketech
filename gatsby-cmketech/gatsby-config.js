@@ -12,7 +12,7 @@ module.exports = {
     title: `Gatsby WordPress Twenty Twenty`,
     description: `Gatsby starter site for Twenty Twenty Gatsby Theme.`,
     author: `@henrikwirth`,
-    siteUrl: process.env.SITE_URL,
+    siteUrl: process.env.SITE_URL || `http://dev.choosemketech.org`,
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -29,7 +29,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: process.env.WPGRAPHQL_URL,
+        url: process.env.WPGRAPHQL_URL ||  `http://dev.choosemketech.org/graphql`,
         verbose: true,
         develop: {
           hardCacheMediaFiles: true,
