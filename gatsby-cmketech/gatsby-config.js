@@ -15,6 +15,7 @@ module.exports = {
     siteUrl: process.env.SITE_URL,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     `gatsby-plugin-notifications`,
     `gatsby-plugin-sharp`,

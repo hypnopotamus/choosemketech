@@ -24,10 +24,11 @@ const Menu = () => {
       }
     }
   `)
+
   if (!wpMenu?.menuItems?.nodes || wpMenu.menuItems.nodes === 0) return null
 
   return (
-    <nav className="primary-menu-wrapper" aria-label="Horizontal" role="navigation">
+    <nav className="header" aria-label="Horizontal" role="navigation">
       <ul className="primary-menu reset-list-style"> {
         wpMenu.menuItems.nodes.map((menuItem, i) => {
           const path = menuItem?.connectedNode?.node?.uri ?? menuItem.url
