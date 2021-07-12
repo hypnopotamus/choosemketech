@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Header from "./Header"
 import Footer from "./Footer"
-
+import Hero from "./Hero";
 import FooterMenusWidgets from "./FooterMenusWidgets"
 import MenuModal from "./MenuModal"
 
@@ -25,7 +25,7 @@ const Layout = ({ children, bodyClass }) => {
       }
     >
       <Header toggleBackdrop={toggleBackdrop} />
-
+      <Hero movieMedia="true" />
       <MenuModal isActive={backdropActive} toggleBackdrop={toggleBackdrop} />
 
       <main id="site-content" role="main">
