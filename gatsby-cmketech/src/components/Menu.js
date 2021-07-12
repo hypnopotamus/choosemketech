@@ -7,56 +7,54 @@ const Menu = () => {
     {
       wpMenu(slug: { eq: "primary" }) {
         name
-        menuItems {
-          nodes {
-            label
-            url
-            databaseId
-            connectedNode {
-              node {
-                ... on WpContentNode {
-                  uri
-                }
-              }
-            }
-          }
+        # menuItems {
+        #   nodes {
+        #     label
+        #     url
+        #     databaseId
+        #     connectedNode {
+        #       node {
+        #         ... on WpContentNode {
+        #           uri
+        #         }
+        #       }
+        #     }
+        #   }
+        # }
+
+        menus {
+    nodes {
+      menuItems(where: {parentDatabaseId: 0}) {
+        nodes {
+          url
+          label
+          parentDatabaseId
         }
       }
     }
-  `)
+  }
 
+      }
+    }
+  `)
   if (!wpMenu?.menuItems?.nodes || wpMenu.menuItems.nodes === 0) return null
 
   return (
-    <nav
-      className="primary-menu-wrapper"
-      aria-label="Horizontal"
-      role="navigation"
-    >
-      <ul className="primary-menu reset-list-style">
-        {wpMenu.menuItems.nodes.map((menuItem, i) => {
+    <nav className="primary-menu-wrapper" aria-label="Horizontal" role="navigation">
+      <ul className="primary-menu reset-list-style"> {
+        wpMenu.menuItems.nodes.map((menuItem, i) => {
           const path = menuItem?.connectedNode?.node?.uri ?? menuItem.url
-
           const itemId = "menu-item-" + menuItem.databaseId
-
           return (
-            <li
-              id={itemId}
-              key={i + menuItem.url}
-              className={
-                "menu-item menu-item-type-custom menu-item-object-custom menu-item-home " +
-                itemId
-              }
-            >
-              <UniversalLink
-                to={path}
-                activeClassName={"current-menu-item current_page_item"}
-              >
-                {menuItem.label}
-              </UniversalLink>
+            <li id={itemId} key={i + menuItem.url} className={"menu-item menu-item-type-custom menu-item-object-custom menu-item-home " + itemId}>
+            <UniversalLink to={path} activeClassName={"current-menu-item current_page_item"} >
+            {menuItem.label}
+            </UniversalLink>
             </li>
           )
-        })}
+          }
+        )
+      }
       </ul>
     </nav>
   )
