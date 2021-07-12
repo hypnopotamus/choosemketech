@@ -1,8 +1,47 @@
+@import '../abstracts/variables';
+
+//TODO: Discuss the font sizes of Headers to scale with design
+
 .hero--media--container {
+    background-color: $navy_blue;
+    box-sizing: border-box;
     position: relative;
-    padding: 0;
+    height: 65vh;
 
     img, video {
-        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        /* width: 51%; */
+        height: 50vh; 
+        box-sizing: border-box;
+    }
+}
+
+.hero--copy--container {
+    position: absolute;
+    bottom: 4rem;
+    left: 5rem;
+    width: 58%;
+    padding: 2rem;
+    z-index: 999;
+
+    h1 {
+        font-size: 6.4rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        color: #FFFFFF;
+    }
+
+    h1 span {
+        background-color: $light_yellow;
+        color: $navy_blue;
+        padding: 0 1rem;
+    }
+
+    h3 {
+        font-size: 4rem;
+        text-transform: uppercase;
+        color: $light_yellow;
     }
 }
