@@ -7,33 +7,20 @@ const Menu = () => {
     {
       wpMenu(slug: { eq: "primary" }) {
         name
-        # menuItems {
-        #   nodes {
-        #     label
-        #     url
-        #     databaseId
-        #     connectedNode {
-        #       node {
-        #         ... on WpContentNode {
-        #           uri
-        #         }
-        #       }
-        #     }
-        #   }
-        # }
-
-        menus {
-    nodes {
-      menuItems(where: {parentDatabaseId: 0}) {
-        nodes {
-          url
-          label
-          parentDatabaseId
+        menuItems {
+          nodes {
+            label
+            url
+            databaseId
+            connectedNode {
+              node {
+                ... on WpContentNode {
+                  uri
+                }
+              }
+            }
+          }
         }
-      }
-    }
-  }
-
       }
     }
   `)

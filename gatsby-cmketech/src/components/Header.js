@@ -20,7 +20,6 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
         <div className="header-titles-wrapper">
           <div className="header-titles">
             <h1 className="site-title">
-              Hi
               <Link
                 to="/"
                 dangerouslySetInnerHTML={{ __html: wp.generalSettings.title }}
