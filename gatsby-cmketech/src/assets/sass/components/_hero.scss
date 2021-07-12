@@ -45,3 +45,46 @@
         color: $light_yellow;
     }
 }
+
+@media only screen and (max-width: 769px) {
+    .hero--media--container {
+        display: block;
+        padding: 0;
+        position: static;
+
+        img, video {
+            display: block;
+            /* width: 51%; */
+            height: 50vh; 
+            box-sizing: border-box;
+        }
+    }
+
+    .hero--copy--container {
+        display: block;
+        position: static;
+        margin-top: 2rem;
+        margin: 0;
+        padding: 3rem 0 0 0;
+        width: 100%;
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: capitalize;
+            color: #FFFFFF;
+        }
+    
+        h1 span {
+            background-color: $light_yellow;
+            color: $navy_blue;
+            padding: 0;
+        }
+    
+        h3 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: $light_yellow;
+        }
+    }
+  }
