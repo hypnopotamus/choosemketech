@@ -1,3 +1,50 @@
-.header {
-    background-color: $warning_red;
+header {
+    display: flex;
+    .logo {
+        span {
+            white-space: nowrap;
+            text-indent: 100%;
+            overflow: hidden;
+            background-image: url('../images/choose-mke-logo.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: 0;
+            max-width: 169px;
+            height: 169px;
+            display: block;
+        }
+    }
+    nav {
+        width: 100%;
+        .nav--top-references {
+            display: flex;
+            background-color: $light_gray;
+            justify-content: flex-end;
+            height: 3.375rem;
+            align-items: center;
+            margin-left: -120px;
+            z-index: -1;
+            position: relative;        
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 100%;
+                left: 0;
+                height: 10px;
+                background: linear-gradient( 130deg ,#F8E161,#009FD6,#007CA6,#005470);    
+            }    
+        }
+        .nav--top-main {
+            display: flex;
+            background-color: white;
+            justify-content: flex-end;
+            height: 3.375rem;
+            align-items: center;
+            margin-left: -120px;
+            z-index: -1;
+            position: relative;        
+            height: 116px;;
+        }
+    }
 }
