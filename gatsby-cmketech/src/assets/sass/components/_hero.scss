@@ -1,7 +1,5 @@
 @import '../abstracts/variables';
 
-//TODO: Discuss the font sizes of Headers to scale with design
-
 .hero--media--container {
     background-color: $navy_blue;
     box-sizing: border-box;
@@ -74,6 +72,16 @@
     border-radius: 50%;
     border: 3px solid $light_yellow;
     width: 11rem;
+    height: 10rem;
+}
+
+.hero--white--circle {
+    position: absolute;
+    right: -47px;
+    bottom: -44px;
+    border-radius: 50%;
+    border: 3px solid #FFF;
+    width: 10rem;
     height: 10rem;
 }
 
