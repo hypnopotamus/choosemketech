@@ -10,6 +10,8 @@ const Hero = (props) => {
                         height="50%" autoPlay="1" muted="" loop="" /> :
                     <img src="https://via.placeholder.com/1280x500" alt="hero image" />
             }
+            <div className="hero--large--circle"></div>
+            <div className="hero--small--circle" />
             <div className="hero--copy--container">
                 <h1>Build your Tech Career <span>In Milwaukee</span></h1>
                 <h3>Talent + Attraction</h3>

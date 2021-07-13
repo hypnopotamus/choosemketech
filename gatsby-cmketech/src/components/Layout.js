@@ -25,7 +25,7 @@ const Layout = ({ children, bodyClass }) => {
       }
     >
       <Header toggleBackdrop={toggleBackdrop} />
-      <Hero movieMedia="true" />
+      <Hero movieMedia={true} />
       <MenuModal isActive={backdropActive} toggleBackdrop={toggleBackdrop} />
 
       <main id="site-content" role="main">
