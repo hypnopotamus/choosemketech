@@ -15,14 +15,6 @@ module.exports = {
     siteUrl: process.env.SITE_URL,
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        typekit: {
-          id: process.env.TYPEKIT_ID,
-        },
-      },
-    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     `gatsby-plugin-notifications`,
