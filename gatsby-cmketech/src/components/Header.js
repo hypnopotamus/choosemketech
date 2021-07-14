@@ -29,8 +29,8 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
           <li><a href="/jobs">Jobs</a></li>
           <li><a href="/why-milwaukee">Why Milwaukee</a></li>
           <li><a href="/companies">Companies</a></li>
-          <li><a href="/tech-scene">Tech scene <i class="fas fa-caret-down"></i></a></li>
-          <li><a href="#" className="search"><i class="fas fa-search"></i></a></li>
+          <li><a href="/tech-scene">Tech scene <i className="fas fa-caret-down"></i></a></li>
+          <li><a href="#" className="search"><i className="fas fa-search"></i></a></li>
         </ul>
       </nav>
     </header>
