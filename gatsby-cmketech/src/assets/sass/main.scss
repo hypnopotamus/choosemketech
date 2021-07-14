@@ -5,6 +5,8 @@
 @import 'base/reset';
 @import 'base/fontawesome.css';
 
+@import 'vendors/slick-slider';
+
 // @import 'layouts/navigation';
 // @import 'layouts/grid';
 @import 'layouts/header';
@@ -18,6 +20,7 @@
 @import 'components/tags';
 @import 'components/collections';
 @import 'components/plans';
+@import 'components/job-carousel';
 
 @import 'pages/homepage';
 

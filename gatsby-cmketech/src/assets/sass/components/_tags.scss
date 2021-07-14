@@ -1,0 +1,18 @@
+.tag {
+    text-transform: uppercase;
+    padding: 7px 15px;
+    position: relative;
+    &--green {        
+        background-color: $tag-green;
+        &--admin {
+            &::before {
+                content: "I";
+                background-color: $tag-green-accent;
+                padding: 5px 3px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
