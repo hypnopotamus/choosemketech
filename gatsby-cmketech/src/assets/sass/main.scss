@@ -2,10 +2,11 @@
 @import 'vendors/font-awesome/fontawesome';
 @import 'vendors/font-awesome/solid.scss';
 
-@import 'abstracts/typography';
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 // @import 'abstracts/functions';
+
+@import 'base/typography';
 
 // @import 'layouts/navigation';
 // @import 'layouts/grid';
