@@ -1,9 +1,11 @@
-@import 'abstracts/variables';
-// @import 'abstracts/functions';
-@import 'abstracts/mixins';
+@import 'vendors/reset';
+@import 'vendors/font-awesome/fontawesome';
+@import 'vendors/font-awesome/solid.scss';
 
-@import 'base/reset';
-@import 'base/fontawesome.css';
+@import 'abstracts/typography';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+// @import 'abstracts/functions';
 
 @import 'vendors/slick-slider';
 
