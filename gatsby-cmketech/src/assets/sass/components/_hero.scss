@@ -2,42 +2,40 @@
 
 .hero--media--container {
     position: relative;
-    // height: 27rem;
     overflow: hidden;
     background-color: $navy_blue;
     box-sizing: border-box;
 
     img, video {
-        // position: absolute;
-        // top: 0;
-        // right: -352px;
         display: block;
         width: auto;
-        /* height: 21rem; */
         object-fit: contain;
+        margin-left: auto;
+        margin-bottom: 3rem;
+        width: 70%;
     }
 }
 
 .hero--media--container:before {
+    position: absolute;
     content: "";
     background-image: url("https://f.hubspotusercontent00.net/hubfs/436951/Media/ELITE%20Site%20Assets/Dots.png");
     width: 60%;
     height: 6rem;
     top: 0;
     left: 0;
-    position: absolute;
     background-repeat: repeat;
     z-index: 1;
 }
 
 .hero--media--container:after {
+    position: absolute;
     content: "";
     background-image: url("https://f.hubspotusercontent00.net/hubfs/436951/Media/ELITE%20Site%20Assets/Dots.png");
     width: 51%;
     height: 6rem;
     bottom: 0;
     right: 0;
-    position: absolute;
     background-repeat: repeat;
     z-index: 1;
 }
@@ -54,10 +52,10 @@
 }
 
 .hero--small--circle:after {
-    content: "";
     position: absolute;
+    content: "";
     left: 56rem;
-    top: 17rem;
+    top: 20rem;
     opacity: .75;
     content: "";
     height: 6rem;
@@ -87,8 +85,8 @@
 }
 
 .hero--large--circle:after {
-    content: "";
     position: absolute;
+    content: "";
     left: 6rem;
     top: 26rem;
     border-radius: 50%;
@@ -100,8 +98,8 @@
 
 .hero--copy {
     position: absolute;
-    bottom: 7rem;
-    left: 23rem;
+    bottom: 9rem;
+    left: 11rem;
     width: 25rem;
     z-index: 999;
 
