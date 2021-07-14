@@ -1,0 +1,15 @@
+@mixin navigationFontStyle($color) {
+    color: $color;
+    text-decoration: none;
+    font-family: "Inter";
+}
+
+@mixin navigationGrid($color) {
+    display: flex;
+    background-color: $color;
+    justify-content: flex-end;
+    height: 3.375rem;
+    align-items: center;
+    margin-left: -190px;
+    position: relative;        
+}

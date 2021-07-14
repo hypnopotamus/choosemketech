@@ -15,21 +15,22 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
     }
   `)
   return (
-    <header>
-      <div class="logo">
-        <span>Choose MKE Tech</span>
+    <header className="header--nav-main">
+      <div className="logo">
+        <Link to="/"><span>Choose MKE Tech</span></Link>
       </div>
       <nav>
-        <ul class="nav--top-references">
-          <li><a href="/help"><i class="fas fa-question-circle"></i> Help</a></li>
-          <li><a href="/recruit-with-us"><i class="fas fa-users"></i> Recruit with us</a></li>
-          <li><a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <ul className="nav--top-references">
+          <li><a href="/help"><i className="fas fa-question-circle"></i> <span>Help</span></a></li>
+          <li><a href="/recruit-with-us"><i className="fas fa-users"></i> <span>Recruit with us</span></a></li>
+          <li><a href="/login"><i className="fas fa-sign-in-alt"></i> <span>Login</span></a></li>
         </ul>
-        <ul class="nav--top-main">
+        <ul className="nav--top-main">
           <li><a href="/jobs">Jobs</a></li>
           <li><a href="/why-milwaukee">Why Milwaukee</a></li>
           <li><a href="/companies">Companies</a></li>
-          <li><a href="/tech-scene">Tech scene</a></li>
+          <li><a href="/tech-scene">Tech scene <i className="fas fa-caret-down"></i></a></li>
+          <li><a href="#" className="search"><i className="fas fa-search"></i></a></li>
         </ul>
       </nav>
     </header>
