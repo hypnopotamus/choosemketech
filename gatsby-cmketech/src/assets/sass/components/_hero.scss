@@ -1,19 +1,20 @@
 @import '../abstracts/variables';
 
 .hero--media--container {
+    position: relative;
+    // height: 27rem;
+    overflow: hidden;
     background-color: $navy_blue;
     box-sizing: border-box;
-    position: relative;
-    height: 27rem;
-    overflow: hidden;
 
     img, video {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 989.17px;
-        height: 21rem; 
-        box-sizing: border-box;
+        // position: absolute;
+        // top: 0;
+        // right: -352px;
+        display: block;
+        width: auto;
+        /* height: 21rem; */
+        object-fit: contain;
     }
 }
 
@@ -97,7 +98,7 @@
 }
 
 
-.hero--copy--container {
+.hero--copy {
     position: absolute;
     bottom: 7rem;
     left: 23rem;
@@ -155,7 +156,7 @@
         display: none;
     }
 
-    .hero--copy--container {
+    .hero--copy {
         display: block;
         position: static;
         margin: 0 auto;
