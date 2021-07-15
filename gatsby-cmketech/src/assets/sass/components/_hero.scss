@@ -1,18 +1,20 @@
-@import '../abstracts/variables';
-
 .hero--media--container {
     position: relative;
     overflow: hidden;
     background-color: $navy_blue;
     box-sizing: border-box;
 
-    img, video {
+    video {
         display: block;
         width: auto;
         object-fit: contain;
         margin-left: auto;
         margin-bottom: 3rem;
         width: 70%;
+    }
+
+    img { 
+        display: none;
     }
 }
 
@@ -128,7 +130,6 @@
     .hero--media--container {
         display: block;
         padding: 0;
-        background-image: url(../../images/landing-page-mke-skyline-hero-image.png);
         background-size: cover;
         height: 639px;
         background-position: bottom;
@@ -136,6 +137,14 @@
 
         video {
             display: none;
+        }
+
+        img { 
+            position: absolute;
+            z-index: 0;
+            display: block;
+            height: 44rem;
+            width: 100%;
         }
     }
 
@@ -160,10 +169,9 @@
         display: block;
         position: absolute;
         margin: 0 auto;
-        padding: 3rem 0 0 0;
         width: 80%;
         left: 2rem;
-        top: 21rem;
+        top: 27rem;
         
         h1 {
             font-weight: bold;
