@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import Header from "./Header"
-import Footer from "./Footer"
-import JobCarousel from "./JobCarousel"
 import Hero from "./Hero"
+import IntroCopy from "./IntroCopy"
+import JobCarousel from "./JobCarousel"
+import Footer from "./Footer"
 
 const backdropClasses = " backdrop"
 
@@ -21,7 +22,7 @@ const Layout = ({ children, bodyClass }) => {
 
       <main id="site-content" role="main">
         <Hero />
-        
+        <IntroCopy />
         <JobCarousel />
       </main>
 

@@ -10,7 +10,7 @@ const Hero = ({}) => {
                 <source src="videos/hero.ogv" type="video/ogv" />
             </video>
             <div className="hero--content">
-                <h2>Build Your Tech <br /> Career In <span>Milwaukee, WI</span></h2>
+                <h1>Build Your Tech <br /> Career In <span>Milwaukee, WI</span></h1>
                 <p>CAREERS + CONNECTION</p>
             </div>
         </div>
