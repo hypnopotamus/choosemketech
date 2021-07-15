@@ -1,0 +1,35 @@
+button,
+.button {
+    display: inline-block;
+    padding: 15px 20px;
+    margin-inline-start: 5px;
+    margin-inline-end: 5px;
+    font: inherit;
+    font-family: 'Inter-Bold';
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    transition: all 0.15s linear;
+    letter-spacing: 0.8px;
+    min-width: 240px;
+    &--primary {
+        color: $white;
+        background-color: $blue;
+        border: 2px solid $blue;
+        &:hover {
+            background-color: transparent;
+            color: $blue;
+        }
+    }
+    &--secondary {
+        color: $navy_blue;
+        background-color: transparent;
+        border: 2px solid $navy_blue;
+        &:hover {
+            background-color: $navy_blue;
+            color: $white;
+        }
+    }
+}

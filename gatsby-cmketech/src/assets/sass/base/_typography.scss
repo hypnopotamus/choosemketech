@@ -1,45 +1,49 @@
 @font-face {
-  font-family: 'Inter';
-  src: url('../fonts/inter/Inter-Regular.woff');
-  src: url('../fonts/inter/Inter-Regular.woff2') format('woff2');
+  font-family: "Inter";
+  src: url("../fonts/inter/Inter-Regular.woff");
+  src: url("../fonts/inter/Inter-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Inter-Bold';
-  src: url('../fonts/inter/Inter-Bold.woff');
-  src: url('../fonts/inter/Inter-Bold.woff2') format('woff2');
+  font-family: "Inter-Bold";
+  src: url("../fonts/inter/Inter-Bold.woff");
+  src: url("../fonts/inter/Inter-Bold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Inter-Light';
-  src: url('../fonts/inter/Inter-Light.woff');
-  src: url('../fonts/inter/Inter-Light.woff2') format('woff2');
+  font-family: "Inter-Light";
+  src: url("../fonts/inter/Inter-Light.woff");
+  src: url("../fonts/inter/Inter-Light.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Inter-Semibold';
-  src: url('../fonts/inter/Inter-SemiBold.woff');
-  src: url('../fonts/inter/Inter-SemiBold.woff2') format('woff2');
+  font-family: "Inter-Semibold";
+  src: url("../fonts/inter/Inter-SemiBold.woff");
+  src: url("../fonts/inter/Inter-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Roboto Bold';
-  src: url('../fonts/roboto/RobotoCondensed-Bold.ttf');  
+  font-family: "Roboto Bold";
+  src: url("../fonts/roboto/RobotoCondensed-Bold.ttf");
+  src: url("../fonts/roboto/RobotoCondensed-Bold.woff") format("woff"),
+    url("../fonts/roboto/RobotoCondensed-Bold.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('../fonts/roboto/RobotoCondensed-Regular.ttf');  
+  font-family: "Roboto";
+  src: url("../fonts/roboto/RobotoCondensed-Regular.ttf");
+  src: url("../fonts/roboto/RobotoCondensed-Regular.woff") format("woff"),
+    url("../fonts/roboto/RobotoCondensed-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
