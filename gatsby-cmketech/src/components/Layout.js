@@ -3,6 +3,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import Hero from "./Hero";
 import FooterMenusWidgets from "./FooterMenusWidgets"
+import JobCarousel from "./JobCarousel"
 import MenuModal from "./MenuModal"
 
 const backdropClasses = " backdrop"
@@ -31,6 +32,7 @@ const Layout = ({ children, bodyClass }) => {
       <main id="site-content" role="main">
         {children}
       </main>
+      <JobCarousel />
 
       <FooterMenusWidgets />
 
