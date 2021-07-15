@@ -16,6 +16,10 @@
     img { 
         display: none;
     }
+
+    img.hero--tablet--view {
+        display: none;
+    }
 }
 
 .hero--media--container:before {
@@ -102,7 +106,7 @@
     position: absolute;
     bottom: 9rem;
     left: 11rem;
-    width: 25rem;
+    width: 23rem;
     z-index: 999;
 
     h1 {
@@ -126,7 +130,8 @@
     }
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 1023px) {
+
     .hero--media--container {
         display: block;
         padding: 0;
@@ -148,23 +153,20 @@
         }
     }
 
-    .hero--media--container:before {
-        display: none;
-        width: 100%;
-        height: 6rem;
-        top: 23rem;
+    .hero--media--container:before, .hero--media--container:after,
+    .hero--small--circle, .hero--large--circle, .hero--white--circle 
+     {
+        display: none;     
     }
 
-    .hero--media--container:after {
-        display: none;
-        top: 6rem;
-        width: 100%;
+    .hero--copy {
+        bottom: 4rem;
+        left: 13rem;
     }
+}
 
-    .hero--small--circle, .hero--large--circle, .hero--white--circle {
-        display: none;
-    }
-
+@media only screen and (max-width: 767px) {
+    
     .hero--copy {
         display: block;
         position: absolute;
