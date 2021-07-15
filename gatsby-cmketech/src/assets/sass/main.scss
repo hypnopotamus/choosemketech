@@ -4,10 +4,11 @@
 
 @import 'abstracts/typography';
 @import 'abstracts/variables';
+@import 'abstracts/functions';
 @import 'abstracts/mixins';
-// @import 'abstracts/functions';
 
-@import 'vendors/slick-slider';
+
+@import 'base/defaults';
 
 // @import 'layouts/navigation';
 // @import 'layouts/grid';
