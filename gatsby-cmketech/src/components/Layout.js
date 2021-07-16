@@ -7,7 +7,6 @@ import CardCopy from "./CardCopy"
 import JobCarousel from "./JobCarousel"
 import Footer from "./Footer"
 
-
 const backdropClasses = " backdrop"
 
 const Layout = ({ children, bodyClass }) => {
