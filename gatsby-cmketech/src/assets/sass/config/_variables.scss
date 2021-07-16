@@ -36,6 +36,12 @@ $tag-blue-accent    :#3369B2;
 $tag-gold           :#B8860B;
 $tag-gold-accent    :#F5A71C;
 
+/* Gradient Line */
+$g1 :#F8E161;
+$g2 :#009FD6;
+$g3 :#007CA6;
+$g4 :#005470;
+
 $breakpoints: (
     "small"                 : 767px, // After this point this will go to tablet mode, ie. 768px @include media('>small')
     "mediaum"               : 959px, // After this point this will go to a smallish desktop mode, ie. 960px @include media('>medium')
