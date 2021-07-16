@@ -1,24 +1,19 @@
-@import 'vendors/reset';
-@import 'vendors/font-awesome/fontawesome';
-@import 'vendors/font-awesome/solid.scss';
-@import 'vendors/slick-slider';
+// Prerequisites
+@import 'config/reset';
+@import 'config/include-media';
+@import 'config/variables';
+@import 'config/functions';
+@import 'config/mixins';
+@import 'config/media-queries';
 
-@import 'abstracts/variables';
-@import 'abstracts/functions';
-@import 'abstracts/mixins';
-
-
+// Base Styles
 @import 'base/defaults';
-
 @import 'base/typography';
 
-// @import 'layouts/navigation';b
-// @import 'layouts/grid';
+// Layouts
 @import 'layouts/header';
-// @import 'layouts/footer';
-// @import 'layouts/sidebar';
-// @import 'layouts/forms';
 
+// Components
 @import 'components/buttons';
 @import 'components/forms';
 @import 'components/links';
@@ -26,8 +21,12 @@
 @import 'components/plans';
 @import 'components/job-carousel';
 
+// Pages
 @import 'pages/homepage';
 
-// @import 'themes/theme';
-// @import 'themes/admin';
-
+// Vendors
+@import 'vendors/font-awesome/fontawesome';
+@import 'vendors/font-awesome/solid.scss';
+@import 'vendors/font-awesome/regular.scss';
+@import 'vendors/font-awesome/brands.scss';
+@import 'vendors/slick-slider';
