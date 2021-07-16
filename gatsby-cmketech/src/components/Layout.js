@@ -1,12 +1,10 @@
 import React, { useState } from "react"
 import Header from "./Header"
-import Hero from "./Hero"
-import IntroCopy from "./IntroCopy"
-import Tiles from "./Tiles"
-import CardCopy from "./CardCopy"
-import JobCarousel from "./JobCarousel"
 import Footer from "./Footer"
 
+import FooterMenusWidgets from "./FooterMenusWidgets"
+import JobCarousel from "./JobCarousel"
+import MenuModal from "./MenuModal"
 
 const backdropClasses = " backdrop"
 
@@ -19,20 +17,24 @@ const Layout = ({ children, bodyClass }) => {
   }
 
   return (
-    <div id={"GatsbyBody"} className={ bodyClass + " showing-menu-modal showing-modal" + (backdropActive ? backdropClasses : "") } >
-
+    <div
+      id={"GatsbyBody"}
+      className={
+        bodyClass +
+        " showing-menu-modal showing-modal" +
+        (backdropActive ? backdropClasses : "")
+      }
+    >
       <Header toggleBackdrop={toggleBackdrop} />
 
       <main id="site-content" role="main">
-        <Hero />
-        <IntroCopy />
-        <Tiles />
-        <CardCopy />
-        <JobCarousel />
+        {children}
       </main>
+      <JobCarousel />
+
+      <FooterMenusWidgets />
 
       <Footer />
-
     </div>
   )
 }
