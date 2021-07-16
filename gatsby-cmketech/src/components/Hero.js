@@ -1,21 +1,20 @@
-import React from 'react';
-import { heroBannerMobile } from '../assets/images';
+import React from "react"
+import { Link } from "gatsby"
 
-const Hero = (props) => {
+const Hero = ({}) => {
     return (
-        <section className="hero--banner--container">
-            <video src="https://f.hubspotusercontent00.net/hubfs/436951/Elite-Home.mp4"
-                autoPlay="1" muted="" loop="" />
-            <img src={heroBannerMobile} alt="alt text" />
-            <div className="hero--large--circle" />
-            <div className="hero--small--circle" />
-            <div className="hero--white--circle" />
-            <div className="hero--copy">
-                <h1 className="h1">Build your Tech Career <span>In Milwaukee</span></h1>
-                <h3>Talent + Attraction</h3>
+        <div className="hero">
+            <video autoPlay="" id="heroVideo" loop="yes" muted="yes" poster="images/hero-placeholder.png">
+                <source src="videos/hero.mp4" type="video/mp4" />
+                <source src="videos/hero.webm" type="video/webm" />
+                <source src="videos/hero.ogv" type="video/ogv" />
+            </video>
+            <div className="hero--content">
+                <h1>Build Your Tech <br /> Career In <span>Milwaukee, WI</span></h1>
+                <p>CAREERS + CONNECTION</p>
             </div>
-        </section>
-    );
-};
+        </div>
+    )
+}
 
-export default Hero;
+export default Hero

@@ -6,7 +6,7 @@ header {
             z-index: 1;
             a {
                 display: block;
-                padding: 15px 0 0 20px;
+                margin: 15px 0 0 20px;
                 span {
                     white-space: nowrap;
                     text-indent: 100%;
@@ -15,9 +15,23 @@ header {
                     background-repeat: no-repeat;
                     background-size: cover;
                     margin: 0;
-                    width: 169px;
-                    height: 169px;
+                    width: 120px;
+                    height: 120px;
                     display: block;
+                }
+                @include media('>small') {
+                    span {
+                        width: 169px;
+                        height: 169px;
+                    }
+                }
+                @include media-context(('custom' : 820px)) {
+                    @include media('>small', '<=custom') {
+                        span {
+                            width: 120px;
+                            height: 120px;
+                        }
+                    }
                 }
             }
         }
@@ -32,7 +46,7 @@ header {
                     width: 100%;
                     left: 0;
                     height: 7px;
-                    background: linear-gradient( 130deg ,#F8E161,#009FD6,#007CA6,#005470);    
+                    background: linear-gradient(130deg, $g1, $g2, $g3, $g4);    
                 }    
                 li {
                     padding: 0 15px;
@@ -48,15 +62,37 @@ header {
             }
             .nav--top-main {
                 @include navigationGrid(white);
-                height: 116px;
+                height: 82px;
+                @include media('>small') {
+                    height: 116px;
+                }
+                @include media-context(('custom' : 820px)) {
+                    @include media('>small', '<=custom') {
+                        height: 82px;
+                    }
+                }
+
                 li {
-                    padding: 0 30px;
+                    padding: 0 10px;
+                    @include media('>small') {
+                        padding: 0 30px;
+                    }
+                    @include media-context(('custom' : 980px)) {
+                        @include media('>small', '<=custom') {
+                            padding: 0 10px;
+                        }
+                    }
                     &:last-child {
                         padding-right: 20px;
                     }
                     a {
                         @include navigationFontStyle($navy_blue);
                         font-size: $font-size-2;
+                        @include media-context(('custom' : 820px)) {
+                            @include media('>small', '<=custom') {
+                                font-size: 1rem;
+                            }
+                        }
                         font-weight: 600;
                         text-transform: uppercase;
                         letter-spacing: 0.0625rem;
