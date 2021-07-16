@@ -57,7 +57,7 @@
     position: absolute;
     content: "";
     left: 56rem;
-    top: 20rem;
+    top: 24rem;
     opacity: .75;
     content: "";
     height: 6rem;
@@ -105,7 +105,7 @@
     z-index: 999;
 
     h1 {
-        font-size: $font-size-h1;
+        // font-size: $font-size-h1;
         font-weight: bold;
         text-transform: capitalize;
         color: #FFFFFF;
@@ -118,7 +118,7 @@
     }
 
     h3 {
-        font-size: $font-size-h3;
+        // font-size: $font-size-h3;
         text-transform: uppercase;
         color: $light_yellow;
         margin-top: 1rem;

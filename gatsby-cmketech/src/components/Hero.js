@@ -11,7 +11,7 @@ const Hero = (props) => {
             <div className="hero--small--circle" />
             <div className="hero--white--circle" />
             <div className="hero--copy">
-                <h1>Build your Tech Career <span>In Milwaukee</span></h1>
+                <h1 className="h1">Build your Tech Career <span>In Milwaukee</span></h1>
                 <h3>Talent + Attraction</h3>
             </div>
         </section>
