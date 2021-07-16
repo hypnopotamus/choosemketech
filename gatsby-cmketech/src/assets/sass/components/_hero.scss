@@ -12,10 +12,8 @@
 }
 
 .hero--copy {
-    position: absolute;
-    bottom: 9rem;
-    left: 3rem;
-    z-index: 999;
+    position: relative;
+    z-index: 2;
 
     h1 {
         font-size: 6vw;
@@ -41,9 +39,10 @@
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
 
     .hero--banner--container {
-        display: block;
+        display: flex;
+        justify-content: center;
         padding: 0;
-        height: 639px;
+        min-height: 21rem;
 
         video {
             display: none;
@@ -54,17 +53,16 @@
         }
 
         #hero--tablet {
-            display: block;
             position: absolute;
-            z-index: 0;
+            z-index: 1;
             display: block;
-            height: 44rem;
+            height: auto;
             width: 100%;
         }
     }
 
     .hero--copy {
-        bottom: 11rem;
+        top: 5rem;
     }
 }
 
@@ -90,10 +88,8 @@
     
     .hero--copy {
         display: block;
-        position: absolute;
-        width: 80%;
-        left: 2rem;
-        top: 27rem;
+        position: relative;
+        width: 80%;;
         
         h1 {
             font-weight: bold;
