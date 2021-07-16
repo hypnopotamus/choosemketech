@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const Hero = ({}) => {
     return (
         <div className="hero">
-            <video autoplay="" id="heroVideo" loop="yes" muted="yes" poster="images/hero-placeholder.png">
+            <video autoPlay="" id="heroVideo" loop="yes" muted="yes" poster="images/hero-placeholder.png">
                 <source src="videos/hero.mp4" type="video/mp4" />
                 <source src="videos/hero.webm" type="video/webm" />
                 <source src="videos/hero.ogv" type="video/ogv" />

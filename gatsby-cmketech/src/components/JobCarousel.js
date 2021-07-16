@@ -29,9 +29,9 @@ const JobCarousel = ({}) => {
                     </div>
                     <div className="job-carousel-card--right">
                         <div className="job-carousel-card--right__details">
-                            <div><i class="fas fa-building"></i> Company Name</div>
-                            <div><i class="fas fa-building"></i> Company Name</div>
-                            <div><i class="fas fa-building"></i> Company Name</div>
+                            <div><i className="fas fa-building"></i> Company Name</div>
+                            <div><i className="fas fa-building"></i> Company Name</div>
+                            <div><i className="fas fa-building"></i> Company Name</div>
                         </div>
                         <div className="job-carousel-card--right__cta">
                             <button className="button button--secondary">Apply For Jobs</button>
@@ -59,9 +59,9 @@ const JobCarousel = ({}) => {
                     </div>
                     <div className="job-carousel-card--right">
                         <div className="job-carousel-card--right__details">
-                            <div><i class="fas fa-building"></i> Company Name</div>
-                            <div><i class="fas fa-building"></i> Company Name</div>
-                            <div><i class="fas fa-building"></i> Company Name</div>
+                            <div><i className="fas fa-building"></i> Company Name</div>
+                            <div><i className="fas fa-building"></i> Company Name</div>
+                            <div><i className="fas fa-building"></i> Company Name</div>
                         </div>
                         <div className="job-carousel-card--right__cta">
                             <button className="button button--secondary">Apply For Jobs</button>
