@@ -1,0 +1,28 @@
+/*Media Queries*/
+// Implemented as follows: 
+//     .class {
+//         mobile first styles
+//         @media #{$mq-mediumScreen}{
+//           query specific styles
+//         }
+//     }
+
+$mq-mediumScreen: "only screen and (min-width:768px)";
+$mq-largeScreen: "only screen and (min-width:1025px)";
+$mq-xLargeScreen: "only screen and (min-width:1200px)";
+$mq-xxLargeScreen: "only screen and (min-width:1400px)";
+
+/* Custom Query */
+// Implemented as follows:
+//      .class {
+//           mobile first styles
+//           @includes customQuery(minimumScreenSize, maximumScreenSize){
+//              query specific styles
+//           }
+//      }
+
+@mixin customQuery($min, $max) {
+    @media only screen and (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
