@@ -4,7 +4,17 @@ import { Link } from "gatsby"
 const Footer = ({}) => {
   return (
     <footer>
-      &copy; {new Date().getFullYear()}{" "}
+      <div className="social">
+          <h4>Stay Connected</h4>
+          <div className="divider"></div>
+          <div className="social--icons">
+              <a href="https://www.linkedin.com/company/mketech/" target="_blank"><i className="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+              <a href="http://mke-slack.herokuapp.com/" target="_blank"><i className="fab fa-slack"></i><span>Slack</span></a>
+              <a href="https://twitter.com/MKETechHub" target="_blank"><i className="fab fa-twitter"></i><span>Twitter</span></a>
+              <a href="https://www.facebook.com/mketechhub/" target="_blank"><i className="fab fa-facebook-f"></i><span>Facebook</span></a>
+              <a href="https://www.instagram.com/mketechhubcoalition/" target="_blank"><i className="fab fa-instagram"></i><span>Instagram</span></a>
+          </div>
+      </div>            
     </footer>
     // <footer id="site-footer" role="contentinfo" className="header-footer-group">
     //   <div className="section-inner">

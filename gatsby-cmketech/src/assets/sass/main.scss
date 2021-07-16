@@ -4,6 +4,7 @@
 @import 'config/variables';
 @import 'config/functions';
 @import 'config/mixins';
+@import 'config/media-queries';
 
 // Base Styles
 @import 'base/defaults';
@@ -15,6 +16,7 @@
 // Components
 @import 'components/buttons';
 @import 'components/forms';
+@import 'components/hero';
 @import 'components/links';
 @import 'components/tags';
 @import 'components/plans';
@@ -26,4 +28,6 @@
 // Vendors
 @import 'vendors/font-awesome/fontawesome';
 @import 'vendors/font-awesome/solid.scss';
+@import 'vendors/font-awesome/regular.scss';
+@import 'vendors/font-awesome/brands.scss';
 @import 'vendors/slick-slider';
