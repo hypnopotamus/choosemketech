@@ -13,6 +13,7 @@ const Hero = ({}) => {
                 <h1>Build Your Tech <br /> Career In <span>Milwaukee, WI</span></h1>
                 <p>CAREERS + CONNECTION</p>
             </div>
+            <span>test</span>
         </div>
     )
 }
