@@ -3,30 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import UniversalLink from "./UniversalLink"
 
 const Menu = () => {
-  const { wpMenu } = useStaticQuery(graphql`
-    {
-      wpMenu(slug: { eq: "primary" }) {
-        name
-        menuItems {
-          nodes {
-            label
-            url
-            databaseId
-            connectedNode {
-              node {
-                ... on WpContentNode {
-                  uri
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  if (!wpMenu?.menuItems?.nodes || wpMenu.menuItems.nodes === 0) return null
-
   return (
     <nav>
       <ul className="nav--top-references">
