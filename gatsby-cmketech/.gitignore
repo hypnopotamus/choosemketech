@@ -69,6 +69,6 @@ yarn-error.log
 .env.*
 !.env.GATSBY_CONCURRENT_DOWNLOAD
 !.env.example
-.DS_Store
+**/.DS_Store
 
 
