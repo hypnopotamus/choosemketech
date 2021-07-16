@@ -1,18 +1,18 @@
-@import 'vendors/reset';
-@import 'vendors/font-awesome/fontawesome';
-@import 'vendors/font-awesome/solid.scss';
-@import 'vendors/slick-slider';
-@import 'vendors/include-media';
+// Prerequisites
+@import 'config/reset';
+@import 'config/include-media';
+@import 'config/variables';
+@import 'config/functions';
+@import 'config/mixins';
 
-@import 'abstracts/variables';
-@import 'abstracts/functions';
-@import 'abstracts/mixins';
-
+// Base Styles
 @import 'base/defaults';
 @import 'base/typography';
 
+// Layouts
 @import 'layouts/header';
 
+// Components
 @import 'components/buttons';
 @import 'components/forms';
 @import 'components/links';
@@ -20,5 +20,10 @@
 @import 'components/plans';
 @import 'components/job-carousel';
 
+// Pages
 @import 'pages/homepage';
 
+// Vendors
+@import 'vendors/font-awesome/fontawesome';
+@import 'vendors/font-awesome/solid.scss';
+@import 'vendors/slick-slider';
