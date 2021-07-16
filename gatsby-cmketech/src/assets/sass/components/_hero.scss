@@ -1,111 +1,99 @@
 .hero--banner--container {
     position: relative;
     overflow: hidden;
-    background-color: $navy_blue;
-    box-sizing: border-box;
-
-    video {
-        display: block;
-        width: auto;
-        object-fit: contain;
-        margin-left: auto;
-        margin-bottom: 3rem;
-        width: 70%;
-    }
-
+ 
     img { 
         display: none;
     }
 }
 
-.hero--banner--container:before {
-    position: absolute;
-    content: "";
-    background-image: url("https://f.hubspotusercontent00.net/hubfs/436951/Media/ELITE%20Site%20Assets/Dots.png");
-    width: 60%;
-    height: 6rem;
-    top: 0;
-    left: 0;
-    background-repeat: repeat;
-    z-index: 1;
-}
+// .hero--banner--container:before {
+//     position: absolute;
+//     content: "";
+//     background-image: url("https://f.hubspotusercontent00.net/hubfs/436951/Media/ELITE%20Site%20Assets/Dots.png");
+//     width: 60%;
+//     height: 6rem;
+//     top: 0;
+//     left: 0;
+//     background-repeat: repeat;
+//     z-index: 1;
+// }
 
-.hero--banner--container:after {
-    position: absolute;
-    content: "";
-    background-image: url("https://f.hubspotusercontent00.net/hubfs/436951/Media/ELITE%20Site%20Assets/Dots.png");
-    width: 51%;
-    height: 6rem;
-    bottom: 0;
-    right: 0;
-    background-repeat: repeat;
-    z-index: 1;
-}
+// .hero--banner--container:after {
+//     position: absolute;
+//     content: "";
+//     background-image: url("https://f.hubspotusercontent00.net/hubfs/436951/Media/ELITE%20Site%20Assets/Dots.png");
+//     width: 51%;
+//     height: 6rem;
+//     bottom: 0;
+//     right: 0;
+//     background-repeat: repeat;
+//     z-index: 1;
+// }
 
-.hero--small--circle {
-    position: absolute;
-    left: 16rem;
-    top: 1rem;
-    content: "";
-    height: 6rem;
-    width: 6rem;
-    background-color: #1A447E;
-    border-radius: 50%;
-}
+// .hero--small--circle {
+//     position: absolute;
+//     left: 16rem;
+//     top: 1rem;
+//     content: "";
+//     height: 6rem;
+//     width: 6rem;
+//     background-color: #1A447E;
+//     border-radius: 50%;
+// }
 
-.hero--small--circle:after {
-    position: absolute;
-    content: "";
-    left: 56rem;
-    top: 24rem;
-    opacity: .75;
-    content: "";
-    height: 6rem;
-    width: 6rem;
-    background-color: #1A447E;
-    border-radius: 50%;
-}
+// .hero--small--circle:after {
+//     position: absolute;
+//     content: "";
+//     left: 56rem;
+//     top: 24rem;
+//     opacity: .75;
+//     content: "";
+//     height: 6rem;
+//     width: 6rem;
+//     background-color: #1A447E;
+//     border-radius: 50%;
+// }
 
-.hero--large--circle {
-    position: absolute;
-    left: -30px;
-    top: -50px;
-    border-radius: 50%;
-    border: 3px solid $light_yellow;
-    width: 11rem;
-    height: 10rem;
-}
+// .hero--large--circle {
+//     position: absolute;
+//     left: -30px;
+//     top: -50px;
+//     border-radius: 50%;
+//     border: 3px solid $light_yellow;
+//     width: 11rem;
+//     height: 10rem;
+// }
 
-.hero--large--circle:after {
-    position: absolute;
-    content: "";
-    left: 6rem;
-    top: 26rem;
-    border-radius: 50%;
-    border: 3px solid $teal;
-    width: 11rem;
-    height: 8rem;
-}
+// .hero--large--circle:after {
+//     position: absolute;
+//     content: "";
+//     left: 6rem;
+//     top: 26rem;
+//     border-radius: 50%;
+//     border: 3px solid $teal;
+//     width: 11rem;
+//     height: 8rem;
+// }
 
-.hero--white--circle {
-    position: absolute;
-    right: -47px;
-    bottom: -44px;
-    border-radius: 50%;
-    border: 3px solid #FFF;
-    width: 10rem;
-    height: 10rem;
-}
+// .hero--white--circle {
+//     position: absolute;
+//     right: -47px;
+//     bottom: -44px;
+//     border-radius: 50%;
+//     border: 3px solid #FFF;
+//     width: 10rem;
+//     height: 10rem;
+// }
 
 .hero--copy {
     position: absolute;
     bottom: 9rem;
-    left: 11rem;
-    width: 23rem;
+    left: 3rem;
     z-index: 999;
 
     h1 {
-        // font-size: $font-size-h1;
+        font-size: 6vw;
         font-weight: bold;
         text-transform: capitalize;
         color: #FFFFFF;
@@ -118,7 +106,7 @@
     }
 
     h3 {
-        // font-size: $font-size-h3;
+        font-size: $font-size-h3;
         text-transform: uppercase;
         color: $light_yellow;
         margin-top: 1rem;
