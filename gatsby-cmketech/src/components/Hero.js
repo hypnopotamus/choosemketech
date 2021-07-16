@@ -1,12 +1,13 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
+import { heroVideo, heroVideo2 } from "../assets/assets";
 
 const Hero = ({}) => {
     return (
-        <div className="hero">
-            <video autoPlay="" id="heroVideo" loop="yes" muted="yes" poster="images/hero-placeholder.png">
-                <source src="videos/hero.mp4" type="video/mp4" />
-                <source src="videos/hero.webm" type="video/webm" />
+        <section className="hero">
+            <video autoPlay="true" id="heroVideo" loop="yes" muted="yes" poster="images/hero-placeholder.png">
+                <source src={heroVideo} type="video/mp4" />
+                <source src={heroVideo2} type="video/webm" />
                 <source src="videos/hero.ogv" type="video/ogv" />
             </video>
             <div className="hero--content">
@@ -14,7 +15,7 @@ const Hero = ({}) => {
                 <p>CAREERS + CONNECTION</p>
             </div>
             <span>test</span>
-        </div>
+        </section>
     )
 }
 
