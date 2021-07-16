@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Tags from "./Tags"
 
-const CarCopy = ({}) => {
+const CardCopy = ({}) => {
     return (
         <div className="tiles">
             <h2>Company Spotlight</h2>
@@ -23,4 +23,4 @@ const CarCopy = ({}) => {
     )
 }
 
-export default CarCopy
+export default CardCopy
