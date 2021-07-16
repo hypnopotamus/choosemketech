@@ -21,8 +21,6 @@ const Layout = ({ children, bodyClass }) => {
     <div id={"GatsbyBody"} className={ bodyClass + " showing-menu-modal showing-modal" + (backdropActive ? backdropClasses : "") } >
 
       <Header toggleBackdrop={toggleBackdrop} />
-      <Hero movieMedia={true} />
-      <MenuModal isActive={backdropActive} toggleBackdrop={toggleBackdrop} />
 
       <main id="site-content" role="main">
         {children}
