@@ -1,0 +1,60 @@
+footer {
+    .footer--social {
+        display: flex;
+        background-color: $light_gray;
+        background-image: url('../svg/skyline.svg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        padding: 50px;
+        height: 640px;
+        .footer--social__wrapper {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            margin-block-end: auto;
+            h4 {
+                width: 310px;
+                white-space: nowrap;
+                text-transform: uppercase;            
+            }
+            .footer--social__icons {
+                display: flex;
+                width: 584px;
+                a {
+                    border-radius: 50%;
+                    background-color: $teal;
+                    color: $white;
+                    width: 100px;
+                    height: 100px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none;
+                    font-size: 2.5rem;
+                    box-shadow: 0px 3px 5px rgba($black, 0.5);
+                    margin: 0 10px;
+                    transition: 1s;
+                    position: relative;
+                    overflow: hidden;
+                    span {
+                        text-indent: 100%;
+                        position: absolute;
+                    }
+                }
+            }
+        }
+    }
+    .footer--main {
+        display: flex;
+        background-color: $navy_blue;
+        * {
+            color: $white;
+        }
+        .footer--main__navigation {
+            display: flex;
+            width: 100%;
+        }
+    }
+}
