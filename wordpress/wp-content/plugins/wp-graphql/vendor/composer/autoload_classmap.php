@@ -390,6 +390,7 @@ return array(
     'WPGraphQL\\Type\\Union\\MenuItemObjectUnion' => $baseDir . '/src/Type/Union/MenuItemObjectUnion.php',
     'WPGraphQL\\Type\\Union\\PostObjectUnion' => $baseDir . '/src/Type/Union/PostObjectUnion.php',
     'WPGraphQL\\Type\\Union\\TermObjectUnion' => $baseDir . '/src/Type/Union/TermObjectUnion.php',
+    'WPGraphQL\\Type\\WPConnectionType' => $baseDir . '/src/Type/WPConnectionType.php',
     'WPGraphQL\\Type\\WPEnumType' => $baseDir . '/src/Type/WPEnumType.php',
     'WPGraphQL\\Type\\WPInputObjectType' => $baseDir . '/src/Type/WPInputObjectType.php',
     'WPGraphQL\\Type\\WPInterfaceTrait' => $baseDir . '/src/Type/WPInterfaceTrait.php',
