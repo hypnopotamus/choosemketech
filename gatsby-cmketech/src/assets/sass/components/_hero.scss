@@ -19,7 +19,7 @@
     position: relative;
     z-index: 2;
     bottom: 26rem;
-    left: 7rem;
+    left: 9rem;
 
     h1 {
         font-size: 6vw;
@@ -32,6 +32,7 @@
         background-color: $light_yellow;
         color: $navy_blue;
         padding: 0 1rem;
+        line-height: 1.25;
     }
 
     h3 {
