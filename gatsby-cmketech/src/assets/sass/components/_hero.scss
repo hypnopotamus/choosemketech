@@ -1,4 +1,4 @@
-.hero--banner--container {
+.hero__banner-container {
     position: relative;
     overflow: hidden;
    
@@ -6,7 +6,7 @@
         display: none;
     }
 
-    #hero--tablet {
+    #hero__tablet {
         display: none;
     }
 
@@ -15,7 +15,7 @@
     }
 }
 
-.hero--copy {
+.hero__copy {
     position: relative;
     z-index: 2;
     bottom: 26rem;
@@ -45,7 +45,7 @@
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
 
-    .hero--banner--container {
+    .hero__banner-container {
         display: flex;
         padding: 0;
         min-height: 21rem;
@@ -58,7 +58,7 @@
             display: none;
         }
 
-        #hero--tablet {
+        #hero__tablet {
             position: absolute;
             z-index: 1;
             display: block;
@@ -67,14 +67,14 @@
         }
     }
 
-    .hero--copy {
+    .hero__copy {
         top: 5rem;
     }
 }
 
 @media only screen and (max-width: 767px) {
 
-    .hero--banner--container {
+    .hero__banner-container {
         display: flex;
         padding: 0;
         height: 639px;
@@ -92,7 +92,7 @@
         }
     }
     
-    .hero--copy {
+    .hero__copy {
         display: block;
         position: relative;
         width: 80%;;
