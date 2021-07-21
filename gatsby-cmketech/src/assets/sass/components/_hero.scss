@@ -26,7 +26,8 @@
     
     img {    
         width: 85%;
-
+        position: absolute;
+        bottom: 0;
     }
 
 
@@ -45,11 +46,12 @@
 }
 
 .hero--banner__copy {
-    position: relative;
+    position: absolute;
     z-index: 10;
-    left: 29px;
-    bottom: 15rem;
-    width: 80%;
+    left: 40px;
+    bottom: 90px;
+    top: auto;
+    width: 282px;
 
     @media #{$mq-mediumScreen} {
 

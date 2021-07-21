@@ -23,14 +23,6 @@ const Layout = ({ children, bodyClass }) => {
       <Header toggleBackdrop={toggleBackdrop} />
 
       <main id="site-content" role="main">
-        {children}
-        {
-          /* 
-          Temporily putting all components into layout, I'll need to 
-          create a page that uses a unique template for the rest 
-          of the site 
-          */
-        }
         <Hero />
         <IntroCopy />
         <Tiles />
