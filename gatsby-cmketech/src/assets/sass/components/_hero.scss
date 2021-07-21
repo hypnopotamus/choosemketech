@@ -8,27 +8,27 @@
         display: none;
     }
 
-    img.hero--banner__tablet {
-        display: none;
-    }
-
     img {    
         width: 85%;
         position: absolute;
         bottom: 0;
+
+        &.hero--banner__tablet {
+            display: none;
+        }
     }
 
     // iPad
     @media #{$mq-mediumScreen} {
 
-        img.hero--banner__tablet {
-            position: absolute;
-            z-index: 100;
-            display: block;
-        }   
-
         img {
             display: none;
+
+            &.hero--banner__tablet {
+                position: absolute;
+                z-index: 100;
+                display: block;
+            }   
         }
 
         video {
@@ -40,11 +40,11 @@
 
         img {
             display: none;
-        }
 
-        img.hero--banner__tablet {
-            display: none;
-        }     
+            &.hero--banner__tablet {
+                display: none;
+            }  
+        }
 
         video {
             display: block;
@@ -94,7 +94,8 @@
     @media #{$mq-largeScreen} {
         width: auto;
         bottom: 0;
-        top: 9rem;
+        left: 3.5rem;
+        top: 11rem;
        
         h1 {
             font-size: 6vw;
