@@ -37,6 +37,7 @@
     }
  
     @media #{$mq-largeScreen} {
+        height: auto;
 
         img {
             display: none;
