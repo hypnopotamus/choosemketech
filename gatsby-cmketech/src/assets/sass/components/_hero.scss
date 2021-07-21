@@ -8,55 +8,93 @@
         display: none;
     }
 
-    @media #{$mq-mediumScreen} {
-
-        img {
-            display: none;
-        }
-
-        video {
-            display: block;
-            width: 100%;
-        }
-    }
-
     img.hero--banner__tablet {
         display: none;
     }
-    
+
     img {    
         width: 85%;
         position: absolute;
         bottom: 0;
     }
 
+    // iPad
+    @media #{$mq-mediumScreen} {
 
-    // DESKTOP PROPS
-    // img { 
-    //     display: none;
-    // }
+        img.hero--banner__tablet {
+            position: absolute;
+            z-index: 100;
+            display: block;
+        }   
 
-    // .hero--banner__tablet {
-    //     display: none;
-    // }
+        img {
+            display: none;
+        }
 
-    // video {
-    //     z-index: 0;
-    // }
+        video {
+            display: none;
+        }
+    }
+ 
+    @media #{$mq-largeScreen} {
+
+        img {
+            display: none;
+        }
+
+        img.hero--banner__tablet {
+            display: none;
+        }     
+
+        video {
+            display: block;
+            width: 100%;
+        }
+    }
 }
 
 .hero--banner__copy {
     position: absolute;
-    z-index: 10;
+    z-index: 999;
     left: 40px;
     bottom: 90px;
     top: auto;
     width: 282px;
 
-    @media #{$mq-mediumScreen} {
+    h1 {
+        color: #FFF;
 
-        bottom: 21rem;
+        span {
+            background-color: $light_yellow;
+            color: $navy_blue;
+            padding: 0 1rem;
+            line-height: 1.25;
+        }
+    }
 
+    h3 {
+        display: none;
+    }
+
+     @media #{$mq-mediumScreen} {
+        top: 30rem;
+
+        h1 {
+            color: #FFF;
+            font-size: 2rem;
+        }
+
+        h3 {
+            display: block;
+            color: $light_yellow;
+            font-size: .75rem;
+        }   
+    }
+
+    @media #{$mq-largeScreen} {
+        width: auto;
+        bottom: 0;
+        top: 9rem;
        
         h1 {
             font-size: 6vw;
@@ -66,62 +104,11 @@
             color: #FFFFFF;
             line-height: 6.4vw;
         }
+
+        h3 {
+            display: block;
+            color: $light_yellow;
+            font-size: 1.5rem;
+        }
     }
-
-    // Desktop Props
-    // position: relative;
-    // z-index: 2;
-    // bottom: 26rem;
-    // left: 9rem;
-
-   
-
-    h1 span {
-        background-color: $light_yellow;
-        color: $navy_blue;
-        padding: 0 1rem;
-        line-height: 1.25;
-    }
-
-    h3 {
-        display: none;
-    }
-
-    // h3 {
-    //     font-size: 1.5vw;
-    //     text-transform: uppercase;
-    //     color: $light_yellow;
-    //     font-weight: 500;
-    //     margin: 1rem 0 0 0;
-
-    // }
 }
-
-// @media only screen and (min-width: 768px) and (max-width: 1023px) {
-
-//     .hero--banner {
-//         display: flex;
-//         padding: 0;
-//         min-height: 21rem;
-
-//         video {
-//             display: none;
-//         }
-
-//         img { 
-//             display: none;
-//         }
-
-//         .hero--banner__tablet {
-//             position: absolute;
-//             z-index: 1;
-//             display: block;
-//             height: auto;
-//             width: 100%;
-//         }
-//     }
-
-//     .hero--banner__copy {
-//         top: 5rem;
-//     }
-// }
