@@ -5,6 +5,7 @@
 
     @media #{$mq-largeScreen} {
         padding: 0;
+        margin-bottom: 3rem;
     }
 
     .intro-copy {
@@ -25,16 +26,21 @@
         h3, p {
             padding: 1rem;
         }
+        
+        button {
+            display: none;
+        };
     
         @media #{$mq-largeScreen} {
             position: sticky;
-    
-            img {
-                display: none;
-    
-                &.hero--banner__tablet {
-                    display: none;
-                }  
+            border: none;
+            width: 100%;
+            box-shadow: none;
+
+            button.button--primary {
+                display: block;
+                text-align: center;
+                margin: 0 auto;
             }
         }
     }
