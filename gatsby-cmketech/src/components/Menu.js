@@ -14,8 +14,8 @@ const Menu = () => {
         <li><Link to="/jobs">Jobs</Link></li>
         <li><Link to="/why-milwaukee">Why Milwaukee</Link></li>
         <li><Link to="/companies">Companies</Link></li>
-        <li><Link to="/tech-scene">Tech scene <i class="fas fa-caret-down"></i></Link></li>
-        <li><Link to="#" className="search"><i class="fas fa-search"></i></Link></li>
+        <li><Link to="/tech-scene">Tech scene <i className="fas fa-caret-down"></i></Link></li>
+        <li><Link to="#" className="search"><i className="fas fa-search"></i></Link></li>
       </ul>
     </nav>
 
