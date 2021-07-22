@@ -1,12 +1,13 @@
-import React, { useState } from "react"
-import Header from "./Header"
-import Hero from "./Hero"
-import IntroCopy from "./IntroCopy"
-import Tiles from "./Tiles"
-import CardCopy from "./CardCopy"
-import JobCarousel from "./JobCarousel"
-import Footer from "./Footer"
-import Cards from "./Cards"
+import React, { useState } from "react";
+import Header from "./Header";
+import Hero from "./Hero";
+import IntroCopy from "./IntroCopy";
+import Tiles from "./Tiles";
+import CardCopy from "./CardCopy";
+import JobCarousel from "./JobCarousel";
+import ImageGrid from "./ImageGrid";
+import Cards from "./Cards";
+import Footer from "./Footer";
 
 const backdropClasses = " backdrop"
 
@@ -30,6 +31,7 @@ const Layout = ({ children, bodyClass }) => {
         <CardCopy />
         <JobCarousel />
         <Cards />
+        <ImageGrid />
       </main>
 
       <Footer />
