@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "gatsby";
-import { heroVideo, heroVideo2, heroBannerMobile, heroBannerTablet } from "../assets/assets";
+import { heroVideo, heroVideo2 } from "../assets/assets";
 
 const Hero = ({}) => {
     return (
-        <div className="hero hero--banner container">
+        <section className="hero hero--banner container">
             <div className="row">
                 <video autoPlay={true} className="hero--banner__video" loop="yes" muted="yes" poster="images/hero-placeholder.png">
                     <source src={heroVideo} type="video/mp4" />
@@ -15,7 +15,7 @@ const Hero = ({}) => {
                     <h3>CAREERS + CONNECTION</h3>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
