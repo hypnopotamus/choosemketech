@@ -10,13 +10,17 @@
 
     .intro-copy {
         position: absolute;
+        top: -7rem;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
         background-color: #FFF;
         border-top: 5px solid #28538E;
         text-align: center;
         width: 82%;
         padding: 1rem;
-        top: -7rem;
-        left: 2.35rem;
         box-shadow: 0 6px 5px -2px #00000033;
     
         h3 {
