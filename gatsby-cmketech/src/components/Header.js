@@ -19,20 +19,7 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
       <div className="logo">
         <Link to="/"><span>Choose MKE Tech</span></Link>
       </div>
-      <nav>
-        <ul className="nav--top-references">
-          <li><a href="/help"><i className="fas fa-question-circle"></i> <span>Help</span></a></li>
-          <li><a href="/recruit-with-us"><i className="fas fa-users"></i> <span>Recruit with us</span></a></li>
-          <li><a href="/login"><i className="fas fa-sign-in-alt"></i> <span>Login</span></a></li>
-        </ul>
-        <ul className="nav--top-main">
-          <li><a href="/jobs">Jobs</a></li>
-          <li><a href="/why-milwaukee">Why Milwaukee</a></li>
-          <li><a href="/companies">Companies</a></li>
-          <li><a href="/tech-scene">Tech scene <i className="fas fa-caret-down"></i></a> <span>Test SubItem</span></li>
-          <li><a href="#" className="search"><i className="fas fa-search"></i></a></li>
-        </ul>
-      </nav>
+      <Menu />
     </header>
     // <header id="site-header" className="header-footer-group" role="banner">
     //   <div className="header-inner section-inner">

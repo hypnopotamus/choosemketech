@@ -1,115 +1,95 @@
 .hero--banner {
-    position: relative;
-    overflow: hidden;
+    background-image: url('../images/mobile_header_still.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 639px;
-    margin-bottom: 60px;
+    background-position: bottom;
+    color: $white;
+    position: relative;
+    margin-block-end: 35px;
+    margin-block-start: 35px;
 
-    video { 
-        display: none;
+    @media #{$mq-mediumScreen} {
+        background-image: url('../images/tablet_header_still.png');
+        background-position: left;
+        height: 431px;
     }
 
-    img {    
-        width: 85%;
-        position: absolute;
-        bottom: 0;
+    @media #{$mq-largeScreen} {
+        background-image: none;
+        height: auto;
+    }
 
-        &.hero--banner__tablet {
-            display: none;
+    .hero--banner__video {
+        display: none;
+        position: relative;
+        width: 100%;
+        @media #{$mq-largeScreen} {
+            display: block;
         }
     }
+    
+    .hero--banner__copy {
+        position: absolute;
+        left: 40px;
+        bottom: 90px;
+        top: auto;
+        width: 285px;
+        @media #{$mq-mediumScreen} {
+            top: 143px;
+            width: auto;
+        }
+        @media #{$mq-largeScreen} {        
+            top: 11vw;
+            left: 65px;    
+        }
+     
+        h1 {
+            color: $white;
+            font-size: 3rem;
+            line-height: 3rem;            
+            br {
+                display: none;
+            }   
+            @media #{$mq-mediumScreen} {
+                font-size: 4rem;
+                line-height: 4.4rem;
+                br {
+                    display: block;
+                }   
+            }
+            @media #{$mq-largeScreen} {        
+                font-size: 6vw;
+                line-height: 6.4vw;   
+                br {
+                    display: block;
+                }   
+            }
+    
+            span {
+                background-color: $light_yellow;
+                color: $navy_blue;
+                padding: 0 6px;
+                white-space: nowrap;
+                display: inline-block;
+                line-height: 3.5rem;
+                margin-block-start: 6px;                
 
-    // iPad
-    @media #{$mq-mediumScreen} {
-
-        img {
-            display: none;
-
-            &.hero--banner__tablet {
-                position: absolute;
-                z-index: 100;
-                display: block;
+                @media #{$mq-largeScreen} {        
+                    line-height: normal;
+                }
             }   
         }
-
-        video {
-            display: none;
-        }
-    }
- 
-    @media #{$mq-largeScreen} {
-
-        img {
-            display: none;
-
-            &.hero--banner__tablet {
-                display: none;
-            }  
-        }
-
-        video {
-            display: block;
-            width: 100%;
-        }
-    }
-}
-
-.hero--banner__copy {
-    position: absolute;
-    z-index: 999;
-    left: 40px;
-    bottom: 90px;
-    top: auto;
-    width: 282px;
-
-    h1 {
-        color: #FFF;
-
-        span {
-            background-color: $light_yellow;
-            color: $navy_blue;
-            padding: 0 1rem;
-            line-height: 1.25;
-        }
-    }
-
-    h3 {
-        display: none;
-    }
-
-     @media #{$mq-mediumScreen} {
-        top: 30rem;
-
-        h1 {
-            color: #FFF;
-            font-size: 2rem;
-        }
-
         h3 {
-            display: block;
+            font-size: 1.5vw;
+            font-weight: 500;
             color: $light_yellow;
-            font-size: .75rem;
-        }   
-    }
-
-    @media #{$mq-largeScreen} {
-        width: auto;
-        bottom: 0;
-        left: 3.5rem;
-        top: 11rem;
-       
-        h1 {
-            font-size: 6vw;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-weight: 700;
-            text-transform: capitalize;
-            color: #FFFFFF;
-            line-height: 6.4vw;
-        }
-
-        h3 {
-            display: block;
-            color: $light_yellow;
-            font-size: 1.5rem;
+            margin-block-start: 1rem;
+            display: none;
+            @media #{$mq-mediumScreen} {
+                font-size: 1.5rem;            
+                display: block;
+            }
         }
     }
 }
