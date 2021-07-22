@@ -6,10 +6,8 @@
     background-position: bottom;
     color: $white;
     position: relative;
-
     margin-block-end: 35px;
     margin-block-start: 35px;
-
 
     @media #{$mq-mediumScreen} {
         background-image: url('../images/tablet_header_still.png');
@@ -30,6 +28,7 @@
             display: block;
         }
     }
+    
     .hero--banner__copy {
         position: absolute;
         left: 40px;
