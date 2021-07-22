@@ -18,6 +18,9 @@ button,
         color: $white;
         background-color: $blue;
         border: 2px solid $blue;
+        &:visited {
+            color: $white;
+        }
         &:hover {
             background-color: transparent;
             color: $blue;
@@ -27,6 +30,9 @@ button,
         color: $navy_blue;
         background-color: transparent;
         border: 2px solid $navy_blue;
+        &:visited {
+            color: $navy_blue;
+        }
         &:hover {
             background-color: $navy_blue;
             color: $white;

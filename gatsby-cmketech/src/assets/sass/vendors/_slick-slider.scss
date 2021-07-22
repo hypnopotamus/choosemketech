@@ -14,3 +14,34 @@
 .slick-next {
     right: 10px;
 }
+.slick-slider {
+    .slick-dots {
+        bottom: 0px;
+        li {
+            width: 70px;
+            height: 7px;
+            &.slick-active {
+                button{
+                    &:before {
+                        background-color: $teal;
+                    }
+                }
+            }
+            button {
+                width: 40px;
+                height: 7px;
+                &:before {
+                    width: 40px;
+                    height: 7px;
+                    content: '';
+                    background-color: $medium_gray;
+                }
+                &:hover, &:focus {
+                    &:before {
+                        background-color: $teal;
+                    }
+                }
+            }
+        }
+    }
+}

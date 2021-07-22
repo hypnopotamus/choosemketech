@@ -4,6 +4,7 @@ $light_yellow   : #F8E161;
 $teal           : #029395;
 $navy_blue      : #0d223f;
 $blue           : #28538e;
+$gold           : #F5A71C;
 
 /* Secondary */
 $dark_gray      : #2B2B2B;
@@ -34,7 +35,7 @@ $tag-green-accent   :$teal;
 $tag-blue           :$blue;
 $tag-blue-accent    :#3369B2;
 $tag-gold           :#B8860B;
-$tag-gold-accent    :#F5A71C;
+$tag-gold-accent    :$gold;
 
 /* Gradient Line */
 $g1 :#F8E161;
@@ -48,3 +49,6 @@ $breakpoints: (
     "large"                 : 1199px, // After this is point we'll be in largish desktop mode, ie. @include media('>large')
     "large-with-margins"    : 1343px
 );
+
+/* Box Shadow */
+$box-shadow                 : 0px 3px 2px #00000033;
