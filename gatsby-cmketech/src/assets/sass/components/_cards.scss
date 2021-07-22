@@ -54,9 +54,7 @@
                 order: -1;
                 span {
                     font-family: 'Inter', sans-serif;
-                    font-weight: bold;
-                    color: $dark_gray;
-                    font-style: italic;
+                    color: $medium_gray;
                 }
                 @media #{$mq-largeScreen}{
                     order: 4;
@@ -127,10 +125,14 @@
     &.company-card { 
         .company-card__left, .company-card__right{
             flex: 1;
-            padding-inline: 35px 5px;
+            padding-inline: 35px;
             padding-block: 20px 25px;
             display: grid;
             place-items: flex-start;
+            img {
+                width:100%;
+
+            }
             @media #{$mq-largeScreen}{
                 padding-block: 35px;
                 place-items: center;
@@ -191,9 +193,7 @@
             &__hiring {
                 span {
                     font-family: 'Inter', sans-serif;
-                    font-weight: bold;
-                    color: $dark_gray;
-                    font-style: italic;
+                    color: $medium_gray;
                 }
             }
         }
