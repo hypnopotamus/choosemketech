@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const IntroCopy = ({ }) => {
     return (
-        <section className="intro-copy--container">
+        <section className="intro intro-copy--container">
             <div className="intro-copy">
                 <h1>Choose Milwaukee Tech</h1>
                 <h3>Community &amp; Careers –&nbsp;new Website coming soon</h3>
