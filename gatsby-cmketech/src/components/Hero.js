@@ -4,7 +4,7 @@ import { heroVideo, heroVideo2, heroBannerMobile, heroBannerTablet } from "../as
 
 const Hero = ({}) => {
     return (
-        <div className="container hero--banner">
+        <div className="hero hero--banner container">
             <div className="row">
                 <video autoPlay={true} className="hero--banner__video" loop="yes" muted="yes" poster="images/hero-placeholder.png">
                     <source src={heroVideo} type="video/mp4" />
