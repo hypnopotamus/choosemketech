@@ -6,6 +6,7 @@ import Tiles from "./Tiles"
 import CardCopy from "./CardCopy"
 import JobCarousel from "./JobCarousel"
 import Footer from "./Footer"
+import Cards from "./Cards"
 
 const backdropClasses = " backdrop"
 
@@ -28,6 +29,7 @@ const Layout = ({ children, bodyClass }) => {
         <Tiles />
         <CardCopy />
         <JobCarousel />
+        <Cards />
       </main>
 
       <Footer />

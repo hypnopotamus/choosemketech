@@ -38,4 +38,11 @@ button,
             color: $white;
         }
     }
+    &--external {
+        &:after {
+            content:"\f35d";
+            font-family: "Font Awesome 5 Free";
+            margin-inline-start: 10px;
+        }
+    }
 }
