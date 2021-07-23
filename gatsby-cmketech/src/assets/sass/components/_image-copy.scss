@@ -40,8 +40,6 @@
             .slick-dots {
                 left: unset;
                 right: 0;
-                max-width: 50%;
-                padding: 0px 20px;
                 bottom: 10px;
             }
         }
@@ -50,7 +48,10 @@
         .slick-dots {
             left: 0;
             padding: 0px 20px;
-            top: 250px;
+            top: 180px;
+            @include customQuery(400px, 450px){
+                top: 200px;
+            }
             @media #{$mq-mediumScreen}{
                 max-width: 50%;
                 bottom: 15px;
