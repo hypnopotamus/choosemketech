@@ -1,0 +1,28 @@
+.intro-copy {
+    position: relative;
+    top: -7rem;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: $white;
+    border-top: 5px solid $blue;
+    width: 82%;
+    padding: 1rem;
+    box-shadow: $box-shadow;
+
+    @media #{$mq-largeScreen} {
+        position: static;
+        border: none;
+        width: 100%;
+        box-shadow: none;
+        padding: 0 10rem;
+
+        button.button--primary {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+}
