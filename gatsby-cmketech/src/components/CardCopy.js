@@ -4,9 +4,9 @@ import Tags from "./Tags"
 
 const CardCopy = ({}) => {
     return (
-        <div className="tiles">
+        <div className="container">
             <h2>Company Spotlight</h2>
-            <div className="tile--container">
+            <div className="tiles tile--container">
                 <div className="tile col">
                     <div className="tile--image">
                         <Tags />
