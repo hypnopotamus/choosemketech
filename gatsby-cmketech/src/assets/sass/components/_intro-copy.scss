@@ -10,7 +10,7 @@
     border-top: 5px solid $blue;
     width: 82%;
     padding: 1rem;
-    box-shadow: 0 6px 5px -2px rgba(0,0,0,0.5);
+    box-shadow: $box-shadow;
 
     @media #{$mq-largeScreen} {
         position: static;
