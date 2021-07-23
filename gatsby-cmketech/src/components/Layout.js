@@ -7,6 +7,7 @@ import CardCopy from "./CardCopy"
 import JobCarousel from "./JobCarousel"
 import Footer from "./Footer"
 import Cards from "./Cards"
+import ImageCopy from "./ImageCopy"
 
 const backdropClasses = " backdrop"
 
@@ -30,6 +31,7 @@ const Layout = ({ children, bodyClass }) => {
         <CardCopy />
         <JobCarousel />
         <Cards />
+        <ImageCopy />
       </main>
 
       <Footer />
