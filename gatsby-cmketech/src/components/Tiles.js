@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 const Tiles = ({}) => {
     return (
         <div className="tiles container">
-                <div className="tiles tile--container">
+                <div className="rows">
                     <h2>Choose Your Journey</h2>
                     <div className="tile col">
                         <div className="tile--image">
