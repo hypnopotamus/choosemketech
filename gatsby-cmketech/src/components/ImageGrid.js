@@ -27,36 +27,44 @@ const ImageGrid = ({ }) => {
     const gallery = [
         {
             imagePath: imageGrid1,
-            altText: altTextPre + 'Milwaukee Art Museum'
-        },
-        {
-            imagePath: imageGrid2,
-            altText: altTextPre + 'Milwaukee collectivo'
+            altText: altTextPre + 'Indiafest',
+            gridArea: 'image-grid-a'
         },
         {
             imagePath: imageGrid3,
-            altText: altTextPre + 'Estabrook park'
-        },
-        {
-            imagePath: imageGrid4,
-            altText: altTextPre + 'Summerfest'
-        },
-        {
-            imagePath: imageGrid5,
-            altText: altTextPre + 'hubbard'
-        },
-        {
-            imagePath: imageGrid6,
-            altText: altTextPre + 'Indiafest'
-        },
-        {
-            imagePath: imageGrid7,
-            altText: altTextPre + 'Milwaukee Lakefront'
+            altText: altTextPre + 'Milwaukee Lakefront',
+            gridArea: 'image-grid-b'
         },
         {
             imagePath: imageGrid8,
-            altText: altTextPre + 'Milwaukee Fireworks'
+            altText: altTextPre + 'Milwaukee Fireworks',
+            gridArea: 'image-grid-c'
         },
+        {
+            imagePath: imageGrid2,
+            altText: altTextPre + 'Milwaukee Art Museum',
+            gridArea: 'image-grid-d'
+        },
+        {
+            imagePath: imageGrid4,
+            altText: altTextPre + 'Summerfest',
+            gridArea: 'image-grid-e'
+        },
+        {
+            imagePath: imageGrid6,
+            altText: altTextPre + 'Milwaukee collectivo',
+            gridArea: 'image-grid-f'
+        },
+        {
+            imagePath: imageGrid5,
+            altText: altTextPre + 'hubbard',
+            gridArea: 'image-grid-g'
+        },
+        {
+            imagePath: imageGrid7,
+            altText: altTextPre + 'Estabrook park',
+            gridArea: 'image-grid-h'
+        }
     ]
 
     return (
@@ -73,7 +81,7 @@ const ImageGrid = ({ }) => {
             <div className="image-grid">
                 {gallery.map((image, index) => {
                     return (
-                        <div key={index}>
+                        <div className={image.gridArea} key={index}>
                             <img src={image.imagePath} alt={image.altText} />
                         </div>
                     )

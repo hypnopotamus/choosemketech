@@ -21,13 +21,52 @@
 
         @media #{$mq-largeScreen} {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            padding: 0 3rem;
+            grid-template-columns: repeat(3, 25% 50%);
+            grid-template-rows: 20%;
             grid-gap: 1rem;
+            grid-template-areas: 
+            "a b c"
+            "d b c"
+            "e f g"
+            "e f h";
 
             img {
                 max-width: 100%;
-                max-height: 100%;
+                object-fit: cover;
             }
+
+            .image-grid-a {
+                grid-area: a;
+            }
+
+            .image-grid-b {
+                grid-area: b;
+            }
+
+            .image-grid-c {
+                grid-area: c;
+            }
+
+            .image-grid-d {
+                grid-area: d;
+            }
+
+            .image-grid-e {
+                grid-area: e;
+            }
+
+            .image-grid-f {
+                grid-area: f;
+            }
+
+            .image-grid-g {
+                grid-area: g;
+            }
+
+           .image-grid-h {
+               grid-area: h;
+           }
         }
     }
 }
