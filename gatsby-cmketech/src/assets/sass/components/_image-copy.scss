@@ -6,17 +6,35 @@
         justify-content: center;
         align-items: center;
     }
-    &__image {        
+    &__image {       
+        margin-block: 20px 0px; 
         margin-inline: 20px;
+        position: relative;
+        @media #{$mq-mediumScreen} {
+            flex: 1;
+            top: 20px;
+            left: 15px;
+            right: unset;
+        }
         img {
             width: 100%;
             aspect-ratio: 16 / 10;
             object-fit: cover;
         }
-        @media #{$mq-mediumScreen} {
-            display: flex;
-            justify-content: flex-end;
-            flex: 1;
+        .tag {
+            position: absolute;
+            top: -20px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            max-width: 120px;
+            @media #{$mq-largeScreen}{
+                top: 20px;
+                left: 20px;
+                right: unset;
+                margin: auto;
+                max-width: none;
+            }
         }
     }
     &__copy {
@@ -30,7 +48,11 @@
                 text-align: left;
             }
         }
-        
+        &__ctas {
+            button, a{
+                margin-inline-end: 20px;
+            }
+        }
     }
     &--reversed {
         .imageCopy__row {

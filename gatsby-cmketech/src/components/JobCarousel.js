@@ -120,7 +120,7 @@ const JobCarousel = ({}) => {
                     <i className="fas fa-building"></i> nvisia
                   </h5>
                   <h5>
-                    <i classNam="fas fa-map-marker-alt"></i> Milwaukee, WI
+                    <i className="fas fa-map-marker-alt"></i> Milwaukee, WI
                   </h5>
                   <h5>
                     <i className="fas fa-calendar-alt"></i> Full Time

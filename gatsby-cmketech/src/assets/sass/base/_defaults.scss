@@ -99,6 +99,9 @@ a {
     margin: 0 auto;
     padding-right: .75rem;
     padding-left: .75rem;
+    &--fullwidth {
+        max-width: none;
+    } 
     .row {
         --bs-gutter-x: 1.5rem;
         --bs-gutter-y: 0;
