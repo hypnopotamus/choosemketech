@@ -1,5 +1,9 @@
 footer {
     background: linear-gradient(to top, $white 64.5%, $light_gray 40%);
+    &.container {
+        padding: 0;
+        margin: 0;
+    }
     .footer--social {
         display: flex;
         background-image: url('../svg/skyline.svg');
