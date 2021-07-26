@@ -17,6 +17,29 @@
         }
     }
 
+    .image-grid--slot {
+        position: relative;
+        z-index: 1;
+    }
+
+    .image-grid--caption {
+        position: absolute;
+        bottom: 0;
+        z-index: 10;
+        width: 100%;
+        padding: 2rem;
+        background-color: $navy_blue;
+        color: $light_yellow;
+        font-size: $font-size-h4;
+        text-align: center;
+        text-transform: uppercase;
+
+        @media #{$mq-largeScreen} {
+            display: none;
+        }
+
+    }
+
     .image-grid {
         display: none;
 

@@ -28,41 +28,49 @@ const ImageGrid = ({ }) => {
         {
             imagePath: imageGrid1,
             altText: altTextPre + 'Indiafest',
+            title: 'India Fest',
             gridArea: 'image-grid-a'
         },
         {
             imagePath: imageGrid3,
             altText: altTextPre + 'Milwaukee Lakefront',
+            title: 'Milwaukee Lakefront',
             gridArea: 'image-grid-b'
         },
         {
             imagePath: imageGrid8,
             altText: altTextPre + 'Milwaukee Fireworks',
+            title: 'Milwaukee Fireworks',
             gridArea: 'image-grid-c'
         },
         {
             imagePath: imageGrid2,
             altText: altTextPre + 'Milwaukee Art Museum',
+            title: 'Milwaukee Art Museum',
             gridArea: 'image-grid-d'
         },
         {
             imagePath: imageGrid4,
             altText: altTextPre + 'Summerfest',
+            title: 'Summerfest',
             gridArea: 'image-grid-e'
         },
         {
             imagePath: imageGrid6,
-            altText: altTextPre + 'Milwaukee collectivo',
+            altText: altTextPre + 'Milwaukee Collectivo',
+            title: 'Milwaukee Collectivo',
             gridArea: 'image-grid-f'
         },
         {
             imagePath: imageGrid5,
             altText: altTextPre + 'hubbard',
+            title: 'Hubbard',
             gridArea: 'image-grid-g'
         },
         {
             imagePath: imageGrid7,
             altText: altTextPre + 'Estabrook park',
+            title: 'Estrabrook Park',
             gridArea: 'image-grid-h'
         }
     ]
@@ -72,7 +80,8 @@ const ImageGrid = ({ }) => {
             <Slider className="image-grid__slider" {...settings}>
                 {gallery.map((image, index) => {
                     return (
-                        <div key={index}>
+                        <div className="image-grid--slot" key={index}>
+                            <div className="image-grid--caption">{image.title}</div>
                             <img src={image.imagePath} alt={image.altText} />
                         </div>
                     )
