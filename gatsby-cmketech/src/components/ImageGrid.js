@@ -8,7 +8,7 @@ const ImageGrid = ({ }) => {
 
     const altTextPre = `Image shown of `
 
-    var settings = {
+    const ImgageGrid_slide_settings = {
         dots: true,
         arrows: false,
         centerMode: true,
@@ -77,12 +77,12 @@ const ImageGrid = ({ }) => {
 
     return (
         <section className="image-grid--container">
-            <Slider className="image-grid__slider" {...settings}>
+            <Slider className="image-grid__slider" {...ImgageGrid_slide_settings}>
                 {gallery.map((image, index) => {
                     return (
                         <div className="image-grid--slot" key={index}>
-                            <div className="image-grid--caption">{image.title}</div>
                             <img src={image.imagePath} alt={image.altText} />
+                            <div className="image-grid--caption">{image.title}</div>
                         </div>
                     )
                 })}
