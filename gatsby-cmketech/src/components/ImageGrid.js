@@ -28,7 +28,7 @@ const ImageGrid = ({ }) => {
         {
             imagePath: imageGrid1,
             altText: altTextPre + 'Indiafest',
-            title: 'India Fest',
+            title: 'IndiaFest',
             gridArea: 'image-grid-a'
         },
         {
