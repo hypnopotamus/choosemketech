@@ -8,6 +8,7 @@ import JobCarousel from "./JobCarousel";
 import ImageGrid from "./ImageGrid";
 import Cards from "./Cards";
 import Footer from "./Footer";
+import Accordions from "./Accordions";
 
 const backdropClasses = " backdrop"
 
@@ -32,6 +33,7 @@ const Layout = ({ children, bodyClass }) => {
         <JobCarousel />
         <Cards />
         <ImageGrid />
+        <Accordions />
       </main>
 
       <Footer />
