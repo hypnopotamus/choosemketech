@@ -48,7 +48,7 @@ const Accordion = ({ id }) => {
     ]
 
     const handleAccordionClick = (i) => {
-        if (selectedAction == i) {
+        if (selectedAction === i) {
             return setSelectedAction(null)
         }
         setSelectedAction(i)
@@ -62,7 +62,8 @@ const Accordion = ({ id }) => {
                         className={
                             selectedAction ? `accordion--active` : `accordion`
                         }
-                        key={idx}>
+                        key={idx}
+                    >
                         <section
                             className={
                                 selectedAction
@@ -75,17 +76,13 @@ const Accordion = ({ id }) => {
                             ) : (
                                 <h5>{el.header}</h5>
                             )}
-                            {selectedAction ? (
-                                <i
-                                    class="fas fa-minus"
-                                    onClick={handleAccordionClick}
-                                ></i>
-                            ) : (
-                                <i
-                                    class="fas fa-plus"
-                                    onClick={handleAccordionClick}
-                                ></i>
-                            )}
+
+                            <i
+                                class={`fas ${
+                                    selectedAction ? `fa-minus` : `fa-plus`
+                                }`}
+                                onClick={handleAccordionClick}
+                            ></i>
                         </section>
                         {selectedAction ? (
                             <section className="accordion--content">
