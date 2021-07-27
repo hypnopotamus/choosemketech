@@ -8,6 +8,7 @@ html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 html, body {
@@ -101,13 +102,11 @@ img {
 .container  {
     width: 100%;
     max-width: 1440px;
+    margin-block-start: 2.5rem;
+    margin-block-end: 2.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
     margin: 0 auto;
-    padding-right: .75rem;
-    padding-left: .75rem;
-    margin-left: auto;
-    margin-right: auto;
-    
-
     .row {
         --bs-gutter-x: 1.5rem;
         --bs-gutter-y: 0;
@@ -117,4 +116,5 @@ img {
         margin-right: calc(var(--bs-gutter-x)/ -2);
         margin-left: calc(var(--bs-gutter-x)/ -2);        
     }
+    
 }

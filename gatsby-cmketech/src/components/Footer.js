@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const Footer = ({}) => {
   return (
-    <footer>
+    <footer className="container">
     <div className="footer--social">
         <div className="footer--social__wrapper">
           <h4>Stay Connected</h4>
