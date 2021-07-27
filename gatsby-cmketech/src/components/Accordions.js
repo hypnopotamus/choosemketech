@@ -4,26 +4,27 @@ import { Link } from "gatsby"
 const Accordions = ({}) => {
     const [accordion, setAccordion] = useState(false)
 
-    const openContent = () => {
-        setAccordion(true);
-    }
-
-    const closeContent = () => {
-        setAccordion(false);
+    const handleAccordionClick = () => {
+        setAccordion(!accordion)
     }
 
     return (
         <div className="accordion">
             <section className="accordion--header">
-                <h5>Closed Accordion Heading</h5>
-                <i class="fas fa-plus" onClick={openContent}></i>
+                {accordion ? (
+                    <h5>Expanded Accordion Heading</h5>
+                ) : (
+                    <h5>Closed Accordion Heading</h5>
+                )}
+                {accordion ? (
+                    <i class="fas fa-minus" onClick={handleAccordionClick}></i>
+                ) : (
+                    <i class="fas fa-plus" onClick={handleAccordionClick}></i>
+                )}
             </section>
             {accordion ? (
                 <section className="accordion--content">
-                    <div className="accordion--content__subheader">
-                        <h5>Expanded Accordion Heading</h5>
-                        <i class="fas fa-minus" onClick={closeContent}></i>
-                    </div>
+                    <div className="accordion--content__subheader"></div>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Ut id purus at felis suscipit consequat id nec magna.
