@@ -1,5 +1,9 @@
 header {
-    &.header--nav-main {
+    &.container {
+        padding: 0;
+        margin: 0;
+    }
+    .header--nav-main {
         display: flex;
         .logo {
             position: relative;

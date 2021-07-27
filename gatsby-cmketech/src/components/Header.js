@@ -15,11 +15,13 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
     }
   `)
   return (
-    <header className="header--nav-main">
-      <div className="logo">
-        <Link to="/"><span>Choose MKE Tech</span></Link>
+    <header className="container">
+      <div className="header--nav-main">
+        <div className="logo">
+          <Link to="/"><span>Choose MKE Tech</span></Link>
+        </div>
+        <Menu />
       </div>
-      <Menu />
     </header>
     // <header id="site-header" className="header-footer-group" role="banner">
     //   <div className="header-inner section-inner">
