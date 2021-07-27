@@ -58,6 +58,10 @@
     }
 
     .accordion--header__active {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    
         @media #{$mq-largeScreen} {
             display: flex;
             align-items: center;
