@@ -49,7 +49,13 @@
             }
         }
         &__ctas {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+
             button, a{
+                margin-block:  10px;
                 margin-inline-end: 20px;
             }
         }
@@ -70,13 +76,13 @@
         .slick-dots {
             left: 0;
             padding: 0px 20px;
-            top: 180px;
+            top: 170px;
             @include customQuery(400px, 450px){
                 top: 200px;
             }
             @media #{$mq-mediumScreen}{
-                max-width: 50%;
-                bottom: 80px;
+                max-width: 55%;
+                bottom: 90px;
                 top: unset;
             }
             @media #{$mq-largeScreen}{
