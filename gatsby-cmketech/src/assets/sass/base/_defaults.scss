@@ -93,12 +93,19 @@ a {
     }
 }
 
+img {
+    width: 100%;
+    display: block;
+}
+
 .container  {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
     padding-right: .75rem;
     padding-left: .75rem;
+    margin-left: auto;
+    margin-right: auto;
     &--fullwidth {
         max-width: none;
     } 
