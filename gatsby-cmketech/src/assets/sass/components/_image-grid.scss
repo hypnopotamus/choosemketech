@@ -3,7 +3,6 @@
 
     .slick-slide img {
         display: block;
-        // height: 500px;
         height: 282px;
         width: 100%;
 
@@ -38,7 +37,6 @@
         @media #{$mq-largeScreen} {
             display: none;
         }
-
     }
 
     .image-grid {
@@ -47,6 +45,8 @@
         @media #{$mq-largeScreen} {
             display: grid;
             padding: 0 7rem;
+            width: 75%;
+            margin: 0 auto;
             grid-template-columns: repeat(6, 1fr);
             grid-template-rows: 20%;
             grid-gap: 2rem;
