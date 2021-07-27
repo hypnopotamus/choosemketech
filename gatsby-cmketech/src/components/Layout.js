@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Header from "./Header"
 import Hero from "./Hero"
 import IntroCopy from "./IntroCopy"
-import ThreeColumn from "./ThreeColumn"
+import Tiles from "./Tiles"
 import CardCopy from "./CardCopy"
 import JobCarousel from "./JobCarousel"
 import Footer from "./Footer"
@@ -27,7 +27,7 @@ const Layout = ({ children, bodyClass }) => {
       <main id="site-content" role="main">
         <Hero />
         <IntroCopy />
-        <ThreeColumn />
+        <Tiles />
         <CardCopy />
         <JobCarousel />
         <Cards />
