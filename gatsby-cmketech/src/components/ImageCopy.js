@@ -8,7 +8,7 @@ const ImageCopy = ({}) => {
     fade: true,
     responsive: [
       {
-        breakpoint: 480,
+        breakpoint: 769,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

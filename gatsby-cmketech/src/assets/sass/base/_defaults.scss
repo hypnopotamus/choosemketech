@@ -96,13 +96,15 @@ a {
 
 .container  {
     width: 100%;
-    padding-right: 2.5rem;
-    padding-left: 2.5rem;
     margin-block-end: 2.5rem;
     margin-block-start: 2.5rem;
     &--fullwidth {
         max-width: none;
     } 
+    @media #{$mq-mediumScreen} {
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
+    }
     .row {
         --bs-gutter-x: 1.5rem;
         --bs-gutter-y: 0;

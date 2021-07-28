@@ -5,6 +5,10 @@
     &__row {
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        @media #{$mq-largeScreen}{
+            flex-direction: row;
+        }
     }
     &__image {       
         margin-block: 20px 0px; 
@@ -12,18 +16,16 @@
         position: relative;
         @media #{$mq-mediumScreen} {
             flex: 1;
-            top: 20px;
-            left: 15px;
-            right: unset;
         }
         img {
             width: 100%;
             aspect-ratio: 16 / 10;
             object-fit: cover;
+            box-shadow: $box-shadow;
         }
         .tag {
             position: absolute;
-            top: -20px;
+            top: -15px;
             left: 0;
             right: 0;
             margin: 0 auto;
@@ -38,8 +40,14 @@
         }
     }
     &__copy {
+        padding: 2.5rem;
         h3 {
             text-align: center;
+            line-height: 2rem;
+        }
+        p {
+            @include fluid-type(320px, 768px, 18px, 18px);
+            line-height: 2rem;
         }
         @media #{$mq-mediumScreen} {
             margin-inline: 20px;
@@ -53,10 +61,20 @@
             flex-direction: column;
             justify-content: center;
             align-items:center;
+            @media #{$mq-largeScreen}{
+                flex-direction: row;
+                justify-content: flex-start;
+            }
 
             button, a{
                 margin-block:  10px;
-                margin-inline-end: 20px;
+                min-width: unset;
+                width: 100%;
+                text-align: center;
+                @media #{$mq-largeScreen}{
+                    width: unset;
+                    margin-inline: 10px;
+                }
             }
         }
     }
@@ -76,16 +94,16 @@
         .slick-dots {
             left: 0;
             padding: 0px 20px;
-            top: 170px;
+            top: 200px;
             @include customQuery(400px, 450px){
-                top: 200px;
+                top: 240px;
             }
             @media #{$mq-mediumScreen}{
-                max-width: 55%;
-                bottom: 90px;
-                top: unset;
+                max-width: 100%;
+                top: 350px;
             }
             @media #{$mq-largeScreen}{
+                max-width: 50%;
                 bottom: 15px;
             }
             li {
