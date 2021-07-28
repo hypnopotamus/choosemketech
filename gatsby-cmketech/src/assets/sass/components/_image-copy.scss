@@ -103,8 +103,9 @@
                 top: 350px;
             }
             @media #{$mq-largeScreen}{
-                max-width: 50%;
+                max-width: 45%;
                 bottom: 15px;
+                top: unset;
             }
             li {
                 &.slick-active {
