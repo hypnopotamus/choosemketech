@@ -78,18 +78,6 @@
             }
         }
     }
-    &--reversed {
-        .imageCopy__row {
-            flex-direction: row-reverse;
-        }
-        .slick-slider {
-            .slick-dots {
-                left: unset;
-                right: 0;
-                bottom: 10px;
-            }
-        }
-    }
     .slick-slider {
         .slick-dots {
             left: 0;
@@ -127,6 +115,18 @@
                         }
                     }
                 }
+            }
+        }
+    }
+    &--reversed {
+        .imageCopy__row {
+            flex-direction: row-reverse;
+        }
+        .slick-slider {
+            .slick-dots {
+                left: unset;
+                right: 0;
+                bottom: 10px;
             }
         }
     }
