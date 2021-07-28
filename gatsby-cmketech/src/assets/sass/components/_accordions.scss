@@ -8,6 +8,10 @@
         background-color: $white;
     }
 
+    &:hover {
+        cursor: pointer;
+    }
+
     @media #{$mq-largeScreen} {
         margin: 0 auto;
         width: 85%;

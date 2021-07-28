@@ -7,7 +7,7 @@ const Accordion = ({ id }) => {
     const MOCK_DATA = [
         {
             id: 1,
-            header: `Lorem Ipsum 2`,
+            tagName: `Lorem Ipsum`,
             text: `Lorem ipsum dolor sit amet, consectetur adipiscing
                     elit. Ut id purus at felis suscipit consequat id nec
                     magna. Vestibulum ante ipsum primis in faucibus orci
@@ -27,7 +27,18 @@ const Accordion = ({ id }) => {
         },
         {
             id: 2,
-            header: `Lorem Ipsum 2`,
+            tagName: `Lorem Ipsum 2 the sequel`,
+            text: ` Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Ut id purus at felis suscipit consequat id nec
+                    magna. Vestibulum ante ipsum primis in faucibus orci
+                    luctus et ultrices posuere cubilia curae; Nam purus
+                    odio, tempor sed justo non, tincidunt suscipit leo.
+                    Suspendisse et nibh nec neque iaculis molestie
+                  `,
+        },
+        {
+            id: 3,
+            tagName: `Stress test of how many characters can go here elwejwelkjwekjwkejlkwje`,
             text: ` Lorem ipsum dolor sit amet, consectetur adipiscing
                     elit. Ut id purus at felis suscipit consequat id nec
                     magna. Vestibulum ante ipsum primis in faucibus orci
@@ -49,12 +60,12 @@ const Accordion = ({ id }) => {
         <>
             {MOCK_DATA.map((el, idx) => {
                 return (
-                    <div className={selectedAction ? `accordion--active` : `accordion` } key={idx}>
-                        <section className={selectedAction ? `accordion--header__active` : `accordion--header`}>
-                            <h5>{el.header}</h5>
-                            <i className={`fas ${selectedAction ? `fa-minus` : `fa-plus`}`} onClick={() => handleAccordionClick(idx)}></i>
+                    <div className={selectedAction == idx ? `accordion--active` : `accordion` } key={idx} onClick={() => handleAccordionClick(idx)}> 
+                        <section className={selectedAction == idx  ? `accordion--header__active` : `accordion--header`}>
+                            <h5>{el.tagName}</h5>
+                            <i className={`fas ${selectedAction == idx ? `fa-minus` : `fa-plus`}`}></i>
                         </section>
-                        {selectedAction ? (
+                        {selectedAction == idx  ? (
                             <section className="accordion--content">
                                 <div className="accordion--content__subheader"></div>
                                 <p>{el.text}</p>
