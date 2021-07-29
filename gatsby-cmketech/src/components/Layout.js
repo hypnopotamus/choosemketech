@@ -9,6 +9,7 @@ import ImageGrid from "./ImageGrid";
 import Cards from "./Cards";
 import Footer from "./Footer";
 import Accordion from "./Accordion";
+import CommunityListing from "./CommunityListing";
 
 const backdropClasses = " backdrop"
 
@@ -34,6 +35,7 @@ const Layout = ({ children, bodyClass }) => {
         <Cards />
         <ImageGrid />
         <Accordion />
+        <CommunityListing />
       </main>
 
       <Footer />

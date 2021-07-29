@@ -1,0 +1,15 @@
+.Community-Listing {
+
+    @media #{$mq-largeScreen} {
+        display: grid;
+    }
+        .Community-Listing--lists li a {
+        @media #{$mq-largeScreen} {
+            display: block;
+            color: $blue;
+            font-size: 26px;
+            margin: 3rem 0;
+        }
+    }
+
+}
