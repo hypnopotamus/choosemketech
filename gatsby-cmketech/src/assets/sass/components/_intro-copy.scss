@@ -13,7 +13,7 @@
     box-shadow: $box-shadow;
 
     @media #{$mq-largeScreen} {
-        position: static;
+        position: relative;
         border: none;
         width: 100%;
         box-shadow: none;
@@ -23,6 +23,45 @@
             display: block;
             text-align: center;
             margin: 0 auto;
+        }
+    }
+}
+
+// Secondary
+
+.intro-copy--secondary__container {
+    position: relative;
+
+    .intro-copy--image {
+        @media #{$mq-largeScreen} {
+            padding-bottom: 8rem;
+            margin-bottom: 3rem;
+
+            img {
+                width: 100%;
+                height: 500px;
+            }
+        }
+    }
+
+    .intro-copy--secondary {
+        position: absolute;
+        bottom: -10rem;
+        padding: 2rem;
+        width: 75%;
+        left: 4rem;
+        border-top: 5px solid $blue;
+        box-shadow: $box-shadow;
+
+        @media #{$mq-largeScreen} {
+            position: absolute;
+            background-color: $white;
+            padding: 5rem;
+            width: 45%;
+            text-align: center;
+            top: 26rem;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     }
 }
