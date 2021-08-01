@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Subscribe from "./Subscription"
 
 const Footer = ({}) => {
   return (
@@ -19,11 +20,7 @@ const Footer = ({}) => {
     <div className="footer--main">
       <ul className="footer--main__subscribe">
         <li>
-          <p><strong>Stay In The Loop</strong></p>
-          <form>
-            <input type="text" />
-            <label>SIGN UP</label>
-          </form>
+          <Subscribe />
         </li>
         <li>
           <Link to="/" className="footer--logo">
@@ -57,8 +54,8 @@ const Footer = ({}) => {
             </ul>
           </li>
       </ul>
-      <p>&copy; MKE Tech Hub Collition. All Rights Reserved. | Visit mketech.org | Photo courtsey of Vist Milawukee</p>
     </div>            
+    <p>&copy; MKE Tech Hub Collition. All Rights Reserved. | Visit mketech.org | Photo courtsey of Vist Milawukee</p>
     </footer>
     // <footer id="site-footer" role="contentinfo" className="header-footer-group">
     //   <div className="section-inner">

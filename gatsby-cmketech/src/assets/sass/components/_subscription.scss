@@ -1,0 +1,23 @@
+.subscription {
+    form {
+         label {
+            font-size: 1.125rem;
+            font-family: 'Inter';
+            font-weight: 500;
+            display: block;
+        }
+        input {
+            border: 1px solid $white;
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0.625rem;
+        }
+        button {
+            border: 1px solid $white;
+            color: $navy;
+        }
+        .input--group {
+            display: flex;
+        }
+    }
+}
