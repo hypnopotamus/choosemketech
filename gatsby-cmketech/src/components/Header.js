@@ -20,9 +20,19 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
         <div className="logo">
           <Link to="/"><span>Choose MKE Tech</span></Link>
         </div>
+       
+        <button className="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle" onClick={(e) => toggleBackdrop(e, true)}>
+          <span className="toggle-inner">
+            <span className="toggle-icon">
+            <ToggleIcon />
+            </span>
+            <span className="toggle-text">Menu</span>
+          </span>
+        </button>
         <Menu />
       </div>
     </header>
+
     // <header id="site-header" className="header-footer-group" role="banner">
     //   <div className="header-inner section-inner">
     //     <div className="header-titles-wrapper">

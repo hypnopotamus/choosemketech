@@ -9,6 +9,7 @@ import ImageGrid from "./ImageGrid";
 import Cards from "./Cards";
 import Footer from "./Footer";
 import Accordion from "./Accordion";
+import MenuModal from "./MenuModal"
 
 const backdropClasses = " backdrop"
 
@@ -24,6 +25,8 @@ const Layout = ({ children, bodyClass }) => {
     <div id={"GatsbyBody"} className={ bodyClass + " showing-menu-modal showing-modal" + (backdropActive ? backdropClasses : "") } >
 
       <Header toggleBackdrop={toggleBackdrop} />
+
+      <MenuModal isActive={backdropActive} toggleBackdrop={toggleBackdrop} />
 
       <main id="site-content" role="main">
         <Hero />

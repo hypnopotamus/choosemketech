@@ -5,12 +5,31 @@ header {
     }
     .header--nav-main {
         display: flex;
+        justify-content: center;
+
+        @media #{$mq-mediumScreen}{
+            justify-content: end;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            left: 0;
+            height: 7px;
+            background: linear-gradient(130deg, $g1, $g2, $g3, $g4);    
+            z-index: 1;
+        }    
+
         .logo {
             position: relative;
             z-index: 1;
             a {
                 display: block;
-                margin: 15px 0 0 20px;
+                margin: 0;
+                @media #{$mq-mediumScreen}{
+                    margin: 15px 0 0 20px;
+                }
                 span {
                     white-space: nowrap;
                     text-indent: 100%;
@@ -23,35 +42,28 @@ header {
                     height: 120px;
                     display: block;
                 }
-                @include media('>small') {
+                @media #{$mq-mediumScreen}{
                     span {
                         width: 169px;
                         height: 169px;
                     }
                 }
-                @include media-context(('custom' : 820px)) {
-                    @include media('>small', '<=custom') {
-                        span {
-                            width: 120px;
-                            height: 120px;
-                        }
+                @include customQuery(768px, 820px){
+                    span {
+                        width: 120px;
+                        height: 120px;
                     }
-                }
+                }                
             }
         }
         nav {
             width: 100%;
+            display: none;
+            @media #{$mq-mediumScreen}{
+                display: block;
+            }
             .nav--top-references {
                 @include navigationGrid($light_gray);
-                &:before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    width: 100%;
-                    left: 0;
-                    height: 7px;
-                    background: linear-gradient(130deg, $g1, $g2, $g3, $g4);    
-                }    
                 li {
                     padding: 0 15px;
                     a {
@@ -67,24 +79,20 @@ header {
             .nav--top-main {
                 @include navigationGrid(white);
                 height: 82px;
-                @include media('>small') {
+                @media #{$mq-mediumScreen}{
                     height: 116px;
                 }
-                @include media-context(('custom' : 820px)) {
-                    @include media('>small', '<=custom') {
-                        height: 82px;
-                    }
+                @include customQuery(768px, 820px){
+                    height: 82px;
                 }
 
                 li {
                     padding: 0 10px;
-                    @include media('>small') {
+                    @media #{$mq-mediumScreen}{
                         padding: 0 30px;
                     }
-                    @include media-context(('custom' : 980px)) {
-                        @include media('>small', '<=custom') {
-                            padding: 0 10px;
-                        }
+                    @include customQuery(768px, 980px){
+                        padding: 0 10px;
                     }
                     &:last-child {
                         padding-right: 20px;
@@ -92,10 +100,9 @@ header {
                     a {
                         @include navigationFontStyle($navy_blue);
                         font-size: $font-size-2;
-                        @include media-context(('custom' : 820px)) {
-                            @include media('>small', '<=custom') {
-                                font-size: 1rem;
-                            }
+
+                        @include customQuery(768px, 820px){
+                            font-size: 1rem;
                         }
                         font-weight: 600;
                         text-transform: uppercase;
