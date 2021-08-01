@@ -30,13 +30,13 @@ const Layout = ({ children, bodyClass }) => {
 
       <main id="site-content" role="main">
         <Hero />
-        <IntroCopy />
-        <Tiles />
-        <CardCopy />
+        <div className="container">
+          <IntroCopy />
+          <Cards />
+          <ImageGrid />
+          <Accordion />
+        </div>
         <JobCarousel />
-        <Cards />
-        <ImageGrid />
-        <Accordion />
       </main>
 
       <Footer />

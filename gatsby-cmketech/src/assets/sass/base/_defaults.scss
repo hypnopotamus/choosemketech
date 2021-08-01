@@ -82,7 +82,6 @@ span[style*=italic] {
 
 a {
     font-family: 'Inter', sans-serif;
-    font-weight: 600;
     text-decoration: underline;
     letter-spacing: 0.1px;
     color: $blue;
@@ -102,13 +101,8 @@ a {
     margin-block-start: 2.5rem;
 
     .row {
-        --bs-gutter-x: 1.5rem;
-        --bs-gutter-y: 0;
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: calc(var(--bs-gutter-y) * -1);
-        margin-right: calc(var(--bs-gutter-x)/ -2);
-        margin-left: calc(var(--bs-gutter-x)/ -2);        
+        margin: 0 -40px;
+        padding: 0 40px;
     }
     
 }

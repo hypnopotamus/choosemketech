@@ -10,36 +10,36 @@ footer {
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: bottom;
-        padding: 50px;
-        height: 550px;
+        padding: 3.125rem;
+        height: 34.375rem;
         .footer--social__wrapper {
-            display: flex;
-            align-items: center;
-            width: 100%;
             justify-content: space-around;
-            margin-block-end: auto;
+            align-items: center;
+            background-color: #eee;
+            padding: 50px 0;
+            display: flex;
+            flex-wrap: wrap;
             h4 {
-                width: 310px;
                 white-space: nowrap;
                 text-transform: uppercase;            
             }
             .footer--social__icons {
                 display: flex;
-                width: 584px;
+                width: 36.5rem;
                 a {
                     border-radius: 50%;
                     background-color: $teal;
                     color: $white;
-                    width: 100px;
-                    height: 100px;
+                    width: 6.25rem;
+                    height: 6.25rem;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     text-decoration: none;
                     font-size: 2.5rem;
-                    box-shadow: 0px 3px 5px rgba($black, 0.2);
-                    margin-inline-end: 10px;
-                    margin-inline-start: 10px;
+                    box-shadow: 0px 0.188rem 0.313rem rgba($black, 0.2);
+                    margin-inline-end: 0.625rem;
+                    margin-inline-start: 0.625rem;
                     transition: 1s;
                     position: relative;
                     overflow: hidden;
@@ -52,20 +52,20 @@ footer {
         }
     }
     .footer--main {
-        display: flex;
         background-color: $navy_blue;
+        margin: 0;
         * {
             color: $white;
         }
-        .footer--main__subscribe {
+        .footer--main__wrapper {
             display: flex;
-            &:after {
-                content: "";
-                display: block;
-                background-color: $white;
+            .divider {
                 width: 1px;
-                margin: 0 50px;
+                background-color: $white;
+                margin: 0 2.5rem;
             }
+        }
+        .footer--main__subscribe {
             .footer--logo {
                 white-space: nowrap;
                 text-indent: 100%;
@@ -73,13 +73,43 @@ footer {
                 display: block;
                 background-image: url('../svg/mke-tech-logo.svg');
                 background-repeat: no-repeat;
-                background-size: contain;
-                height: 110px;
+                background-size: 75%;
+                height: 6.875rem;
+                margin-top: 50px;
+                margin-bottom: -30px;
             }
         }
         .footer--main__navigation {
             display: flex;
             width: 100%;
+            li {
+                margin-bottom: 20px;
+                font-family: 'Inter Medium';
+                width: 100%;
+                p {
+                    margin: 0 0 20px 0;
+                    display: block;
+                    line-height: 1rem;
+                    strong {
+                        font-size: 1.125rem;
+                        font-family: 'Inter';
+                        font-weight: 500;
+                        display: block;
+                    }
+                }
+                i {
+                    color: $light_yellow;
+                    display: inline-block;
+                    margin-left: 5px;
+                }                
+            }
+        }
+        .footer--copyright {
+            font-size: 0.875rem;
+            padding:20px 0;
+            a {
+                color: $light_yellow;
+            }
         }
     }
 }
