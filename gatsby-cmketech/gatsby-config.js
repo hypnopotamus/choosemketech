@@ -30,8 +30,10 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         auth: {
-          htaccess_user: "choosemketechdev",
-          htaccess_pass: "7oeAMm4YtCfq",
+          htaccess: {
+            username: "choosemketechedit",
+            password: "eK3yHSinoVqN",
+          }
         },
         url: process.env.WPGRAPHQL_URL,
         verbose: true,
