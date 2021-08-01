@@ -6,7 +6,7 @@ header {
     .header--nav-main {
         display: flex;
         justify-content: center;
-
+        position: relative;
         @media #{$mq-mediumScreen}{
             justify-content: end;
         }
@@ -20,15 +20,43 @@ header {
             background: linear-gradient(130deg, $g1, $g2, $g3, $g4);    
             z-index: 1;
         }    
-
+        .toggle {
+            display: block;
+            margin: 0;
+            min-width: auto;
+            margin-left: 1.25rem;
+            margin-top: 0.625rem;
+            background-color: transparent;
+            position: absolute;
+            padding: 0;
+            top: 1rem;
+            left: 0;
+            .toggle-text, .toggle-icon {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+            .toggle-text {
+                margin-left: 0.625rem;
+                display: inline-block;
+            }            
+            @media #{$mq-mediumScreen}{
+                display: none;
+            }
+        }
         .logo {
             position: relative;
             z-index: 1;
+            margin-block-end: -3.75rem;
+            margin-block-start: 0.625rem;
+            @media #{$mq-mediumScreen}{
+                margin-block-end: auto;
+                margin-block-start: auto;
+            }
             a {
                 display: block;
                 margin: 0;
                 @media #{$mq-mediumScreen}{
-                    margin: 15px 0 0 20px;
+                    margin: 0.938rem 0 0 1.25rem;
                 }
                 span {
                     white-space: nowrap;
@@ -38,20 +66,20 @@ header {
                     background-repeat: no-repeat;
                     background-size: cover;
                     margin: 0;
-                    width: 120px;
-                    height: 120px;
+                    width: 7.5rem;
+                    height: 7.5rem;
                     display: block;
                 }
                 @media #{$mq-mediumScreen}{
                     span {
-                        width: 169px;
-                        height: 169px;
+                        width: 10.563rem;
+                        height: 10.563rem;
                     }
                 }
                 @include customQuery(768px, 820px){
                     span {
-                        width: 120px;
-                        height: 120px;
+                        width: 7.5rem;
+                        height: 7.5rem;
                     }
                 }                
             }
@@ -65,37 +93,37 @@ header {
             .nav--top-references {
                 @include navigationGrid($light_gray);
                 li {
-                    padding: 0 15px;
+                    padding: 0 0.938rem;
                     a {
                         @include navigationFontStyle($navy_blue);
                         letter-spacing: 0.02rem;
                         span {
                             text-decoration: underline;
-                            padding: 0 5px;
+                            padding: 0 0.313rem;
                         }
                     }
                 }
             }
             .nav--top-main {
                 @include navigationGrid(white);
-                height: 82px;
+                height: 5.125rem;
                 @media #{$mq-mediumScreen}{
-                    height: 116px;
+                    height: 7.25rem;
                 }
                 @include customQuery(768px, 820px){
-                    height: 82px;
+                    height: 5.125rem;
                 }
 
                 li {
-                    padding: 0 10px;
+                    padding: 0 0.625rem;
                     @media #{$mq-mediumScreen}{
-                        padding: 0 30px;
+                        padding: 0 1.875rem;
                     }
                     @include customQuery(768px, 980px){
-                        padding: 0 10px;
+                        padding: 0 0.625rem;
                     }
                     &:last-child {
-                        padding-right: 20px;
+                        padding-right: 1.25rem;
                     }
                     a {
                         @include navigationFontStyle($navy_blue);
