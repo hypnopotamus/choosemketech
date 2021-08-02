@@ -10,7 +10,9 @@
             display: none;
         }
     }
-
+	.slick-slide {
+		padding: 0 10px;
+	}
     .slick-slider {
 		padding: 0 10px;
         @media #{$mq-largeScreen} {
