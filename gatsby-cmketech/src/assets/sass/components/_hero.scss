@@ -1,93 +1,98 @@
-.hero--banner {
-    background-image: url('../images/mobile_header_still.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 639px;
-    background-position: bottom;
-    color: $white;
-    position: relative;
-    padding: 0;
-
-    @media #{$mq-mediumScreen} {
-        background-image: url('../images/tablet_header_still.png');
-        background-position: left;
-        height: 431px;
-    }
-
-    @media #{$mq-largeScreen} {
-        background-image: none;
-        height: auto;
-    }
-
-    .hero--banner__video {
-        display: none;
+.hero {
+    &.hero--banner {
+        background-image: url('../images/mobile_header_still.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 639px;
+        background-position: bottom;
+        color: $white;
         position: relative;
-        width: 100%;
-        @media #{$mq-largeScreen} {
-            display: block;
-        }
-    }
-    
-    .hero--banner__copy {
-        position: absolute;
-        left: 40px;
-        bottom: 90px;
-        top: auto;
-        width: 285px;
+        padding: 0;
+
+        margin-block-start: 0;
+
         @media #{$mq-mediumScreen} {
-            top: 143px;
-            width: auto;
+            background-image: url('../images/tablet_header_still.png');
+            background-position: left;
+            height: 431px;
+            margin-block-start: 2.5rem;
         }
-        @media #{$mq-largeScreen} {        
-            top: 11vw;
-            left: 65px;    
+
+        @media #{$mq-largeScreen} {
+            background-image: none;
+            height: auto;
         }
-     
-        h1 {
-            color: $white;
-            font-size: 3rem;
-            line-height: 3rem;            
-            br {
-                display: none;
-            }   
+
+        .hero--banner__video {
+            display: none;
+            position: relative;
+            width: 100%;
+            @media #{$mq-largeScreen} {
+                display: block;
+            }
+        }
+        
+        .hero--banner__copy {
+            position: absolute;
+            left: 40px;
+            bottom: 90px;
+            top: auto;
+            width: 285px;
             @media #{$mq-mediumScreen} {
-                font-size: 4rem;
-                line-height: 4.4rem;
-                br {
-                    display: block;
-                }   
+                top: 143px;
+                width: auto;
             }
             @media #{$mq-largeScreen} {        
-                font-size: 6vw;
-                line-height: 6.4vw;   
+                top: 11vw;
+                left: 65px;    
+            }
+        
+            h1 {
+                color: $white;
+                font-size: 3rem;
+                line-height: 3rem;            
                 br {
-                    display: block;
+                    display: none;
+                }   
+                @media #{$mq-mediumScreen} {
+                    font-size: 4rem;
+                    line-height: 4.4rem;
+                    br {
+                        display: block;
+                    }   
+                }
+                @media #{$mq-largeScreen} {        
+                    font-size: 6vw;
+                    line-height: 6.4vw;   
+                    br {
+                        display: block;
+                    }   
+                }
+        
+                span {
+                    background-color: $light_yellow;
+                    color: $navy_blue;
+                    padding: 0 6px;
+                    white-space: nowrap;
+                    display: inline-block;
+                    line-height: 3.5rem;
+                    margin-block-start: 6px;                
+
+                    @media #{$mq-largeScreen} {        
+                        line-height: normal;
+                    }
                 }   
             }
-    
-            span {
-                background-color: $light_yellow;
-                color: $navy_blue;
-                padding: 0 6px;
-                white-space: nowrap;
-                display: inline-block;
-                line-height: 3.5rem;
-                margin-block-start: 6px;                
-
-                @media #{$mq-largeScreen} {        
-                    line-height: normal;
+            h3 {
+                font-size: 1.5vw;
+                font-weight: 500;
+                color: $light_yellow;
+                margin-block-start: 1rem;
+                display: none;
+                @media #{$mq-mediumScreen} {
+                    font-size: 1.5rem;            
+                    display: block;
                 }
-            }   
-        }
-        h3 {
-            font-size: 1.5vw;
-            font-weight: 500;
-            color: $light_yellow;
-            margin-block-start: 1rem;
-            display: none;
-            @media #{$mq-mediumScreen} {
-                font-size: 1.5rem;            
-                display: block;
             }
         }
     }

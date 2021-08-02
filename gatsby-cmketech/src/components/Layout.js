@@ -1,12 +1,15 @@
-import React, { useState } from "react"
-import Header from "./Header"
-import Hero from "./Hero"
-import IntroCopy from "./IntroCopy"
-import ThreeColumn from "./ThreeColumn"
-import CardCopy from "./CardCopy"
-import JobCarousel from "./JobCarousel"
-import Footer from "./Footer"
-import Cards from "./Cards"
+import React, { useState } from "react";
+import Header from "./Header";
+import Hero from "./Hero";
+import IntroCopy from "./IntroCopy";
+import Tiles from "./Tiles";
+import CardCopy from "./CardCopy";
+import JobCarousel from "./JobCarousel";
+import ImageGrid from "./ImageGrid";
+import Cards from "./Cards";
+import Footer from "./Footer";
+import Accordion from "./Accordion";
+import MenuModal from "./MenuModal"
 
 const backdropClasses = " backdrop"
 
@@ -23,13 +26,17 @@ const Layout = ({ children, bodyClass }) => {
 
       <Header toggleBackdrop={toggleBackdrop} />
 
+      <MenuModal isActive={backdropActive} toggleBackdrop={toggleBackdrop} />
+
       <main id="site-content" role="main">
         <Hero />
-        <IntroCopy />
-        <ThreeColumn />
-        <CardCopy />
+        <div className="container">
+          <IntroCopy />
+          <Cards />
+          <ImageGrid />
+          <Accordion />
+        </div>
         <JobCarousel />
-        <Cards />
       </main>
 
       <Footer />
