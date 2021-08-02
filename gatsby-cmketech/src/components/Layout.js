@@ -9,6 +9,7 @@ import Cards from "./Cards";
 import Footer from "./Footer";
 import Accordion from "./Accordion";
 import MenuModal from "./MenuModal"
+import ImageCopy from "./ImageCopy";
 import ThreeColumn from "./ThreeColumn";
 
 const backdropClasses = " backdrop"
@@ -38,6 +39,8 @@ const Layout = ({ children, bodyClass }) => {
         </div>
         <ThreeColumn />
         <JobCarousel />
+        <Cards />
+        <ImageCopy />
       </main>
 
       <Footer />
