@@ -8,22 +8,6 @@ const ImageGrid = ({ }) => {
 
     const altTextPre = `Image shown of `
 
-    const ImgageGrid_slide_settings = {
-        dots: true,
-        arrows: false,
-        centerMode: true,
-        responsive: [
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    centerMode: false,
-                },
-            },
-        ],
-    }
-    
     const gallery = [
         {
             imagePath: imageGrid1,
@@ -130,17 +114,6 @@ const ImageGrid = ({ }) => {
     ]
 
     return (
-        // <section className="image-grid--container">
-        //     <div className="image-grid">
-        //         {gallery.map((image, index) => {
-        //             return (
-        //                 <div className={image.gridArea} key={index}>
-        //                     <img src={image.imagePath} alt={image.altText} />
-        //                 </div>
-        //             )
-        //         })}
-        //     </div>
-        // </section>
         <div class="gallery">
             {gallery.map((image, index) => {
                 return (
