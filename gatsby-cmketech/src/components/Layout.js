@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React, { useState } from "react"
-import Header from "./Header"
-import Hero from "./Hero"
-import IntroCopy from "./IntroCopy"
-import ThreeColumn from "./ThreeColumn"
-import CardCopy from "./CardCopy"
-import JobCarousel from "./JobCarousel"
-import Footer from "./Footer"
-import Cards from "./Cards"
-=======
 import React, { useState } from "react";
 import Header from "./Header";
 import Hero from "./Hero";
@@ -21,7 +10,6 @@ import Cards from "./Cards";
 import Footer from "./Footer";
 import Accordion from "./Accordion";
 import MenuModal from "./MenuModal"
->>>>>>> develop
 
 const backdropClasses = " backdrop"
 
@@ -42,19 +30,13 @@ const Layout = ({ children, bodyClass }) => {
 
       <main id="site-content" role="main">
         <Hero />
-<<<<<<< HEAD
         <IntroCopy />
-        <ThreeColumn />
+        <Tiles />
         <CardCopy />
-=======
-        <div className="container">
-          <IntroCopy />
-          <Cards />
-          <ImageGrid />
-          <Accordion />
-        </div>
->>>>>>> develop
         <JobCarousel />
+        <Cards />
+        <ImageGrid />
+        <Accordion />
       </main>
 
       <Footer />
