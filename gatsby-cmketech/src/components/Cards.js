@@ -2,7 +2,8 @@ import React from "react"
 
 const Cards = ({}) => {
   return (
-    <div className="container cards">
+    <div className="row">
+    <div className="cards">
       <div className="card job-card job-card--featured">
         <div className="job-card__left">
           <div className="job-card__left__heading">
@@ -190,6 +191,7 @@ const Cards = ({}) => {
           </a>
         </div>
       </div>
+    </div>
     </div>
   )
 }

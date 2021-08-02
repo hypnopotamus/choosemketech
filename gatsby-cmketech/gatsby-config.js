@@ -29,6 +29,12 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
+        auth: {
+          htaccess: {
+            username: "choosemketechedit",
+            password: "eK3yHSinoVqN",
+          }
+        },
         url: process.env.WPGRAPHQL_URL,
         verbose: true,
         develop: {
