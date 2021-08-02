@@ -10,6 +10,7 @@ import Cards from "./Cards";
 import Footer from "./Footer";
 import Accordion from "./Accordion";
 import CommunityListing from "./CommunityListing";
+import MenuModal from "./MenuModal"
 
 const backdropClasses = " backdrop"
 
@@ -26,11 +27,16 @@ const Layout = ({ children, bodyClass }) => {
 
       <Header toggleBackdrop={toggleBackdrop} />
 
+      <MenuModal isActive={backdropActive} toggleBackdrop={toggleBackdrop} />
+
       <main id="site-content" role="main">
         <Hero />
-        <IntroCopy />
-        <Tiles />
-        <CardCopy />
+        <div className="container">
+          <IntroCopy />
+          <Cards />
+          <ImageGrid />
+          <Accordion />
+        </div>
         <JobCarousel />
         <Cards />
         <ImageGrid />

@@ -1,6 +1,5 @@
 // Prerequisites
 @import 'config/reset';
-@import 'config/include-media';
 @import 'config/variables';
 @import 'config/functions';
 @import 'config/mixins';
@@ -28,6 +27,7 @@
 @import 'components/image-grid';
 @import 'components/accordions';
 @import 'components/community-listing';
+@import 'components/subscription';
 
 // Pages
 @import 'pages/homepage';

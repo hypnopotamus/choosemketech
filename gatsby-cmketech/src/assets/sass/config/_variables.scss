@@ -38,17 +38,10 @@ $tag-gold           :#B8860B;
 $tag-gold-accent    :$gold;
 
 /* Gradient Line */
-$g1 :#F8E161;
+$g1 :$light_yellow;
 $g2 :#009FD6;
 $g3 :#007CA6;
 $g4 :#005470;
-
-$breakpoints: (
-    "small"                 : 767px, // After this point this will go to tablet mode, ie. 768px @include media('>small')
-    "mediaum"               : 959px, // After this point this will go to a smallish desktop mode, ie. 960px @include media('>medium')
-    "large"                 : 1199px, // After this is point we'll be in largish desktop mode, ie. @include media('>large')
-    "large-with-margins"    : 1343px
-);
 
 /* Box Shadow */
 $box-shadow                 : 0px 3px 2px #00000033;
