@@ -24,7 +24,8 @@
     }
 
     .Community-Listing--cta {
-        background-color: $navy_blue;
+        // background-color: $navy_blue;
+        background: url('../../images/ad-bg-1.jpg');
         color: $white;
         padding: 1.5rem;
         margin: 1rem 0;
@@ -43,7 +44,8 @@
         }
 
         &#recruit {
-            background-color: $white;
+            // background-color: $white;
+            background: url('../../images/ad-bg-2.jpg');
             color: #000;
             
             h3 {
