@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Header from "./Header";
 import Hero from "./Hero";
 import IntroCopy from "./IntroCopy";
-import Tiles from "./Tiles";
 import CardCopy from "./CardCopy";
 import JobCarousel from "./JobCarousel";
 import ImageGrid from "./ImageGrid";
@@ -10,6 +9,7 @@ import Cards from "./Cards";
 import Footer from "./Footer";
 import Accordion from "./Accordion";
 import MenuModal from "./MenuModal"
+import ThreeColumn from "./ThreeColumn";
 
 const backdropClasses = " backdrop"
 
@@ -30,9 +30,13 @@ const Layout = ({ children, bodyClass }) => {
 
       <main id="site-content" role="main">
         <Hero />
-        <IntroCopy />
-        <Tiles />
-        <CardCopy />
+        <div className="container">
+          <IntroCopy />
+          <Cards />
+          <ImageGrid />
+          <Accordion />
+        </div>
+        <ThreeColumn />
         <JobCarousel />
         <Cards />
         <ImageGrid />

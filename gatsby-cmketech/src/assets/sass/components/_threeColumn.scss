@@ -3,9 +3,10 @@
     &__heading h2{
         color: $white;
         text-align: center;
-        padding-block: 1.875rem;
+        padding-block-start: 2.375rem;
+        margin-block-start: 0;
         @media #{$mq-mediumScreen}{
-            padding-block: 3.125rem;
+            padding-block-start: 3.125rem;
         }
     }
     .slick-slider {
@@ -16,6 +17,8 @@
     }
     &__container {
         padding-block: 0px 60px;
+        max-width: 1440px;
+        margin: 0 auto;
     }
     &__column {
         &__container {
