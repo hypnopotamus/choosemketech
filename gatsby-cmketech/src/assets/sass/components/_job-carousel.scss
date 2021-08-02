@@ -7,21 +7,22 @@
     &__header {
         text-align: center;
     }
+    .job-carousel-item {
+        padding-inline: 10px;
+        @media #{$mq-largeScreen} {
+            padding-inline: 0px;
+        }
+    }
     .slick-slider {
-        padding-inline: 20px;
         .slick-slide {
-            margin-left: -6px;
             @media #{$mq-largeScreen} {
                 margin-left: 0;
             }
         }
         .card {
-            margin-inline: 20px;
-            @media #{$mq-largeScreen}{
-                margin-inline: 35px;
+            @media #{$mq-largeScreen} {
+                margin-inline: 20px;
             }
         }
     }
-    
-    
 }
