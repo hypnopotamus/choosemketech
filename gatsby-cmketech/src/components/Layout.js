@@ -10,6 +10,7 @@ import Cards from "./Cards";
 import Footer from "./Footer";
 import Accordion from "./Accordion";
 import MenuModal from "./MenuModal"
+import ImageCopy from "./ImageCopy";
 
 const backdropClasses = " backdrop"
 
