@@ -130,17 +130,6 @@ const ImageGrid = ({ }) => {
     ]
 
     return (
-        // <section className="image-grid--container">
-        //     <div className="image-grid">
-        //         {gallery.map((image, index) => {
-        //             return (
-        //                 <div className={image.gridArea} key={index}>
-        //                     <img src={image.imagePath} alt={image.altText} />
-        //                 </div>
-        //             )
-        //         })}
-        //     </div>
-        // </section>
         <div className="image-grid--container ">
             <Slider className="image-grid__slider" {...ImgageGrid_slide_settings}>
                 {gallery.map((image, index) => {

@@ -38,9 +38,6 @@ const Layout = ({ children, bodyClass }) => {
         </div>
         <ThreeColumn />
         <JobCarousel />
-        <Cards />
-        <ImageGrid />
-        <Accordion />
       </main>
 
       <Footer />
