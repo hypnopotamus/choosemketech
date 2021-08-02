@@ -11,6 +11,10 @@
             border-radius: 0;
             background-color: transparent;
             padding: 0.625rem;
+            width: 100%;
+            @media #{$mq-mediumScreen}{
+                width: auto;
+            }
             &::placeholder {
                 color: rgba($white, 0.5);
             }

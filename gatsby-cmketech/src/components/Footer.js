@@ -24,7 +24,7 @@ const Footer = ({}) => {
               <Subscribe />
             </li>
             <li>
-              <Link to="/" className="footer--logo">
+              <Link to="/" className="footer--logo desktop">
                 <span>MKE Tech</span>
               </Link>
             </li>
@@ -57,6 +57,7 @@ const Footer = ({}) => {
               </li>
           </ul>
         </div>
+        <Link to="/" className="footer--logo mobile"><span>MKE Tech</span></Link>
         <p className="footer--copyright">&copy; 2021 MKE Tech Hub Collition. All Rights Reserved. | Visit <Link to="">mketech.org</Link> | Photo courtsey of <Link to="">Vist Milawukee</Link></p>
       </div>            
     </footer>
