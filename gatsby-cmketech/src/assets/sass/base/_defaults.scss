@@ -17,6 +17,10 @@ html, body {
     @include fluid-type(320px, 768px, 14px, 16px);
 }
 
+body {
+    background-color: $white;
+}
+
 h1, .h1, .heading-1 {
     font-family: 'Roboto Bold', sans-serif;
     @include fluid-type(320px, 768px, 33px, 40px);
