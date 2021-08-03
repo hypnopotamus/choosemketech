@@ -1,0 +1,36 @@
+.subscription {
+    form {
+         label {
+            font-size: 1.125rem;
+            font-family: 'Inter';
+            font-weight: 500;
+            display: block;
+        }
+        input {
+            border: 1px solid $white;
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0.625rem;
+            width: 100%;
+            @media #{$mq-mediumScreen}{
+                width: auto;
+            }
+            &::placeholder {
+                color: rgba($white, 0.5);
+            }
+        }
+        button {
+            border: 1px solid $white;
+            color: $navy_blue;
+            background-color: $white;
+            min-width: auto;
+            margin: 0;
+            white-space: nowrap;
+            padding: 5px 10px;
+        }
+        .input--group {
+            margin-block-start: 20px;
+            display: flex;
+        }
+    }
+}

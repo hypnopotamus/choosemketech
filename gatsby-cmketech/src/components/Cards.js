@@ -2,7 +2,8 @@ import React from "react"
 
 const Cards = ({}) => {
   return (
-    <div className="container cards">
+    <div className="row">
+    <div className="cards">
       <div className="card job-card job-card--featured">
         <div className="job-card__left">
           <div className="job-card__left__heading">
@@ -124,8 +125,33 @@ const Cards = ({}) => {
               <i className="fas fa-building"></i> Company Name
             </h5>
           </div>
+          <div className="company-card__center__listing">
+            <h5>
+              <span>09</span> Perks
+            </h5>
+            <h5>
+              <span>25</span> Jobs
+            </h5>
+          </div>
+          <div className="company-card__center__hiring">
+            <span>Hiring Now</span>
+          </div>
         </div>
         <div className="company-card__right">
+        <div className="company-card__right__details">
+            <h5>
+              <i className="fas fa-building"></i> Company Name
+            </h5>
+            <h5>
+              <i className="fas fa-building"></i> Company Name
+            </h5>
+            <h5>
+              <i className="fas fa-building"></i> Company Name
+            </h5>
+            <h5>
+              <i className="fas fa-building"></i> Company Name
+            </h5>
+          </div>
           <a className="button button--primary" href="/">
             View Profile
           </a>
@@ -190,6 +216,7 @@ const Cards = ({}) => {
           </a>
         </div>
       </div>
+    </div>
     </div>
   )
 }

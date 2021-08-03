@@ -1,6 +1,5 @@
 // Prerequisites
 @import 'config/reset';
-@import 'config/include-media';
 @import 'config/variables';
 @import 'config/functions';
 @import 'config/mixins';
@@ -24,10 +23,16 @@
 @import 'components/plans';
 @import 'components/cards';
 @import 'components/job-carousel';
+@import 'components/threeColumn';
+@import 'components/image-copy';
 @import 'components/intro-copy';
 @import 'components/image-grid';
 @import 'components/accordions';
+<<<<<<< HEAD
 @import 'components/community-listing';
+=======
+@import 'components/subscription';
+>>>>>>> develop
 
 // Pages
 @import 'pages/homepage';
