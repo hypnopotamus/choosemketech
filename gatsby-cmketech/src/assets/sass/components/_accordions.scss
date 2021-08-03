@@ -13,6 +13,14 @@
         background-color: $white;
     }
 
+    .fa-minus {
+        padding-right: 0.5rem;
+
+        @media #{$mq-largeScreen} {
+            padding-right: 0;
+        }
+    }
+
     &:hover {
         cursor: pointer;
     }
@@ -23,7 +31,6 @@
 
         &--active {
             background-color: $white;
-            margin: 2rem auto;
             border: 1px solid $medium_gray;
             padding: 1rem;
         }
@@ -31,8 +38,7 @@
 
     h5 {
         color: $white;
-        line-height: 1.5
-        ;
+        line-height: 1.5;
         @media #{$mq-largeScreen} {
             text-transform: capitalize;
             font-weight: normal;
@@ -69,7 +75,7 @@
         display: flex;
         align-items: baseline;
         justify-content: space-between;
-    
+
         @media #{$mq-largeScreen} {
             display: flex;
             align-items: center;
@@ -87,20 +93,21 @@
     }
 
     .accordion--content {
-    
+        p {
+            padding-left: 2rem;
+
+            @media #{$mq-largeScreen} {
+                border-top: 1px solid $medium_gray;
+                padding-top: 1rem;
+                margin: 0;
+            }
+        }
+
         h5 {
             color: $navy_blue;
             font-size: $font-size-h5;
             padding-bottom: 1rem;
-        }
-
-        .accordion--content__subheader {
-            @media #{$mq-largeScreen} {
-                display: flex;
-                align-items: baseline;
-                justify-content: space-between;
-                border-bottom: 1px solid $medium_gray;
-            }
+            line-height: 20 * $px;
         }
     }
 }
