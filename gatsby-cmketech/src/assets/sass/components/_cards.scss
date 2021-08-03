@@ -15,6 +15,9 @@
             color: $teal;
         }
     }
+    h4 {
+        text-transform: capitalize;
+    }
     &.job-card, &.blog-card {
         padding-inline: 25px;
         padding-block: 25px;
@@ -32,7 +35,7 @@
                 border-right: 1px solid $medium_gray;
             }
             &__heading {
-                border-bottom: 2px solid $dark_gray;
+                border-bottom: 2px solid $medium_gray;
                 order: 1;
                 @media #{$mq-largeScreen}{
                     order: 0;
@@ -52,8 +55,11 @@
             &__date {
                 order: -1;
                 span {
-                    font-family: 'Inter', sans-serif;
-                    color: $medium_gray;
+                    font-family: 'Inter Bold', sans-serif;
+                    color: $dark_gray;
+                    font-weight: bold;
+                    font-style: italic;
+                    opacity: 0.5;
                 }
                 @media #{$mq-largeScreen}{
                     order: 4;
@@ -84,6 +90,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            button, a, .button, .link {
+                margin: 0 auto;
+                @media #{$mq-largeScreen}{
+                    margin: initial;
+                }
+            }
             &__details {
                 display: none;
                 margin-inline-start: -70px;
@@ -99,6 +111,7 @@
                 margin-block-start: 5px;
                 .link {
                     margin-block-start: 15px;
+                    cursor: pointer;
                 }
             }
         }
@@ -144,11 +157,22 @@
             position: relative;
             &:before { 
                 content: '';
+                display:none;
                 position: absolute;
                 left:0;
                 width: 1px;
                 height: 80%;
                 background-color: $medium_gray;
+                @media #{$mq-largeScreen} {
+                    display: block;
+                }
+
+            }
+            button, a, .button, .link {
+                margin: 0 auto;
+                @media #{$mq-largeScreen}{
+                    margin: initial;
+                }
             }
             &__details {
                 display: none;
@@ -191,14 +215,17 @@
             }
             &__hiring {
                 span {
-                    font-family: 'Inter', sans-serif;
-                    color: $medium_gray;
+                    font-family: 'Inter Bold', sans-serif;
+                    color: $dark_gray;
+                    font-weight: bold;
+                    font-style: italic;
+                    opacity: 0.5;
                 }
             }
         }
         &--minimal {
             border-top: 8px solid $medium_gray;
-            .company-card--left {
+            .company-card__left {
                 background-color: unset;
             }
             .company-card__center {
@@ -209,6 +236,7 @@
         }
         &.company-card--featured {
             border-top: 8px solid $gold;
+            box-shadow: $box-shadow-featured;
             &:before {
                 content: "\f005";
                 background-image: url('../svg/featured_flag.svg');
