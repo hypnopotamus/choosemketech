@@ -40,14 +40,11 @@ const Layout = ({ children, bodyClass }) => {
         </div>
         <ThreeColumn />
         <JobCarousel />
-<<<<<<< HEAD
         <Cards />
         <ImageGrid />
         <Accordion />
         <CommunityListing />
-=======
         <ImageCopy />
->>>>>>> develop
       </main>
 
       <Footer />
