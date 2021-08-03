@@ -38,7 +38,7 @@ const Accordion = ({ id }) => {
         },
         {
             id: 3,
-            tagName: `Stress test of how many characters can go here elwejwelkjwekjwkejlkwje`,
+            tagName: `Stress test of how many characters can go here alpha beta gamma delta epsilion zeta eta theta iota kappa lambda mu nu xi`,
             text: ` Lorem ipsum dolor sit amet, consectetur adipiscing
                     elit. Ut id purus at felis suscipit consequat id nec
                     magna. Vestibulum ante ipsum primis in faucibus orci
