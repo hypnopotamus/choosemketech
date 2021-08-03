@@ -8,14 +8,11 @@ import ImageGrid from "./ImageGrid";
 import Cards from "./Cards";
 import Footer from "./Footer";
 import Accordion from "./Accordion";
-<<<<<<< HEAD
 import CommunityListing from "./CommunityListing";
 import IntroCopySecondary from './IntroCopySecondary';
-=======
 import MenuModal from "./MenuModal"
 import ImageCopy from "./ImageCopy";
 import ThreeColumn from "./ThreeColumn";
->>>>>>> develop
 
 const backdropClasses = " backdrop"
 
@@ -44,15 +41,12 @@ const Layout = ({ children, bodyClass }) => {
         </div>
         <ThreeColumn />
         <JobCarousel />
-<<<<<<< HEAD
         <Cards />
         <ImageGrid />
         <Accordion />
         <CommunityListing />
         <IntroCopySecondary />
-=======
         <ImageCopy />
->>>>>>> develop
       </main>
 
       <Footer />

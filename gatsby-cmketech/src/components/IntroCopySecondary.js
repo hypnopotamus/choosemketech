@@ -19,10 +19,10 @@ const IntroCopy = ({}) => {
                     careers and community along the way.
                     <strong>
                         To stay in the loop about upcoming tech jobs, events,
-                        and the MKE tech scene, sign up for updates below.
+                        and the MKE tech scene, sign up for updates below. 
                     </strong>
                 </p>
-                <button className="button--primary">Button Style 1</button>
+                <button className="button--primary">Button Style 2</button>
             </div>
         </section>
     )
