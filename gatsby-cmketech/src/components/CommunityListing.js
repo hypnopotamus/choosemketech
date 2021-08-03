@@ -21,7 +21,7 @@ const CommunityListing = ({}) => {
         },
         {
             id: 4,
-            ListTitle: `Company Entry Member Name Milwaukee, WI.`,
+            ListTitle: `Company Entry Member Name Milwaukee, WI. Company Entry Member Name Milwaukee, WI. Company Entry Member Name Milwaukee, WI. Company Entry Member Name Milwaukee, WI.`,
         },
         {
             id: 5,
@@ -52,7 +52,7 @@ const CommunityListing = ({}) => {
     return (
         <section className="Community-Listing container">
             <ul className="Community-Listing--lists">
-            <p>Other Choose MKE Tech Members</p>
+                <p>Other Choose MKE Tech Members</p>
                 {MOCK_DATA.map((listing, index) => {
                     return (
                         <li key={index}>
@@ -62,18 +62,20 @@ const CommunityListing = ({}) => {
                 })}
             </ul>
             <section>
-            <div className="Community-Listing--cta">
-                <h3>Want more prominence in the search results?</h3>
-                <p>Upgrade your profile today to see your logo!</p>
-                <button class="button">Upgrade my profile</button>
-            </div>
-            <div className="Community-Listing--cta" id="recruit">
-                <h3>Are you an advocate for technology in Milwaukee?</h3>
-                <p>Join Choose MKE Tech and see your company listed in the search results.</p>
-                <button class="button--secondary">Recruit with us</button>
-            </div>
+                <div className="Community-Listing--cta">
+                    <h3>Want more prominence in the search results?</h3>
+                    <p>Upgrade your profile today to see your logo!</p>
+                    <button class="button--tertiary">Upgrade my profile</button>
+                </div>
+                <div className="Community-Listing--cta" id="recruit">
+                    <h3>Are you an advocate for technology in Milwaukee?</h3>
+                    <p>
+                        Join Choose MKE Tech and see your company listed in the
+                        search results.
+                    </p>
+                    <button class="button--secondary">Recruit with us</button>
+                </div>
             </section>
-   
         </section>
     )
 }
