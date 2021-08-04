@@ -89,11 +89,27 @@ a {
     text-decoration: underline;
     letter-spacing: 0.1px;
     color: $blue;
+    position: relative;
     &:hover {
         color: $navy_blue;
     }
     &:visited {
         color: $dark_gray;
+    }
+    &.linked {
+        &:after {
+            content: '\f30b';
+            font-family: 'Font Awesome 5 Free';
+            position: absolute;
+            right: -25px;
+            font-size: 20px;
+            transition: all linear 0.25s;
+        }
+        &:hover {
+            &:after {
+                right: -40px;
+            }
+        }
     }
 }
 
