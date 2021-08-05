@@ -60,7 +60,7 @@ const ThreeColumn = ({}) => {
                                     <p>
                                         Lorem ipsum dolor sit amet, consetetur
                                         sadipscing elitr, sed diam nonumy eirmod
-                                        tempor <a href="">invidunt ut</a> labore
+                                        tempor <a href="#">invidunt ut</a> labore
                                         et dolore magna aliquyam erat, sed diam
                                         voluptua.
                                     </p>
@@ -82,7 +82,7 @@ const ThreeColumn = ({}) => {
                                     <p>
                                         Lorem ipsum dolor sit amet, consetetur
                                         sadipscing elitr, sed diam nonumy eirmod
-                                        tempor <a href="">invidunt ut</a> labore
+                                        tempor <a href="#">invidunt ut</a> labore
                                         et dolore magna aliquyam erat, sed diam
                                         voluptua.
                                     </p>
