@@ -134,6 +134,10 @@ footer {
             @media #{$mq-mediumScreen} {
                 margin-top: 0;
             }
+            @media #{$mq-largeScreen} {
+                margin-top: 0;
+                flex-wrap: nowrap;
+            }
             width: 100%;
             li {
                 margin-bottom: 20px;
