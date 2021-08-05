@@ -5,6 +5,7 @@ const ImageCopy = ({}) => {
   var settings = {
     dots: true,
     arrows: false,
+    fade: true,
     infinite: false,
     responsive: [
       {
@@ -17,7 +18,7 @@ const ImageCopy = ({}) => {
     ],
   }
   return (
-    <div className="container imageCopy">
+    <div className="imageCopy">
       <div className="imageCopy__heading">
         <h2>Header</h2>
       </div>

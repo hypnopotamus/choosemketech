@@ -103,11 +103,11 @@ a {
             position: absolute;
             right: -25px;
             font-size: 20px;
-            transition: all linear 0.25s;
+            transition: all linear 0.15s;
         }
         &:hover {
             &:after {
-                right: -40px;
+                right: -30px;
             }
         }
     }
