@@ -12,6 +12,8 @@
     box-shadow: $box-shadow;
 
     p {
+        margin-bottom: 1.75rem;
+
         @media #{$mq-largeScreen} {
             width: 80%;
             margin: 1rem auto;
@@ -34,5 +36,6 @@
 
     h2 {
         margin: 0;
+        padding-top: 2.5rem;
     }
 }
