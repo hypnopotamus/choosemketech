@@ -5,6 +5,7 @@
     box-shadow: $box-shadow;
     position: relative;
     border-top: 8px solid $blue;
+    background-color: $white;
     @media #{$mq-largeScreen}{
         flex-direction: row;
     }

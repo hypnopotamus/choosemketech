@@ -35,7 +35,7 @@ const Footer = ({}) => {
                 <p><strong>About</strong></p>
                 <ul>
                     <li><Link to="/"><span>About Choose MKE Tech</span></Link></li>
-                    <li><Link to="/"><span>MKE Tech Collition <i className="fas fa-external-link-square-alt"></i></span></Link></li>
+                    <li><Link to="/"><span>MKE Tech Coalition <i className="fas fa-external-link-square-alt"></i></span></Link></li>
                     <li><Link to="/"><span>Reverse Pitch MKE <i className="fas fa-external-link-square-alt"></i></span></Link></li>
                     <li><Link to="/"><span>RPM: High School Edition <i className="fas fa-external-link-square-alt"></i></span></Link></li>
                 </ul>
@@ -50,7 +50,7 @@ const Footer = ({}) => {
               <li>
                 <p><strong>Legal</strong></p>
                 <ul>
-                    <li><Link to="/"><span>Term of Use</span></Link></li>
+                    <li><Link to="/"><span>Terms of Use</span></Link></li>
                     <li><Link to="/"><span>Accessibility</span></Link></li>
                     <li><Link to="/"><span>Privacy Policy</span></Link></li>
                 </ul>
@@ -58,7 +58,7 @@ const Footer = ({}) => {
           </ul>
         </div>
         <Link to="/" className="footer--logo mobile"><span>MKE Tech</span></Link>
-        <p className="footer--copyright">&copy; 2021 MKE Tech Hub Collition. All Rights Reserved. | Visit <Link to="">mketech.org</Link> | Photo courtsey of <Link to="">Vist Milawukee</Link></p>
+        <p className="footer--copyright">&copy; 2021 MKE Tech Hub Coalition. All Rights Reserved. | Visit <Link to="">mketech.org</Link> | Photos courtesy of <Link to="">Visit Milwaukee</Link></p>
       </div>            
     </footer>
     // <footer id="site-footer" role="contentinfo" className="header-footer-group">

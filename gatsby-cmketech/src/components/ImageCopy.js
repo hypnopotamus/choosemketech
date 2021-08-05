@@ -6,6 +6,7 @@ const ImageCopy = ({}) => {
     dots: true,
     arrows: false,
     fade: true,
+    infinite: false,
     responsive: [
       {
         breakpoint: 769,
@@ -17,7 +18,7 @@ const ImageCopy = ({}) => {
     ],
   }
   return (
-    <div className="container imageCopy">
+    <div className="imageCopy">
       <div className="imageCopy__heading">
         <h2>Header</h2>
       </div>
@@ -29,7 +30,7 @@ const ImageCopy = ({}) => {
               <img src="https://via.placeholder.com/592x372" />
             </div>
             <div className="imageCopy__copy">
-              <h3>SubHeading 1</h3>
+              <h3>SubHeading </h3>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
@@ -41,8 +42,8 @@ const ImageCopy = ({}) => {
               </p>
               <div className="imageCopy__copy__ctas">
                 <button className="button button--primary">Button Style</button>
-                <a className="link" href="#">
-                  Thisis a link
+                <a  href="#" className="linked">
+                  This is a link
                 </a>
               </div>
             </div>
@@ -52,7 +53,7 @@ const ImageCopy = ({}) => {
           <div className="row imageCopy__row">
             <div className="imageCopy__image">
               <span className="tag tag--gold tag--gold--featured">Featured</span>
-              <img src="https://via.placeholder.com/592x372" />
+              <img src="https://via.placeholder.com/592x373" />
             </div>
             <div className="imageCopy__copy">
               <h3>SubHeading 1</h3>
@@ -67,8 +68,8 @@ const ImageCopy = ({}) => {
               </p>
               <div className="imageCopy__copy__ctas">
                 <button className="button button--primary">Button Style</button>
-                <a className="link" href="#">
-                  Thisis a link
+                <a  href="#" className="linked" >
+                  This is a link
                 </a>
               </div>
             </div>
@@ -78,10 +79,10 @@ const ImageCopy = ({}) => {
           <div className="row imageCopy__row">
             <div className="imageCopy__image">
               <span className="tag tag--gold tag--gold--featured">Featured</span>
-              <img src="https://via.placeholder.com/592x372" />
+              <img src="https://via.placeholder.com/592x375" />
             </div>
             <div className="imageCopy__copy">
-              <h3>SubHeading 1</h3>
+              <h3>SubHeading 2</h3>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
@@ -93,8 +94,8 @@ const ImageCopy = ({}) => {
               </p>
               <div className="imageCopy__copy__ctas">
                 <button className="button button--primary">Button Style</button>
-                <a className="link" href="#">
-                  Thisis a link
+                <a  href="#" className="linked">
+                  This is a link
                 </a>
               </div>
             </div>
