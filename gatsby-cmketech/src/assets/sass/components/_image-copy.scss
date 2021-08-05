@@ -68,7 +68,9 @@
                 flex-direction: row;
                 justify-content: flex-start;
             }
-
+            button:first-child, .button:first-child{
+                margin-inline-start: 0px;
+            }
             button, a{
                 margin-block:  10px;
                 min-width: unset;
