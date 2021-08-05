@@ -18,9 +18,16 @@
             margin-block-start: 2.5rem;
         }
 
+        @include customQuery(415px, 767px) {
+            background-image: url('../images/tablet_header_still.png');
+            background-position: left;
+            height: 431px;
+        }
+
         @media #{$mq-largeScreen} {
             background-image: none;
             height: auto;
+            margin-block-start: 2.5rem;
         }
 
         .hero--banner__video {
@@ -42,6 +49,12 @@
                 top: 143px;
                 width: auto;
             }
+
+            @include customQuery(415px, 767px) {
+                top: 143px;
+                width: auto;
+            }
+
             @media #{$mq-largeScreen} {        
                 top: 11vw;
                 left: 65px;    
