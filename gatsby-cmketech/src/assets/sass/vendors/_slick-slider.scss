@@ -15,10 +15,18 @@
     right: 10px;
 }
 .slick-slider {
+    .slick-slide { 
+        pointer-events: none; 
+    }
+
+    .slick-active { 
+        pointer-events: auto; 
+    }
+    
     .slick-dots {
         bottom: 0px;
         li {
-            width: 70px;
+            width: 45px;
             height: 7px;
             &.slick-active {
                 button{

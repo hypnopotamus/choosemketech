@@ -2,7 +2,7 @@ module.exports = {
   endOfLine: "lf",
   semi: false,
   singleQuote: false,
-  tabWidth: 2,
+  tabWidth: 4,
   trailingComma: "es5",
   overrides: [
     {
@@ -12,6 +12,7 @@ module.exports = {
       // object declarations.
       files: ["**/api-node-helpers-docs.js"],
       options: {
+        bracketSpacing: false,
         semi: true,
       },
     },

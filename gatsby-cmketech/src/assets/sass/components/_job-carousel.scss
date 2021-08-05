@@ -1,7 +1,28 @@
 .job-carousel {
-    padding: 30px 0;
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+    padding: 30px 0 60px;
     background-color: $light_gray;
     &__header {
         text-align: center;
+    }
+    .job-carousel-item {
+        padding-inline: 10px;
+        @media #{$mq-largeScreen} {
+            padding-inline: 0px;
+        }
+    }
+    .slick-slider {
+        .slick-slide {
+            @media #{$mq-largeScreen} {
+                margin-left: 0;
+            }
+        }
+        .card {
+            @media #{$mq-largeScreen} {
+                margin-inline: 20px;
+            }
+        }
     }
 }

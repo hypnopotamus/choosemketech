@@ -8,12 +8,17 @@ html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 html, body {
     font-family: 'Roboto', sans-serif;
     letter-spacing: 0.5px;
     @include fluid-type(320px, 768px, 14px, 16px);
+}
+
+body {
+    background-color: $white;
 }
 
 h1, .h1, .heading-1 {
@@ -81,31 +86,41 @@ span[style*=italic] {
 
 a {
     font-family: 'Inter', sans-serif;
-    font-weight: 600;
     text-decoration: underline;
     letter-spacing: 0.1px;
     color: $blue;
+    position: relative;
     &:hover {
         color: $navy_blue;
     }
     &:visited {
         color: $dark_gray;
     }
+    &.linked {
+        &:after {
+            content: '\f30b';
+            font-family: 'Font Awesome 5 Free';
+            position: absolute;
+            right: -25px;
+            font-size: 20px;
+            transition: all linear 0.15s;
+        }
+        &:hover {
+            &:after {
+                right: -30px;
+            }
+        }
+    }
 }
 
 .container  {
     width: 100%;
-    padding-right: .75rem;
-    padding-left: .75rem;
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    margin-block-end: 2.5rem;
+    margin-block-start: 2.5rem;
     .row {
-        --bs-gutter-x: 1.5rem;
-        --bs-gutter-y: 0;
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: calc(var(--bs-gutter-y) * -1);
-        margin-right: calc(var(--bs-gutter-x)/ -2);
-        margin-left: calc(var(--bs-gutter-x)/ -2);        
+        margin: 0 -40px;
+        padding: 0 40px;
     }
 }

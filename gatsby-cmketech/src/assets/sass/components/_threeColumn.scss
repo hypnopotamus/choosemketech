@@ -1,0 +1,46 @@
+.threeColumn {
+    background-color: $navy_blue;
+    &__heading h2{
+        color: $white;
+        text-align: center;
+        padding-block-start: 2.375rem;
+        margin-block-start: 0;
+        @media #{$mq-mediumScreen}{
+            padding-block-start: 3.125rem;
+        }
+    }
+    .slick-slider {
+        .slick-slide {
+            margin-left: -8px;
+        }
+        
+    }
+    &__container {
+        padding-block: 0px 60px;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    &__column {
+        &__container {
+            background-color: $white;
+            padding: 25px;
+            margin: 0px 15px;
+        }
+        &__image {
+            margin-block: 0px 15px;
+            img {
+                aspect-ratio: 16 / 10;
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+        &__content {
+            h4 {
+                margin-block-start: 21px;
+            }
+            p {
+                margin-block: 14px;
+            }
+        }
+    }
+}

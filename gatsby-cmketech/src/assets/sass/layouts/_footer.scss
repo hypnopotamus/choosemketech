@@ -1,81 +1,200 @@
 footer {
-    background: linear-gradient(to top, $white 64.5%, $light_gray 40%);
+    background: linear-gradient(to top, $white 75.5%, $light_gray 50%);
+    @media #{$mq-mediumScreen}{
+        background: linear-gradient(to top, $white 72%, $light_gray 40%);
+    }
+    &.container {
+        padding: 0;
+        margin: 0;
+    }
     .footer--social {
-        display: flex;
+        // display: flex;
+        @media #{$mq-mediumScreen}{
+            display: flex;
+        }
         background-image: url('../svg/skyline.svg');
-        background-size: 100%;
+        background-size: 315%;
+        @media #{$mq-mediumScreen}{
+            background-size: 150%;
+        }
+        @media #{$mq-largeScreen}{
+            background-size: 101%;
+        }
         background-repeat: no-repeat;
         background-position: bottom;
-        padding: 50px;
-        height: 550px;
+        padding: 3.125rem;
+        height: 31.375rem;
+        @media #{$mq-mediumScreen}{
+            height: 34.375rem;
+        }
         .footer--social__wrapper {
-            display: flex;
-            align-items: center;
-            width: 100%;
             justify-content: space-around;
-            margin-block-end: auto;
+            align-items: center;
+            @media #{$mq-mediumScreen}{
+                width: 100%;
+                margin-block-end: auto;
+                flex-wrap: wrap;
+            }
+            padding: 0 0 40px 0;
+            display: flex;
+            flex-wrap: wrap;
             h4 {
-                width: 310px;
+                color: $blue;
                 white-space: nowrap;
-                text-transform: uppercase;            
+                text-transform: uppercase;        
+                margin-block-start: 0;
+                margin-block-end: 40px;    
+                @media #{$mq-mediumScreen}{
+                    margin-block-start: 0;
+                }
+                @media #{$mq-largeScreen}{
+                    margin-block-start: 0;
+                    margin-block-end: 0;    
+                }
             }
             .footer--social__icons {
                 display: flex;
-                width: 584px;
+                width: 36.5rem;
+                justify-content: center;
                 a {
                     border-radius: 50%;
                     background-color: $teal;
                     color: $white;
-                    width: 100px;
-                    height: 100px;
+                    @media #{$mq-mediumScreen}{
+                        width: 6.25rem;
+                        height: 6.25rem;
+                    }
+                    width: 60px;
+                    height: 60px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     text-decoration: none;
                     font-size: 2.5rem;
-                    box-shadow: 0px 3px 5px rgba($black, 0.2);
-                    margin-inline-end: 10px;
-                    margin-inline-start: 10px;
+                    box-shadow: 0px 0.188rem 0.313rem rgba($black, 0.2);
                     transition: 1s;
+                    @media #{$mq-mediumScreen}{
+                        margin-inline-end: 0.625rem;
+                        margin-inline-start: 0.625rem;
+                    }
+                    margin: 0 5px;
                     position: relative;
                     overflow: hidden;
+                    i {
+                        font-size: 1.75rem;
+                        @media #{$mq-mediumScreen}{
+                            font-size: 40px;
+                        }
+                    }
                     span {
                         text-indent: 100%;
                         position: absolute;
+                    }
+                    &:hover {
+                        background-color: $navy_blue;
                     }
                 }
             }
         }
     }
     .footer--main {
-        display: flex;
         background-color: $navy_blue;
+        margin: -1px 0 0 0;
+        display: inline-block;
+        padding-top: 20px;
         * {
             color: $white;
         }
         .footer--main__subscribe {
-            display: flex;
-            &:after {
-                content: "";
-                display: block;
-                background-color: $white;
-                width: 1px;
-                margin: 0 50px;
+            width: 100%;
+            @media #{$mq-mediumScreen}{
+                width: auto;
             }
-            .footer--logo {
-                white-space: nowrap;
-                text-indent: 100%;
-                overflow: hidden;
-                display: block;
-                background-image: url('../svg/mke-tech-logo.svg');
-                background-repeat: no-repeat;
-                background-size: contain;
-                height: 110px;
+        }
+        .footer--main__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            @media #{$mq-mediumScreen} {
+                flex-wrap: nowrap;
+            }
+            .divider {
+                width: 1px;
+                background-color: $white;
+                margin: 0 2.5rem;
+                display: none;
+                @media #{$mq-mediumScreen}{
+                    display: block;
+                }
             }
         }
         .footer--main__navigation {
             display: flex;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            @media #{$mq-mediumScreen} {
+                margin-top: 0;
+            }
+            @media #{$mq-largeScreen} {
+                margin-top: 0;
+                flex-wrap: nowrap;
+            }
             width: 100%;
+            li {
+                margin-bottom: 20px;
+                font-family: 'Inter Medium';
+                width: 100%;
+                p {
+                    margin: 0 0 20px 0;
+                    display: block;
+                    line-height: 1rem;
+                    strong {
+                        font-size: 1.125rem;
+                        font-family: 'Inter';
+                        font-weight: 500;
+                        display: block;
+                    }
+                }
+                i {
+                    color: $light_yellow;
+                    display: inline-block;
+                    margin-left: 5px;
+                }                
+            }
+        }
+        .footer--copyright {
+            font-size: 0.875rem;
+            padding:20px 0;
+            a {
+                color: $light_yellow;
+            }
+        }
+        .footer--logo {
+            white-space: nowrap;
+            text-indent: 100%;
+            overflow: hidden;
+            background-image: url('../svg/mke-tech-logo.svg');
+            background-repeat: no-repeat;
+            background-size: 75%;
+            height: 6.875rem;
+            margin-top: 50px;
+            margin-bottom: -30px;
+            &.desktop {
+                display: none;
+            }
+            &.mobile {
+                display: block;
+                margin: 0;
+                background-size: contain;
+            }
+            @media #{$mq-mediumScreen}{
+                &.desktop {
+                    display: block;
+                }
+                &.mobile {
+                    display: none;
+                }
+    
+            }
         }
     }
 }

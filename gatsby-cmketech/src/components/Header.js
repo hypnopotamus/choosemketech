@@ -15,12 +15,35 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
     }
   `)
   return (
-    <header className="header--nav-main">
-      <div className="logo">
-        <Link to="/"><span>Choose MKE Tech</span></Link>
+    <header id="site-header" className="header-footer-group container" role="banner">
+      <div className="header--nav-main">
+        
+        <button
+          className="toggle nav-toggle mobile-nav-toggle"
+          data-toggle-target=".menu-modal"
+          data-toggle-body-class="showing-menu-modal"
+          aria-expanded="false"
+          data-set-focus=".close-nav-toggle"
+          onClick={(e) => toggleBackdrop(e, true)}>
+          <span className="toggle-inner">
+            <span className="toggle-icon">
+              <i class="fas fa-bars"></i>
+            </span>
+            <span className="toggle-text">Menu</span>
+          </span>
+        </button>
+        
+        <div className="logo">
+          <Link to="/">
+            <span>Choose MKE Tech</span>
+          </Link>
+        </div>
+        
+        <Menu />
+      
       </div>
-      <Menu />
     </header>
+
     // <header id="site-header" className="header-footer-group" role="banner">
     //   <div className="header-inner section-inner">
     //     <div className="header-titles-wrapper">
