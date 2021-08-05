@@ -16,7 +16,7 @@ const Hero = ({}) => {
                     <h3>CAREERS + CONNECTION</h3>
                 </div>
             </div>
-            <IntroCopy />
+            <IntroCopy overlap={true} />
         </div>
     )
 }
