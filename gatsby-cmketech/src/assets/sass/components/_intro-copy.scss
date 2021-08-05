@@ -11,6 +11,13 @@
     padding: 1rem;
     box-shadow: $box-shadow;
 
+    p {
+        @media #{$mq-largeScreen} {
+            width: 80%;
+            margin: 1rem auto;
+        }
+    }
+
     @media #{$mq-largeScreen} {
         position: static;
         border: none;
