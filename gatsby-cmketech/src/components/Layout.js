@@ -32,7 +32,6 @@ const Layout = ({ children, bodyClass }) => {
       <main id="site-content" role="main">
         <Hero />
         <div className="container">
-          <IntroCopy />
           <Cards />
           <ImageGrid />
           <Accordion />

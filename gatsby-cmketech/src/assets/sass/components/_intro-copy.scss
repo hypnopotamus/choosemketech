@@ -10,7 +10,11 @@
     border-top: 5px solid $blue;
     padding: 1rem;
     box-shadow: $box-shadow;
-
+    button, .button {
+        &:first-of-type {
+            margin-inline-start: 0;
+        }
+    }
     p {
         margin-bottom: 1.75rem;
 

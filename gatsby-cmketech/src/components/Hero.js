@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import IntroCopy from "./IntroCopy";
 import { heroVideo, heroVideo2, heroBannerMobile, heroBannerTablet } from "../assets/assets";
 
 const Hero = ({}) => {
@@ -15,6 +16,7 @@ const Hero = ({}) => {
                     <h3>CAREERS + CONNECTION</h3>
                 </div>
             </div>
+            <IntroCopy />
         </div>
     )
 }

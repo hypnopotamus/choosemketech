@@ -6,10 +6,8 @@ const IntroCopy = ({ }) => {
         <div className="row">
             <section className="intro intro-copy">
                 <h2>Choose Milwaukee Tech</h2>
-                <h3>Community &amp; Careers –&nbsp;new Website coming soon</h3>
-                <p>The Milwaukee Tech Hub Coalition is brewing up a home-base for tech candidates and top companies to connect, building careers and community along the way. 
-                    <strong>To stay in the loop about upcoming tech jobs, events, and the MKE tech scene, sign up for updates below.</strong>
-                </p>
+                <h3>Voted Best City for Startups in Tech</h3>
+                <p>Find your next job in tech in the Midwest’s hottest rising tech hub. Milwaukee is home to household names in tech, globally recognized water technology, exciting start-ups, and a vibrant tech community eager to explore the next emerging technology. <strong>Come see what’s brewing in Milwaukee.</strong></p>
                 <button className="button--primary">Button Style 1</button>
             </section>
         </div>
