@@ -1,6 +1,5 @@
-.intro-copy--mobile {
+.intro-copy--hero{
     z-index: 10;
-    top: 40rem !important;
     max-width: 85%;
 
     @media #{$mq-largeScreen} {
@@ -20,6 +19,7 @@
     border-top: 5px solid $blue;
     padding: 1rem;
     box-shadow: $box-shadow;
+
     button,
     .button {
         &:first-of-type {
@@ -40,7 +40,8 @@
         position: static;
         border: none;
         width: 100%;
-        padding: 2rem 10rem;
+        margin-top: 0;
+        padding: 0 10rem 2rem 10rem;
 
         button.button--primary {
             display: block;
@@ -54,4 +55,3 @@
         padding-top: 2.5rem;
     }
 }
-
