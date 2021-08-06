@@ -52,7 +52,7 @@
         }
 
         @media #{$mq-mediumScreen} {
-            background-image: url("../images/ad-bg-1-tablet.jpg");
+            background-image: url("../images/ad-bg-1-large.jpg");
             padding: 3.5rem;
             padding-top: 13.5rem;
             // padding-top: 7.5rem;
@@ -77,8 +77,8 @@
             background-repeat: no-repeat;
             color: #000;
 
-            @media #{$mq-largeScreen} {
-                background-image: url("../images/ad-bg-2-tablet.jpg");
+            @media #{$mq-mediumScreen} {
+                background-image: url("../images/ad-bg-2-large.jpg");
                 padding-top: 13.5rem;
             }
 
