@@ -5,10 +5,41 @@ import { Link } from "gatsby"
 
 const Navigation = () => {
     const { wpMenu } = useMenuQuery();
+    console.log(wpMenu)
     const [subNavShow, setSubNavShow] = useState(false);
+    const handleNavClick = () =>  {
+        setSubNavShow(!subNavShow);        
+    }
 
-    const handleNavClick = (i) =>  {
-        setSubNavShow(!i);
+    const SubMenu = ({data, toggle, menuIndex}) => {
+        const [subNavShow, setSubNavShow] = useState(toggle ? true : false);
+        
+        return (
+            <ul
+                role="menubar"
+                aria-hidden="true"
+                className={`nav__list nav__list--secondary ${subNavShow ? 'showSubNav' : ''}`}
+            >
+                {data.childItems.nodes.map(
+                    (childItem) => (
+                        <li
+                            key={childItem.id}
+                            tabIndex="0"
+                            role="menuitem"
+                            className="nav__item nav__item--secondary"
+                        >
+                            <Link
+                                to={childItem.url}
+                                activeClassName="active"
+                                className="nav__link nav__link--secondary"
+                            >
+                                {childItem.label}
+                            </Link>
+                        </li>
+                    )
+                )}
+            </ul>
+        )
     }
 
     return (
@@ -46,30 +77,9 @@ const Navigation = () => {
                                 )}
                             </Link>
                             {mainItem.childItems.nodes.length !== 0 ? (
-                                <ul
-                                    role="menubar"
-                                    aria-hidden="true"
-                                    className={`nav__list nav__list--secondary ${subNavShow ? 'showSubNav' : ''}`}
-                                >
-                                    {mainItem.childItems.nodes.map(
-                                        (childItem) => (
-                                            <li
-                                                key={childItem.id}
-                                                tabIndex="0"
-                                                role="menuitem"
-                                                className="nav__item nav__item--secondary"
-                                            >
-                                                <Link
-                                                    to={childItem.url}
-                                                    activeClassName="active"
-                                                    className="nav__link nav__link--secondary"
-                                                >
-                                                    {childItem.label}
-                                                </Link>
-                                            </li>
-                                        )
-                                    )}
-                                </ul>
+                                <SubMenu 
+                                data={mainItem} 
+                                toggle={subNavShow}/>
                             ) : null}
                         </li>
                     ) : null

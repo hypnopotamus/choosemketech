@@ -89,7 +89,7 @@ header {
         }
         nav {
             width: 100%;
-            display: none;
+            
             @media #{$mq-mediumScreen}{
                 display: block;
             }
