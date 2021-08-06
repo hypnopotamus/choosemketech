@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import Menu from "./Menu"
+import Navigation from "./Navigation"
+import UtilityNav from "./UtilityNav"
 import ToggleIcon from "../assets/svg/toggle.inline.svg"
 
 const Header = ({ pageContext, toggleBackdrop, ...props }) => {
@@ -15,9 +16,19 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
     }
   `)
   return (
-    <header id="site-header" className="header-footer-group container" role="banner">
+    <header id="site-header" className="header-footer-group container header" role="banner">
+      <div className="header__utility-nav">
+        <UtilityNav />
+      </div>
+
+      <div className="header__branding">
+        <div className="logo">
+            <Link to="/">
+              <span>Choose MKE Tech</span>
+            </Link>
+          </div>
+      </div>
       <div className="header--nav-main">
-        
         <button
           className="toggle nav-toggle mobile-nav-toggle"
           data-toggle-target=".menu-modal"
@@ -27,20 +38,12 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
           onClick={(e) => toggleBackdrop(e, true)}>
           <span className="toggle-inner">
             <span className="toggle-icon">
-              <i class="fas fa-bars"></i>
+              <i className="fas fa-bars"></i>
             </span>
             <span className="toggle-text">Menu</span>
           </span>
         </button>
-        
-        <div className="logo">
-          <Link to="/">
-            <span>Choose MKE Tech</span>
-          </Link>
-        </div>
-        
-        <Menu />
-      
+        <Navigation />
       </div>
     </header>
 

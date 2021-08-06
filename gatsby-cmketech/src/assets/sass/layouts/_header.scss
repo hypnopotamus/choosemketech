@@ -1,48 +1,20 @@
 header {
+    padding-block-start: 7px;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+        height: 7px;
+        background: linear-gradient(130deg, $g1, $g2, $g3, $g4);    
+        z-index: 1;
+    }    
     &.container {
         padding: 0;
         margin: 0;
     }
-    .header--nav-main {
-        display: flex;
-        justify-content: center;
-        position: relative;
-        @media #{$mq-mediumScreen}{
-            justify-content: end;
-        }
-        &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            width: 100%;
-            left: 0;
-            height: 7px;
-            background: linear-gradient(130deg, $g1, $g2, $g3, $g4);    
-            z-index: 1;
-        }    
-        .toggle {
-            display: block;
-            margin: 0;
-            min-width: auto;
-            margin-left: 1.25rem;
-            margin-top: 0.625rem;
-            background-color: transparent;
-            position: absolute;
-            padding: 0;
-            top: 1rem;
-            left: 0;
-            .toggle-text, .toggle-icon {
-                font-size: 1.5rem;
-                line-height: 2rem;
-            }
-            .toggle-text {
-                margin-left: 0.625rem;
-                display: inline-block;
-            }            
-            @media #{$mq-mediumScreen}{
-                display: none;
-            }
-        }
+    .header__branding {
         .logo {
             position: relative;
             z-index: 1;
@@ -82,6 +54,37 @@ header {
                         height: 7.5rem;
                     }
                 }                
+            }
+        }
+    }
+    .header--nav-main {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        @media #{$mq-mediumScreen}{
+            justify-content: end;
+        }
+        .toggle {
+            display: block;
+            margin: 0;
+            min-width: auto;
+            margin-left: 1.25rem;
+            margin-top: 0.625rem;
+            background-color: transparent;
+            position: absolute;
+            padding: 0;
+            top: 1rem;
+            left: 0;
+            .toggle-text, .toggle-icon {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+            .toggle-text {
+                margin-left: 0.625rem;
+                display: inline-block;
+            }            
+            @media #{$mq-mediumScreen}{
+                display: none;
             }
         }
         nav {
