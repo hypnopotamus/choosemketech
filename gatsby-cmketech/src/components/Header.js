@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import Navigation from "./Navigation"
 import UtilityNav from "./UtilityNav"
-import ToggleIcon from "../assets/svg/toggle.inline.svg"
+import { chooseMKELogo } from "../assets/assets";
 
 const Header = ({ pageContext, toggleBackdrop, ...props }) => {
   const { wp } = useStaticQuery(graphql`
@@ -20,11 +20,10 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
       <div className="header__utility-nav">
         <UtilityNav />
       </div>
-
       <div className="header__branding">
         <div className="logo">
             <Link to="/">
-              <span>Choose MKE Tech</span>
+              <img src={chooseMKELogo} alt="Choose MKE Tech Logo" />
             </Link>
           </div>
       </div>
@@ -44,69 +43,11 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
           </span>
         </button>
         <Navigation />
+        <div className="header__global-search">
+          <i class="fas fa-search"></i>
+        </div>
       </div>
     </header>
-
-    // <header id="site-header" className="header-footer-group" role="banner">
-    //   <div className="header-inner section-inner">
-    //     <div className="header-titles-wrapper">
-    //       <div className="header-titles">
-    //         <h1 className="site-title">
-    //           <Link
-    //             to="/"
-    //             dangerouslySetInnerHTML={{ __html: wp.generalSettings.title }}
-    //           />
-    //         </h1>
-    //         <div
-    //           className="site-description"
-    //           dangerouslySetInnerHTML={{
-    //             __html: wp.generalSettings.description,
-    //           }}
-    //         />
-    //       </div>
-
-    //       <button
-    //         className="toggle nav-toggle mobile-nav-toggle"
-    //         data-toggle-target=".menu-modal"
-    //         data-toggle-body-class="showing-menu-modal"
-    //         aria-expanded="false"
-    //         data-set-focus=".close-nav-toggle"
-    //         onClick={(e) => toggleBackdrop(e, true)}
-    //       >
-    //         <span className="toggle-inner">
-    //           <span className="toggle-icon">
-    //             <ToggleIcon />
-    //           </span>
-    //           <span className="toggle-text">Menu</span>
-    //         </span>
-    //       </button>
-    //     </div>
-
-    //     <div className="header-navigation-wrapper">
-    //       <Menu />
-
-    //       <div className="header-toggles hide-no-js">
-    //         <div className="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
-    //           <button
-    //             className="toggle nav-toggle desktop-nav-toggle"
-    //             data-toggle-target=".menu-modal"
-    //             data-toggle-body-class="showing-menu-modal"
-    //             aria-expanded="false"
-    //             data-set-focus=".close-nav-toggle"
-    //             onClick={(e) => toggleBackdrop(e, true)}
-    //           >
-    //             <span className="toggle-inner">
-    //               <span className="toggle-text">Menu</span>
-    //               <span className="toggle-icon">
-    //                 <ToggleIcon />
-    //               </span>
-    //             </span>
-    //           </button>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </header>
   )
 }
 

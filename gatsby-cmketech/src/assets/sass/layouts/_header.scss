@@ -1,4 +1,8 @@
 header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
     padding-block-start: 7px;
     &:before {
         content: "";
@@ -15,46 +19,24 @@ header {
         margin: 0;
     }
     .header__branding {
+        position: absolute;
+        left: 0;
         .logo {
-            position: relative;
             z-index: 1;
-            margin-block-end: -3.75rem;
-            margin-block-start: 0.625rem;
-            @media #{$mq-mediumScreen}{
-                margin-block-end: auto;
-                margin-block-start: auto;
-            }
+            
             a {
                 display: block;
                 margin: 0;
                 @media #{$mq-mediumScreen}{
                     margin: 0.938rem 0 0 1.25rem;
-                }
-                span {
-                    white-space: nowrap;
-                    text-indent: 100%;
-                    overflow: hidden;
-                    background-image: url('../images/choose-mke-logo.svg');
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    margin: 0;
-                    width: 7.5rem;
-                    height: 7.5rem;
-                    display: block;
-                }
-                @media #{$mq-mediumScreen}{
-                    span {
-                        width: 10.563rem;
-                        height: 10.563rem;
-                    }
-                }
-                @include customQuery(768px, 820px){
-                    span {
-                        width: 7.5rem;
-                        height: 7.5rem;
-                    }
-                }                
+                }             
             }
+        }
+    }
+    .header__global-search {
+        padding: 40px;
+        .fas {
+            font-size: 28px;
         }
     }
     .header--nav-main {
@@ -62,7 +44,8 @@ header {
         justify-content: center;
         position: relative;
         @media #{$mq-mediumScreen}{
-            justify-content: end;
+            justify-content: flex-end;
+            align-items: center;
         }
         .toggle {
             display: block;
