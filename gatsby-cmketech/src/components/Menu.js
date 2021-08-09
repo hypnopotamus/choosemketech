@@ -8,7 +8,7 @@ const Menu = () => {
       <ul className="nav--top-references">
         <li><Link to="/help"><i className="fas fa-question-circle"></i> <span>Help</span></Link></li>
         <li><Link to="/recruit-with-us"><i className="fas fa-users"></i> <span>Recruit with us</span></Link></li>
-        <li><Link to="/login"><i className="fas fa-sign-in-alt"></i> <span>Login</span></Link></li>
+        <li><Link to="#/ms/login"><i className="fas fa-sign-in-alt"></i> <span>Login</span></Link></li>
       </ul>
       <ul className="nav--top-main"> 
         <li><Link to="/jobs">Jobs</Link></li>
