@@ -11,7 +11,7 @@ const Hero = ({}) => {
                     <source src={heroVideo2} type="video/webm" />
                 </video>
                 <div className="hero--banner__copy">
-                    <h1>Build Your Tech <br /> Career <span>In Milwaukee</span></h1>
+                    <h1>Build Your Tech <br /> Career 1 <span>In Milwaukee</span></h1>
                     <h3>CAREERS + CONNECTION</h3>
                 </div>
             </div>
