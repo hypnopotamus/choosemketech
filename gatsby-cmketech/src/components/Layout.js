@@ -11,6 +11,7 @@ import Accordion from "./Accordion";
 import MenuModal from "./MenuModal"
 import ImageCopy from "./ImageCopy";
 import ThreeColumn from "./ThreeColumn";
+import MembershipTiers from "./MembershipTiers";
 
 const backdropClasses = " backdrop"
 
@@ -40,6 +41,7 @@ const Layout = ({ children, bodyClass }) => {
         </div>
         <ThreeColumn />
         <JobCarousel />
+        <MembershipTiers />
       </main>
 
       <Footer />
