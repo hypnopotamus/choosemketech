@@ -61,7 +61,7 @@
         padding: 1.5rem;
         background-color: $teal;
         padding: 1rem;
-        grid-template: tiers;
+        grid-area: tiers;
 
         @media #{$mq-mediumScreen} {
             grid-area: tiers;
@@ -80,9 +80,9 @@
 
     //Membership features
     .memberships--features {
-        display: block;
+        display: flex;
         grid-area: features;
-        color: red;
+        width: 100%;
 
         @media #{$mq-mediumScreen} {
             display: grid;
