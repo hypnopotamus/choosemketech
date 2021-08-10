@@ -4,8 +4,8 @@ import { Link } from "gatsby"
 const MembershipTiers = ({}) => {
     return (
         <>
-            <section className="memberships--tier">
-                <div className="memberships--perks">
+            <div className="memberships--tier">
+                <section className="memberships--perks">
                     <h4>INCLUDES</h4>
                     <p className="memberships--perks__header">
                         Member Benefits
@@ -27,7 +27,7 @@ const MembershipTiers = ({}) => {
                     <label>Social Media Links</label>
                     <label>Company Stories</label>
                     <label>Profile</label>
-                </div>
+                </section>
                 <section className="memberships--tiers__header">
                     <div>
                         <h4>Premiere</h4>
@@ -46,13 +46,15 @@ const MembershipTiers = ({}) => {
                         <span>For startups + engaged community members</span>
                     </div>
                 </section>
-            </section>
-
-            <section className="memberships--features">
-                <div>
+                <section className="memberships--features">
                     <i class="fas fa-check"></i>
-                </div>
-            </section>
+                    <i class="fas fa-check"></i>
+                    <i class="fas fa-check"></i>
+                    <i class="fas fa-check"></i>
+                    <i class="fas fa-check"></i>
+
+                </section>
+            </div>
         </>
     )
 }
