@@ -1,8 +1,18 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 
-const Accordion = ({ id }) => {
-    const [selectedAction, setSelectedAction] = useState(null)
+const Accordion = ({ tagName, content }) => {
+    const [selectedAction, setSelectedAction] = useState(null);
+    const { wp } = useStaticQuery(graphql`
+    {
+      wp {
+        generalSettings {
+          title
+          description
+        }
+      }
+    }
+  `)
 
     const MOCK_DATA = [
         {
