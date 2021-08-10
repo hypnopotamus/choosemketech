@@ -3,7 +3,7 @@ import { useMenuQuery } from "../hooks/useMenuQuery"
 import { Link } from "gatsby"
 
 const Navigation = () => {
-    const { wpMenu } = useMenuQuery()
+    const  { wpMenu }  = useMenuQuery()
     const [subNavShow, setSubNavShow] = useState(null)
 
     const handleNavClick = (i) => {

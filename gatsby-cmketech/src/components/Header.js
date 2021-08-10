@@ -44,7 +44,7 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
         </button>
         <Navigation />
         <div className="header__global-search">
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
         </div>
       </div>
     </header>

@@ -1,9 +1,11 @@
 header {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: column;    
     position: relative;
     padding-block-start: 7px;
+    @media #{$mq-largeScreen} {
+        align-items: flex-end;
+    }
     &:before {
         content: "";
         position: absolute;
@@ -15,35 +17,58 @@ header {
         z-index: 1;
     }    
     &.container {
-        padding: 0;
-        margin: 0;
+        padding-inline: 0;
+        margin-block: 0;
     }
     .header__branding {
         position: absolute;
         left: 0;
+        right: 0;
+        text-align: center;
+        pointer-events: none;
+        @media #{$mq-largeScreen} {
+            right: initial;
+            text-align: left;
+        }
         .logo {
-            z-index: 1;
-            
+            position: relative;
+            z-index: 1;            
             a {
-                display: block;
+                display: inline-block;
                 margin: 0;
-                @media #{$mq-mediumScreen}{
-                    margin: 0.938rem 0 0 1.25rem;
-                }             
+                img {
+                    max-width: 120px;
+                    aspect-ratio: 1 / 1;
+                    @media #{$mq-largeScreen} {
+                        max-width: initial;
+                        aspect-ratio: initial;
+                    }
+                }
             }
         }
     }
+    .header__utility-nav {
+        position: absolute;
+        width:100%;
+        @media #{$mq-largeScreen} {
+            position: relative;
+        }
+    }
     .header__global-search {
-        padding: 40px;
+        position: absolute;
         .fas {
             font-size: 28px;
         }
+        @media #{$mq-largeScreen} {
+            position: relative;
+            padding: 40px;
+        }
     }
     .header--nav-main {
-        display: flex;
-        justify-content: center;
-        position: relative;
+        min-height: 60px;
         @media #{$mq-mediumScreen}{
+            display: flex;
+            position: relative;
             justify-content: flex-end;
             align-items: center;
         }
@@ -87,43 +112,6 @@ header {
                             text-decoration: underline;
                             padding: 0 0.313rem;
                         }
-                    }
-                }
-            }
-            .nav--top-main {
-                @include navigationGrid(white);
-                height: 5.125rem;
-                @media #{$mq-mediumScreen}{
-                    height: 7.25rem;
-                }
-                @include customQuery(768px, 820px){
-                    height: 5.125rem;
-                }
-
-                li {
-                    padding: 0 0.625rem;
-                    @media #{$mq-mediumScreen}{
-                        padding: 0 1.875rem;
-                    }
-                    @include customQuery(768px, 980px){
-                        padding: 0 0.625rem;
-                    }
-                    &:last-child {
-                        padding-right: 1.25rem;
-                    }
-                    a {
-                        @include navigationFontStyle($navy_blue);
-                        font-size: $font-size-2;
-
-                        @include customQuery(768px, 820px){
-                            font-size: 1rem;
-                        }
-                        font-weight: 600;
-                        text-transform: uppercase;
-                        letter-spacing: 0.0625rem;
-                        &.search {
-                            font-size: 1.75rem;
-                        }               
                     }
                 }
             }
