@@ -1,0 +1,25 @@
+.utilityNav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: $light_gray;
+    &__list {
+        display: flex;
+        &--primary {
+
+        }
+    }
+    &__item {
+        &--primary {
+            margin-inline: 0px 40px;
+            padding-block: 15px;
+        }
+    }
+    &__link {
+        &--primary {
+            .fas {
+                margin-inline: 0px 10px;
+            }
+        }
+    }
+}

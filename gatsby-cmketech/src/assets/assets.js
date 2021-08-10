@@ -1,3 +1,4 @@
+import chooseMKELogo from './images/choose-mke-logo.svg';
 import heroBannerMobile from './images/mobile_header_still.png';
 import heroBannerTablet from './images/tablet_header_still.png';
 import heroVideo from './videos/SliceOfMilwaukee.mp4';
@@ -13,7 +14,7 @@ import imageGrid7 from './images/mke-estabrook.jpg';
 import imageGrid8 from './images/mke-fireworks.jpg';
 
 // Hero Assets
-export { heroVideo, heroVideo2, heroBannerMobile, heroBannerTablet };
+export { heroVideo, heroVideo2, heroBannerMobile, heroBannerTablet, chooseMKELogo };
 
 // image Grid
 export { imageGrid1, imageGrid2, imageGrid3, imageGrid4, imageGrid5, imageGrid6, imageGrid7, imageGrid8 }
