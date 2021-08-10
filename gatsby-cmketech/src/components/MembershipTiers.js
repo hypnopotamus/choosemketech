@@ -7,8 +7,13 @@ const MembershipTiers = ({}) => {
             <div className="memberships--perks">
                 <h4>INCLUDES</h4>
                 <p>Member Benefits</p>
+                <label>Company Profile Listing</label>
+                <label>Link To Job Board</label>
+                <label>Tech Company Listing</label>
+                <label>Top Job Search Placement</label>
+                <label>Job Listings</label>
             </div>
-            <div className="memberships--feature">
+            <div className="memberships--tiers">
                 <section className="memberships--feature__grid">
                     <div>
                         <h4>Premium</h4>
@@ -28,17 +33,20 @@ const MembershipTiers = ({}) => {
                     </div>
                 </section>
             </div>
-            <div class="membership--perks">NEWWWW</div>
-            <div class="memberships--feature__row">
-                <div>1111</div>
-                <div>1111</div>
-                <div>1111</div>
-                <div>1111</div>
+            <div class="memberships--features">
+                <i class="fas fa-check"></i>
+                <i class="fas fa-check"></i>
+                <i class="fas fa-check"></i>
+                <i class="fas fa-check"></i>
+                <i class="fas fa-check"></i>
+                <i class="fas fa-check"></i>
+                <i class="fas fa-check"></i>
+                <i class="fas fa-check"></i>
+                <span>Premium Placement</span>
+                <span>Premium Placement</span>
+                <span>Limited Details</span>
+                <span>Name and Location Only</span>
             </div>
-            <div class="membership--perks">NEWWWW</div>
-            <div class="membership--perks">NEWWWW</div>
-
-
         </section>
     )
 }
