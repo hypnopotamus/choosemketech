@@ -8,6 +8,7 @@
         grid-template-areas: 
         "perks tiers"
         "perks features"
+        "perks features"
         "perks features";
     }
 
@@ -27,6 +28,12 @@
         }
     }
 
+    .memberships--perks__header {
+        font-weight: bold;
+        border-bottom: 2px solid #029395;
+        padding-bottom: 1rem;
+    }
+
     .memberships--tiers {
         grid-area: tiers;
         background-color: $teal;
@@ -38,19 +45,26 @@
         grid-template-columns: repeat(4, 1fr);
         text-align: center;
         color: $black;
+        padding-top: .75rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px #D6D6D6 solid;
 
         span {
             display: block;
+            margin: .75rem;
+            margin-bottom: 0.5rem;
         }
 
         .fa-check {
             color: $success_green;
-            margin-bottom: 1rem;
+            // margin-bottom: 1rem;
+            margin: .45rem 0;
         }
 
         .fa-times {
             color: $warning_red;
-            margin-bottom: 1rem;
+            // margin-bottom: 1rem;
+            margin: .45rem 0;
         }
     }
 }
@@ -59,5 +73,24 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     text-align: center;
+
+}
+
+/* new css */
+.new-membership-grid-parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 2fr repeat(12, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    color: $black; 
+
+    .div1 { grid-area: 1 / 2 / 2 / 6; }
+.div2 { grid-area: 1 / 1 / 2 / 2; }
+.div3 { grid-area: 2 / 1 / 7 / 2; }
+.div4 { grid-area: 2 / 2 / 7 / 6; }
+.div5 { grid-area: 7 / 1 / 11 / 2; }
+.div6 { grid-area: 7 / 2 / 11 / 6; }
+.div7 { grid-area: 7 / 2 / 11 / 6; }
 
 }
