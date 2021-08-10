@@ -4,37 +4,53 @@ import { Link } from "gatsby"
 const MembershipTiers = ({}) => {
     return (
         <>
-        <section className="memberships--tier">
-            <div className="memberships--perks">
-                <h4>INCLUDES</h4>
-                <p className="memberships--perks__header">Member Benefits</p>
-                <label>Company Profile Listing</label>
-                <label>Link To Job Board</label>
-                <label>Tech Company Listing</label>
-                <label>Top Job Search Placement</label>
-                <label>Job Listings</label>
-                <p className="memberships--perks__header">Homepage Features</p>
-                <label>Profile Listing</label>
-                <label>Featured Jobs</label>
-                <label>Community Spotlight</label>
-                <p className="memberships--perks__header">
-                    Company Profile Features
-                </p>
-                <label>Social Media Links</label>
-                <label>Company Stories</label>
-                <label>Profile</label>
-            </div>
-            <section className="memberships--tiers__header ">
-                <h4>Premiere</h4>
-                <h4>Enhanced</h4>
-                <h4>Base</h4>
-                <h4>Entry</h4>
+            <section className="memberships--tier">
+                <div className="memberships--perks">
+                    <h4>INCLUDES</h4>
+                    <p className="memberships--perks__header">
+                        Member Benefits
+                    </p>
+                    <label>Company Profile Listing</label>
+                    <label>Link To Job Board</label>
+                    <label>Tech Company Listing</label>
+                    <label>Top Job Search Placement</label>
+                    <label>Job Listings</label>
+                    <p className="memberships--perks__header">
+                        Homepage Features
+                    </p>
+                    <label>Profile Listing</label>
+                    <label>Featured Jobs</label>
+                    <label>Community Spotlight</label>
+                    <p className="memberships--perks__header">
+                        Company Profile Features
+                    </p>
+                    <label>Social Media Links</label>
+                    <label>Company Stories</label>
+                    <label>Profile</label>
+                </div>
+                <section className="memberships--tiers__header">
+                    <div>
+                        <h4>Premiere</h4>
+                        <span>For enterprises tech companies</span>
+                    </div>
+                    <div>
+                        <h4>Enhanced</h4>
+                        <span>For mid to large tech employers</span>
+                    </div>
+                    <div>
+                        <h4>Base</h4>
+                        <span>For small tech employers</span>
+                    </div>
+                    <div>
+                        <h4>Entry</h4>
+                        <span>For startups + engaged community members</span>
+                    </div>
+                </section>
             </section>
-        </section>
 
-            <section  className="memberships--features">
+            <section className="memberships--features">
                 <div>
-                <i class="fas fa-check"></i>
+                    <i class="fas fa-check"></i>
                 </div>
             </section>
         </>
@@ -80,7 +96,7 @@ Back up
                         <span>For small tech employers</span>
                     </div>
                     <div>
-                        <h4>Premium</h4>
+                        <h4>Entry</h4>
                         <span>For startups + engaged community members</span>
                     </div>
                 </section>

@@ -1,5 +1,7 @@
 .memberships--tier {
-    display: flex;
+    // display: flex;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     color: $white;
 
     @media #{$mq-mediumScreen} {
@@ -17,11 +19,13 @@
         color: $white;
     }
 
+    // Left Side
     .memberships--perks {
         display: block;
         background-color: $navy-blue;
-        padding: 2rem;
+        padding: 1rem .5rem;
         position: sticky;
+        width: 100%;
 
         @media #{$mq-mediumScreen} {
             grid-area: perks;
@@ -44,14 +48,25 @@
     // Membership Tier Headers
     .memberships--tiers__header {
         display: flex;
+        align-items: end;
         justify-content: space-between;
         overflow:auto;
-        height: 4rem;
+        height: 7.5rem;
+        padding: 1.5rem;
         background-color: $teal;
         padding: 1rem;
 
         h4 {
             margin: 0 1rem;
+        }
+
+        div {
+            margin: 0 1rem;
+        }
+
+        div span {
+            text-align: center;
+            line-height: 1.2;
         }
 
         @media #{$mq-mediumScreen} {
