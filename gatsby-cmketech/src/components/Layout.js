@@ -42,7 +42,7 @@ const Layout = ({ children, bodyClass }) => {
         <JobCarousel />
       </main>
 
-      
+      <Footer />
 
     </div>
   )
