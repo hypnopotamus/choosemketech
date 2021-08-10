@@ -13,11 +13,19 @@
 
     .memberships--perks {
         background-color: $navy-blue;
+        padding: 1.5rem 4rem;
     }
 
     .memberships--feature {
         background-color: $teal;
         padding: 1rem;
+    }
+
+    .memberships--feature__row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        text-align: center;
+        background-color: black;
     }
 }
 

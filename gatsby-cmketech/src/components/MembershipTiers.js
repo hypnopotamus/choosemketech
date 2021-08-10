@@ -5,7 +5,7 @@ const MembershipTiers = ({}) => {
     return (
         <section className="memberships--tier container">
             <div className="memberships--perks">
-                <div>INCLUDES</div>
+                <h4>INCLUDES</h4>
                 <p>Member Benefits</p>
             </div>
             <div className="memberships--feature">
@@ -29,7 +29,12 @@ const MembershipTiers = ({}) => {
                 </section>
             </div>
             <div class="membership--perks">NEWWWW</div>
-            <div class="membership--perks">NEWWWW</div>
+            <div class="memberships--feature__row">
+                <div>1111</div>
+                <div>1111</div>
+                <div>1111</div>
+                <div>1111</div>
+            </div>
             <div class="membership--perks">NEWWWW</div>
             <div class="membership--perks">NEWWWW</div>
 
