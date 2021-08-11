@@ -30,9 +30,6 @@ const Layout = ({ children, bodyClass }) => {
       <MenuModal isActive={backdropActive} toggleBackdrop={toggleBackdrop} />
 
       <main id="site-content" role="main">
-        {
-          children
-        }
         <Hero />
         <div className="container">
           <IntroCopy />
