@@ -67,7 +67,7 @@ const MembershipTiers = ({}) => {
 
     return (
         <>
-            <section class="tier-grid-container ">
+            <section class="tier-grid-container container">
                 {/* PERKS */}
                 <div class="tier-grid--perks">
                     <div>
@@ -83,16 +83,22 @@ const MembershipTiers = ({}) => {
                     </div>
                 </div>
                 <div class="tier-grid--tiers">
-                    <h4>Enhanced</h4>
-                    <p>For mid to large tech employers</p>
+                    <div>
+                        <h4>Enhanced</h4>
+                        <p>For mid to large tech employers</p>
+                    </div>
                 </div>
                 <div class="tier-grid--tiers">
-                    <h4>Base</h4>
-                    <p>For small tech employers</p>
+                    <div>
+                        <h4>Base</h4>
+                        <p>For small tech employers</p>
+                    </div>
                 </div>
                 <div class="tier-grid--tiers">
-                    <h4>Entry</h4>
-                    <p>For startups + engaged community members</p>
+                    <div>
+                        <h4>Entry</h4>
+                        <p>For startups + engaged community members</p>
+                    </div>
                 </div>
                 <div class="tier-grid--perks">
                     <p>Company Profile Listing</p>
@@ -110,6 +116,7 @@ const MembershipTiers = ({}) => {
                 <div class="tier-grid--features">
                     <i class="fas fa-check"></i>
                 </div>
+                {/* New Cycle */}
                 <div class="tier-grid--perks">
                     <p>Link to Job Board</p>
                 </div>
@@ -124,6 +131,182 @@ const MembershipTiers = ({}) => {
                 </div>
                 <div class="tier-grid--features">
                     <i class="fas fa-check"></i>
+                </div>
+                {/* New Cycle */}
+                <div class="tier-grid--perks">
+                    <p>Tech Company Listing</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>Premium Placement</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>Featured</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>Limited Details</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>Name and Location only</p>
+                </div>
+                {/* New Cycle */}
+                <div class="tier-grid--perks">
+                    <p>Top Job Search Placement</p>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-times"></i>
+                </div>
+                {/* New Cycle */}
+                <div class="tier-grid--perks">
+                    <p>Job Listings</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>12/month</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>7/month</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>2/month</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>Available for purchase</p>
+                </div>
+                {/* New Cycle */}
+                <div class="tier-grid--perks">
+                    <h4>Homepage Features</h4>
+                </div>
+                <div class="tier-grid--features" id="testingGrid">
+                    <p>-</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>-</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>-</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>-</p>
+                </div>
+                {/* New Cycle */}
+                <div class="tier-grid--perks">
+                    <p>Profile Listing</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>4/year</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>2/year</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>1/year</p>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-times"></i>
+                </div>
+                {/* New Cycle */}
+                <div class="tier-grid--perks">
+                    <p>Featured Jobs</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>2/month</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>1/month</p>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-times"></i>
+                </div>
+                {/* New Cycle */}
+                <div class="tier-grid--perks">
+                    <p>Community Spotlight</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>2/month</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>1/month</p>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-times"></i>
+                </div>
+                {/* New Cycle */}
+                <div class="tier-grid--perks">
+                    <h4>Company Profile Features</h4>
+                </div>
+                <div class="tier-grid--features" id="testingGrid">
+                    <p>-</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>-</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>-</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>-</p>
+                </div>
+                {/* New Cycle */}
+                <div class="tier-grid--perks">
+                    <p>Social Media Links</p>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-times"></i>
+                </div>
+                {/* New Cycle */}
+                <div class="tier-grid--perks">
+                    <p>Company Stories</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>5 stories</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>3 stories</p>
+                </div>
+                <div class="tier-grid--features">
+                    <p>1 stories</p>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-times"></i>
+                </div>
+                {/* New Cycle */}
+                <div class="tier-grid--perks">
+                    <p>Profile Analytics</p>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-times"></i>
                 </div>
             </section>
         </>
