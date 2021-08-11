@@ -28,6 +28,8 @@ header {
         pointer-events: none;
         @media #{$mq-largeScreen} {
             right: initial;
+            left: 40px;
+            top: 15px;
             text-align: left;
         }
         .logo {
@@ -50,23 +52,31 @@ header {
     .header__utility-nav {
         position: absolute;
         width:100%;
+        -webkit-transform: translateY(-120%);
+        transform: translateY(-120%);
         @media #{$mq-largeScreen} {
             position: relative;
+            -webkit-transform: translateY(0%);
+            transform: translateY(0%);
         }
     }
     .header__global-search {
         position: absolute;
+        -webkit-transform: translateY(-120%);
+        transform: translateY(-120%);
         .fas {
             font-size: 28px;
         }
         @media #{$mq-largeScreen} {
             position: relative;
             padding: 40px;
+            -webkit-transform: translateY(0%);
+            transform: translateY(0%);
         }
     }
     .header--nav-main {
         min-height: 60px;
-        @media #{$mq-mediumScreen}{
+        @media #{$mq-largeScreen}{
             display: flex;
             position: relative;
             justify-content: flex-end;
@@ -91,29 +101,26 @@ header {
                 margin-left: 0.625rem;
                 display: inline-block;
             }            
-            @media #{$mq-mediumScreen}{
+            @media #{$mq-largeScreen}{
                 display: none;
             }
         }
         nav {
+            transition: 500ms;
             width: 100%;
-            
-            @media #{$mq-mediumScreen}{
+            position: absolute;
+            z-index: 1;
+            -webkit-transform: translateY(-120%);
+            transform: translateY(-120%);
+            @media #{$mq-largeScreen}{
                 display: block;
+                position: relative;
+                -webkit-transform: translateY(0%);
+                transform: translateY(0%);
             }
-            .nav--top-references {
-                @include navigationGrid($light_gray);
-                li {
-                    padding: 0 0.938rem;
-                    a {
-                        @include navigationFontStyle($navy_blue);
-                        letter-spacing: 0.02rem;
-                        span {
-                            text-decoration: underline;
-                            padding: 0 0.313rem;
-                        }
-                    }
-                }
+            &.nav-open {
+                -webkit-transform: translateY(20vh);
+                transform: translateY(20vh);
             }
         }
     }

@@ -2,16 +2,18 @@ import React, { useState } from "react"
 import { useMenuQuery } from "../hooks/useMenuQuery"
 import { Link } from "gatsby"
 
-const Navigation = () => {
+const Navigation = ({ toggleNav }) => {
     const  { wpMenu }  = useMenuQuery()
     const [subNavShow, setSubNavShow] = useState(null)
 
-    const handleNavClick = (i) => {
+    const handleNavClick = (e,i) => {
+        e.preventDefault();
         if (subNavShow === i) {
             return setSubNavShow(null)
         }
         setSubNavShow(i)
     }
+    console.log(toggleNav)
 
     const SubMenu = ({ data }) => {
         return (
@@ -45,7 +47,7 @@ const Navigation = () => {
     return (
         <nav
             id="nav"
-            className="header__nav nav__wrapper"
+            className={`header__nav nav__wrapper ${ toggleNav ? "nav-open" : " "}` }
             aria-label="site navigation"
             role="navigation"
         >
@@ -74,8 +76,8 @@ const Navigation = () => {
                                 {mainItem.label}
                                 {mainItem.childItems.nodes.length !== 0 && (
                                     <span
-                                        onClick={() => {
-                                            handleNavClick(mainItem.id)
+                                        onClick={(e) => {
+                                            handleNavClick(e,mainItem.id)
                                         }}
                                         onKeyDown={() => handleNavEnter(mainItem.id)}
                                         className="nav__link__child-toggle"

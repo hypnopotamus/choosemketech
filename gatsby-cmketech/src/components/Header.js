@@ -1,20 +1,18 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import Navigation from "./Navigation"
 import UtilityNav from "./UtilityNav"
 import { chooseMKELogo } from "../assets/assets";
 
+
 const Header = ({ pageContext, toggleBackdrop, ...props }) => {
-  const { wp } = useStaticQuery(graphql`
-    {
-      wp {
-        generalSettings {
-          title
-          description
-        }
-      }
-    }
-  `)
+  
+  const [displayMobileNav, setDisplayedMobileNav] = useState(false)
+
+  const handleMenuClick = () => {
+    setDisplayedMobileNav(!displayMobileNav);
+  }
+
   return (
     <header id="site-header" className="header-footer-group container header" role="banner">
       <div className="header__utility-nav">
@@ -34,7 +32,7 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
           data-toggle-body-class="showing-menu-modal"
           aria-expanded="false"
           data-set-focus=".close-nav-toggle"
-          onClick={(e) => toggleBackdrop(e, true)}>
+          onClick={() => (handleMenuClick())}>
           <span className="toggle-inner">
             <span className="toggle-icon">
               <i className="fas fa-bars"></i>
@@ -42,7 +40,9 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
             <span className="toggle-text">Menu</span>
           </span>
         </button>
-        <Navigation />
+        <Navigation 
+          toggleNav={displayMobileNav}
+        />
         <div className="header__global-search">
           <i className="fas fa-search"></i>
         </div>
