@@ -72,7 +72,9 @@ const MembershipTiers = ({}) => {
                 <div class="tier-grid--perks">
                     <div>
                         <h4>Includes</h4>
-                        <h4>Member Benefits</h4>
+                        <h4 className="tier-grid--perks__header">
+                            Member Benefits
+                        </h4>
                     </div>
                 </div>
                 {/* TIERS */}
@@ -182,7 +184,9 @@ const MembershipTiers = ({}) => {
                 </div>
                 {/* New Cycle */}
                 <div class="tier-grid--perks">
-                    <h4>Homepage Features</h4>
+                    <h4 className="tier-grid--perks__header">
+                        Homepage Features
+                    </h4>
                 </div>
                 <div class="tier-grid--features" id="testingGrid">
                     <p>-</p>
@@ -246,7 +250,9 @@ const MembershipTiers = ({}) => {
                 </div>
                 {/* New Cycle */}
                 <div class="tier-grid--perks">
-                    <h4>Company Profile Features</h4>
+                    <h4 className="tier-grid--perks__header">
+                        Company Profile Features
+                    </h4>
                 </div>
                 <div class="tier-grid--features" id="testingGrid">
                     <p>-</p>
