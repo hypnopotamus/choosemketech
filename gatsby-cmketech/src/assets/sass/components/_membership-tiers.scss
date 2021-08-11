@@ -51,7 +51,7 @@
         padding: 1rem 0;
     }
 
-    // Membership Tier Headers
+    // Membership Tier Headers RIGHT SIDE TOP
     .memberships--tiers__header {
         display: flex;
         align-items: end;
@@ -78,11 +78,12 @@
         }
     }
 
-    //Membership features
+    //Membership features RIGHT SIDE BOTTOM
     .memberships--features {
         display: flex;
         grid-area: features;
         width: 100%;
+        background-color: #000;
 
         @media #{$mq-mediumScreen} {
             display: grid;
@@ -115,5 +116,63 @@
                 margin: 0.45rem 0;
             }
         }
+    }
+}
+
+/* New attempt */
+
+.tier-grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 5rem;
+}
+
+.tier-grid--perks {
+    color: white;
+    background-color: #0d223f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+
+    h4 {
+        color: white;
+        text-transform: uppercase;
+    }
+}
+
+.tier-grid--tiers {
+    text-align: center;
+    background-color: #029395;
+    color: white;
+
+    h4 {
+        color: white;
+        margin-bottom: 0;
+    }
+
+    div { 
+        margin: 0
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.tier-grid-container .tier-grid--tiers:nth-child(1) {
+    margin-left: 1rem;
+}
+
+
+.tier-grid--features {
+    text-align: center;
+    // border: 2px solid #000;
+    padding: 1.5rem 0;
+
+    .fa-check {
+        color: $success_green;
+        font-size: 1.5rem;
     }
 }

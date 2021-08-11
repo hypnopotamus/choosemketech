@@ -2,158 +2,132 @@ import React from "react"
 import { Link } from "gatsby"
 
 const MembershipTiers = ({}) => {
+    const TIER_DATA = [
+        {
+            tier: "Includes",
+            subtext: "Member Benefits",
+            company_profile_listing: "Company Profile Listing",
+            link_job_board: "Link to Job Board",
+            tech_company_listing: "Tech Company Listing",
+            top_job_search_placement: "Top Job Search Placement",
+            job_listings: "Job Listings",
+            profile_listing: "Profile Listing",
+            featured_jobs: "Featured Jobs",
+            community_spotlight: "Community Spotlight",
+        },
+        {
+            tier: "PREMIUM",
+            subtext: "For mid to large tech employers",
+            company_profile_listing: true,
+            link_job_board: true,
+            tech_company_listing: "Premium Placement",
+            top_job_search_placement: true,
+            job_listings: "12/months",
+            profile_listing: "4/year",
+            featured_jobs: "2/month",
+            community_spotlight: "2/month",
+        },
+        {
+            tier: "ENHANCED",
+            subtext: "For mid to large tech employers",
+            company_profile_listing: true,
+            link_job_board: true,
+            tech_company_listing: "Featured",
+            top_job_search_placement: true,
+            job_listings: "7/months",
+            profile_listing: "2/year",
+            featured_jobs: "1/month",
+            community_spotlight: "1/month",
+        },
+        {
+            tier: "BASE",
+            subtext: "For small tech employers",
+            company_profile_listing: true,
+            link_job_board: true,
+            tech_company_listing: "Limited Details",
+            top_job_search_placement: false,
+            job_listings: "2/month",
+            profile_listing: "1/year",
+            featured_jobs: false,
+            community_spotlight: false,
+        },
+        {
+            tier: "ENTRY",
+            subtext: "For startups + engaged community members",
+            company_profile_listing: true,
+            link_job_board: true,
+            tech_company_listing: "Name and Location only",
+            top_job_search_placement: false,
+            job_listings: "Available for purchase",
+            profile_listing: false,
+            featured_jobs: false,
+            community_spotlight: false,
+        },
+    ]
+
     return (
         <>
-            <div className="memberships--tier">
-                <section className="memberships--perks">
-                    <h4>INCLUDES</h4>
-                    <p className="memberships--perks__header">
-                        Member Benefits
-                    </p>
-                    <label>Company Profile Listing</label>
-                    <label>Link To Job Board</label>
-                    <label>Tech Company Listing</label>
-                    <label>Top Job Search Placement</label>
-                    <label>Job Listings</label>
-                    <p className="memberships--perks__header">
-                        Homepage Features
-                    </p>
-                    <label>Profile Listing</label>
-                    <label>Featured Jobs</label>
-                    <label>Community Spotlight</label>
-                    <p className="memberships--perks__header">
-                        Company Profile Features
-                    </p>
-                    <label>Social Media Links</label>
-                    <label>Company Stories</label>
-                    <label>Profile</label>
-                </section>
-                <section className="memberships--tiers__header">
+            <section class="tier-grid-container ">
+                {/* PERKS */}
+                <div class="tier-grid--perks">
                     <div>
-                        <h4>Premiere</h4>
-                        <span>For enterprises tech companies</span>
+                        <h4>Includes</h4>
+                        <h4>Member Benefits</h4>
                     </div>
+                </div>
+                {/* TIERS */}
+                <div class="tier-grid--tiers">
                     <div>
-                        <h4>Enhanced</h4>
-                        <span>For mid to large tech employers</span>
+                        <h4>Premium</h4>
+                        <p>For enterprise tech companies</p>
                     </div>
-                    <div>
-                        <h4>Base</h4>
-                        <span>For small tech employers</span>
-                    </div>
-                    <div>
-                        <h4>Entry</h4>
-                        <span>For startups + engaged community members</span>
-                    </div>
-                </section>
-                <section className="memberships--features">
+                </div>
+                <div class="tier-grid--tiers">
+                    <h4>Enhanced</h4>
+                    <p>For mid to large tech employers</p>
+                </div>
+                <div class="tier-grid--tiers">
+                    <h4>Base</h4>
+                    <p>For small tech employers</p>
+                </div>
+                <div class="tier-grid--tiers">
+                    <h4>Entry</h4>
+                    <p>For startups + engaged community members</p>
+                </div>
+                <div class="tier-grid--perks">
+                    <p>Company Profile Listing</p>
+                </div>
+                {/* FEATURES */}
+                <div class="tier-grid--features">
                     <i class="fas fa-check"></i>
+                </div>
+                <div class="tier-grid--features">
                     <i class="fas fa-check"></i>
+                </div>
+                <div class="tier-grid--features">
                     <i class="fas fa-check"></i>
+                </div>
+                <div class="tier-grid--features">
                     <i class="fas fa-check"></i>
+                </div>
+                <div class="tier-grid--perks">
+                    <p>Link to Job Board</p>
+                </div>
+                <div class="tier-grid--features">
                     <i class="fas fa-check"></i>
-
-                </section>
-            </div>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="tier-grid--features">
+                    <i class="fas fa-check"></i>
+                </div>
+            </section>
         </>
     )
 }
 
 export default MembershipTiers
-
-/*
-Back up 
-         <section className="memberships--tier container">
-            <div className="memberships--perks">
-                <h4>INCLUDES</h4>
-                <p className="memberships--perks__header">Member Benefits</p>
-                <label>Company Profile Listing</label>
-                <label>Link To Job Board</label>
-                <label>Tech Company Listing</label>
-                <label>Top Job Search Placement</label>
-                <label>Job Listings</label>
-                <p className="memberships--perks__header">Homepage Features</p>
-                <label>Profile Listing</label>
-                <label>Featured Jobs</label>
-                <label>Community Spotlight</label>
-                <p className="memberships--perks__header">
-                    Company Profile Features
-                </p>
-                <label>Social Media Links</label>
-                <label>Company Stories</label>
-                <label>Profile</label>
-            </div>
-            <div className="memberships--tiers__header">
-                <section className="memberships--feature__grid">
-                    <div>
-                        <h4>Premium</h4>
-                        <span>For enterprises tech companies</span>
-                    </div>
-                    <div>
-                        <h4>Enhanced</h4>
-                        <span>For mid to large tech employers</span>
-                    </div>
-                    <div>
-                        <h4>Base</h4>
-                        <span>For small tech employers</span>
-                    </div>
-                    <div>
-                        <h4>Entry</h4>
-                        <span>For startups + engaged community members</span>
-                    </div>
-                </section>
-            </div>
-            <div class="memberships--features">
-                <i class="fas fa-check"></i>
-                <i class="fas fa-check"></i>
-                <i class="fas fa-check"></i>
-                <i class="fas fa-check"></i>
-                <i class="fas fa-check"></i>
-                <i class="fas fa-check"></i>
-                <i class="fas fa-check"></i>
-                <i class="fas fa-check"></i>
-                <span>Premium Placement</span>
-                <span>Premium Placement</span>
-                <span>Limited Details</span>
-                <span>Name and Location Only</span>
-                <i class="fas fa-check"></i>
-                <i class="fas fa-check"></i>
-                <i class="fas fa-times"></i>
-                <i class="fas fa-times"></i>
-                <span>12/month</span>
-                <span>7/month</span>
-                <span>2/month</span>
-                <span>Available for purchase</span>
-            </div>
-            <div class="memberships--features">
-                <span>4/year</span>
-                <span>2/year</span>
-                <span>1/year</span>
-                <i class="fas fa-times"></i>
-                <span>2/month</span>
-                <span>1/month</span>
-                <i class="fas fa-times"></i>
-                <i class="fas fa-times"></i>
-                <span>2/month</span>
-                <span>1/month</span>
-                <i class="fas fa-times"></i>
-                <i class="fas fa-times"></i>
-            </div>
-            <div class="memberships--features">
-                <i class="fas fa-check"></i>
-                <i class="fas fa-check"></i>
-                <i class="fas fa-times"></i>
-                <i class="fas fa-times"></i>
-                <span>5 stories</span>
-                <span>3 stories</span>
-                <span>1 stories</span>
-                <i class="fas fa-times"></i>
-                <i class="fas fa-check"></i>
-                <i class="fas fa-check"></i>
-                <i class="fas fa-times"></i>
-                <i class="fas fa-times"></i>
-            </div>
-        </section>
-
- 
-        */
