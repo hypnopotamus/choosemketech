@@ -13,7 +13,7 @@ const jobs = ({ data }) => {
       bodyClass={`page-template-default page page-id-${databaseId} wp-embed-responsive singular missing-post-thumbnail has-no-pagination not-showing-comments footer-top-visible customize-support`}
     >
     
-    <h1 className="entry-title" dangerouslySetInnerHTML={{ __html: title }} />
+    <h1 className="entry-title JOBS" dangerouslySetInnerHTML={{ __html: title }} />
 
     </Layout>
   )
