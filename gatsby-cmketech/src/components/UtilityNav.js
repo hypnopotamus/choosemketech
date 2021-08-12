@@ -5,6 +5,7 @@ import { useUtilityNavQuery } from "../hooks/useUtilityNavQuery"
 const UtilityNav = () => {
     const { wpMenu } = useUtilityNavQuery()
     console.log(wpMenu)
+    window.MemberStack.reload();
     return(
         <div className="utilityNav">
             <ul
