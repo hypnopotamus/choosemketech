@@ -15,6 +15,5 @@ export const onClientEntry = () => {
 }
 
 export const onInitialClientRender = () => {
-    console.log("ReactDOM.render has executed");
-    window.MemberStack.reload();
+    console.log("ReactDOM.render has executed");    
 }
