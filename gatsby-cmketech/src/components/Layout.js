@@ -27,6 +27,7 @@ const Layout = ({ children, bodyClass }) => {
 
   return (
     <div id={"GatsbyBody"} className={ bodyClass + " showing-menu-modal showing-modal" + (backdropActive ? backdropClasses : "") } >
+      {children}
       <Helmet>
         <link rel="icon" href={favicon} />
         <script type="text/javascript">
@@ -34,7 +35,7 @@ const Layout = ({ children, bodyClass }) => {
         </script>
       </Helmet>
       
-      <Seo />
+      <Seo title={title} />
 
       <Header toggleBackdrop={toggleBackdrop} />
 
