@@ -19,7 +19,7 @@ const UtilityNav = () => {
                             className="utilityNav__item utilityNav__item--primary">
                                 <Link 
                                 className="utilityNav__link utilityNav__link--primary"
-                                to="/">
+                                to={mainItem.url}>
                                     <i className={
                                         mainItem.cssClasses.join(' ')
                                     }></i>
