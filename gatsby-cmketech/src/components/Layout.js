@@ -34,7 +34,7 @@ const Layout = ({ children, bodyClass }) => {
         </script>
       </Helmet>
       
-      <Seo title={title} description={excerpt} socialImage={featuredImage?.node} uri={uri} />
+      <Seo title={title} description={excerpt} />
 
       <Header toggleBackdrop={toggleBackdrop} />
 
