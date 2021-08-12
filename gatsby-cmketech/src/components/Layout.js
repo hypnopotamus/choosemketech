@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import favicon from '../images/favicon.ico'
-import Helmet from 'react-helmet'
 import Header from "./Header";
 import Hero from "./Hero";
 import IntroCopy from "./IntroCopy";
@@ -18,7 +16,6 @@ import ThreeColumn from "./ThreeColumn";
 const backdropClasses = " backdrop"
 
 const Layout = ({ children, bodyClass }) => {
-  
   const [backdropActive, setBackdropActive] = useState(false)
 
   const toggleBackdrop = (e, active) => {
