@@ -12,6 +12,7 @@ import CommunityListing from "./CommunityListing";
 import MenuModal from "./MenuModal"
 import ImageCopy from "./ImageCopy";
 import ThreeColumn from "./ThreeColumn";
+import Seo from "./Seo";
 
 const backdropClasses = " backdrop"
 
@@ -26,13 +27,8 @@ const Layout = ({ children, bodyClass }) => {
 
   return (
     <div id={"GatsbyBody"} className={ bodyClass + " showing-menu-modal showing-modal" + (backdropActive ? backdropClasses : "") } >
-      <Helmet>
-        <title>Choose MKE Tech | </title>
-        <link rel="icon" href={favicon} />
-        <script>
-          window.Memberstack.reload();
-        </script>
-      </Helmet>
+      
+      <Seo />
 
       <Header toggleBackdrop={toggleBackdrop} />
 
