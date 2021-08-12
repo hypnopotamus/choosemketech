@@ -13,3 +13,7 @@ export const onClientEntry = () => {
         memberStackScript("https://api.memberstack.io/static/memberstack.js?custom")
     }
 }
+
+exports.onInitialClientRender = () => {
+    console.log("ReactDOM.render has executed")
+}
