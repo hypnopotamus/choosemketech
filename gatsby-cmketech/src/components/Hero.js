@@ -8,7 +8,7 @@ const Hero = ({}) => {
         <>
         <div className="hero hero--banner container">
             <div className="row">
-                <video autoPlay={true} className="hero--banner__video" loop="yes" muted="yes" poster="images/hero-placeholder.png">
+                <video autoPlay={true} className="hero--banner__video" loop="yes" muted="yes" poster="../assets/images/hero-placeholder.png">
                     <source src={heroVideo} type="video/mp4" />
                     <source src={heroVideo2} type="video/webm" />
                 </video>
