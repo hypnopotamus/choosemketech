@@ -35,8 +35,6 @@ const Layout = ({ children, bodyClass }) => {
         </script>
       </Helmet>
       
-      <Seo title={title} />
-
       <Header toggleBackdrop={toggleBackdrop} />
 
       <MenuModal isActive={backdropActive} toggleBackdrop={toggleBackdrop} />
