@@ -168,12 +168,13 @@
 
 .hasChild {
     .nav__list--secondary {
-        max-height: 0 !important;
+        transition: 500ms;
+        max-height: 0;
         @media #{$mq-largeScreen} {
-            max-height: none !important;
+            max-height: none;
         }
         &.showSubNav {
-            max-height: none !important;
+            max-height: none;
         }
     }
     

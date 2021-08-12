@@ -13,12 +13,12 @@ const UtilityNav = () => {
                 {wpMenu.menuItems.nodes.map((mainItem) =>
                     !mainItem.parentId ? (
                         <li
+                            role="menuitem"
                             key={mainItem.id}
-                            tabIndex="0"
                             className="utilityNav__item utilityNav__item--primary">
                                 <Link 
                                 className="utilityNav__link utilityNav__link--primary"
-                                to="/">
+                                to={mainItem.url}>
                                     <i className={
                                         mainItem.cssClasses.join(' ')
                                     }></i>

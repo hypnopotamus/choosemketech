@@ -1,22 +1,37 @@
 .utilityNav {
     width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    background-color: $light_gray;
+    display: flex;    
+    justify-content: flex-start;    
+    @media #{$mq-largeScreen} {
+        justify-content: flex-end;
+        background-color: $light_gray;    
+    }
     &__list {
         display: flex;
+        flex-direction: column;
+        width: 100%;
+        @media #{$mq-largeScreen} {
+            flex-direction: row;
+            justify-content: flex-end;
+        }
         &--primary {
 
         }
     }
     &__item {
         &--primary {
-            margin-inline: 0px 40px;
-            padding-block: 15px;
+            padding: 25px;
+            background-color: $light_gray;
+            margin-top: 5px;
+            @media #{$mq-largeScreen} {
+                padding-block: 15px;
+                margin-top: 0;
+            }
         }
     }
     &__link {
         &--primary {
+            color: $navy_blue;
             .fas {
                 margin-inline: 0px 10px;
             }
