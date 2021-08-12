@@ -14,7 +14,7 @@ const page = ({ data }) => {
     >
       <Helmet>
         <script type="text/javascript">
-          window.Memberstack.reload();
+          window.MemberStack.reload();
         </script>
       </Helmet>
 
