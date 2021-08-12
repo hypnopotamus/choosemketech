@@ -68,15 +68,21 @@
                 flex-direction: row;
                 justify-content: flex-start;
             }
-
+            button:first-child, .button:first-child{
+                margin-inline-start: 0px;
+            }
             button, a{
                 margin-block:  10px;
                 min-width: unset;
-                width: 100%;
                 text-align: center;
                 @media #{$mq-largeScreen}{
-                    width: unset;
                     margin-inline: 10px;
+                }
+            }
+            button {
+                width: 100%;
+                @media #{$mq-largeScreen}{
+                    width: unset;
                 }
             }
         }
@@ -85,15 +91,18 @@
         .slick-dots {
             left: 0;
             padding: 0px 20px;
-            top: 200px;
+            top: 155px;
             @include customQuery(400px, 450px){
-                top: 240px;
+                top: 185px;
             }
             @media #{$mq-mediumScreen}{
                 max-width: 100%;
                 top: 350px;
             }
-            @media #{$mq-largeScreen}{
+            @include customQuery(1025px,1400px){
+                max-width: 45%;
+            }
+            @media #{$mq-xxLargeScreen}{
                 max-width: 45%;
                 bottom: 15px;
                 top: unset;

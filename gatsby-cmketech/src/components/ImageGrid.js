@@ -141,7 +141,7 @@ const ImageGrid = ({ }) => {
                     )
                 })}
             </Slider>
-            <div class="gallery">
+            <div className="gallery">
                 {gallery.map((image, index) => {
                     return (
                         <div className={image.gridArea} key={index}>

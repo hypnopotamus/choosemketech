@@ -37,14 +37,10 @@ const Layout = ({ children, bodyClass }) => {
           <Cards />
           <ImageGrid />
           <Accordion />
+          <ImageCopy />
         </div>
         <ThreeColumn />
         <JobCarousel />
-        <Cards />
-        <ImageGrid />
-        <Accordion />
-        <CommunityListing />
-        <ImageCopy />
       </main>
 
       <Footer />

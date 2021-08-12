@@ -50,8 +50,8 @@ const CommunityListing = ({}) => {
     ]
 
     return (
-        <section className="Community-Listing container">
-            <ul className="Community-Listing--lists">
+        <section className="community-listing container">
+            <ul className="community-listing--lists">
                 <p>Other Choose MKE Tech Members</p>
                 {MOCK_DATA.map((listing, index) => {
                     return (
@@ -62,12 +62,12 @@ const CommunityListing = ({}) => {
                 })}
             </ul>
             <section>
-                <div className="Community-Listing--cta">
+                <div className="community-listing--cta cl-cta-upgrade">
                     <h3>Want more prominence in the search results?</h3>
                     <p>Upgrade your profile today to see your logo!</p>
                     <button class="button--tertiary">Upgrade my profile</button>
                 </div>
-                <div className="Community-Listing--cta" id="recruit">
+                <div className="community-listing--cta cl-cta-recruit">
                     <h3>Are you an advocate for technology in Milwaukee?</h3>
                     <p>
                         Join Choose MKE Tech and see your company listed in the

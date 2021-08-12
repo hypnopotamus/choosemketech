@@ -1,4 +1,4 @@
-.Community-Listing {
+.community-listing {
     @media #{$mq-largeScreen} {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -13,7 +13,7 @@
         }
     }
 
-    .Community-Listing--lists p {
+    .community-listing--lists p {
         color: $navy_blue;
         font-size: $font-size-2;
         font-weight: bold;
@@ -33,15 +33,14 @@
         }
     }
 
-    .Community-Listing--cta {
-        background-image: url("../images/ad-bg-1.jpg");
+    .community-listing--cta {
         background-repeat: no-repeat;
         color: $white;
         padding: 7.5rem 2.5rem;
         margin: 1rem 0;
 
         @media only screen and (min-width: 768px) and (max-width: 1024px) {
-            background-image: url("../images/ad-bg-1-tablet.jpg");
+            background-image: url("../images/ad-bg-1-tablet.png");
             padding-top: 13rem;
         }
 
@@ -58,13 +57,17 @@
             color: $light_yellow;
         }
 
-        &#recruit {
-            background-image: url("../images/ad-bg-2.jpg");
+        &.cl-cta-upgrade {
+            background-image: url('../images/ad-bg-2.png');
+        }
+
+        &.cl-cta-recruit {
+            background-image: url("../images/ad-bg-2.png");
             background-repeat: no-repeat;
-            color: #000;
+            color: $black;
 
             @media only screen and (min-width: 768px) and (max-width: 1024px) {
-                background-image: url("../images/ad-bg-2-tablet.jpg");
+                background-image: url("../images/ad-bg-2-tablet.png");
                 padding-top: 15rem;
             }
 
