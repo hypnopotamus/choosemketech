@@ -29,7 +29,7 @@ const Layout = ({ children, bodyClass }) => {
     <div id={"GatsbyBody"} className={ bodyClass + " showing-menu-modal showing-modal" + (backdropActive ? backdropClasses : "") } >
       <Helmet>
         <link rel="icon" href={favicon} />
-        <script>
+        <script type="text/javascript">
           window.Memberstack.reload();
         </script>
       </Helmet>
