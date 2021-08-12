@@ -41,6 +41,7 @@ const Layout = ({ children, bodyClass }) => {
         </div>
         <ThreeColumn />
         <JobCarousel />
+        <CommunityListing />
       </main>
 
       <Footer />
