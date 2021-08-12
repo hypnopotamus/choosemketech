@@ -26,7 +26,13 @@ const Layout = ({ children, bodyClass }) => {
 
   return (
     <div id={"GatsbyBody"} className={ bodyClass + " showing-menu-modal showing-modal" + (backdropActive ? backdropClasses : "") } >
+      <Helmet>
+        <title>Choose MKE Tech | </title>
         <link rel="icon" href={favicon} />
+        <script>
+          window.Memberstack.reload();
+        </script>
+      </Helmet>
 
       <Header toggleBackdrop={toggleBackdrop} />
 
