@@ -14,12 +14,6 @@ export const onClientEntry = () => {
     }
 }
 
-// export const onInitialClientRender = () => {
-//     console.log("ReactDOM.render has executed");    
-// }
-
-export const onRouteUpdate = ({ location, prevLocation }) => { 
-    window.reload = () => {
-        memberStackScript("https://api.memberstack.io/static/memberstack.js?custom")
-    }
+export const onInitialClientRender = () => {
+    window.MemberStack.reload
 }
