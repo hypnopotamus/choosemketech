@@ -4,7 +4,7 @@ import { useUtilityNavQuery } from "../hooks/useUtilityNavQuery"
 
 const UtilityNav = () => {
     const { wpMenu } = useUtilityNavQuery()
-
+    console.log(wpMenu)
     return(
         <div className="utilityNav">
             <ul
