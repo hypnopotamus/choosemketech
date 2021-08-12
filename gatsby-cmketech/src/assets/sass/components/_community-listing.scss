@@ -45,14 +45,9 @@
         padding: 6.5rem 2.5rem;
         margin: 2.5rem 0;
 
-<<<<<<< HEAD
         @media only screen and (min-width: 768px) and (max-width: 1024px) {
             background-image: url("../images/ad-bg-1-tablet.png");
             padding-top: 13rem;
-=======
-        &:first-child {
-            margin-bottom: 1rem;
->>>>>>> 9fc7f6f2c55647a6d24b2ad826d9478673fe8335
         }
 
         @media #{$mq-mediumScreen} {
@@ -82,15 +77,9 @@
             background-repeat: no-repeat;
             color: $black;
 
-<<<<<<< HEAD
             @media only screen and (min-width: 768px) and (max-width: 1024px) {
                 background-image: url("../images/ad-bg-2-tablet.png");
                 padding-top: 15rem;
-=======
-            @media #{$mq-mediumScreen} {
-                background-image: url("../images/ad-bg-2-large.jpg");
-                padding-top: 13.5rem;
->>>>>>> 9fc7f6f2c55647a6d24b2ad826d9478673fe8335
             }
 
             h3 {
