@@ -9,9 +9,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby WordPress Twenty Twenty`,
-    description: `Gatsby starter site for Twenty Twenty Gatsby Theme.`,
-    author: `@henrikwirth`,
+    title: `Choose MKE Tech`,
+    description: `Tech Website`,
+    author: `@stephendeo`,
     siteUrl: process.env.SITE_URL,
   },
   plugins: [
