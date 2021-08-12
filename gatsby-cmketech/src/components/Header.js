@@ -23,7 +23,7 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
       <div className="header__branding">
         <div className="logo">
             <Link to="/">
-              <span>Choose MKE Tech</span>
+              <img src={chooseMKELogo} alt="Choose MKE Tech Logo" />
             </Link>
           </div>
       </div>
