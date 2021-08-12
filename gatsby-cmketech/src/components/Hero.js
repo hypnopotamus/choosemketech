@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "gatsby";
+import IntroCopy from "./IntroCopy";
 import { heroVideo, heroVideo2, heroBannerMobile, heroBannerTablet } from "../assets/assets";
+import HeroPlaceholder from "../assets/images/hero-placeholder.png";
 
 const Hero = ({}) => {
     return (
+        <>
         <div className="hero hero--banner container">
             <div className="row">
-                <video autoPlay={true} className="hero--banner__video" loop="yes" muted="yes" poster="images/hero-placeholder.png">
+                <video autoPlay={true} className="hero--banner__video" loop="yes" muted="yes" poster={HeroPlaceholder}>
                     <source src={heroVideo} type="video/mp4" />
                     <source src={heroVideo2} type="video/webm" />
                 </video>
@@ -16,6 +19,8 @@ const Hero = ({}) => {
                 </div>
             </div>
         </div>
+        <IntroCopy heroModifier={true} />
+        </>
     )
 }
 

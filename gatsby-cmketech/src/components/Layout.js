@@ -1,21 +1,24 @@
 import React, { useState } from "react";
+import favicon from '../assets/images/favicon.png'
+import Helmet from 'react-helmet'
 import Header from "./Header";
 import Hero from "./Hero";
-import IntroCopy from "./IntroCopy";
-import CardCopy from "./CardCopy";
 import JobCarousel from "./JobCarousel";
 import ImageGrid from "./ImageGrid";
 import Cards from "./Cards";
 import Footer from "./Footer";
 import Accordion from "./Accordion";
+import CommunityListing from "./CommunityListing";
 import MenuModal from "./MenuModal"
 import ImageCopy from "./ImageCopy";
 import ThreeColumn from "./ThreeColumn";
 import MembershipTiers from "./MembershipTiers";
+import Seo from "./Seo";
 
 const backdropClasses = " backdrop"
 
 const Layout = ({ children, bodyClass }) => {
+  
   const [backdropActive, setBackdropActive] = useState(false)
 
   const toggleBackdrop = (e, active) => {
@@ -25,6 +28,7 @@ const Layout = ({ children, bodyClass }) => {
 
   return (
     <div id={"GatsbyBody"} className={ bodyClass + " showing-menu-modal showing-modal" + (backdropActive ? backdropClasses : "") } >
+      {children}
 
       <Header toggleBackdrop={toggleBackdrop} />
 
@@ -33,7 +37,6 @@ const Layout = ({ children, bodyClass }) => {
       <main id="site-content" role="main">
         <Hero />
         <div className="container">
-          <IntroCopy />
           <Cards />
           <ImageGrid />
           <Accordion />
@@ -42,6 +45,7 @@ const Layout = ({ children, bodyClass }) => {
         <ThreeColumn />
         <JobCarousel />
         <MembershipTiers />
+        <CommunityListing />
       </main>
 
       <Footer />

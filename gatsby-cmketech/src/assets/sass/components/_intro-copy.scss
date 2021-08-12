@@ -1,28 +1,57 @@
-.intro-copy {
+.intro-copy, .intro {
     position: relative;
     top: -7rem;
-    left: 0;
-    right: 0;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     background-color: $white;
     border-top: 5px solid $blue;
-    width: 82%;
     padding: 1rem;
     box-shadow: $box-shadow;
+
+    &--hero{
+        z-index: 10;
+        max-width: 85%;
+    
+        @media #{$mq-largeScreen} {
+            max-width: 100%;
+            z-index: 0;
+            top: 0;
+        }
+    }
+
+    button,
+    .button {
+        &:first-of-type {
+            margin-inline-start: 0;
+        }
+    }
+    p {
+        margin-bottom: 1.75rem;
+        color: #000;
+
+        @media #{$mq-largeScreen} {
+            width: 80%;
+            margin: 1rem auto;
+        }
+    }
 
     @media #{$mq-largeScreen} {
         position: static;
         border: none;
         width: 100%;
-        box-shadow: none;
-        padding: 0 10rem;
+        margin-top: 0;
+        padding: 0 10rem 2rem 10rem;
 
         button.button--primary {
             display: block;
             text-align: center;
             margin: 0 auto;
         }
+    }
+
+    h2 {
+        margin: 0;
+        padding-top: 2.5rem;
     }
 }
