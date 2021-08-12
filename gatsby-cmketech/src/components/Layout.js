@@ -8,6 +8,7 @@ import ImageGrid from "./ImageGrid";
 import Cards from "./Cards";
 import Footer from "./Footer";
 import Accordion from "./Accordion";
+import CommunityListing from "./CommunityListing";
 import MenuModal from "./MenuModal"
 import ImageCopy from "./ImageCopy";
 import ThreeColumn from "./ThreeColumn";
@@ -39,6 +40,7 @@ const Layout = ({ children, bodyClass }) => {
         </div>
         <ThreeColumn />
         <JobCarousel />
+        <CommunityListing />
       </main>
 
       <Footer />

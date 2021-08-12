@@ -38,6 +38,18 @@ button,
             color: $white;
         }
     }
+    &--tertiary {
+        color: $white;
+        background-color: transparent;
+        border: 2px solid $white;
+        &:visited {
+            color: $white;
+        }
+        &:hover {
+            background-color: $white;
+            color: $navy_blue;
+        }
+    }
     &--external {
         &:after {
             content:"\f35d";
