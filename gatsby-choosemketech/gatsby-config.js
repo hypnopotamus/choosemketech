@@ -25,15 +25,16 @@ module.exports = {
        */
       resolve: `gatsby-source-wordpress`,
       options: {
-        options: {
         auth: {
           htaccess: {
-            username: process.env.HTTPBASICAUTH_USERNAME || `choosemketechedit`,
-            password: process.env.HTTPBASICAUTH_PASSWORD || `eK3yHSinoVqN`,
+            username: `choosemketechedit`,
+            password: `eK3yHSinoVqN`,
           }
         },
         // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WPGRAPHQL_URL || `https://edit.choosemketech.org/graphql`,
+        url:
+          process.env.WPGRAPHQL_URL ||
+          `https://edit.choosemketech.org/graphql`,
       },
     },
 
