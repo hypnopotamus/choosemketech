@@ -13,9 +13,3 @@ export const onClientEntry = () => {
         memberStackScript("https://api.memberstack.io/static/memberstack.js?custom")
     }
 }
-
-export const onRouteUpdate = ({ location, prevLocation }) => { 
-    window.reload = () => {
-        memberStackScript("https://api.memberstack.io/static/memberstack.js?custom")
-    }
-}
