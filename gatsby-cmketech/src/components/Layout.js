@@ -32,6 +32,10 @@ const Layout = ({ children, bodyClass }) => {
 
       <main id="site-content" role="main">
         <Hero />
+
+        {children}
+
+        
         <div className="container">
           <Cards />
           <ImageGrid />
