@@ -1,7 +1,7 @@
 const path = require(`path`)
 const glob = require(`glob`)
 
-const createBlog = require(`./create/createBlog`)
+
 const createContentTypes = require(`./create/createContentTypes`)
 const createCategories = require(`./create/createCategories`)
 const createAuthors = require(`./create/createAuthors`)
@@ -27,7 +27,7 @@ exports.createPages = async (props) => {
   const templates = getTemplates()
 
   await createContentTypes(props, { templates })
-  await createBlog(props, { perPage, blogURI })
+
   await createCategories(props, { perPage })
   await createAuthors(props, { perPage })
 }

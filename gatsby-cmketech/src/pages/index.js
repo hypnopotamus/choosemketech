@@ -5,7 +5,7 @@ import Hero from "../components/Hero"
 
 const IndexPage = () => (
   <Layout>
-    <Seo title="Home" />
+    <Seo title="Home Page" />
     <Hero />
   </Layout>
 )
