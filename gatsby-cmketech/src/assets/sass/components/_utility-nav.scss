@@ -14,9 +14,6 @@
             flex-direction: row;
             justify-content: flex-end;
         }
-        &--primary {
-
-        }
     }
     &__item {
         &--primary {
@@ -32,6 +29,9 @@
     &__link {
         &--primary {
             color: $navy_blue;
+            &:visited{
+                color: $navy_blue;
+            }
             .fas {
                 margin-inline: 0px 10px;
             }
