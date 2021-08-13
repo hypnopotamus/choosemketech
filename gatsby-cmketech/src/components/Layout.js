@@ -31,7 +31,7 @@ const Layout = ({ children, bodyClass }) => {
       <MenuModal isActive={backdropActive} toggleBackdrop={toggleBackdrop} />
 
       <main id="site-content" role="main">
-        <Hero />
+        {children}
         <div className="container">
           <Cards />
           <ImageGrid />
