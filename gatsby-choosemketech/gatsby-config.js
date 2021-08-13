@@ -27,8 +27,8 @@ module.exports = {
       options: {
         auth: {
           htaccess: {
-            username: `choosemketechedit`,
-            password: `eK3yHSinoVqN`,
+            username: "choosemketechedit",
+            password: "eK3yHSinoVqN",
           }
         },
         // the only required plugin option for WordPress is the GraphQL url.
