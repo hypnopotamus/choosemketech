@@ -12,6 +12,7 @@ import ThreeColumn from "../components/ThreeColumn";
 
 const IndexPage = () => (
   <Layout>
+    fdafdafdsa
     <Seo title="Home Page" />
     <Hero />
 
