@@ -34,16 +34,6 @@ const Layout = ({ children, bodyClass }) => {
 
         {children}
 
-        
-        <div className="container">
-          <Cards />
-          <ImageGrid />
-          <Accordion />
-          <ImageCopy />
-        </div>
-        <ThreeColumn />
-        <JobCarousel />
-        <CommunityListing />
       </main>
 
       <Footer />

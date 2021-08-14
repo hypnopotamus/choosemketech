@@ -7,6 +7,16 @@ const IndexPage = () => (
   <Layout>
     <Seo title="Home Page" />
     <Hero />
+
+    <div className="container">
+      <Cards />
+      <ImageGrid />
+      <Accordion />
+      <ImageCopy />
+    </div>
+    <ThreeColumn />
+    <JobCarousel />
+    <CommunityListing />    
   </Layout>
 )
 
