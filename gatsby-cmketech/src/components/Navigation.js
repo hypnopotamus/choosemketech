@@ -2,11 +2,12 @@ import React, { useState } from "react"
 import { useMenuQuery } from "../hooks/useMenuQuery"
 import { Link } from "gatsby"
 
-const Navigation = () => {
-    const  { wpMenu }  = useMenuQuery()
+const Navigation = ({ toggleNav }) => {
+    const { wpMenu } = useMenuQuery()
     const [subNavShow, setSubNavShow] = useState(null)
 
-    const handleNavClick = (i) => {
+    const handleNavClick = (e, i) => {
+        e.preventDefault()
         if (subNavShow === i) {
             return setSubNavShow(null)
         }
@@ -25,7 +26,6 @@ const Navigation = () => {
                 {data.childItems.nodes.map((childItem) => (
                     <li
                         key={childItem.id}
-                        tabIndex="0"
                         role="menuitem"
                         className="nav__item nav__item--secondary"
                     >
@@ -45,7 +45,9 @@ const Navigation = () => {
     return (
         <nav
             id="nav"
-            className="header__nav nav__wrapper"
+            className={`header__nav nav__wrapper ${
+                toggleNav ? "nav-open" : " "
+            }`}
             aria-label="site navigation"
             role="navigation"
         >
@@ -58,7 +60,6 @@ const Navigation = () => {
                     !mainItem.parentId ? (
                         <li
                             key={mainItem.id}
-                            tabIndex="0"
                             role="menuitem"
                             className={`nav__item nav__item--primary ${
                                 mainItem.childItems.nodes.length !== 0
@@ -67,17 +68,19 @@ const Navigation = () => {
                             }`}
                         >
                             <Link
-                                to={mainItem.url}
                                 className="nav__link nav__link--primary"
                                 activeClassName="active"
+                                to={mainItem.url}
                             >
                                 {mainItem.label}
                                 {mainItem.childItems.nodes.length !== 0 && (
                                     <span
-                                        onClick={() => {
-                                            handleNavClick(mainItem.id)
+                                        onClick={(e) => {
+                                            handleNavClick(e, mainItem.id)
                                         }}
-                                        onKeyDown={() => handleNavEnter(mainItem.id)}
+                                        onKeyDown={() =>
+                                            handleNavEnter(mainItem.id)
+                                        }
                                         className="nav__link__child-toggle"
                                     >
                                         <i className="fas fa-caret-down"></i>
