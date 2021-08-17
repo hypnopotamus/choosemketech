@@ -1,0 +1,138 @@
+.form {
+    &-field {
+        display: flex;
+        flex-direction: column;
+        label {
+            font-family: 'Inter', sans-serif;
+            margin-block: 10px 0px;
+            @include fluid-type(320px, 768px, 16px, 16px);
+        }
+        &--error {
+            color: $warning_red;
+            font-family: "Inter-Bold", sans-serif;
+            font-style: italic;
+            margin: 0;
+        }
+        &__input-container {
+            display: flex;
+            align-items: center;
+            .fa-exclamation-triangle {
+                color: $warning_red;
+                font-size: 21px;
+                padding: 10px
+            }
+        }
+        &__password-field {
+            position: relative;
+            &__button {
+                position: absolute;
+                padding: 5px;
+                min-width: 0;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                margin-inline: 1px;
+                background: $white;
+            }
+            &__hide-button {
+                .fas {
+                    opacity: 0.5;
+                }
+            }
+        }
+        input {
+            padding: 10px;
+            border: 1px solid $medium_gray;
+            margin-block: 10px;
+            @include fluid-type(320px, 768px, 16px, 16px);
+            min-height: 40px;
+            font-family: 'Inter', sans-serif;
+            width: 100%;
+            position: relative;
+            &.half-width {
+                width: 50%;
+            }
+        }
+        &.checkbox {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            .form-field__input-container {
+                input {
+                    min-height: 18px;
+                    width: 18px;
+                    margin-inline: 5px;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    -o-appearance: none;
+                    appearance: none;
+                    &:checked {
+                        background-color: $teal;
+                        &:before { 
+                            content: "\f00c";
+                            font-family: "Font Awesome 5 Free";
+                            font-size: 14px;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 0;
+                            color: $white;
+                            text-align: center;
+                            width: 100%; 
+                        }
+                    }
+                }
+            }
+        }
+        &.form-slider {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            .form-field__toggle {
+                display: inline-block;
+                width: 60px;
+                height: 25px;
+                position: relative;
+                input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+            }
+            .slider-toggle {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #7b7b7b;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+            .slider-toggle:before {
+                position: absolute;
+                content: "";
+                height: 18px;
+                width: 18px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+            
+            input:checked + .slider-toggle {
+                background-color: #00648a;
+            }
+            
+            input:focus + .slider-toggle {
+                box-shadow: 0 0 1px #00648a;
+            }
+            
+            input:checked + .slider-toggle:before {
+                -webkit-transform: translateX(32px);
+                -ms-transform: translateX(32px);
+                transform: translateX(32px);
+            }
+        }
+    }
+}
