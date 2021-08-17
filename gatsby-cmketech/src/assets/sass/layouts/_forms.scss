@@ -53,7 +53,7 @@
                 width: 50%;
             }
         }
-        &.checkbox {
+        &.checkbox, &.radio {
             flex-direction: row-reverse;
             justify-content: flex-end;
             .form-field__input-container {
@@ -78,6 +78,25 @@
                             color: $white;
                             text-align: center;
                             width: 100%; 
+                        }
+                    }
+                }
+            }
+        }
+        &.radio {
+            .form-field__input-container {
+                input {
+                    border-radius: 15px;
+                    &:checked {
+                        background-color: transparent;
+                        &:before {
+                            content: "";
+                            margin: 0 auto;
+                            right: 0;
+                            background: $teal;
+                            height: 12px;
+                            width: 12px;
+                            border-radius: 15px;
                         }
                     }
                 }
