@@ -1,7 +1,7 @@
 import React from "react"
 import Slider from "react-slick"
 
-const ImageCopy = ({}) => {
+const ImageCopy = ({flip}) => {
   var settings = {
     dots: true,
     arrows: false,
@@ -18,7 +18,7 @@ const ImageCopy = ({}) => {
     ],
   }
   return (
-    <div className="imageCopy">
+    <div className="imageCopy" className={flip ? `imageCopy imageCopy--reversed` : `imageCopy`}>
       <div className="imageCopy__heading">
         <h2>Header</h2>
       </div>
