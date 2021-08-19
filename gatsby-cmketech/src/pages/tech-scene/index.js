@@ -5,7 +5,9 @@ import Layout from "../../components/Layout";
 const TechScene = () => (
     <Layout>
         <Seo title="Tech Scene Page" />
-        <h1>Tech Scene Page</h1>
+        <div className="container">
+          <h1>Tech Scene Page</h1>
+        </div>
     </Layout>
   )
   
