@@ -65,7 +65,7 @@ const CommunityListing = ({}) => {
                 <div className="community-listing--cta cl-cta-upgrade">
                     <h3>Want more prominence in the search results?</h3>
                     <p>Upgrade your profile today to see your logo!</p>
-                    <button class="button--tertiary">Upgrade my profile</button>
+                    <button className="button--tertiary">Upgrade my profile</button>
                 </div>
                 <div className="community-listing--cta cl-cta-recruit">
                     <h3>Are you an advocate for technology in Milwaukee?</h3>
@@ -73,7 +73,7 @@ const CommunityListing = ({}) => {
                         Join Choose MKE Tech and see your company listed in the
                         search results.
                     </p>
-                    <button class="button--secondary">Recruit with us</button>
+                    <button className="button--secondary">Recruit with us</button>
                 </div>
             </section>
         </section>

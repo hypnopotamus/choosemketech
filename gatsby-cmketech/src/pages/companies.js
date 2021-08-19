@@ -5,7 +5,9 @@ import Layout from "../components/Layout";
 const Companies = () => (
     <Layout>
         <Seo title="Companies Page" />
-        <h1>Companies Header</h1>
+        <div className="container">
+          <h1>Companies Header</h1>
+        </div>
     </Layout>
   )
   

@@ -5,7 +5,9 @@ import Layout from "../components/Layout";
 const WhyMilwaukee = () => (
     <Layout>
         <Seo title="Why Milwaukee Page" />
-        <h1>Why Milwaukee Header</h1>
+        <div className="container">
+          <h1>Why Milwaukee Header</h1>
+        </div>
     </Layout>
   )
   

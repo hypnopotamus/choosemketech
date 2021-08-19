@@ -5,7 +5,9 @@ import Layout from "../../components/Layout";
 const Networking = () => (
     <Layout>
         <Seo title="Networking Page" />
-        <h1>Networking Header</h1>
+        <div className="container">
+          <h1>Networking Header</h1>
+        </div>
     </Layout>
   )
   
