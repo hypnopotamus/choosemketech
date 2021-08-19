@@ -5,9 +5,9 @@ const Subscription = ({}) => {
     return (
         <div className="subscription">
             <form>
-                <label for="subscribe">Stay In the Loop!</label>
+                <label htmlFor="subscribe">Stay In the Loop!</label>
                 <div className="input--group">
-                    <input type="text" value="" id="subscribe" placeholder="email@address.com"/>
+                    <input type="text" defaultValue="" id="subscribe" placeholder="email@address.com"/>
                     <button type="submit" className="">Sign Up</button>
                 </div>
             </form>

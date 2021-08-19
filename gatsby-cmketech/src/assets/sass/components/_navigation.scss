@@ -42,7 +42,7 @@
             background: $white;
             &.active {
                 color: $teal;
-                border-bottom: 7px solid $teal;
+                box-shadow: 0px 4px 0px #029395;
             }
         }
         &--secondary {
