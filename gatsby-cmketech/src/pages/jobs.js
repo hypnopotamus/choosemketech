@@ -7,6 +7,7 @@ const Jobs = () => (
     <Layout>
         <Seo title="Jobs Page" />
         <div className="container">
+          <h1>Explore tech companies in Milwaukee</h1>
           <Cards />
         </div>
     </Layout>
