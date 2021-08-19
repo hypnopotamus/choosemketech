@@ -12,6 +12,12 @@ const FormInput = ({
     error,
     children,
     label,
+    email,
+    hidden,
+    file,
+    number,
+    tel,
+    memberstack,
     ...props
 }) => {
     const [passwordShown, setPasswordShown] = useState(false)
@@ -33,6 +39,7 @@ const FormInput = ({
                             value={value}
                             className={className}
                             style={error && { border: "solid 1px #B11030" }}
+                            data-ms-form={memberstack}
                         ></textarea>
                         {error && (
                             <i className="fas fa-exclamation-triangle"></i>
@@ -55,6 +62,7 @@ const FormInput = ({
                             value={value}
                             className={className}
                             style={error && { border: "solid 1px #B11030" }}
+                            data-ms-form={memberstack}
                         />
                         {error && (
                             <i className="fas fa-exclamation-triangle"></i>
@@ -78,6 +86,7 @@ const FormInput = ({
                                 value={value}
                                 className={className}
                                 style={error && { border: "solid 1px #B11030" }}
+                                data-ms-form={memberstack}
                             />
                             {passwordShown ? (
                                 <button
@@ -120,6 +129,7 @@ const FormInput = ({
                                 value={value}
                                 className={className}
                                 style={error && { border: "solid 1px #B11030" }}
+                                data-ms-form={memberstack}
                             />
                             <span className="slider-toggle"></span>
                             {error && (
@@ -143,6 +153,7 @@ const FormInput = ({
                                 value={value}
                                 className={className}
                                 style={error && { border: "solid 1px #B11030" }}
+                                data-ms-form={memberstack}
                             />
                             {error && (
                                 <i className="fas fa-exclamation-triangle"></i>
@@ -166,6 +177,7 @@ const FormInput = ({
                             value={value}
                             className={className}
                             style={error && { border: "solid 1px #B11030" }}
+                            data-ms-form={memberstack}
                         />
                         {error && (
                             <i className="fas fa-exclamation-triangle"></i>
@@ -207,6 +219,7 @@ const FormInput = ({
                                     style={
                                         error && { border: "solid 1px #B11030" }
                                     }
+                                    data-ms-form={memberstack}
                                 >
                                     <option value="">Select option</option>
                                     {children.map((option) => (

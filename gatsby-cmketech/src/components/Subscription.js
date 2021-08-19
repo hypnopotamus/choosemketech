@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import FormInput from "./FormInput"
 
 const Subscription = ({}) => {
     return (
@@ -7,7 +7,7 @@ const Subscription = ({}) => {
             <form>
                 <label for="subscribe">Stay In the Loop!</label>
                 <div className="input--group">
-                    <input type="text" value="" id="subscribe" placeholder="email@address.com"/>
+                    <FormInput type="date" id="subscribe" placeholder="email@address.com" />
                     <button type="submit" className="">Sign Up</button>
                 </div>
             </form>
