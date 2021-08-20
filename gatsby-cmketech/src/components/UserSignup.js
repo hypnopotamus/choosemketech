@@ -23,11 +23,12 @@ const UserSignup = forwardRef((props,ref) => {
     const JobForm = () => {
         return (
             <div className="user-signup__form user-signup__form--job">
-                <div className="user-signup__">
-
+                <div className="user-signup__content">
+                    <img className="user-signup__logo" src={userLogo} />
+                    <h3>Create a Profile</h3>
+                    <a href="#">Already have an account? Login</a>
                 </div>
-                <img className="user-signup__logo" src={userLogo} />
-                <form>
+                <form className="form">
                     <FormInput 
                         name="email"
                         type="text"
@@ -63,10 +64,11 @@ const UserSignup = forwardRef((props,ref) => {
     const RecruitForm = () => {
         return (
             <div className="user-signup__form user-signup__form--job">
-                <div className="user-signup__">
-
+                <div className="user-signup__content">
+                    <img className="user-signup__logo" src={recruitLogo} />
+                    <h3>Recruit with Us</h3>
+                    <a href="#">Already have an account? Login</a>
                 </div>
-                <img className="user-signup__logo" src={userLogo} />
                 <form>                    
                 </form>
             </div>

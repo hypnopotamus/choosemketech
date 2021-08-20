@@ -41,11 +41,25 @@
 
         }
     }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0px 0px;
+    }
     &__logo {
         max-width: 150px;
         aspect-ratio: 1;
         object-fit: contain;
-        margin: 0 auto;   
+    }
+    .form {
+        padding: 30px 100px;
+        .checkbox {
+            padding-bottom: 10px;
+            &:last-of-type{
+                padding-bottom: 0;
+            }
+        }
     }
     &__actions {
         padding: 30px 25px 10px;
