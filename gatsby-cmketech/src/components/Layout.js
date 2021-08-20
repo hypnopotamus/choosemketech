@@ -21,7 +21,7 @@ const Layout = ({ children, bodyClass }) => {
       </button>
 
       <Modal ref={modalRef1} modalType="user">
-        <UserSignup ref={modalRef1} />
+        <UserSignup ref={modalRef1} formDisplayed="job-form"/>
       </Modal>
       
       <main id="site-content" role="main">

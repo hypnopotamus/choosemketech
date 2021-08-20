@@ -13,8 +13,14 @@ import imageGrid6 from './images/mke-collectivo.jpg';
 import imageGrid7 from './images/mke-estabrook.jpg';
 import imageGrid8 from './images/mke-fireworks.jpg';
 
+import recruitLogo from './images/recruit-icon.png';
+import userLogo from './images/user-account-logo.png';
+
 // Hero Assets
 export { heroVideo, heroVideo2, heroBannerMobile, heroBannerTablet, chooseMKELogo };
 
 // image Grid
 export { imageGrid1, imageGrid2, imageGrid3, imageGrid4, imageGrid5, imageGrid6, imageGrid7, imageGrid8 }
+
+//Form Assets
+export { recruitLogo, userLogo };
