@@ -27,6 +27,11 @@ const UtilityNav = () => {
                             </li>
                     ) : null
                 )}
+                <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="members">
+                    <a href="javascript:;" className="utilityNav__link utilityNav__link--primary">
+                        <i className="fas fa-user-circle"></i><span data-ms-member="name"></span>
+                    </a>
+                </li>
             </ul>
         </div>
     )
