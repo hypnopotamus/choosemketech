@@ -1,36 +1,65 @@
 .subscription {
-    form {
-         label {
-            font-size: 1.125rem;
-            font-family: 'Inter';
-            font-weight: 500;
-            display: block;
-        }
-        input {
-            border: 1px solid $white;
+    label {
+        font-size: 1.125rem;
+        font-family: 'Inter';
+        font-weight: 500;
+        display: block;
+    }
+    .ctct-inline-form {
+        margin-block-start: 20px;
+        .ctct-form-defaults {
+            background-color: transparent !important;
             border-radius: 0;
-            background-color: transparent;
-            padding: 0.625rem;
-            width: 100%;
-            @media #{$mq-mediumScreen}{
-                width: auto;
+            padding: 0;
+            .ctct-form-custom {
+                display: flex;
+                min-height: auto;
+                input[type="email"] {
+                    border: 1px solid $white;
+                    border-radius: 0;
+                    background-color: transparent;
+                    padding: 0.625rem;
+                    width: 100%;
+                    height: auto;              
+                    color: $white;
+                    line-height: normal;
+                    @media #{$mq-mediumScreen}{
+                        width: auto;
+                    }
+                    &::placeholder {
+                        color: rgba($white, 0.5);
+                    }                    
+                }
+                .ctct-form-field {
+                    margin: 0;
+                }
+                button[type="submit"] {
+                    border: 1px solid $white;
+                    color: $navy_blue;
+                    background-color: $white;
+                    min-width: auto;
+                    margin: 0;
+                    white-space: nowrap;
+                    padding: 5px 10px;      
+                    text-transform: uppercase;
+                    height: auto;              
+                }
             }
-            &::placeholder {
-                color: rgba($white, 0.5);
+            .ctct-form-errorMessage,
+            .ctct-form-footer,
+            #gdpr_text,
+            .ctct-form-text,
+            .ctct-form-label {
+                display: none !important;
             }
-        }
-        button {
-            border: 1px solid $white;
-            color: $navy_blue;
-            background-color: $white;
-            min-width: auto;
-            margin: 0;
-            white-space: nowrap;
-            padding: 5px 10px;
-        }
-        .input--group {
-            margin-block-start: 20px;
-            display: flex;
+            .ctct-form-button {
+                padding: 0;
+                border-radius: 0;
+            }
         }
     }
+}
+
+.g-recaptcha {
+    display: none !important;
 }
