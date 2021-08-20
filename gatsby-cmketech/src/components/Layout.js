@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Helmet from "react-helmet";
+import favicon from '../assets/images/favicon.png'
 
 import MenuModal from "../components/MenuModal"
 
@@ -20,6 +21,9 @@ const Layout = ({ children, bodyClass }) => {
     <div id={"GatsbyBody"} className={ bodyClass + " showing-menu-modal showing-modal" + (backdropActive ? backdropClasses : "") } >
 
       <Header toggleBackdrop={toggleBackdrop} />
+      <Helmet>
+        <link rel="icon" href={favicon} />
+      </Helmet>
 
       <MenuModal isActive={backdropActive} toggleBackdrop={toggleBackdrop} />
 
