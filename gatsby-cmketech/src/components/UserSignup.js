@@ -5,10 +5,14 @@ const UserSignup = forwardRef((props,ref) => {
     
     return (
         <div className="user-signup">
-            <div className="user-signup__close">X</div>
+            <div className="user-signup__close">
+                <button href="#" onClick={()=>ref.current.closeModal()}>
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
             <div className="user-signup__tab-group">
                 <div className="user-signup__tab-group-tab">
-                    <a href="#">I'm Looking for a Job</a>
+                    <a href="#" className="active">I'm Looking for a Job</a>
                 </div>
                 <div className="user-signup__tab-group-tab">
                     <a href="#">I'm Looking to Recruit</a>

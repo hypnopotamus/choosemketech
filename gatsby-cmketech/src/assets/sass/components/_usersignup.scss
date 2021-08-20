@@ -2,5 +2,42 @@
     background-color: $white;
     min-width: 800px;
     border-top: 8px solid $navy_blue;
-    padding: 20px 0px;
+    padding: 0px 0px 20px 0px;
+    &__close {
+        display: flex;
+        justify-content: flex-end;
+        button {
+            padding: 15px;
+            margin: 0px;
+            background: none;
+            min-width: 0;
+        }
+    }
+    &__tab-group {
+        display: flex;
+        justify-content: space-evenly;
+        &-tab {
+            text-transform: uppercase;
+            a {
+                font-family: "Inter-Bold", sans-serif;
+                font-weight: 900;
+                color: $navy_blue;
+                text-decoration: none;
+                letter-spacing: 0.7px;
+                &:hover, &:focus {
+                    color: $teal;
+                }
+                &:visited {
+                    color: $navy_blue;
+                }
+                &.active {
+                    color: $teal;
+                    border-bottom: 7px solid $teal;
+                    padding-bottom: 5px;
+                }
+            }
+            
+
+        }
+    }
 }

@@ -23,17 +23,6 @@ const Layout = ({ children, bodyClass }) => {
       <Modal ref={modalRef1} modalType="user">
         <UserSignup ref={modalRef1} />
       </Modal>
-
-      <button onClick={
-        () => modalRef2.current.openModal()
-      }>
-        Modal 2 button
-      </button>
-
-      <Modal ref={modalRef2} modalType="user">
-        <h1>Woah! A new Modal!</h1>
-        <UserSignup ref={modalRef1} />
-      </Modal>
       
       <main id="site-content" role="main">
 
