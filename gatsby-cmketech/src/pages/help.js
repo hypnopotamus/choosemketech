@@ -2,18 +2,18 @@ import React from "react";
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 
-const Companies = () => {
+const Help = () => {
 
   return (
     <Layout>
-        <Seo title="Companies Page" />
+        <Seo title="Help Page" />
         <div className="container">
-          <h1>Companies Header</h1>
+          <h1>Help</h1>
         </div>
     </Layout>
   )
   
 }
   
-export default Companies;
+export default Help;
   

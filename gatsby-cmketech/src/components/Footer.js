@@ -9,11 +9,11 @@ const Footer = ({}) => {
           <div className="footer--social__wrapper">
             <h4>Stay Connected</h4>
             <div className="footer--social__icons">
-                <Link to="https://www.linkedin.com/company/mketech/" target="_blank"><i className="fab fa-linkedin-in"></i><span>LinkedIn</span></Link>
-                <Link to="http://mke-slack.herokuapp.com/" target="_blank"><i className="fab fa-slack"></i><span>Slack</span></Link>
-                <Link to="https://twitter.com/MKETechHub" target="_blank"><i className="fab fa-twitter"></i><span>Twitter</span></Link>
-                <Link to="https://www.facebook.com/mketechhub/" target="_blank"><i className="fab fa-facebook-f"></i><span>Facebook</span></Link>
-                <Link to="https://www.instagram.com/mketechhubcoalition/" target="_blank"><i className="fab fa-instagram"></i><span>Instagram</span></Link>
+                <a href="https://www.linkedin.com/company/mketech/" target="_blank"><i className="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+                <a href="http://mke-slack.herokuapp.com/" target="_blank"><i className="fab fa-slack"></i><span>Slack</span></a>
+                <a href="https://twitter.com/MKETechHub" target="_blank"><i className="fab fa-twitter"></i><span>Twitter</span></a>
+                <a href="https://www.facebook.com/mketechhub/" target="_blank"><i className="fab fa-facebook-f"></i><span>Facebook</span></a>
+                <a href="https://www.instagram.com/mketechhubcoalition/" target="_blank"><i className="fab fa-instagram"></i><span>Instagram</span></a>
             </div>
           </div>
       </div>
@@ -35,9 +35,9 @@ const Footer = ({}) => {
                 <p><strong>About</strong></p>
                 <ul>
                     <li><Link to="/"><span>About Choose MKE Tech</span></Link></li>
-                    <li><Link to="/"><span>MKE Tech Coalition <i className="fas fa-external-link-square-alt"></i></span></Link></li>
-                    <li><Link to="/"><span>Reverse Pitch MKE <i className="fas fa-external-link-square-alt"></i></span></Link></li>
-                    <li><Link to="/"><span>RPM: High School Edition <i className="fas fa-external-link-square-alt"></i></span></Link></li>
+                    <li><a href="https://www.mketech.org/" target="_blank"><span>MKE Tech Coalition <i className="fas fa-external-link-square-alt"></i></span></a></li>
+                    <li><a href="https://www.mketech.org/" target="_blank"><span>Reverse Pitch MKE <i className="fas fa-external-link-square-alt"></i></span></a></li>
+                    <li><a href="https://www.mketech.org/" target="_blank"><span>RPM: High School Edition <i className="fas fa-external-link-square-alt"></i></span></a></li>
                 </ul>
               </li>
               <li>
@@ -58,7 +58,7 @@ const Footer = ({}) => {
           </ul>
         </div>
         <Link to="/" className="footer--logo mobile"><span>MKE Tech</span></Link>
-        <p className="footer--copyright">&copy; 2021 MKE Tech Hub Coalition. All Rights Reserved. | Visit <Link to="">mketech.org</Link> | Photos courtesy of <Link to="">Visit Milwaukee</Link></p>
+        <p className="footer--copyright">&copy; 2021 MKE Tech Hub Coalition. All Rights Reserved. | Visit <a href="https://www.mketech.org" target="_blank">mketech.org</a> | Photos courtesy of <a href="https://www.mketech.org" target="_blank">Visit Milwaukee</a></p>
       </div>            
     </footer>
     // <footer id="site-footer" role="contentinfo" className="header-footer-group">

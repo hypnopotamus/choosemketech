@@ -4,26 +4,27 @@ import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import JobCarousel from "../components/JobCarousel";
 import ImageGrid from "../components/ImageGrid";
-import Cards from "../components/Cards";
-import Accordion from "../components/Accordion";
-import CommunityListing from "../components/CommunityListing";
 import ImageCopy from "../components/ImageCopy";
 import ThreeColumn from "../components/ThreeColumn";
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home Page" />
-    <Hero />
-    <div className="container">
-      <Cards />
+const IndexPage = () => {
+
+  return (
+    <Layout>
+      <Seo />
+      <Hero />
+      <ThreeColumn />
+      <div className="container">
+        <ImageCopy />
+      </div>
+      <JobCarousel />
+      <div className="container">
+        <ImageCopy flip={true} />
+      </div>
       <ImageGrid />
-      <Accordion />
-      <ImageCopy />
-    </div>
-    <ThreeColumn />
-    <JobCarousel />
-    <CommunityListing />    
-  </Layout>
-)
+    </Layout>
+  )
+  
+}
 
 export default IndexPage

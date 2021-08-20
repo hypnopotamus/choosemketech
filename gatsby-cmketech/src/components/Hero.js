@@ -1,10 +1,6 @@
 import React from "react";
 import IntroCopy from "./IntroCopy";
-import { heroVideo, heroVideo2, heroBannerMobile, heroBannerTablet } from "../assets/assets";
-import HeroPlaceholder from "../assets/images/hero-placeholder.png";
 import { useHeroQuery } from "../hooks/useHeroQuery";
-import { getImage } from "gatsby-plugin-image";
-
 
 const Hero = () => {
     const { 

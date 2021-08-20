@@ -12,6 +12,12 @@ const FormInput = ({
     error,
     children,
     label,
+    email,
+    hidden,
+    file,
+    number,
+    tel,
+    memberstack,
     ...props
 }) => {
     const [passwordShown, setPasswordShown] = useState(false)
@@ -30,9 +36,10 @@ const FormInput = ({
                             name={name}
                             placeholder={placeholder}
                             onChange={onChange}
-                            value={value}
+                            defaultValue={value}
                             className={className}
                             style={error && { border: "solid 1px #B11030" }}
+                            data-ms-form={memberstack}
                         ></textarea>
                         {error && (
                             <i className="fas fa-exclamation-triangle"></i>
@@ -52,9 +59,10 @@ const FormInput = ({
                             type={type}
                             placeholder={placeholder}
                             onChange={onChange}
-                            value={value}
+                            defaultValue={value}
                             className={className}
                             style={error && { border: "solid 1px #B11030" }}
+                            data-ms-form={memberstack}
                         />
                         {error && (
                             <i className="fas fa-exclamation-triangle"></i>
@@ -75,9 +83,10 @@ const FormInput = ({
                                 type={passwordShown ? "text" : "password"}
                                 placeholder={placeholder}
                                 onChange={onChange}
-                                value={value}
+                                defaultValue={value}
                                 className={className}
                                 style={error && { border: "solid 1px #B11030" }}
+                                data-ms-form={memberstack}
                             />
                             {passwordShown ? (
                                 <button
@@ -117,9 +126,10 @@ const FormInput = ({
                                 type={type}
                                 placeholder={placeholder}
                                 onChange={onChange}
-                                value={value}
+                                defaultValue={value}
                                 className={className}
                                 style={error && { border: "solid 1px #B11030" }}
+                                data-ms-form={memberstack}
                             />
                             <span className="slider-toggle"></span>
                             {error && (
@@ -140,9 +150,10 @@ const FormInput = ({
                                 type={type}
                                 placeholder={placeholder}
                                 onChange={onChange}
-                                value={value}
+                                defaultValue={value}
                                 className={className}
                                 style={error && { border: "solid 1px #B11030" }}
+                                data-ms-form={memberstack}
                             />
                             {error && (
                                 <i className="fas fa-exclamation-triangle"></i>
@@ -163,9 +174,10 @@ const FormInput = ({
                             type={type}
                             placeholder={placeholder}
                             onChange={onChange}
-                            value={value}
+                            defaultValue={value}
                             className={className}
                             style={error && { border: "solid 1px #B11030" }}
+                            data-ms-form={memberstack}
                         />
                         {error && (
                             <i className="fas fa-exclamation-triangle"></i>
@@ -185,7 +197,7 @@ const FormInput = ({
                         <label htmlFor={name}>{label}</label>
                         <MultiSelect
                             options={children}
-                            value={selected}
+                            defaultValue={selected}
                             onChange={setSelected}
                             labelledBy="Select"
                         />
@@ -207,8 +219,9 @@ const FormInput = ({
                                     style={
                                         error && { border: "solid 1px #B11030" }
                                     }
+                                    data-ms-form={memberstack}
                                 >
-                                    <option value="">Select option</option>
+                                    <option defaultValue="">Select option</option>
                                     {children.map((option) => (
                                         <option key={option.value}>
                                             {" "}
