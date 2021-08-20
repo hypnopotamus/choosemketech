@@ -1,28 +1,40 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Helmet from "react-helmet";
-
-import MenuModal from "../components/MenuModal"
-
-
-const backdropClasses = " backdrop"
+import Modal from "./Modal";
+import UserSignup from "./UserSignup";
 
 const Layout = ({ children, bodyClass }) => {
-  const [backdropActive, setBackdropActive] = useState(false)
-
-  const toggleBackdrop = (e, active) => {
-    e.preventDefault()
-    setBackdropActive(active)
-  }
+  const modalRef1 = useRef();
+  const modalRef2 = useRef();
 
   return (
-    <div id={"GatsbyBody"} className={ bodyClass + " showing-menu-modal showing-modal" + (backdropActive ? backdropClasses : "") } >
 
-      <Header toggleBackdrop={toggleBackdrop} />
+    <div id={"GatsbyBody"} className={ bodyClass } >
 
-      <MenuModal isActive={backdropActive} toggleBackdrop={toggleBackdrop} />
+      <Header  />
 
+      <button onClick={
+        () => modalRef1.current.openModal()
+      }>
+        Modal button
+      </button>
+
+      <Modal ref={modalRef1} modalType="user">
+        <UserSignup ref={modalRef1} />
+      </Modal>
+
+      <button onClick={
+        () => modalRef2.current.openModal()
+      }>
+        Modal 2 button
+      </button>
+
+      <Modal ref={modalRef2} modalType="user">
+        <h1>Woah! A new Modal!</h1>
+        <UserSignup ref={modalRef1} />
+      </Modal>
+      
       <main id="site-content" role="main">
 
         {children}

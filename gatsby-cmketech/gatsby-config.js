@@ -18,6 +18,7 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     `gatsby-plugin-notifications`,
+    `gatsby-plugin-portal`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -14,7 +14,6 @@ const IndexPage = () => (
   <Layout>
     <Seo title="Home Page" />
     <Hero />
-
     <div className="container">
       <Cards />
       <ImageGrid />
