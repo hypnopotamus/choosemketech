@@ -7,20 +7,24 @@ import ImageGrid from "../components/ImageGrid";
 import ImageCopy from "../components/ImageCopy";
 import ThreeColumn from "../components/ThreeColumn";
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="Home Page" />
-    <Hero />
-    <ThreeColumn />
-    <div className="container">
-      <ImageCopy />
-    </div>
-    <JobCarousel />
-    <div className="container">
-      <ImageCopy flip={true} />
-    </div>
-    <ImageGrid />
-  </Layout>
-)
+const IndexPage = () => {
+
+  return (
+    <Layout>
+      <Seo />
+      <Hero />
+      <ThreeColumn />
+      <div className="container">
+        <ImageCopy />
+      </div>
+      <JobCarousel />
+      <div className="container">
+        <ImageCopy flip={true} />
+      </div>
+      <ImageGrid />
+    </Layout>
+  )
+  
+}
 
 export default IndexPage

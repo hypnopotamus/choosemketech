@@ -2,7 +2,9 @@ import React from "react";
 import Seo from "../../components/Seo";
 import Layout from "../../components/Layout";
 
-const TechScene = () => (
+const TechScene = () => {
+  
+  return (
     <Layout>
         <Seo title="Tech Scene Page" />
         <div className="container">
@@ -10,6 +12,8 @@ const TechScene = () => (
         </div>
     </Layout>
   )
+
+}
   
 export default TechScene;
   

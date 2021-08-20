@@ -2,7 +2,9 @@ import React from "react";
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 
-const WhyMilwaukee = () => (
+const WhyMilwaukee = () => {
+
+  return (
     <Layout>
         <Seo title="Why Milwaukee Page" />
         <div className="container">
@@ -10,6 +12,8 @@ const WhyMilwaukee = () => (
         </div>
     </Layout>
   )
+  
+}
   
 export default WhyMilwaukee;
   

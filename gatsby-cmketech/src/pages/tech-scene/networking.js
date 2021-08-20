@@ -2,7 +2,9 @@ import React from "react";
 import Seo from "../../components/Seo";
 import Layout from "../../components/Layout";
 
-const Networking = () => (
+const Networking = () => {
+
+  return (
     <Layout>
         <Seo title="Networking Page" />
         <div className="container">
@@ -10,6 +12,8 @@ const Networking = () => (
         </div>
     </Layout>
   )
+
+}
   
 export default Networking;
   

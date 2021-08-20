@@ -2,7 +2,9 @@ import React from "react";
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 
-const Companies = () => (
+const Companies = () => {
+
+  return (
     <Layout>
         <Seo title="Companies Page" />
         <div className="container">
@@ -10,6 +12,8 @@ const Companies = () => (
         </div>
     </Layout>
   )
+  
+}
   
 export default Companies;
   
