@@ -13,8 +13,6 @@ const Hero = () => {
     const heroSubText = data.heroSubText;
     const heroTextMinusP = heroText.replace(/<p>/g, '').replace(/<\/p>/g, '');
 
-    console.log(heroTextMinusP)
-
     return (
         <>
         <div className="hero hero--banner container">
