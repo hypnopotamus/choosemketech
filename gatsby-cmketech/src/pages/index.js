@@ -11,7 +11,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Seo />
+      <Seo title="Choose MKE Tech" />
       <Hero />
       <ThreeColumn />
       <div className="container">
