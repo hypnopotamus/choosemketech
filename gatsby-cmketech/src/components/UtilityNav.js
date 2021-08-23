@@ -27,14 +27,14 @@ const UtilityNav = () => {
                             </li>
                     ) : null
                 )}
-                <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="members">
+                {/* <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="members">
                     <a href="/company-profile"  className="utilityNav__link utilityNav__link--primary" data-ms-content="premium-plans">
                         <i className="fas fa-user"></i><span>Company Profile</span>
                     </a>
                     <a href="/member-profile"  className="utilityNav__link utilityNav__link--primary" data-ms-content="!premium-plans">
                         <i className="fas fa-user"></i><span>Member Profile</span>
                     </a>
-                </li>
+                </li> */}
                 <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
                     <a href="#"  className="utilityNav__link utilityNav__link--primary" data-ms-content="premium-plans">
                         <i className="fas fa-user-circle"></i><span data-ms-member="organizationname"></span>
