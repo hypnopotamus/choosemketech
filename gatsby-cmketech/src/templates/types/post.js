@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
-import Comments from "../../components/Comments"
 import ContentTypePagination from "../../components/ContentTypePagination"
 import AuthorBio from "../../components/AuthorBio"
 import PostMeta from "../../components/PostMeta"
@@ -28,12 +27,11 @@ const post = ({ data }) => {
       bodyClass={`post-template-default single single-post postid-${databaseId} single-format-standard wp-embed-responsive singular has-post-thumbnail has-single-pagination showing-comments footer-top-visible customize-support`}
     >
       <Seo title={title} description={excerpt} socialImage={featuredImage?.node} uri={uri} />
-
+      <div className="container">
       <article
         className={`post-${databaseId} post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized`}
         id={`post-${databaseId}`}
       >
-        <header className="entry-header has-text-align-center header-footer-group">
           <div className="entry-header-inner section-inner medium">
             <PostCategories categories={categories} />
             <h1
@@ -46,7 +44,6 @@ const post = ({ data }) => {
             />
             <PostMeta title={title} author={author} date={date} />
           </div>
-        </header>
 
         <FeaturedMedia image={featuredImage} />
 
@@ -64,9 +61,9 @@ const post = ({ data }) => {
             nextPage={nextPage}
             contentType={"Post"}
           />
-          <Comments />
         </div>
       </article>
+      </div>
     </Layout>
   )
 }
