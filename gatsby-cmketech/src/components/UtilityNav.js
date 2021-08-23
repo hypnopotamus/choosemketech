@@ -16,13 +16,8 @@ const UtilityNav = () => {
                             role="menuitem"
                             key={mainItem.id}
                             className="utilityNav__item utilityNav__item--primary">
-                                <Link 
-                                className="utilityNav__link utilityNav__link--primary"
-                                to={mainItem.url}>
-                                    <i className={
-                                        mainItem.cssClasses.join(' ')
-                                    }></i>
-                                    {mainItem.label}
+                                <Link tabindex="0" className="utilityNav__link utilityNav__link--primary" to={mainItem.url}>
+                                    <i className={ mainItem.cssClasses.join(' ') }></i><span>{ mainItem.label }</span>
                                 </Link>
                             </li>
                     ) : null
