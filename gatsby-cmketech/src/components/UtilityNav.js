@@ -16,20 +16,30 @@ const UtilityNav = () => {
                             role="menuitem"
                             key={mainItem.id}
                             className="utilityNav__item utilityNav__item--primary">
-                                <Link 
-                                className="utilityNav__link utilityNav__link--primary"
-                                to={mainItem.url}>
-                                    <i className={
-                                        mainItem.cssClasses.join(' ')
-                                    }></i>
-                                    {mainItem.label}
+                                <Link tabindex="0" className="utilityNav__link utilityNav__link--primary" to={mainItem.url}>
+                                    <i className={ mainItem.cssClasses.join(' ') }></i><span>{ mainItem.label }</span>
                                 </Link>
                             </li>
                     ) : null
                 )}
+                <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="members">
+                    <a href="/member-profile"  className="utilityNav__link utilityNav__link--primary" data-ms-content="!premium-plans">
+                        <i className="fas fa-user"></i><span>Member Profile</span>
+                    </a>
+                </li>
                 <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
-                    <a href="#"  className="utilityNav__link utilityNav__link--primary">
-                        <i className="fas fa-user-circle"></i><span data-ms-member="organizationname"></span>
+                    <a href="#"  className="utilityNav__link utilityNav__link--primary" data-ms-content="!premium-plans">
+                        <i className="fas fa-user-circle"></i><span data-ms-member="firstname"></span> <i class="fas fa-caret-down"></i>
+                    </a>
+                </li>
+                <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="members">
+                    <a href="/company-profile"  className="utilityNav__link utilityNav__link--primary" data-ms-content="premium-plans">
+                        <i className="fas fa-user"></i><span>Company Profile</span>
+                    </a>
+                </li>
+                <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
+                    <a href="#"  className="utilityNav__link utilityNav__link--primary" data-ms-content="premium-plans">
+                        <i className="fas fa-user-circle"></i><span data-ms-member="organizationname"></span> <i class="fas fa-caret-down"></i>
                     </a>
                 </li>
             </ul>
@@ -37,4 +47,4 @@ const UtilityNav = () => {
     )
 }
 
-export default UtilityNav
+export default UtilityNav 

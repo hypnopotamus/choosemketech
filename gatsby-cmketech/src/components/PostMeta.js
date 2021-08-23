@@ -32,21 +32,6 @@ const PostMeta = ({ author, title, date }) => {
           </span>
           <span className="meta-text">{date}</span>
         </li>
-        <li className="post-comment-link meta-wrapper">
-          <span className="meta-icon">
-            <CommentIcon />
-          </span>
-          <span className="meta-text">
-            <a href="#respond">
-              {/*TODO: Dynamic comments*/}
-              No Comments
-              <span className="screen-reader-text">
-                {" "}
-                on <span dangerouslySetInnerHTML={{ __html: title }} />
-              </span>
-            </a>
-          </span>
-        </li>
       </ul>
     </div>
   )

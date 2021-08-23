@@ -19,8 +19,10 @@
         &--primary {
             background-color: $light_gray;
             margin-top: 5px;
+            display: flex;
             a {
-                padding: 0 25px;
+                padding: 0 25px 0 0;
+                font-size: 0.90rem;
             }
             @media #{$mq-largeScreen} {
                 padding-block: 15px;
@@ -29,23 +31,33 @@
         }
         &--members {
             position: relative;
-            margin-left: 1rem;
             font-weight: 500;
             a {
-                text-decoration: none;
                 letter-spacing: normal;
+                font-size: 1rem;
+                span {
+                    box-shadow: none;
+                }
                 .fas {
-                    position: absolute;
-                    top: -2px;
-                    left: -6px;
                     font-size: 1.5rem;
+                    &.fa-caret-down {
+                        margin-left: 0.50rem;
+                        font-size: 1rem;                        
+                    }
                 }
             }
         }
     }
     &__link {
         &--primary {
+            display: flex;
+            align-items: center;
             color: $navy_blue;
+            text-decoration: none;
+            line-height: 1rem;
+            span {
+                box-shadow: 0px 1px 0px $navy_blue;
+            };
             &:visited{
                 color: $navy_blue;
             }

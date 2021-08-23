@@ -4,11 +4,14 @@ import { useHeroQuery } from "../hooks/useHeroQuery";
 
 const Hero = () => {
     const { 
-        wpPage : { LandingPage_CF: data }, 
+        wpPage : { LandingPage_CF: data },
     } = useHeroQuery() 
     
     const placeholderImage = data.heroImage.sourceUrl;
 
+    const heroText = data.heroText;
+    const heroSubText = data.heroSubText;
+    const heroTextMinusP = heroText.replace(/<p>/g, '').replace(/<\/p>/g, '');
 
     return (
         <>
@@ -19,8 +22,8 @@ const Hero = () => {
                     <source src={data.heroVideo} type="video/webm" />
                 </video>
                 <div className="hero--banner__copy">
-                    <h1>{data.heroText}</h1>
-                    <h3>{data.heroSubText}</h3>
+                    <h1 dangerouslySetInnerHTML={ {__html: heroTextMinusP} } />
+                    <h3 dangerouslySetInnerHTML={ {__html: heroSubText} } ></h3>
                 </div>
             </div>
         </div>

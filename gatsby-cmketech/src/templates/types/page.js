@@ -13,19 +13,17 @@ const page = ({ data }) => {
       bodyClass={`page-template-default page page-id-${databaseId} wp-embed-responsive singular missing-post-thumbnail has-no-pagination not-showing-comments footer-top-visible customize-support`}
     >
       <Seo title={title} description={excerpt} socialImage={featuredImage?.node} uri={uri} />
-
+      <div className="container">
       <article
         className={`post-${databaseId} post page type-page status-publish hentry`}
         id={`post-${databaseId}`}
       >
-        <header className="entry-header has-text-align-center header-footer-group">
           <div className="entry-header-inner section-inner medium">
             <h1
               className="entry-title"
               dangerouslySetInnerHTML={{ __html: title }}
             />
           </div>
-        </header>
 
         <FeaturedMedia image={featuredImage} />
 
@@ -36,6 +34,7 @@ const page = ({ data }) => {
           />
         </div>
       </article>
+      </div>
     </Layout>
   )
 }
