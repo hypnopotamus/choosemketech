@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "./Layout";
 import { useHeroQuery } from "../hooks/useProfileHeroQuery";
 
 const ProfileHero = () => {
