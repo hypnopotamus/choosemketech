@@ -12,7 +12,7 @@ footer {
         @media #{$mq-mediumScreen}{
             display: flex;
         }
-        background-image: url('../svg/skyline.svg');
+        background-image: url('../images/skyline.png');
         background-size: 315%;
         @media #{$mq-mediumScreen}{
             background-size: 150%;
