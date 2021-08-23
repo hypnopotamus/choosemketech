@@ -13,12 +13,29 @@
     }
     .profile-hero--logo {
         position: absolute;
-        bottom: -100px;
-        left: 40px;        
+        left: 16px;
+        bottom: -70px;
+        transition: 0.5s;
+        @media #{$mq-mediumScreen} {
+            left: 40px;
+            bottom: -100px;
+        }
+        @media #{$mq-largeScreen} {
+            bottom: -100px;
+        }
         img {
             display: block;
             border-radius: 50%;
             object-fit: cover;
+            border: 5px solid $white;
+            width: 45%;
+
+            @media #{$mq-mediumScreen} {
+                width: 70%;               
+            }
+            @media #{$mq-largeScreen} {
+                width: 100%;               
+            }
         }
     }
 }
