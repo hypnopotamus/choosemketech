@@ -34,18 +34,21 @@ const UserSignup = forwardRef((props,ref) => {
                         type="text"
                         required
                         label="Email"
+                        halfLength={true}
                     />
                     <FormInput 
                         name="password"
                         type="password"
                         required
                         label="Password"
+                        halfLength={true}
                     />
                     <FormInput 
                         name="passwordConfirm"
                         type="password"
                         required
                         label="Confirm Password"
+                        halfLength={true}
                     />
                     <FormInput 
                         name="Job Opportunities"

@@ -50,7 +50,7 @@ const FormInput = ({
             )
         case "text":
             return (
-                <div className="form-field">
+                <div className={`form-field ${props.halfLength ? "half-length" : ""}`}>
                     <label htmlFor={name}>{label}</label>
                     <span className="form-field__input-container">
                         <input
@@ -73,7 +73,7 @@ const FormInput = ({
             )
         case "password":
             return (
-                <div className="form-field">
+                <div className={`form-field ${props.halfLength ? "half-length" : ""}`}>
                     <label htmlFor={name}>{label}</label>
                     <span className="form-field__input-container">
                         <span className="form-field__password-field">
