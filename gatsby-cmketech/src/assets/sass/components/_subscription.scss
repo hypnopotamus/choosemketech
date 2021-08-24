@@ -20,10 +20,13 @@
                     border-radius: 0;
                     background-color: transparent;
                     padding: 0.625rem;
-                    width: 100%;
+                    width: 246px;
                     height: auto;              
                     color: $white;
                     line-height: normal;
+                    @media #{$mq-largeScreen}{
+                        width: 100%;
+                    }
                     @media #{$mq-mediumScreen}{
                         width: auto;
                     }
