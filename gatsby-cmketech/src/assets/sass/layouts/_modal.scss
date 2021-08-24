@@ -21,8 +21,12 @@
             right: 0;
             display: block;
             margin: 0 auto;
-            max-width: 800px;
-            width: 50%;
+            width: 90%;
+            height: 90%;
+            @media #{$mq-largeScreen} {
+                max-width: 1000px;
+                height: auto;
+            }
         }
     }
 }

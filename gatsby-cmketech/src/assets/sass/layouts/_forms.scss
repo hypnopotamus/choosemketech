@@ -14,7 +14,10 @@
             margin: 0;
         }
         &.half-length {
-            width: 50%;
+            width: 100%;
+            @media #{$mq-mediumScreen} {
+                width: 40%;
+            }
         }
         &__input-container {
             display: flex;
@@ -53,8 +56,11 @@
             font-family: 'Inter', sans-serif;
             width: 100%;
             position: relative;
-            &.half-width {
-                width: 50%;
+            &.half-length {
+                width: 100%;
+                @media #{$mq-mediumScreen} {
+                    width: 50%;
+                }
             }
         }
         &.checkbox, &.radio {

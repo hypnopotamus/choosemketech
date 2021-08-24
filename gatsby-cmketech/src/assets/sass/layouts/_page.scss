@@ -1,3 +1,9 @@
+#___gatsby {
+    &.modal-opened {
+        height: 100vh;
+        overflow: hidden;
+    }
+}
 main {
     overflow: hidden;
 }

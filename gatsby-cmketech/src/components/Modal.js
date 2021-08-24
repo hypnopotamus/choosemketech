@@ -12,11 +12,15 @@ const Modal = forwardRef((props, ref) => {
     })
 
     const handleOpen = () => {
-        setDisplay(true)
+        setDisplay(true);
+        let root = document.getElementById('___gatsby');
+        root.classList.add("modal-opened")
     }
 
     const handleClose = () => {
-        setDisplay(false)
+        setDisplay(false);
+        let root = document.getElementById('___gatsby');
+        root.classList.remove("modal-opened")
     }
 
     if (display) {
