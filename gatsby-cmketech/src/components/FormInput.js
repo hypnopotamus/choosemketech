@@ -71,7 +71,30 @@ const FormInput = ({
                     {error && <p className="form-field--error"> {error}</p>}
                 </div>
             )
-        case "password":
+            case "email":
+                return (
+                    <div className={`form-field ${props.halfLength ? "half-length" : ""}`}>
+                        <label htmlFor={name}>{label}</label>
+                        <span className="form-field__input-container">
+                            <input
+                                id={name}
+                                name={name}
+                                type={type}
+                                placeholder={placeholder}
+                                onChange={onChange}
+                                defaultValue={value}
+                                className={className}
+                                style={error && { border: "solid 1px #B11030" }}
+                                data-ms-form={memberstack}
+                            />
+                            {error && (
+                                <i className="fas fa-exclamation-triangle"></i>
+                            )}
+                        </span>
+                        {error && <p className="form-field--error"> {error}</p>}
+                    </div>
+                )            
+            case "password":
             return (
                 <div className={`form-field ${props.halfLength ? "half-length" : ""}`}>
                     <label htmlFor={name}>{label}</label>
@@ -249,11 +272,11 @@ FormInput.defaultProps = {
 FormInput.propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string,
-    placeholder: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(["text", "number", "password", "checkbox", "select"]),
+    placeholder: PropTypes.string,
+    type: PropTypes.oneOf(["text", "number", "password", "checkbox", "select", "email"]),
     className: PropTypes.string,
     value: PropTypes.any,
-    onChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func,
 }
 
 export default FormInput

@@ -35,7 +35,7 @@ const ModalModules = forwardRef((props, ref) => {
                 <div className="loginModal__signup">
                     <div className="loginModal__signup__close">
                         <button type="button" onClick={() => ref.current.closeModal()}>
-                            <i class="fas fa-times"></i>
+                            <i className="fas fa-times"></i>
                         </button>
                     </div>
                     <h5>New to Choose MKE Tech?</h5>
@@ -53,12 +53,13 @@ const ModalModules = forwardRef((props, ref) => {
     const LoginForm = () => {
         return (
             <>
-            <form>
+            <form data-ms-form="login" noValidate>
                 <FormInput
                     name="email"
-                    type="text"
+                    type="email"
                     required
                     label="Email"
+                    memberstack="email"
                 />
                 
                 <FormInput
@@ -66,6 +67,7 @@ const ModalModules = forwardRef((props, ref) => {
                     type="password"
                     required
                     label="Password"
+                    memberstack="password"
                 />
                 <a href="#"
                     onClick={(e) => handleFormChange(e,"forgotLogin")}
@@ -73,7 +75,7 @@ const ModalModules = forwardRef((props, ref) => {
                     Forgot Password?
                 </a>
                 <div className="loginModal__actions">
-                    <button className="button button--primary">
+                    <button className="button button--primary" type="submit">
                         Log In To Portal
                     </button>
                     <a
@@ -120,7 +122,7 @@ const ModalModules = forwardRef((props, ref) => {
             <div className="user-signup">
                 <div className="user-signup__close">
                     <button type="button" onClick={() => ref.current.closeModal()}>
-                        <i class="fas fa-times"></i>
+                        <i className="fas fa-times"></i>
                     </button>
                 </div>
                 <div className="user-signup__tab-group">
