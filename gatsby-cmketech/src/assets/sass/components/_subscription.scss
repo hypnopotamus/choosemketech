@@ -35,7 +35,7 @@
                     margin: 0;
                 }
                 button[type="submit"] {
-                    border: 1px solid $white;
+                    border: 0;
                     color: $navy_blue;
                     background-color: $white;
                     min-width: auto;
@@ -44,7 +44,7 @@
                     padding: 5px 10px;      
                     text-transform: uppercase;
                     width: 92px;
-                    height: 36px;              
+                    height: 38px;              
                 }
             }
             .ctct-form-errorMessage,
