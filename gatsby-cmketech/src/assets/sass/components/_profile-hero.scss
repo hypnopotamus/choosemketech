@@ -1,0 +1,42 @@
+.profile-hero {
+    margin-bottom: 140px;
+    position: relative;
+    margin-block-start: 0.5rem;
+    .profile-hero--banner {
+        width: 100%;
+        max-height: 575px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: 16 / 8;
+        }
+    }
+    .profile-hero--logo {
+        position: absolute;
+        left: 16px;
+        bottom: -70px;
+        transition: 0.5s;
+        @media #{$mq-mediumScreen} {
+            left: 40px;
+            bottom: -100px;
+        }
+        @media #{$mq-largeScreen} {
+            bottom: -100px;
+        }
+        img {
+            display: block;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid $white;
+            width: 45%;
+
+            @media #{$mq-mediumScreen} {
+                width: 70%;               
+            }
+            @media #{$mq-largeScreen} {
+                width: 100%;               
+            }
+        }
+    }
+}

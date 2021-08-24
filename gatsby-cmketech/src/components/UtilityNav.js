@@ -16,7 +16,7 @@ const UtilityNav = () => {
                             role="menuitem"
                             key={mainItem.id}
                             className="utilityNav__item utilityNav__item--primary">
-                                <Link tabindex="0" className="utilityNav__link utilityNav__link--primary" to={mainItem.url}>
+                                <Link className="utilityNav__link utilityNav__link--primary" to={mainItem.url}>
                                     <i className={ mainItem.cssClasses.join(' ') }></i><span>{ mainItem.label }</span>
                                 </Link>
                             </li>
@@ -29,7 +29,7 @@ const UtilityNav = () => {
                 </li>
                 <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
                     <a href="#"  className="utilityNav__link utilityNav__link--primary" data-ms-content="!premium-plans">
-                        <i className="fas fa-user-circle"></i><span data-ms-member="firstname"></span> <i class="fas fa-caret-down"></i>
+                        <i className="fas fa-user-circle"></i><span data-ms-member="first-name"></span> <i className="fas fa-caret-down"></i>
                     </a>
                 </li>
                 <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="members">
@@ -39,7 +39,7 @@ const UtilityNav = () => {
                 </li>
                 <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
                     <a href="#"  className="utilityNav__link utilityNav__link--primary" data-ms-content="premium-plans">
-                        <i className="fas fa-user-circle"></i><span data-ms-member="organizationname"></span> <i class="fas fa-caret-down"></i>
+                        <i className="fas fa-user-circle"></i><span data-ms-member="company-name"></span> <i className="fas fa-caret-down"></i>
                     </a>
                 </li>
             </ul>

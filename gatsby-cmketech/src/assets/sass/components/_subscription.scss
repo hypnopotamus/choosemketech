@@ -14,15 +14,19 @@
             .ctct-form-custom {
                 display: flex;
                 min-height: auto;
+                align-items: center;
                 input[type="email"] {
                     border: 1px solid $white;
                     border-radius: 0;
                     background-color: transparent;
                     padding: 0.625rem;
-                    width: 100%;
+                    width: 246px;
                     height: auto;              
                     color: $white;
                     line-height: normal;
+                    @media #{$mq-largeScreen}{
+                        width: 100%;
+                    }
                     @media #{$mq-mediumScreen}{
                         width: auto;
                     }
@@ -34,7 +38,7 @@
                     margin: 0;
                 }
                 button[type="submit"] {
-                    border: 1px solid $white;
+                    border: 0;
                     color: $navy_blue;
                     background-color: $white;
                     min-width: auto;
@@ -42,7 +46,8 @@
                     white-space: nowrap;
                     padding: 5px 10px;      
                     text-transform: uppercase;
-                    height: auto;              
+                    width: 92px;
+                    height: 38px;              
                 }
             }
             .ctct-form-errorMessage,

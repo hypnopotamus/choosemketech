@@ -12,7 +12,7 @@ footer {
         @media #{$mq-mediumScreen}{
             display: flex;
         }
-        background-image: url('../svg/skyline.svg');
+        background-image: url('../images/skyline.png');
         background-size: 315%;
         @media #{$mq-mediumScreen}{
             background-size: 150%;
@@ -172,7 +172,7 @@ footer {
             white-space: nowrap;
             text-indent: 100%;
             overflow: hidden;
-            background-image: url('../svg/mke-tech-logo.svg');
+            background-image: url('../images/mke-tech-logo.png');
             background-repeat: no-repeat;
             background-size: 75%;
             height: 6.875rem;
