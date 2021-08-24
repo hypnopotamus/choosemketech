@@ -7,7 +7,7 @@ const ProfileHero = () => {
         <div className="profile-hero">
             <div className="row">
                 <div className="profile-hero--banner">
-                    <img src="https://source.unsplash.com/random/615" />
+                    <img src="https://picsum.photos/id/171/1500/1000" />
                 </div>
                 <div className="profile-hero--logo">
                     <img src="https://picsum.photos/282" />

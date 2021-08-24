@@ -10,7 +10,7 @@ const MemberProfile = () => {
         <Seo title="Member Profile" />
         <ProfileHero />
         <div className="container">
-          <h1>Member Profile</h1>
+          <h1>Welcome Back <span data-ms-member="first-name"></span>!</h1>
         </div>
     </Layout>
   )
