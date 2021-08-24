@@ -14,6 +14,7 @@
             .ctct-form-custom {
                 display: flex;
                 min-height: auto;
+                align-items: center;
                 input[type="email"] {
                     border: 1px solid $white;
                     border-radius: 0;
@@ -43,7 +44,7 @@
                     padding: 5px 10px;      
                     text-transform: uppercase;
                     width: 92px;
-                    height: 38px;              
+                    height: 36px;              
                 }
             }
             .ctct-form-errorMessage,
