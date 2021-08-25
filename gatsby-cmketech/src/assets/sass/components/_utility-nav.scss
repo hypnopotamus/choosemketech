@@ -71,10 +71,21 @@
         bottom: 0;
         right: 0;
         width: 150%;
+        transition: all 500ms;
         .showSubNav {
             opacity: 1;
             background-color: $navy_blue;
             z-index: 10;
+        }
+        .nav__user {
+            padding: 8px 15px;
+            color: $white;
+            span {
+                margin-left: 10px;
+            }
+        }
+        .nav__list--secondary {
+            pointer-events: auto;
         }
         li {
             &.nav__link {
@@ -82,6 +93,18 @@
                 padding-inline: 30px 0px;
                 @media #{$mq-largeScreen} {
                     padding-inline: 15px 0px;
+                }
+            }
+            &.nav__link-group__title {
+                h4 {
+                    color: $white;
+                    margin: 5px 10px;
+                    font-family: "Inter", sans-serif;
+                    font-size: 15px;
+                    border-bottom: 1px solid $teal;
+                    padding: 10px 0px;
+                    text-transform: capitalize;
+                    font-weight: 400;
                 }
             }
             a {
