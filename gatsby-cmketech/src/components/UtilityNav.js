@@ -47,7 +47,7 @@ const UtilityNav = () => {
                         <i className="fas fa-user-circle"></i><span data-ms-member="company-name"></span> <i className="fas fa-caret-down"></i>
                     </a>
                 </li>
-                <li role="menuitem" className="utilityNav__item utilityNav__item--primary">
+                <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="!premium-plans">
                     <a href="#"  className="utilityNav__link utilityNav__link--primary" onClick={ () => modalRef1.current.openModal() }>
                         <i className="fas fa-sign-in-alt"></i><span>Log In</span>
                     </a>
