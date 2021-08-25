@@ -51,6 +51,7 @@ header {
     }
     .header__utility-nav {
         position: absolute;
+        z-index: 6;
         width:100%;
         transition: 500ms;
         -webkit-transform: translateY(-120%);

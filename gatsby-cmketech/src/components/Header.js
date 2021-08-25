@@ -11,6 +11,11 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
         setDisplayedMobileNav(!displayMobileNav)
     }
 
+    const handleSearchToggle = (e) => {
+        e.preventDefault();
+    }
+
+
     return (
         <header
             id="site-header"
@@ -45,9 +50,10 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
                     </span>
                 </button>
                 <Navigation toggleNav={displayMobileNav} />
-                <div className="header__global-search">
-                    <i className="fas fa-search"></i>
-                </div>
+                
+                    <a className="header__global-search" href="#" onClick={(e)=>handleSearchToggle(e)}><i className="fas fa-search"></i></a>
+                    
+                
             </div>
         </header>
     )
