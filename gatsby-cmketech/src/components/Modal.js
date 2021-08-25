@@ -30,7 +30,6 @@ const Modal = forwardRef((props, ref) => {
                     <div className="modal-container" >
                         {props.children}
                     </div>
-                
             </Portal>
         )
     }

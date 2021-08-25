@@ -39,7 +39,7 @@ const FormInput = ({
                             defaultValue={value}
                             className={className}
                             style={error && { border: "solid 1px #B11030" }}
-                            data-ms-form={memberstack}
+                            data-ms-member={memberstack}
                         ></textarea>
                         {error && (
                             <i className="fas fa-exclamation-triangle"></i>
@@ -62,7 +62,7 @@ const FormInput = ({
                             defaultValue={value}
                             className={className}
                             style={error && { border: "solid 1px #B11030" }}
-                            data-ms-form={memberstack}
+                            data-ms-member={memberstack}
                         />
                         {error && (
                             <i className="fas fa-exclamation-triangle"></i>
@@ -85,7 +85,7 @@ const FormInput = ({
                                 defaultValue={value}
                                 className={className}
                                 style={error && { border: "solid 1px #B11030" }}
-                                data-ms-form={memberstack}
+                                data-ms-member={memberstack}
                             />
                             {error && (
                                 <i className="fas fa-exclamation-triangle"></i>
@@ -109,7 +109,7 @@ const FormInput = ({
                                 defaultValue={value}
                                 className={className}
                                 style={error && { border: "solid 1px #B11030" }}
-                                data-ms-form={memberstack}
+                                data-ms-member={memberstack}
                             />
                             {passwordShown ? (
                                 <button
@@ -152,7 +152,7 @@ const FormInput = ({
                                 defaultValue={value}
                                 className={className}
                                 style={error && { border: "solid 1px #B11030" }}
-                                data-ms-form={memberstack}
+                                data-ms-member={memberstack}
                             />
                             <span className="slider-toggle"></span>
                             {error && (
@@ -176,7 +176,7 @@ const FormInput = ({
                                 defaultValue={value}
                                 className={className}
                                 style={error && { border: "solid 1px #B11030" }}
-                                data-ms-form={memberstack}
+                                data-ms-member={memberstack}
                             />
                             {error && (
                                 <i className="fas fa-exclamation-triangle"></i>
@@ -200,7 +200,7 @@ const FormInput = ({
                             defaultValue={value}
                             className={className}
                             style={error && { border: "solid 1px #B11030" }}
-                            data-ms-form={memberstack}
+                            data-ms-member={memberstack}
                         />
                         {error && (
                             <i className="fas fa-exclamation-triangle"></i>
@@ -242,7 +242,7 @@ const FormInput = ({
                                     style={
                                         error && { border: "solid 1px #B11030" }
                                     }
-                                    data-ms-form={memberstack}
+                                    data-ms-member={memberstack}
                                 >
                                     <option defaultValue="">Select option</option>
                                     {children.map((option) => (

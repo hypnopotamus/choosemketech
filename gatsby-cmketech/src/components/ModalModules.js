@@ -161,9 +161,6 @@ const ModalModules = forwardRef((props, ref) => {
                 <div className="user-signup__content">
                     <img className="user-signup__logo" src={userLogo} />
                     <h3>Create a Profile</h3>
-                    <a href="#" onClick={(e) => handleFormChange(e, "login")}>
-                        Already have an account? Login
-                    </a>
                 </div>
                 <form className="form">
                     <FormInput
@@ -197,6 +194,11 @@ const ModalModules = forwardRef((props, ref) => {
                         type="checkbox"
                         label="Sign me up for Chooose MKE Tech news, such as meetups, tech related news, and more."
                     />
+                    <div className="user-signup__content">
+                        <a href="#" onClick={(e) => handleFormChange(e, "login")}>
+                            Already have an account? Login
+                        </a>
+                    </div>
                     <div className="user-signup__actions">
                         <button className="button button--primary">
                             Create My Profile
@@ -220,9 +222,6 @@ const ModalModules = forwardRef((props, ref) => {
                 <div className="user-signup__content">
                     <img className="user-signup__logo" src={recruitLogo} />
                     <h3>Recruit with Us</h3>
-                    <a href="#" onClick={(e) => handleFormChange(e, "login")}>
-                        Already have an account? Login
-                    </a>
                 </div>
                 <form className="form">
                     <FormInput
@@ -258,7 +257,11 @@ const ModalModules = forwardRef((props, ref) => {
                         label="Confirm Password"
                         halfLength={true}
                     />
-
+                    <div className="user-signup__content">
+                        <a href="#" onClick={(e) => handleFormChange(e, "login")}>
+                            Already have an account? Login
+                        </a>
+                    </div>
                     <div className="user-signup__actions">
                         <button className="button button--primary">
                             Create My Profile

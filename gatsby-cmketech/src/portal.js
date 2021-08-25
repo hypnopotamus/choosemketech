@@ -20,6 +20,7 @@ export default class Portal extends Component {
 
     componentDidMount = () => {
         portalRoot.appendChild(this.el)
+        window.MemberStack.reload();
     }
 
     componentWillUnmount = () => {

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'gatsby'
 import { useUtilityNavQuery } from "../hooks/useUtilityNavQuery"
+import Modal from "./Modal";
+import ModalModules from "./ModalModules";
+
 
 const UtilityNav = () => {
     const { wpMenu } = useUtilityNavQuery()
+    const modalRef1 = useRef();
+
     return(
         <div className="utilityNav">
             <ul
@@ -42,7 +47,15 @@ const UtilityNav = () => {
                         <i className="fas fa-user-circle"></i><span data-ms-member="company-name"></span> <i className="fas fa-caret-down"></i>
                     </a>
                 </li>
+                <li role="menuitem" className="utilityNav__item utilityNav__item--primary">
+                    <a href="#"  className="utilityNav__link utilityNav__link--primary" onClick={ () => modalRef1.current.openModal() }>
+                        <i className="fas fa-sign-in-alt"></i><span>Log In</span>
+                    </a>
+                </li>
             </ul>
+            <Modal ref={modalRef1}>
+                <ModalModules ref={modalRef1} formDisplayed="login"/>
+            </Modal>
         </div>
     )
 }
