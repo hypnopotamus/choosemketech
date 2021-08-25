@@ -50,10 +50,7 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
                     </span>
                 </button>
                 <Navigation toggleNav={displayMobileNav} />
-                
-                    <a className="header__global-search" href="#" onClick={(e)=>handleSearchToggle(e)}><i className="fas fa-search"></i></a>
-                    
-                
+                <a className="header__global-search" href="#" onClick={(e)=>handleSearchToggle(e)}><i className="fas fa-search"></i></a>
             </div>
         </header>
     )
