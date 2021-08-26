@@ -44,14 +44,27 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
                     onClick={() => handleMenuClick()}
                 >
                     <span className="toggle-inner">
-                        <span className="toggle-icon">
-                            <i className="fas fa-bars"></i>
-                        </span>
-                        <span className="toggle-text">Menu</span>
+                        {!displayMobileNav && (
+                            <>
+                            <span className="toggle-icon">
+                                <i className="fas fa-bars"></i>
+                            </span>
+                            <span className="toggle-text">Menu</span>
+                            </>
+                        )}
+                        {displayMobileNav && (
+                            <>
+                            <span className="toggle-icon">
+                                <i className="fas fa-times"></i>
+                            </span>
+                            <span className="toggle-text">Close</span>
+                            </>
+                        )}
+                        
                     </span>
                 </button>
                 <Navigation toggleNav={displayMobileNav} />
-                <MembershipDropdown membershipToggle={displayMobileNav}/>
+                <MembershipDropdown />
                 <a className="header__global-search" href="#" onClick={(e)=>handleSearchToggle(e)}><i className="fas fa-search"></i></a>
             </div>
         </header>

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby'
 
-const MembershipDropdown = ({membershipToggle}) => {
+const MembershipDropdown = () => {
     const [profileType, setProfileType] = useState(null);  
     const [userName, setUserName] = useState("");
     const [firstName, setFirstName] = useState("");
-    const [subNavShow, setsubNavShow] = useState(membershipToggle);    
+    const [subNavShow, setsubNavShow] = useState(false);    
 
     const handleDropdownClick = (e) => {
         e.preventDefault();
@@ -36,7 +36,16 @@ const MembershipDropdown = ({membershipToggle}) => {
         return(
             <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
                 <a href="#" onClick={(e) => handleDropdownClick(e)}  className="utilityNav__link utilityNav__link--primary" >
-                    <i className="fas fa-user-circle"></i><span>{firstName}</span> <i className="fas fa-caret-down"></i>
+                    {subNavShow && (
+                        <>
+                        <i className="fas fa-user-circle"></i><span className="membershipDropdown__close">{firstName}</span> <i className="fas fa-caret-down"></i>
+                        </>
+                    )}
+                    {!subNavShow && (
+                        <>
+                        <i className="fas fa-times"></i><span>Close</span>
+                        </>
+                    )}
                 </a>
                 <CandidateSubnav />
             </li>
@@ -98,7 +107,17 @@ const MembershipDropdown = ({membershipToggle}) => {
 
             <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
                 <a href="#" onClick={(e) => handleDropdownClick(e)} className="utilityNav__link utilityNav__link--primary" >
+                {subNavShow && (
+                    <>
+                    <i className="fas fa-times"></i><span className="membershipDropdown__close">Close</span>
+                    </>
+                    
+                )}
+                {!subNavShow && (
+                    <>
                     <i className="fas fa-user-circle"></i><span>{userName}</span> <i className="fas fa-caret-down"></i>
+                    </>
+                )}
                 </a>
                 <CompanySubnav />
             </li>
