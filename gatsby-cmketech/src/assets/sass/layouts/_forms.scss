@@ -6,6 +6,7 @@
             font-family: 'Inter', sans-serif;
             margin-block: 10px 0px;
             @include fluid-type(320px, 768px, 16px, 16px);
+            color: $dark_gray;
         }
         &--error {
             color: $warning_red;
@@ -66,6 +67,9 @@
         &.checkbox, &.radio {
             flex-direction: row-reverse;
             justify-content: flex-end;
+            label {
+                margin: 10px 0 0 10px;
+            }
             .form-field__input-container {
                 input {
                     min-height: 18px;

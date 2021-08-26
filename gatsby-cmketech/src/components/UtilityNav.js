@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'gatsby'
 import { useUtilityNavQuery } from "../hooks/useUtilityNavQuery"
+import Modal from "./Modal";
+import ModalModules from "./ModalModules";
 import MembershipDropdown from './MembershipDropdown';
+
 
 const UtilityNav = () => {
     const { wpMenu } = useUtilityNavQuery()
-
+    const modalRef1 = useRef();
 
     return(
         <div className="utilityNav">
@@ -27,6 +30,9 @@ const UtilityNav = () => {
                 )}
                 <MembershipDropdown />
             </ul>
+            <Modal ref={modalRef1}>
+                <ModalModules ref={modalRef1} formDisplayed="login"/>
+            </Modal>
         </div>
     )
 }
