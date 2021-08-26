@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 const MembershipDropdown = () => {
     const [profileType, setProfileType] = useState(null);  
     const [userName, setUserName] = useState("");
+    const [firstName, setFirstName] = useState("");
     const [subNavShow, setsubNavShow] = useState(false);    
 
     const handleDropdownClick = (e) => {
@@ -18,17 +19,17 @@ const MembershipDropdown = () => {
         if(window.MemberStack.onReady){
             window.MemberStack.onReady.then(function(member){
                 let membershipType = member.membership.name;
-                console.log(member['company-name'])
                 if(membershipType != "Candidate") {
                     membershipType = "premium-plan"
                     setUserName(member['company-name']) 
                 }else {
+                    setFirstName(member['first-name']);
                     setUserName(member['first-name'] + ' ' + member['last-name'])
                 }
                 setProfileType(membershipType)
             });
         }
-    }, [userName])    
+    }, [])    
     
     
     const CandidateView = () => {
@@ -41,7 +42,7 @@ const MembershipDropdown = () => {
                 </li> */}
                 <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
                     <a href="#" onClick={(e) => handleDropdownClick(e)}  className="utilityNav__link utilityNav__link--primary" >
-                        <i className="fas fa-user-circle"></i><span>{username}</span> <i className="fas fa-caret-down"></i>
+                        <i className="fas fa-user-circle"></i><span>{firstName}</span> <i className="fas fa-caret-down"></i>
                     </a>
                     <CandidateSubnav />
                 </li>
@@ -52,11 +53,11 @@ const MembershipDropdown = () => {
         return (
             <div className="utilityNav__member__subnav--container">
                 <ul 
-                    
+                    onMouseLeave={()=>handleMouseLeaveSubNav()}
                     role="menubar"
                     className={`nav__list nav__list--secondary ${subNavShow ? "showSubNav": ""}`}>
                     <div className="nav__user">
-                    <i className="fas fa-user-circle"></i><span data-ms-member="first-name"></span> 
+                    <i className="fas fa-user-circle"></i><span>{userName}</span> 
                     </div>
                     
                     <li className="nav__link-group__title">
@@ -120,11 +121,11 @@ const MembershipDropdown = () => {
         return (
             <div className="utilityNav__member__subnav--container">
                 <ul 
-                    
+                    onMouseLeave={()=>handleMouseLeaveSubNav()}
                     role="menubar"
                     className={`nav__list nav__list--secondary ${subNavShow ? "showSubNav": ""}`}>
                     <div className="nav__user">
-                    <i className="fas fa-user-circle"></i><span data-ms-member="first-name"></span> 
+                    <i className="fas fa-user-circle"></i><span>{userName}</span> 
                     </div>
                     
                     <li className="nav__link-group__title">

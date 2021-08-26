@@ -28,6 +28,11 @@ const UtilityNav = () => {
                             </li>
                     ) : null
                 )}
+                <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="!premium-plans">
+                    <a href="#"  className="utilityNav__link utilityNav__link--primary" onClick={ () => modalRef1.current.openModal() }>
+                        <i className="fas fa-sign-in-alt"></i><span>Log In</span>
+                    </a>
+                </li>
                 <MembershipDropdown />
             </ul>
             <Modal ref={modalRef1}>
