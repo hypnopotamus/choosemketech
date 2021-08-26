@@ -4,9 +4,11 @@ import { useHeroQuery } from "../hooks/useHeroQuery";
 
 const Hero = () => {
     const { 
-        wpPage : { LandingPage_CF: data },
+        wpPage : { Pages_CF: data },
     } = useHeroQuery() 
     
+    console.log(data)
+
     const placeholderImage = data.heroImage.sourceUrl;
 
     const heroText = data.heroText;
