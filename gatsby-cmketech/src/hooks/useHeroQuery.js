@@ -4,7 +4,7 @@ export const useHeroQuery = () => {
     const data = useStaticQuery(graphql`
         query HeroQuery {
             wpPage(databaseId : {eq: 102} ) {
-                LandingPage_CF {
+                Pages_CF {
                     heroImage {
                         sourceUrl
                     }
