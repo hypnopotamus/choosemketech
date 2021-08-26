@@ -12,7 +12,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Choose MKE Tech" />
-      <Hero />
+      <Hero id="107" />
       <ThreeColumn />
       <div className="container">
         <ImageCopy />

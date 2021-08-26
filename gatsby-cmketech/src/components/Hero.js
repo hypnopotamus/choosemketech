@@ -7,6 +7,8 @@ const Hero = () => {
         wpPage : { Pages_CF: data },
     } = useHeroQuery() 
     
+    console.log(data)
+
     const placeholderImage = data.heroImage.sourceUrl;
 
     const heroText = data.heroText;
