@@ -57,11 +57,16 @@ header {
         transition: 500ms;
         -webkit-transform: translateY(-120%);
         transform: translateY(-120%);
-
-        @media #{$mq-largeScreen} {
+        @media #{$mq-largeScreen} {            
             position: relative;
             -webkit-transform: translateY(0%);
             transform: translateY(0%);
+        }
+        .utilityNav__item--members {
+            display: none;
+            @media #{$mq-largeScreen} {
+                display: block;
+            }
         }
     }
     .header__global-search {
