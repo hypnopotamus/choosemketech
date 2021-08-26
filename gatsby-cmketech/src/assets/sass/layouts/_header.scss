@@ -149,6 +149,37 @@ header {
                 }
             }
         }
+        .utilityNav__item--members {
+            position: absolute;
+            right: 0;
+            z-index: 20;
+            background-color: $white;
+            @media #{$mq-largeScreen} {
+                display: none;
+            }
+            a {
+                &:first-of-type {
+                    padding: 15px;
+                    font-size: 15px;
+                }
+            }
+            .utilityNav__member__subnav--container {
+                .nav__list--secondary {
+                    transform: translateY(100%);
+                    position: fixed;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                    height: 80vh;
+                    transition: all 500ms;
+                    &.showSubNav {
+                        transform: translateY(0%);
+                        
+                    }
+                }
+                
+            }
+        }
     }
     &.opened-nav {
         position: fixed;

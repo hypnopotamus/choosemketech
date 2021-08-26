@@ -72,11 +72,6 @@
         right: 0;
         width: 150%;
         transition: all 500ms;
-        .showSubNav {
-            opacity: 1;
-            background-color: $navy_blue;
-            z-index: 10;
-        }
         .nav__user {
             padding: 8px 15px;
             color: $white;
@@ -86,13 +81,22 @@
         }
         .nav__list--secondary {
             pointer-events: auto;
+            display:none;
+            &.showSubNav {
+                display: block;
+                opacity: 1;
+                background-color: $navy_blue;
+                z-index: 10;
+            }
         }
         li {
             &.nav__link {
                 text-align: left;
-                padding-inline: 30px 0px;
+                padding-inline: 0px;
+                padding-block: 12px;
                 @media #{$mq-largeScreen} {
                     padding-inline: 15px 0px;
+                    padding-block: 15px;
                 }
             }
             &.nav__link-group__title {

@@ -3,6 +3,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import Navigation from "./Navigation"
 import UtilityNav from "./UtilityNav"
 import { chooseMKELogo } from "../assets/assets"
+import MembershipDropdown from "./MembershipDropdown"
 
 const Header = ({ pageContext, toggleBackdrop, ...props }) => {
     const [displayMobileNav, setDisplayedMobileNav] = useState(false)
@@ -50,6 +51,7 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
                     </span>
                 </button>
                 <Navigation toggleNav={displayMobileNav} />
+                <MembershipDropdown membershipToggle={displayMobileNav}/>
                 <a className="header__global-search" href="#" onClick={(e)=>handleSearchToggle(e)}><i className="fas fa-search"></i></a>
             </div>
         </header>

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby'
 
-const MembershipDropdown = () => {
+const MembershipDropdown = ({membershipToggle}) => {
     const [profileType, setProfileType] = useState(null);  
     const [userName, setUserName] = useState("");
     const [firstName, setFirstName] = useState("");
-    const [subNavShow, setsubNavShow] = useState(false);    
+    const [subNavShow, setsubNavShow] = useState(membershipToggle);    
 
     const handleDropdownClick = (e) => {
         e.preventDefault();
@@ -34,19 +34,12 @@ const MembershipDropdown = () => {
     
     const CandidateView = () => {
         return(
-            <>
-            {/* <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="members">
-                    <a href="/member-profile"  className="utilityNav__link utilityNav__link--primary">
-                        <i className="fas fa-user"></i><span>Member Profile</span>
-                    </a>
-                </li> */}
-                <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
-                    <a href="#" onClick={(e) => handleDropdownClick(e)}  className="utilityNav__link utilityNav__link--primary" >
-                        <i className="fas fa-user-circle"></i><span>{firstName}</span> <i className="fas fa-caret-down"></i>
-                    </a>
-                    <CandidateSubnav />
-                </li>
-            </>
+            <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
+                <a href="#" onClick={(e) => handleDropdownClick(e)}  className="utilityNav__link utilityNav__link--primary" >
+                    <i className="fas fa-user-circle"></i><span>{firstName}</span> <i className="fas fa-caret-down"></i>
+                </a>
+                <CandidateSubnav />
+            </li>
         )
     }
     const CandidateSubnav = () => {
@@ -102,19 +95,13 @@ const MembershipDropdown = () => {
 
     const CompanyView = () => {
         return (
-            <>
-                <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="members">
-                    <a href="/company-profile"  className="utilityNav__link utilityNav__link--primary" >
-                        <i className="fas fa-user"></i><span>Company Profile</span>
-                    </a>
-                </li>
-                <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
-                    <a href="#" onClick={(e) => handleDropdownClick(e)} className="utilityNav__link utilityNav__link--primary" >
-                        <i className="fas fa-user-circle"></i><span>{userName}</span> <i className="fas fa-caret-down"></i>
-                    </a>
-                    <CompanySubnav />
-                </li>
-            </>
+
+            <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
+                <a href="#" onClick={(e) => handleDropdownClick(e)} className="utilityNav__link utilityNav__link--primary" >
+                    <i className="fas fa-user-circle"></i><span>{userName}</span> <i className="fas fa-caret-down"></i>
+                </a>
+                <CompanySubnav />
+            </li>
         )
     }
     const CompanySubnav = () => {
@@ -134,7 +121,7 @@ const MembershipDropdown = () => {
                         </h4>
                     </li>
                     <li className="nav__link">
-                        <Link to="/member-profile">
+                        <Link to="/company-profile">
                             Company Profile
                         </Link>
                     </li>
