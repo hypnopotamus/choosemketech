@@ -137,7 +137,7 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
         return (
             <div className="utilityNav__member__subnav--container">
                 <ul 
-                    // onMouseLeave={()=>handleMouseLeaveSubNav()}
+                    onMouseLeave={()=>handleMouseLeaveSubNav()}
                     role="menubar"
                     className={`nav__list nav__list--secondary ${subNavShow ? "showSubNav": ""}`}>
                     <div className="nav__user">
