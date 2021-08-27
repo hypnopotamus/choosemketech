@@ -32,6 +32,7 @@ header {
             left: 40px;
             top: 15px;
             text-align: left;
+            z-index: 10;
         }
         .logo {
             position: relative;
@@ -51,15 +52,21 @@ header {
     }
     .header__utility-nav {
         position: absolute;
+        z-index: 6;
         width:100%;
         transition: 500ms;
         -webkit-transform: translateY(-120%);
         transform: translateY(-120%);
-
-        @media #{$mq-largeScreen} {
+        @media #{$mq-largeScreen} {            
             position: relative;
             -webkit-transform: translateY(0%);
             transform: translateY(0%);
+        }
+        .utilityNav__item--members {
+            display: none;
+            @media #{$mq-largeScreen} {
+                display: block;
+            }
         }
     }
     .header__global-search {
@@ -140,6 +147,43 @@ header {
                     -webkit-transform: translateY(0);
                     transform: translateY(0);
                 }
+            }
+        }
+        .utilityNav__item--members {
+            position: absolute;
+            right: 0;
+            z-index: 20;
+            background-color: $white;
+            @media #{$mq-largeScreen} {
+                display: none;
+            }
+            .membershipDropdown__close {
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                font-weight: 800;
+                font-family: "Inter-Bold";
+            }
+            a {
+                &:first-of-type {
+                    padding: 15px;
+                    font-size: 15px;
+                }
+            }
+            .utilityNav__member__subnav--container {
+                .nav__list--secondary {
+                    transform: translateY(100%);
+                    position: fixed;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                    height: 80vh;
+                    transition: all 500ms;
+                    &.showSubNav {
+                        transform: translateY(0%);
+                        
+                    }
+                }
+                
             }
         }
     }

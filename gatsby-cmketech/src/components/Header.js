@@ -3,6 +3,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import Navigation from "./Navigation"
 import UtilityNav from "./UtilityNav"
 import { chooseMKELogo } from "../assets/assets"
+import MembershipDropdown from "./MembershipDropdown"
 
 const Header = ({ pageContext, toggleBackdrop, ...props }) => {
     const [displayMobileNav, setDisplayedMobileNav] = useState(false)
@@ -10,6 +11,11 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
     const handleMenuClick = () => {
         setDisplayedMobileNav(!displayMobileNav)
     }
+
+    const handleSearchToggle = (e) => {
+        e.preventDefault();
+    }
+
 
     return (
         <header
@@ -38,16 +44,31 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
                     onClick={() => handleMenuClick()}
                 >
                     <span className="toggle-inner">
-                        <span className="toggle-icon">
-                            <i className="fas fa-bars"></i>
-                        </span>
-                        <span className="toggle-text">Menu</span>
+                        {!displayMobileNav && (
+                            <>
+                            <span className="toggle-icon">
+                                <i className="fas fa-bars"></i>
+                            </span>
+                            <span className="toggle-text">Menu</span>
+                            </>
+                        )}
+                        {displayMobileNav && (
+                            <>
+                            <span className="toggle-icon">
+                                <i className="fas fa-times"></i>
+                            </span>
+                            <span className="toggle-text">Close</span>
+                            </>
+                        )}
+                        
                     </span>
                 </button>
-                <Navigation toggleNav={displayMobileNav} />
-                <div className="header__global-search">
-                    <i className="fas fa-search"></i>
-                </div>
+                <Navigation 
+                    toggleNav={displayMobileNav} />
+                <MembershipDropdown 
+                    toggleNav={displayMobileNav} 
+                    onDropdownOpen={setDisplayedMobileNav}/>
+                <a className="header__global-search" href="#" onClick={(e)=>handleSearchToggle(e)}><i className="fas fa-search"></i></a>
             </div>
         </header>
     )

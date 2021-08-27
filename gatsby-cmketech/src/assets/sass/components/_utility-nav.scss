@@ -32,6 +32,16 @@
         &--members {
             position: relative;
             font-weight: 500;
+            #membershipDropdown__close, .membershipDropdown__close {
+                @media #{$mq-largeScreen} {
+                    display: none;
+                }
+            }
+            .membershipDropdown__name {
+                @include customQuery(300px, 1023px){
+                    display: none;
+                }
+            }
             a {
                 letter-spacing: normal;
                 font-size: 1rem;
@@ -64,6 +74,61 @@
             .fas {
                 margin-inline: 0px 10px;
             }
+        }
+    }
+    &__member__subnav--container {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 200%;
+        transition: all 500ms;
+        .nav__user {
+            padding: 20px 15px 0px;
+            text-transform: uppercase;
+            color: $white;
+            span {
+                margin-left: 10px;
+            }
+        }
+        .nav__list--secondary {
+            pointer-events: auto;
+            display:none;
+            &.showSubNav {
+                display: block;
+                opacity: 1;
+                background-color: $navy_blue;
+                z-index: 10;
+                width: 120%;
+            }
+        }
+        li {
+            &.nav__link {
+                text-align: left;
+                padding-inline: 0px;
+                padding-block: 12px;
+                @media #{$mq-largeScreen} {
+                    padding-inline: 15px 0px;
+                    padding-block: 15px;
+                }
+            }
+            &.nav__link-group__title {
+                h4 {
+                    color: $white;
+                    margin: 5px 10px;
+                    font-family: "Inter", sans-serif;
+                    font-size: 15px;
+                    border-bottom: 1px solid $teal;
+                    padding: 10px 0px;
+                    text-transform: capitalize;
+                    font-weight: 400;
+                }
+            }
+            a {
+                color: $white;
+                text-decoration: none;
+                
+            }
+            
         }
     }
 }

@@ -132,7 +132,10 @@
     }
     &--reversed {
         .imageCopy__row {
-            flex-direction: row-reverse;
+            flex-direction: column;
+            @media #{$mq-mediumScreen} {
+                flex-direction: row-reverse;
+            }
         }
         .slick-slider {
             .slick-dots {
