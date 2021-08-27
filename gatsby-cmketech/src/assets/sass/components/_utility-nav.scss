@@ -32,6 +32,16 @@
         &--members {
             position: relative;
             font-weight: 500;
+            #membershipDropdown__close, .membershipDropdown__close {
+                @media #{$mq-largeScreen} {
+                    display: none;
+                }
+            }
+            .membershipDropdown__name {
+                @include customQuery(300px, 1023px){
+                    display: none;
+                }
+            }
             a {
                 letter-spacing: normal;
                 font-size: 1rem;

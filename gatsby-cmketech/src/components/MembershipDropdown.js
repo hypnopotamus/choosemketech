@@ -1,20 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby'
 
-const MembershipDropdown = () => {
+const MembershipDropdown = ({toggleNav, ...props}) => {
     const [profileType, setProfileType] = useState(null);  
     const [userName, setUserName] = useState("");
     const [firstName, setFirstName] = useState("");
     const [subNavShow, setsubNavShow] = useState(false);    
 
     const handleDropdownClick = (e) => {
-        e.preventDefault();
+        e.preventDefault();        
         setsubNavShow(!subNavShow);
+        if(toggleNav && props.onDropdownOpen){
+            props.onDropdownOpen(false)
+        }
     }
     const handleMouseLeaveSubNav = () => {
         setsubNavShow(false);
     }
-
+    useEffect(() => {
+        if(toggleNav && subNavShow) {
+            setsubNavShow(false)
+        }
+    }, [toggleNav])
     useEffect(() => {
         if(window.MemberStack.onReady){
             window.MemberStack.onReady.then(function(member){
@@ -36,14 +43,16 @@ const MembershipDropdown = () => {
         return(
             <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
                 <a href="#" onClick={(e) => handleDropdownClick(e)}  className="utilityNav__link utilityNav__link--primary" >
-                    {subNavShow && (
+                    {subNavShow  && (
                         <>
-                        <i className="fas fa-user-circle"></i><span className="membershipDropdown__close">{firstName}</span> <i className="fas fa-caret-down"></i>
+                        <i className="fas fa-times" id="membershipDropdown__close"></i><span className="membershipDropdown__close">Close</span>
+                        <i className="fas fa-user-circle membershipDropdown__name"></i><span className="membershipDropdown__name">{firstName}</span> <i className="fas fa-caret-down"></i>
                         </>
+                        
                     )}
-                    {!subNavShow && (
+                    {!subNavShow &&  (
                         <>
-                        <i className="fas fa-times"></i><span>Close</span>
+                        <i className="fas fa-user-circle"></i><span>{firstName}</span> <i className="fas fa-caret-down"></i>
                         </>
                     )}
                 </a>
@@ -107,13 +116,14 @@ const MembershipDropdown = () => {
 
             <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
                 <a href="#" onClick={(e) => handleDropdownClick(e)} className="utilityNav__link utilityNav__link--primary" >
-                {subNavShow && (
+                {subNavShow  && (
                     <>
-                    <i className="fas fa-times"></i><span className="membershipDropdown__close">Close</span>
+                    <i className="fas fa-times" id="membershipDropdown__close"></i><span className="membershipDropdown__close">Close</span>
+                    <i className="fas fa-user-circle membershipDropdown__name"></i><span className="membershipDropdown__name">{userName}</span> <i className="fas fa-caret-down"></i>
                     </>
                     
                 )}
-                {!subNavShow && (
+                {!subNavShow &&  (
                     <>
                     <i className="fas fa-user-circle"></i><span>{userName}</span> <i className="fas fa-caret-down"></i>
                     </>
@@ -127,7 +137,7 @@ const MembershipDropdown = () => {
         return (
             <div className="utilityNav__member__subnav--container">
                 <ul 
-                    onMouseLeave={()=>handleMouseLeaveSubNav()}
+                    // onMouseLeave={()=>handleMouseLeaveSubNav()}
                     role="menubar"
                     className={`nav__list nav__list--secondary ${subNavShow ? "showSubNav": ""}`}>
                     <div className="nav__user">

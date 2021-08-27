@@ -63,8 +63,11 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
                         
                     </span>
                 </button>
-                <Navigation toggleNav={displayMobileNav} />
-                <MembershipDropdown />
+                <Navigation 
+                    toggleNav={displayMobileNav} />
+                <MembershipDropdown 
+                    toggleNav={displayMobileNav} 
+                    onDropdownOpen={setDisplayedMobileNav}/>
                 <a className="header__global-search" href="#" onClick={(e)=>handleSearchToggle(e)}><i className="fas fa-search"></i></a>
             </div>
         </header>
