@@ -43,14 +43,16 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
         return(
             <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
                 <a href="#" onClick={(e) => handleDropdownClick(e)}  className="utilityNav__link utilityNav__link--primary" >
-                    {subNavShow && (
+                    {subNavShow  && (
                         <>
-                        <i className="fas fa-user-circle"></i><span className="membershipDropdown__close">{firstName}</span> <i className="fas fa-caret-down"></i>
+                        <i className="fas fa-times" id="membershipDropdown__close"></i><span className="membershipDropdown__close">Close</span>
+                        <i className="fas fa-user-circle membershipDropdown__name"></i><span className="membershipDropdown__name">{firstName}</span> <i className="fas fa-caret-down"></i>
                         </>
+                        
                     )}
-                    {!subNavShow && (window.matchMedia("max-width:1024px")) &&(
+                    {!subNavShow &&  (
                         <>
-                        <i className="fas fa-times"></i><span>Close</span>
+                        <i className="fas fa-user-circle"></i><span>{firstName}</span> <i className="fas fa-caret-down"></i>
                         </>
                     )}
                 </a>
