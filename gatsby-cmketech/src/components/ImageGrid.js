@@ -39,7 +39,7 @@ const ImageGrid = ({gallery}) => {
                 {galleryData.map((image, index) => {
                     return (
                         <div className={image.gridArea} key={index}>
-                            <img src={image.imagePath} alt={image.altText} />
+                            <img src={image.imagePath.sourceUrl} alt={image.altText} />
                         </div>
                     )
                 })}

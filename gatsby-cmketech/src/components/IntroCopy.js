@@ -2,7 +2,7 @@ import React from "react"
 
 const IntroCopy = ({heroModifier, intro}) => {
     
-    const data = intro.wpPage.Pages_CF;
+    const data = intro;
 
     return (
         <div className="row">

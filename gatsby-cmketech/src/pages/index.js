@@ -60,7 +60,6 @@ const IndexPage = () => {
     <Layout>
       <Seo title="Choose MKE Tech" />
       <Hero hero={data}/>
-      <IntroCopy intro={data} />
       <ThreeColumn columns={data} />
       <div className="container">
         <ImageCopy />

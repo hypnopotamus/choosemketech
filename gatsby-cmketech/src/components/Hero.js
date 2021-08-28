@@ -1,4 +1,5 @@
 import React from "react";
+import IntroCopy from "./IntroCopy";
 
 const Hero = ({hero}) => {
 
@@ -19,6 +20,7 @@ const Hero = ({hero}) => {
                 </div>
             </div>
         </div>
+        <IntroCopy heroModifier={true} intro={data} />
         </>
     )
 }
