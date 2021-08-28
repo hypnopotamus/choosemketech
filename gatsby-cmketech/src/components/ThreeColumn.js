@@ -19,8 +19,6 @@ const ThreeColumn = ({columns}) => {
         ],
     }
     
-    console.log(columns)
-
     const data = columns.wpPage.Pages_CF;
 
     return (

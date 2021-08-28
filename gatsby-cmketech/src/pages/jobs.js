@@ -9,7 +9,6 @@ const Jobs = () => {
   return (
     <Layout>
         <Seo title="Jobs Page" />
-        <Hero />
         <div className="container">
           <h1>Explore tech companies in Milwaukee</h1>
           <Cards />

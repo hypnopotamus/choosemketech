@@ -18,11 +18,15 @@ const ImageGrid = ({gallery}) => {
             },
         ],
     }
+
+    console.log(gallery)
+
+    const galleryData = gallery.wpPage.Pages_CF.gridImages;
     
     return (
         <div className="image-grid--container ">
-            {/* <Slider className="image-grid__slider" {...ImgageGrid_slide_settings}>
-                {gallery.map((image, index) => {
+            <Slider className="image-grid__slider" {...ImgageGrid_slide_settings}>
+                {galleryData.map((image, index) => {
                     return (
                         <div className="image-grid--slot" key={index}>
                             <img src={image.imagePath} alt={image.altText} />
@@ -32,14 +36,14 @@ const ImageGrid = ({gallery}) => {
                 })}
             </Slider>
             <div className="gallery">
-                {gallery.map((image, index) => {
+                {galleryData.map((image, index) => {
                     return (
                         <div className={image.gridArea} key={index}>
                             <img src={image.imagePath} alt={image.altText} />
                         </div>
                     )
                 })}
-            </div> */}
+            </div>
         </div>
     )
 }

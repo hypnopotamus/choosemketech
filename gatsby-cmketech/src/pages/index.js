@@ -69,7 +69,7 @@ const IndexPage = () => {
       <div className="container">
         <ImageCopy flip={true} />
       </div>
-      <ImageGrid />
+      <ImageGrid gallery={data} />
     </Layout>
   )
   
