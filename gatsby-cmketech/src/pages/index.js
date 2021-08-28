@@ -14,7 +14,6 @@ const IndexPage = () => {
     query HeroPageQuery {
       wpPage(databaseId: {eq: 102}) {
         Pages_CF {
-          headerText
           heroSubText
           heroText
           heroVideo
@@ -33,13 +32,23 @@ const IndexPage = () => {
           subHeroButtonUrl
           subHeroButtonLabel
           gridImages {
-            title
             altText
             gridArea
             imagePath {
               sourceUrl
             }
+            title
           }
+          threeColumnCards {
+            content
+            link
+            linkLabel
+            title
+            image {
+              sourceUrl
+            }
+          }
+          threeColumnHeaderText
         }
       }
     }

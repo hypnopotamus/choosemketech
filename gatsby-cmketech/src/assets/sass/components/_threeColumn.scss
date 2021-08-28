@@ -30,7 +30,7 @@
             margin-block: 0px 15px;
             img {
                 aspect-ratio: 16 / 10;
-                object-fit: cover;
+                object-fit: contain;
                 width: 100%;
             }
         }

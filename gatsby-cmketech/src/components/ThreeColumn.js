@@ -21,81 +21,37 @@ const ThreeColumn = ({columns}) => {
     
     console.log(columns)
 
-    
+    const data = columns.wpPage.Pages_CF;
+
     return (
         <div className="threeColumn">
             <div className="container">
                 <div className="threeColumn__heading">
-                    <h2>Choose Your Journey</h2>
+                    <h2 dangerouslySetInnerHTML={ {__html : data.threeColumnHeaderText} }></h2>
                 </div>
                 <div className="threeColumn__container">
                     <Slider {...settings}>
-                        <div className="threeColumn__column">
-                            <div className="threeColumn__column__container">
-                                <div className="threeColumn__column__image">
-                                    <img src="https://via.placeholder.com/384x249" />
-                                </div>
-                                <div className="threeColumn__column__content">
-                                    <h4>SUBHEADING</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consetetur
-                                        sadipscing elitr, sed diam nonumy eirmod
-                                        tempor <a href="#">invidunt ut</a> labore
-                                        et dolore magna aliquyam erat, sed diam
-                                        voluptua.
-                                    </p>
-                                    <div className="threeColumn__column__ctas">
-                                        <a href="#" className="linked">
-                                            This is a hyper link
-                                        </a>
+                        {data.threeColumnCards.map((col, index) => {
+                            return (
+                                <div className="threeColumn__column" key={index}>
+                                <div className="threeColumn__column__container">
+                                    <div className="threeColumn__column__image">
+                                        <img src={col.image.sourceUrl} />
+                                    </div>
+                                    <div className="threeColumn__column__content">
+                                        <h4 dangerouslySetInnerHTML={ {__html : col.title} }></h4>
+                                        <p dangerouslySetInnerHTML={ {__html : col.content } }></p>
+                                        <div className="threeColumn__column__ctas">
+                                            <a href={col.link} className="linked">
+                                                {col.linkLabel}
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="threeColumn__column">
-                            <div className="threeColumn__column__container">
-                                <div className="threeColumn__column__image">
-                                    <img src="https://via.placeholder.com/384x249" />
-                                </div>
-                                <div className="threeColumn__column__content">
-                                    <h4>SUBHEADING</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consetetur
-                                        sadipscing elitr, sed diam nonumy eirmod
-                                        tempor <a href="#">invidunt ut</a> labore
-                                        et dolore magna aliquyam erat, sed diam
-                                        voluptua.
-                                    </p>
-                                    <div className="threeColumn__column__ctas">
-                                        <a href="#" className="linked">
-                                            This is a hyper link
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="threeColumn__column">
-                            <div className="threeColumn__column__container">
-                                <div className="threeColumn__column__image">
-                                    <img src="https://via.placeholder.com/384x249" />
-                                </div>
-                                <div className="threeColumn__column__content">
-                                    <h4>SUBHEADING</h4>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consetetur
-                                        sadipscing elitr, sed diam nonumy eirmod
-                                        tempor <a href="#">invidunt ut</a> labore
-                                        et dolore magna aliquyam erat, sed diam
-                                        voluptua.
-                                    </p>
-                                    <div className="threeColumn__column__ctas">
-                                        <a href="#" className="linked">
-                                            This is a hyper link
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            )
+                        })}
+
                     </Slider>
                 </div>
             </div>
