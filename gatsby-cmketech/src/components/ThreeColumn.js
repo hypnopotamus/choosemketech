@@ -1,7 +1,7 @@
 import React from "react"
 import Slider from "react-slick"
 
-const ThreeColumn = ({}) => {
+const ThreeColumn = ({columns}) => {
     const settings = {
         dots: false,
         arrows: false,
@@ -19,7 +19,9 @@ const ThreeColumn = ({}) => {
         ],
     }
     
+    console.log(columns)
 
+    
     return (
         <div className="threeColumn">
             <div className="container">

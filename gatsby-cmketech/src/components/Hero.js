@@ -1,19 +1,9 @@
 import React from "react";
-import IntroCopy from "./IntroCopy";
-import { useHeroQuery } from "../hooks/useHeroQuery";
 
-const Hero = () => {
-    const { 
-        wpPage : { Pages_CF: data },
-    } = useHeroQuery() 
-    
-    console.log(data)
+const Hero = ({hero}) => {
 
+    const data = hero.wpPage.Pages_CF;
     const placeholderImage = data.heroImage.sourceUrl;
-
-    const heroText = data.heroText;
-    const heroSubText = data.heroSubText;
-    const heroTextMinusP = heroText.replace(/<p>/g, '').replace(/<\/p>/g, '');
 
     return (
         <>
@@ -24,12 +14,11 @@ const Hero = () => {
                     <source src={data.heroVideo} type="video/webm" />
                 </video>
                 <div className="hero--banner__copy">
-                    <h1 dangerouslySetInnerHTML={ {__html: heroTextMinusP} } />
-                    <h3 dangerouslySetInnerHTML={ {__html: heroSubText} } ></h3>
+                    { data.heroText }
+                    <h3 dangerouslySetInnerHTML={ {__html: data.heroSubText} } ></h3>
                 </div>
             </div>
         </div>
-        <IntroCopy heroModifier={true} />
         </>
     )
 }
