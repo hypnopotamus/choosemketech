@@ -14,7 +14,7 @@ const Hero = ({hero}) => {
                     <source src={data.heroVideo} type="video/webm" />
                 </video>
                 <div className="hero--banner__copy">
-                    { data.heroText }
+                    <div dangerouslySetInnerHTML={ {__html:  data.heroText } } />
                     <h3 dangerouslySetInnerHTML={ {__html: data.heroSubText} } ></h3>
                 </div>
             </div>
