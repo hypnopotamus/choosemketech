@@ -1,5 +1,4 @@
 import React from "react";
-import { graphql } from "gatsby"
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
@@ -8,9 +7,8 @@ import ImageGrid from "../components/ImageGrid";
 import ImageCopy from "../components/ImageCopy";
 import ThreeColumn from "../components/ThreeColumn";
 
-const IndexPage = ({data}) => {
-  console.log(data)
-  
+const IndexPage = () => {
+
   return (
     <Layout>
       <Seo title="Choose MKE Tech" />
@@ -28,16 +26,5 @@ const IndexPage = ({data}) => {
   )
   
 }
-
-export const query = graphql`
-  query HeroPageQuery {
-    wpPage {
-        Pages_CF {
-            heroText
-        }
-    }
-  }
-`
-
 
 export default IndexPage
