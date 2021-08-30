@@ -3,9 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Seo from "../../components/Seo";
 import Layout from "../../components/Layout";
 import ThreeColumn from "../../components/ThreeColumn";
-import IntroCopy from "../../components/IntroCopy";
-import Hero from "../../components/Hero";
-
+import SubHero from "../../components/SubHero";
 const TechScene = () => {
   
   const data = useStaticQuery(graphql`
@@ -39,7 +37,7 @@ const TechScene = () => {
   return (
     <Layout>
         <Seo title="Tech Scene Page" />
-        <IntroCopy intro={TechPageData} />
+        <SubHero hero={TechPageData} />
         <ThreeColumn 
           columns={TechPageData.threeColumnCardsMts} 
           title={TechPageData.threeColumnHeaderText} 

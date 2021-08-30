@@ -3,11 +3,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
+import SubHero from "../components/SubHero";
 import JobCarousel from "../components/JobCarousel";
 import ImageGrid from "../components/ImageGrid";
 import ImageCopy from "../components/ImageCopy";
 import ThreeColumn from "../components/ThreeColumn";
-import IntroCopy from "../components/IntroCopy";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -71,6 +71,7 @@ const IndexPage = () => {
       <div className="container">
         <ImageCopy flip={true} />
       </div>
+      <SubHero hero={IndexPageData} />
       <ImageGrid gallery={IndexPageData} />
     </Layout>
   )
