@@ -12,7 +12,7 @@ const TechScene = () => {
       wpPage(databaseId: {eq: 31}) {
         MilwaukeeTechScene_CF {
           threeColumnHeaderText
-          threeColumnCards {
+          threeColumnCardsMts {
             title
             content
             linkLabel
@@ -40,8 +40,8 @@ const TechScene = () => {
   return (
     <Layout>
         <Seo title="Tech Scene Page" />
-        <IntroCopy intro={TechPageData} />
-        <ThreeColumn columns={TechPageData} />
+        {/* <IntroCopy intro={TechPageData} />
+        <ThreeColumn columns={TechPageData} /> */}
         <div className="container">
           <h1>Tech Scene Page</h1>
         </div>
