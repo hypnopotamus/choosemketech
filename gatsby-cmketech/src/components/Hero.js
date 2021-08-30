@@ -7,7 +7,7 @@ const Hero = ({hero}) => {
 
     return (
         <>
-        <div className="hero hero--banner container">
+        <div className="hero hero--banner">
             <div className="row">
                 <video autoPlay={true} className="hero--banner__video" loop="yes" muted="yes" poster={placeholderImage}>
                     <source src={hero.heroVideo} type="video/mp4" />

@@ -19,37 +19,42 @@ const ThreeColumn = ({columns, title}) => {
         ],
     }
 
+    let threeColumnTitle;
+
+    if (title) {
+        threeColumnTitle = <div className="threeColumn__heading"><h2 dangerouslySetInnerHTML={ {__html : title} }></h2></div>;
+    }
+
     return (
+        
         <div className="threeColumn">
-            <div className="container">
-                <div className="threeColumn__heading">
-                    <h2 dangerouslySetInnerHTML={ {__html : title} }></h2>
-                </div>
-                <div className="threeColumn__container">
-                    <Slider {...settings}>
-                        {columns.map((col, index) => {
-                            return (
-                                <div className="threeColumn__column" key={index}>
-                                <div className="threeColumn__column__container">
-                                    <div className="threeColumn__column__image">
-                                        <img src={col.image.sourceUrl} />
-                                    </div>
-                                    <div className="threeColumn__column__content">
-                                        <h4 dangerouslySetInnerHTML={ {__html : col.title} }></h4>
-                                        <p dangerouslySetInnerHTML={ {__html : col.content } }></p>
-                                        <div className="threeColumn__column__ctas">
-                                            <a href={col.link} className="linked">
-                                                {col.linkLabel}
-                                            </a>
-                                        </div>
+            
+            { threeColumnTitle }
+
+            <div className="threeColumn__container">
+                <Slider {...settings}>
+                    {columns.map((col, index) => {
+                        return (
+                            <div className="threeColumn__column" key={index}>
+                            <div className="threeColumn__column__container">
+                                <div className="threeColumn__column__image">
+                                    <img src={col.image.sourceUrl} />
+                                </div>
+                                <div className="threeColumn__column__content">
+                                    <h4 dangerouslySetInnerHTML={ {__html : col.title} }></h4>
+                                    <p dangerouslySetInnerHTML={ {__html : col.content } }></p>
+                                    <div className="threeColumn__column__ctas">
+                                        <a href={col.link} className="linked">
+                                            {col.linkLabel}
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                            )
-                        })}
+                        </div>
+                        )
+                    })}
 
-                    </Slider>
-                </div>
+                </Slider>
             </div>
         </div>
     )
