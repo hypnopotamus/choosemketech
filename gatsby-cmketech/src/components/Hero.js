@@ -1,10 +1,11 @@
 import React from "react";
 import IntroCopy from "./IntroCopy";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Hero = ({hero}) => {
 
     const data = hero.wpPage.Pages_CF;
-    const placeholderImage = data.heroImage.sourceUrl;
+    const placeholderImage = getImage(data.heroImage.sourceUrl);
 
     return (
         <>
