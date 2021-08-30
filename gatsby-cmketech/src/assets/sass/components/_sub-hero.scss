@@ -3,6 +3,12 @@
     background-color: $light_gray;
     padding-bottom: 3.125rem;
     &.sub-hero--banner {
+        margin-block-start: 0;
+        @media #{$mq-mediumScreen} {
+            height: 431px;
+            margin-block-start: 0.5rem;
+        }
+
         img {
             width: 100%;
             object-fit: cover;
