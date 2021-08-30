@@ -1,0 +1,45 @@
+.comparisonTable {
+    box-shadow: $box-shadow;
+    font-family: "Inter", sans-serif;
+    min-width: 50%;
+    margin: 0 auto;
+    &__container {
+        padding: 20px 0px 0px;
+    }
+    &__blue {
+        color: $blue;
+        text-align: center;
+    }
+    &__center {
+        text-align: center;
+    }
+    
+    thead {
+        tr {
+            th {
+                font-size: 20px;
+                font-family: "Inter-Bold", sans-serif;
+                text-transform: uppercase;
+                padding: 20px 15px 20px;
+                background-color: $navy_blue;
+                color: $white;
+                text-align: left;
+            }
+        }
+    }
+    tbody {
+        .comparisonTable__subheader {
+            background-color: $blue;
+            color: $white;
+            font-size: 18px;
+            font-family: "Inter-Bold", sans-serif;
+            td {
+                padding: 20px 15px;
+            }
+        }
+        td {
+            padding: 20px 15px;
+            border-bottom: 1px solid $medium_gray;
+        }
+    }
+}
