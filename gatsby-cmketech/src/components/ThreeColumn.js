@@ -36,13 +36,13 @@ const ThreeColumn = ({columns, title}) => {
                     {columns.map((col, index) => {
                         return (
                             <div className="threeColumn__column" key={index}>
-                            <div className="threeColumn__column__container">
+                            <div className="threeColumn__column__container" tabIndex="0" aria-labelledby={`header${index}, content${index}`}>
                                 <div className="threeColumn__column__image">
-                                    <img src={col.image.sourceUrl} />
+                                    <img src={col.image.sourceUrl} alt=""/>
                                 </div>
                                 <div className="threeColumn__column__content">
-                                    <h4 dangerouslySetInnerHTML={ {__html : col.title} }></h4>
-                                    <p dangerouslySetInnerHTML={ {__html : col.content } }></p>
+                                    <h4 dangerouslySetInnerHTML={ {__html : col.title} } id={`header${index}`}></h4>
+                                    <p dangerouslySetInnerHTML={ {__html : col.content } } id={`content${index}`}></p>
                                     <div className="threeColumn__column__ctas">
                                         <a href={col.link} className="linked">
                                             {col.linkLabel}

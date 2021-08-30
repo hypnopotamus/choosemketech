@@ -19,12 +19,10 @@ const ImageGrid = ({gallery}) => {
         ],
     }
 
-    const galleryData = gallery.gridImages;
-    
     return (
         <div className="image-grid--container ">
             <Slider className="image-grid__slider" {...ImgageGrid_slide_settings}>
-                {galleryData.map((image, index) => {
+                {gallery.map((image, index) => {
                     return (
                         <div className="image-grid--slot" key={index}>
                             <img src={image.imagePath.sourceUrl} alt={image.altText} />
@@ -34,7 +32,7 @@ const ImageGrid = ({gallery}) => {
                 })}
             </Slider>
             <div className="gallery">
-                {galleryData.map((image, index) => {
+                {gallery.map((image, index) => {
                     return (
                         <div className={image.gridArea} key={index}>
                             <img src={image.imagePath.sourceUrl} alt={image.altText} />

@@ -4,7 +4,6 @@ import SubIntroCopy from "./SubIntroCopy";
 const SubHero = ({hero}) => {
 
     const placeholderImage = hero.subHeroImage.sourceUrl;
-    console.log(hero)
 
     return (
         <>

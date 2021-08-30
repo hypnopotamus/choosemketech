@@ -72,7 +72,7 @@ const IndexPage = () => {
         <ImageCopy flip={true} />
       </div>
       <SubHero hero={IndexPageData} />
-      <ImageGrid gallery={IndexPageData} />
+      <ImageGrid gallery={IndexPageData.gridImages} />
     </Layout>
   )
   

@@ -4,6 +4,8 @@ import Seo from "../../components/Seo";
 import Layout from "../../components/Layout";
 import ThreeColumn from "../../components/ThreeColumn";
 import SubHero from "../../components/SubHero";
+import ImageGrid from "../../components/ImageGrid";
+
 const TechScene = () => {
   
   const data = useStaticQuery(graphql`
@@ -28,6 +30,14 @@ const TechScene = () => {
           subHeroImage {
             sourceUrl
           }
+          gridImagesMts {
+            title
+            altText
+            gridArea
+            imagePath {
+              sourceUrl
+            }
+          }
         }
       }
     }
@@ -44,8 +54,8 @@ const TechScene = () => {
           title={TechPageData.threeColumnHeaderText} 
         />
         <div className="container">
-          <h1>Tech Scene Page</h1>
         </div>
+        <ImageGrid gallery={TechPageData.gridImagesMts} />
     </Layout>
   )
 
