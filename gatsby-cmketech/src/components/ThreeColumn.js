@@ -19,17 +19,15 @@ const ThreeColumn = ({columns}) => {
         ],
     }
     
-    const data = columns.wpPage.Pages_CF;
-
     return (
         <div className="threeColumn">
             <div className="container">
                 <div className="threeColumn__heading">
-                    <h2 dangerouslySetInnerHTML={ {__html : data.threeColumnHeaderText} }></h2>
+                    <h2 dangerouslySetInnerHTML={ {__html : columns.threeColumnHeaderText} }></h2>
                 </div>
                 <div className="threeColumn__container">
                     <Slider {...settings}>
-                        {data.threeColumnCards.map((col, index) => {
+                        {columns.threeColumnCards.map((col, index) => {
                             return (
                                 <div className="threeColumn__column" key={index}>
                                 <div className="threeColumn__column__container">

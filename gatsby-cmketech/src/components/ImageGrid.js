@@ -19,9 +19,7 @@ const ImageGrid = ({gallery}) => {
         ],
     }
 
-    console.log(gallery)
-
-    const galleryData = gallery.wpPage.Pages_CF.gridImages;
+    const galleryData = gallery.gridImages;
     
     return (
         <div className="image-grid--container ">

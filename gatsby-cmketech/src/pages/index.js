@@ -11,7 +11,7 @@ import IntroCopy from "../components/IntroCopy";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
-    query HeroPageQuery {
+    query HomePageQuery {
       wpPage(databaseId: {eq: 102}) {
         Pages_CF {
           heroSubText
@@ -54,13 +54,13 @@ const IndexPage = () => {
     }
   `)
 
-  console.log(data)
+  const IndexPageData = data.wpPage.Pages_CF;
 
   return (
     <Layout>
       <Seo title="Choose MKE Tech" />
-      <Hero hero={data}/>
-      <ThreeColumn columns={data} />
+      <Hero hero={IndexPageData}/>
+      <ThreeColumn columns={IndexPageData} />
       <div className="container">
         <ImageCopy />
       </div>
@@ -68,7 +68,7 @@ const IndexPage = () => {
       <div className="container">
         <ImageCopy flip={true} />
       </div>
-      <ImageGrid gallery={data} />
+      <ImageGrid gallery={IndexPageData} />
     </Layout>
   )
   

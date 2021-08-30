@@ -3,24 +3,23 @@ import IntroCopy from "./IntroCopy";
 
 const Hero = ({hero}) => {
 
-    const data = hero.wpPage.Pages_CF;
-    const placeholderImage = data.heroImage.sourceUrl;
+    const placeholderImage = hero.heroImage.sourceUrl;
 
     return (
         <>
         <div className="hero hero--banner container">
             <div className="row">
                 <video autoPlay={true} className="hero--banner__video" loop="yes" muted="yes" poster={placeholderImage}>
-                    <source src={data.heroVideo} type="video/mp4" />
-                    <source src={data.heroVideo} type="video/webm" />
+                    <source src={hero.heroVideo} type="video/mp4" />
+                    <source src={hero.heroVideo} type="video/webm" />
                 </video>
                 <div className="hero--banner__copy">
-                    <div dangerouslySetInnerHTML={ {__html:  data.heroText } } />
-                    <h3 dangerouslySetInnerHTML={ {__html: data.heroSubText} } ></h3>
+                    <div dangerouslySetInnerHTML={ {__html:  hero.heroText } } />
+                    <h3 dangerouslySetInnerHTML={ {__html: hero.heroSubText} } ></h3>
                 </div>
             </div>
         </div>
-        <IntroCopy heroModifier={true} intro={data} />
+        <IntroCopy heroModifier={true} intro={hero} />
         </>
     )
 }
