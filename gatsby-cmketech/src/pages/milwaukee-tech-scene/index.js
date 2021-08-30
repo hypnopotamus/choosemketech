@@ -28,8 +28,9 @@ const TechScene = () => {
             sourceUrl
           }
         }
-      }      
+      }
     }
+
   `)
 
   const TechPageData = data.wpPage.MilwaukeeTechScene_CF;

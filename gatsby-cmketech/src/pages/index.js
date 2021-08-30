@@ -32,13 +32,14 @@ const IndexPage = () => {
           subHeroButtonUrl
           subHeroButtonLabel
           gridImages {
+            title
             altText
             gridArea
             imagePath {
               sourceUrl
             }
-            title
           }
+          threeColumnHeaderText
           threeColumnCards {
             content
             link
@@ -48,7 +49,6 @@ const IndexPage = () => {
               sourceUrl
             }
           }
-          threeColumnHeaderText
         }
       }
     }
