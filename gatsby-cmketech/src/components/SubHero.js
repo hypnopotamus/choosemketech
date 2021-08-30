@@ -5,9 +5,10 @@ const SubHero = ({hero}) => {
 
     const placeholderImage = hero.subHeroImage.sourceUrl;
     console.log(hero)
+
     return (
         <>
-        <div className="sub-hero sub-hero--banner container">
+        <div className="sub-hero sub-hero--banner">
             <div className="row">
                 <img src={placeholderImage} />
             </div>

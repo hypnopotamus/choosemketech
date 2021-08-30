@@ -20,16 +20,17 @@ const TechScene = () => {
               sourceUrl
             }
           }
-          introTitle
-          introSubTitle
-          introContent
-          miniHeroImage {
+          subHeroTitle
+          subHeroSubTitle
+          subHeroContent
+          subHeroButtonUrl
+          subHeroButtonLabel
+          subHeroImage {
             sourceUrl
           }
         }
       }
     }
-
   `)
 
   const TechPageData = data.wpPage.MilwaukeeTechScene_CF;
