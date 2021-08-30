@@ -5,6 +5,7 @@ import Layout from "../../components/Layout";
 import ThreeColumn from "../../components/ThreeColumn";
 import SubHero from "../../components/SubHero";
 import ImageGrid from "../../components/ImageGrid";
+import IntroCopy from "../../components/SubIntroCopy";
 
 const TechScene = () => {
   
@@ -38,12 +39,28 @@ const TechScene = () => {
               sourceUrl
             }
           }
+          tertiaryIntroSubHeader
+          tertiaryIntroSubContent
+          tertiaryIntroSubButtonUrl
+          tertiaryIntroSubButtonLabel
+          tertiaryIntroHeader
         }
       }
     }
+
   `)
 
   const TechPageData = data.wpPage.MilwaukeeTechScene_CF;
+  let TertiaryIntroData = {
+    subHeroTitle : data.wpPage.MilwaukeeTechScene_CF.tertiaryIntroHeader,
+    subHeroSubTitle : data.wpPage.MilwaukeeTechScene_CF.tertiaryIntroSubHeader,
+    subHeroContent : `<p>` + data.wpPage.MilwaukeeTechScene_CF.tertiaryIntroSubContent + `</p>`,
+    subHeroButtonUrl : data.wpPage.MilwaukeeTechScene_CF.tertiaryIntroSubButtonUrl,
+    subHeroButtonLabel : data.wpPage.MilwaukeeTechScene_CF.tertiaryIntroSubButtonLabel
+  };
+
+
+  console.log(TertiaryIntroData)
 
   return (
     <Layout>
@@ -55,6 +72,7 @@ const TechScene = () => {
         />
         <div className="container">
         </div>
+        <IntroCopy intro={TertiaryIntroData}/>
         <ImageGrid gallery={TechPageData.gridImagesMts} />
     </Layout>
   )
