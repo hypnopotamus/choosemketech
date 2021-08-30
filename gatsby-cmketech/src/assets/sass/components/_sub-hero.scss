@@ -5,7 +5,6 @@
     &.sub-hero--banner {
         margin-block-start: 0;
         @media #{$mq-mediumScreen} {
-            height: 431px;
             margin-block-start: 0.5rem;
         }
 
