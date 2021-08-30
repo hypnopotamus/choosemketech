@@ -34,7 +34,7 @@ const ImageCopy = ({flip, content, header}) => {
                     <img src={el.image.link} alt={el.image.altText} />
                   </div>
                   <div className="imageCopy__copy">
-                  <div dangerouslySetInnerHTML={{ __html: el.copy }}></div>
+                  <p dangerouslySetInnerHTML={{ __html: el.copy }}></p>
                   </div>
                 </div>
               </div>

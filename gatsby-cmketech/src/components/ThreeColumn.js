@@ -38,7 +38,7 @@ const ThreeColumn = ({header, headline, copy, background, content}) => {
                                         <img src={el.threeColumnImage.link} alt={el.threeColumnImage.altText} />
                                     </div>
                                     <div className="threeColumn__column__content">
-                                        <div dangerouslySetInnerHTML={{ __html: el.threeColumnContent }}></div>
+                                        <p dangerouslySetInnerHTML={{ __html: el.threeColumnContent }}></p>
                                     </div>
                                 </div>
                             </div>

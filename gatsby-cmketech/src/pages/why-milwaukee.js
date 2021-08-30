@@ -12,7 +12,7 @@ const WhyMilwaukee = () => {
     const pageQuery = useStaticQuery(graphql`
         query MyQuery {
             wpPage(databaseId: { eq: 25 }) {
-                why_milwaukee_cf {
+                WhyMilwaukee_CF {
                     introCopyHeadline
                     introCopySubheader
                     introCopyContent
@@ -61,34 +61,34 @@ const WhyMilwaukee = () => {
                 <h1>Why Milwaukee Header</h1>
                 <IntroCopy
                   headline={
-                      pageQuery.wpPage.why_milwaukee_cf.introCopyHeadline
+                      pageQuery.wpPage.WhyMilwaukee_CF.introCopyHeadline
                   }
                   subheader={
-                      pageQuery.wpPage.why_milwaukee_cf.introCopySubheader
+                      pageQuery.wpPage.WhyMilwaukee_CF.introCopySubheader
                   }
-                  copy={pageQuery.wpPage.why_milwaukee_cf.introCopyContent}
+                  copy={pageQuery.wpPage.WhyMilwaukee_CF.introCopyContent}
                 />
                 <ComparisonTable />
                 <ThreeColumn
                   header={true}
-                  headline={pageQuery.wpPage.why_milwaukee_cf.threeColumnWithCopyHeadline}
-                  copy={pageQuery.wpPage.why_milwaukee_cf.threeColumnWithCopyContent}
-                  background={pageQuery.wpPage.why_milwaukee_cf.threeColumnWithIntroBackgroundColor}
-                  content={pageQuery.wpPage.why_milwaukee_cf.threeColumnRepeaterOne}
+                  headline={pageQuery.wpPage.WhyMilwaukee_CF.threeColumnWithCopyHeadline}
+                  copy={pageQuery.wpPage.WhyMilwaukee_CF.threeColumnWithCopyContent}
+                  background={pageQuery.wpPage.WhyMilwaukee_CF.threeColumnWithIntroBackgroundColor}
+                  content={pageQuery.wpPage.WhyMilwaukee_CF.threeColumnRepeaterOne}
                 />
                 <ThreeColumn
                   header={false}
-                  background={pageQuery.wpPage.why_milwaukee_cf.threeColumnTwoBackgroundColor}
-                  content={pageQuery.wpPage.why_milwaukee_cf.threeColumnTwoRepeater}
+                  background={pageQuery.wpPage.WhyMilwaukee_CF.threeColumnTwoBackgroundColor}
+                  content={pageQuery.wpPage.WhyMilwaukee_CF.threeColumnTwoRepeater}
                 />
                 <ThreeColumn
                   header={false}
-                  background={pageQuery.wpPage.why_milwaukee_cf.threeColumnThirdBackgroundColor}
-                  content={pageQuery.wpPage.why_milwaukee_cf.threeColumnThirdRepeater}
+                  background={pageQuery.wpPage.WhyMilwaukee_CF.threeColumnThirdBackgroundColor}
+                  content={pageQuery.wpPage.WhyMilwaukee_CF.threeColumnThirdRepeater}
                 />
                 <ImageCopy
                   header={false}
-                  content={pageQuery.wpPage.why_milwaukee_cf.imageCopyRepeater}
+                  content={pageQuery.wpPage.WhyMilwaukee_CF.imageCopyRepeater}
                 />
             </div>
             <ImageGrid />
