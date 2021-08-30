@@ -19,8 +19,6 @@ const ThreeColumn = ({columns, title}) => {
         ],
     }
 
-    console.log(columns)
-    
     return (
         <div className="threeColumn">
             <div className="container">

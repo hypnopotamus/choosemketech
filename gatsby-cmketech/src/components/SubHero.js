@@ -1,18 +1,18 @@
 import React from "react";
-import IntroCopy from "./IntroCopy";
+import SubIntroCopy from "./SubIntroCopy";
 
 const SubHero = ({hero}) => {
 
-    const placeholderImage = hero.heroImage.sourceUrl;
-
+    const placeholderImage = hero.subHeroImage.sourceUrl;
+    console.log(hero)
     return (
         <>
         <div className="sub-hero sub-hero--banner container">
             <div className="row">
                 <img src={placeholderImage} />
             </div>
+            <SubIntroCopy heroModifier={true} intro={hero} />
         </div>
-        <IntroCopy heroModifier={true} intro={hero} />
         </>
     )
 }

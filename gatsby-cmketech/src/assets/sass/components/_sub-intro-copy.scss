@@ -1,0 +1,38 @@
+.sub-intro-copy, .sub-intro {
+    position: relative;
+    top: -7rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: $white;
+    border-top: 5px solid $blue;
+    padding: 1rem;
+    box-shadow: $box-shadow;
+    padding-block-start: 2.5rem;
+    padding-block-end: 2.5rem;
+
+    &--hero{
+        z-index: 1;
+        max-width: 85%;
+    }
+
+    button,
+    .button {
+        &:first-of-type {
+            margin-inline-start: 0;
+        }
+    }
+    p {
+        margin-bottom: 1.75rem;
+        color: #000;
+
+        @media #{$mq-largeScreen} {
+            width: 80%;
+            margin: 1rem auto;
+        }
+    }
+
+    h2 {
+        margin: 0;
+    }
+}
