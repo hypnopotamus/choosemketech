@@ -4,6 +4,7 @@ import Seo from "../../components/Seo";
 import Layout from "../../components/Layout";
 import ThreeColumn from "../../components/ThreeColumn";
 import IntroCopy from "../../components/IntroCopy";
+import Hero from "../../components/Hero";
 
 const TechScene = () => {
   
@@ -35,13 +36,14 @@ const TechScene = () => {
 
   const TechPageData = data.wpPage.MilwaukeeTechScene_CF;
 
-  console.log(TechPageData)
-  
   return (
     <Layout>
         <Seo title="Tech Scene Page" />
-        {/* <IntroCopy intro={TechPageData} />
-        <ThreeColumn columns={TechPageData} /> */}
+        <IntroCopy intro={TechPageData} />
+        <ThreeColumn 
+          columns={TechPageData.threeColumnCardsMts} 
+          title={TechPageData.threeColumnHeaderText} 
+        />
         <div className="container">
           <h1>Tech Scene Page</h1>
         </div>

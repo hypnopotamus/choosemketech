@@ -1,7 +1,7 @@
 import React from "react"
 import Slider from "react-slick"
 
-const ThreeColumn = ({columns}) => {
+const ThreeColumn = ({columns, title}) => {
     const settings = {
         dots: false,
         arrows: false,
@@ -18,16 +18,18 @@ const ThreeColumn = ({columns}) => {
             },
         ],
     }
+
+    console.log(columns)
     
     return (
         <div className="threeColumn">
             <div className="container">
                 <div className="threeColumn__heading">
-                    <h2 dangerouslySetInnerHTML={ {__html : columns.threeColumnHeaderText} }></h2>
+                    <h2 dangerouslySetInnerHTML={ {__html : title} }></h2>
                 </div>
                 <div className="threeColumn__container">
                     <Slider {...settings}>
-                        {columns.threeColumnCards.map((col, index) => {
+                        {columns.map((col, index) => {
                             return (
                                 <div className="threeColumn__column" key={index}>
                                 <div className="threeColumn__column__container">
