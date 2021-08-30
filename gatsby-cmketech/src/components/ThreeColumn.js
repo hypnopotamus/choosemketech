@@ -28,11 +28,12 @@ const ThreeColumn = ({columns}) => {
                 <div className="threeColumn__container">
                     <Slider {...settings}>
                         {columns.threeColumnCards.map((col, index) => {
+                            console.log(col)
                             return (
                                 <div className="threeColumn__column" key={index}>
                                 <div className="threeColumn__column__container">
                                     <div className="threeColumn__column__image">
-                                        <img src={col.image.sourceUrl} />
+                                        {/* <img src={col.image.sourceUrl} /> */}
                                     </div>
                                     <div className="threeColumn__column__content">
                                         <h4 dangerouslySetInnerHTML={ {__html : col.title} }></h4>

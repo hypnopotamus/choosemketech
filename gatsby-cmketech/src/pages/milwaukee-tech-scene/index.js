@@ -11,7 +11,8 @@ const TechScene = () => {
     query MKETechSceneQuery {
       wpPage(databaseId: {eq: 31}) {
         MilwaukeeTechScene_CF {
-          cardLayout {
+          threeColumnHeaderText
+          threeColumnCards {
             title
             content
             linkLabel
@@ -23,18 +24,23 @@ const TechScene = () => {
           introTitle
           introSubTitle
           introContent
-          threeColumnHeaderText
           miniHeroImage {
             sourceUrl
           }
         }
-      }
+      }      
     }
   `)
 
+  const TechPageData = data.wpPage.MilwaukeeTechScene_CF;
+
+  console.log(TechPageData)
+  
   return (
     <Layout>
         <Seo title="Tech Scene Page" />
+        <IntroCopy intro={TechPageData} />
+        <ThreeColumn columns={TechPageData} />
         <div className="container">
           <h1>Tech Scene Page</h1>
         </div>
