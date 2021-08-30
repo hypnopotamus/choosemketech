@@ -12,7 +12,6 @@ const CompanyProfile = () => {
         <div className="container">
           <div className="row">
             <div className="col sidebar">
-              test
             </div>
             <div className="col content">
               <h1>Welcome <span data-ms-member="company-name"></span>!</h1>
