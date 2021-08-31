@@ -49,9 +49,36 @@ const IndexPage = () => {
               sourceUrl
             }
           }
+          headerText
+          cardCollectionHp {
+            buttonLabel
+            buttonUrl
+            content
+            featured
+            title
+            linkUrl
+            linkLabel
+            image {
+              sourceUrl
+            }
+          }
+          headerText2
+          cardCollectionHp2 {
+            buttonLabel
+            buttonUrl
+            content
+            featured
+            title
+            linkUrl
+            linkLabel
+            image {
+              sourceUrl
+            }
+          }
         }
       }
     }
+
   `)
 
   const IndexPageData = data.wpPage.Pages_CF;
@@ -65,12 +92,12 @@ const IndexPage = () => {
         title={IndexPageData.threeColumnHeaderText} 
       />
       <div className="container">
-        <ImageCopy />
+        <ImageCopy 
+          cards={IndexPageData.cardCollectionHp} 
+          title={IndexPageData.headerText} 
+        />
       </div>
       <JobCarousel />
-      <div className="container">
-        <ImageCopy flip={true} />
-      </div>
       <SubHero hero={IndexPageData} />
       <ImageGrid gallery={IndexPageData.gridImages} />
     </Layout>

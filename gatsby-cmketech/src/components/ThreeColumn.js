@@ -32,8 +32,8 @@ const ThreeColumn = ({columns, title, content}) => {
     if (content) {
         threeColumnContent = <div className="threeColumn__content" dangerouslySetInnerHTML={ {__html : content} } ></div>;
     }
+
     return (
-        
         <div className="threeColumn">
             
             { threeColumnTitle }

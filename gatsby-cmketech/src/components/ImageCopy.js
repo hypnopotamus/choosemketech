@@ -1,7 +1,8 @@
 import React from "react"
 import Slider from "react-slick"
+import { Link } from "gatsby"
 
-const ImageCopy = ({flip}) => {
+const ImageCopy = ({cards, title, flip}) => {
   var settings = {
     dots: true,
     arrows: false,
@@ -17,93 +18,47 @@ const ImageCopy = ({flip}) => {
       },
     ],
   }
+
+  let cardTitle;
+
+  if (title) {
+      cardTitle = <div className="imageCopy__heading"><h2 dangerouslySetInnerHTML={ {__html : title} }></h2></div>;
+  }
+
+
+  
   return (
     <div className="imageCopy" className={flip ? `imageCopy imageCopy--reversed` : `imageCopy`}>
-      <div className="imageCopy__heading">
-        <h2>Header</h2>
-      </div>
       <Slider {...settings}>
-        <div className="imageCopy__container imageCopy__featured">
-          <div className="row imageCopy__row">
-            <div className="imageCopy__image">
-              <span className="tag tag--gold tag--gold--featured">Featured</span>
-              <img src="https://via.placeholder.com/592x372" />
-            </div>
-            <div className="imageCopy__copy">
-              <h3>SubHeading </h3>
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor.
-              </p>
-              <div className="imageCopy__copy__ctas">
-                <button className="button button--primary">Button Style</button>
-                <a  href="#" className="linked">
-                  This is a link
-                </a>
+        {cards.map((card, index) => {
+
+          let cardCta;
+
+            if (card.buttonLabel || card.buttonUrl || card.linkUrl || card.linkLabel ) {
+              cardCta = <div className="imageCopy__copy__ctas"><Link to={card.buttonUrl} className="button button--primary">{card.buttonLabel}</Link><Link to={card.linkUrl} className="linked">{card.linkLabel}</Link></div>
+            }
+
+            return (
+              <div className="imageCopy__container imageCopy__featured" key={index}>
+              <div className="row imageCopy__row">
+                <div className="imageCopy__image">
+                  <span className={card.featured ? `tag tag--gold tag--gold--featured` : `tag tag--none`} >Featured</span>
+                  <img src={card.image.sourceUrl} alt={card.altText}/>
+                </div>
+                <div className="imageCopy__copy">
+                  <h3>{card.title}</h3>
+                  <p>
+                      {card.content}
+                  </p>
+                  {cardCta}
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="imageCopy__container imageCopy__featured">
-          <div className="row imageCopy__row">
-            <div className="imageCopy__image">
-              <span className="tag tag--gold tag--gold--featured">Featured</span>
-              <img src="https://via.placeholder.com/592x373" />
-            </div>
-            <div className="imageCopy__copy">
-              <h3>SubHeading 1</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor.
-              </p>
-              <div className="imageCopy__copy__ctas">
-                <button className="button button--primary">Button Style</button>
-                <a  href="#" className="linked" >
-                  This is a link
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="imageCopy__container imageCopy__featured">
-          <div className="row imageCopy__row">
-            <div className="imageCopy__image">
-              <span className="tag tag--gold tag--gold--featured">Featured</span>
-              <img src="https://via.placeholder.com/592x375" />
-            </div>
-            <div className="imageCopy__copy">
-              <h3>SubHeading 2</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor.
-              </p>
-              <div className="imageCopy__copy__ctas">
-                <button className="button button--primary">Button Style</button>
-                <a  href="#" className="linked">
-                  This is a link
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
+            )
+        })}
       </Slider>
     </div>
+      
   )
 }
 
