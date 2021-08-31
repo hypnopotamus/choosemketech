@@ -3,10 +3,15 @@ import { Link } from "gatsby"
 
 const IntroCopy = ({heroModifier, intro}) => {
     
-    let linkButton;
+    let linkButton,
+        subContent;
 
     if (intro.subHeroButtonUrl || intro.subHeroButtonLabel) {
         linkButton = <Link to={intro.subHeroButtonUrl} className="button button--primary">{intro.subHeroButtonLabel}</Link>
+    }
+
+    if (intro.subHeroContent) {
+        subContent = <div dangerouslySetInnerHTML={ {__html: intro.subHeroContent} }></div>
     }
 
     return (
@@ -14,7 +19,7 @@ const IntroCopy = ({heroModifier, intro}) => {
             <section className={heroModifier ? `sub-intro sub-intro-copy--hero` : `sub-intro-copy`}>
                 <h2 dangerouslySetInnerHTML={ {__html: intro.subHeroTitle} }></h2>
                 <h3 dangerouslySetInnerHTML={ {__html: intro.subHeroSubTitle} }></h3>
-                <div dangerouslySetInnerHTML={ {__html: intro.subHeroContent} }></div>
+                { subContent }
                 { linkButton }
             </section>
         </div>

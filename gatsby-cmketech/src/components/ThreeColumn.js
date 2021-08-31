@@ -1,7 +1,7 @@
 import React from "react"
 import Slider from "react-slick"
 
-const ThreeColumn = ({columns, title}) => {
+const ThreeColumn = ({columns, title, content}) => {
     const settings = {
         dots: true,
         arrows: false,
@@ -23,17 +23,23 @@ const ThreeColumn = ({columns, title}) => {
         ],
     }
 
-    let threeColumnTitle;
+    let threeColumnTitle,
+        threeColumnContent;
 
     if (title) {
         threeColumnTitle = <div className="threeColumn__heading"><h2 dangerouslySetInnerHTML={ {__html : title} }></h2></div>;
     }
 
+    if (content) {
+        threeColumnContent = <div className="threeColumn__content" dangerouslySetInnerHTML={ {__html : content} } ></div>;
+    }
     return (
         
         <div className="threeColumn">
             
             { threeColumnTitle }
+
+            { threeColumnContent }
 
             <div className="threeColumn__container">
                 <Slider {...settings}>
