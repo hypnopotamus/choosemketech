@@ -7,6 +7,7 @@ import ComparisonMap from "../components/ComparisonMap";
 import ThreeColumn from "../components/ThreeColumn";
 import IntroCopy from "../components/SubIntroCopy";
 import ImageGrid from "../components/ImageGrid";
+import ImageCopy from "../components/ImageCopy";
 
 const WhyMilwaukee = () => {
 
@@ -98,6 +99,9 @@ const WhyMilwaukee = () => {
           columns={WhyMKEData.threeColumnCardsWmke2} 
           title={WhyMKEData.threeColumnHeaderText2}
         />
+        <div className="container">
+          <ImageCopy />
+        </div>
         <IntroCopy intro={TertiaryIntroData}/>
         <ImageGrid gallery={WhyMKEData.gridImagesWmke} />
     </Layout>

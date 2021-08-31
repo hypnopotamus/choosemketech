@@ -7,7 +7,6 @@ const ThreeColumn = ({columns, title, content}) => {
         arrows: false,
         centerMode: true,
         centerPadding: '0px',
-        slidesToScroll: 3,
         slidesToShow: 3,
 
         responsive: [
