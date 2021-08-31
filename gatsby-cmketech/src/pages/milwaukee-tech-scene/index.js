@@ -51,6 +51,7 @@ const TechScene = () => {
   `)
 
   const TechPageData = data.wpPage.MilwaukeeTechScene_CF;
+  
   let TertiaryIntroData = {
     subHeroTitle : data.wpPage.MilwaukeeTechScene_CF.tertiaryIntroHeader,
     subHeroSubTitle : data.wpPage.MilwaukeeTechScene_CF.tertiaryIntroSubHeader,
@@ -58,10 +59,7 @@ const TechScene = () => {
     subHeroButtonUrl : data.wpPage.MilwaukeeTechScene_CF.tertiaryIntroSubButtonUrl,
     subHeroButtonLabel : data.wpPage.MilwaukeeTechScene_CF.tertiaryIntroSubButtonLabel
   };
-
-
-  console.log(TertiaryIntroData)
-
+  
   return (
     <Layout>
         <Seo title="Tech Scene Page" />
