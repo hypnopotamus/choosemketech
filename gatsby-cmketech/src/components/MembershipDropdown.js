@@ -25,7 +25,8 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
     useEffect(() => {
         if(window.MemberStack.onReady){
             window.MemberStack.onReady.then(function(member){
-                let membershipType = member.membership.name;
+                if(member.membership){
+                    let membershipType = member.membership.name;
                 if(membershipType != "Candidate") {
                     membershipType = "premium-plan"
                     setUserName(member['company-name']) 
@@ -34,6 +35,7 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
                     setUserName(member['first-name'] + ' ' + member['last-name'])
                 }
                 setProfileType(membershipType)
+                }
             });
         }
     }, [])    

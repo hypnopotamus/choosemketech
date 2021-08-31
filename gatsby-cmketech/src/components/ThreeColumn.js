@@ -1,7 +1,7 @@
 import React from "react"
 import Slider from "react-slick"
 
-const ThreeColumn = ({columns, title}) => {
+const ThreeColumn = ({header, headline, copy, background, content}) => {
     const settings = {
         dots: true,
         arrows: false,
@@ -30,35 +30,32 @@ const ThreeColumn = ({columns, title}) => {
     }
 
     return (
-        
-        <div className="threeColumn">
-            
-            { threeColumnTitle }
-
-            <div className="threeColumn__container">
-                <Slider {...settings}>
-                    {columns.map((col, index) => {
-                        return (
-                            <div className="threeColumn__column" key={index}>
-                            <div className="threeColumn__column__container" tabIndex="0" aria-labelledby={`header${index}, content${index}`}>
-                                <div className="threeColumn__column__image">
-                                    <img src={col.image.sourceUrl} alt=""/>
-                                </div>
-                                <div className="threeColumn__column__content">
-                                    <h4 dangerouslySetInnerHTML={ {__html : col.title} } id={`header${index}`}></h4>
-                                    <p dangerouslySetInnerHTML={ {__html : col.content } } id={`content${index}`}></p>
-                                    <div className="threeColumn__column__ctas">
-                                        <a href={col.link} className="linked">
-                                            {col.linkLabel}
-                                        </a>
+        <div className={`threeColumn ${background === "blue" ? "blue" : "white"}`}>
+            <div className="container">
+                <div className="threeColumn__heading">
+                    {header ? (
+                        <h2>{headline}</h2>
+                    ) : null}
+                    <div dangerouslySetInnerHTML={{ __html: copy }}></div>
+                </div>
+                <div className="threeColumn__container">
+                    <Slider {...settings}>
+                        {content.map((el, idx) => {
+                            return (
+                            <div className="threeColumn__column" key={idx}>
+                                <div className="threeColumn__column__container">
+                                    <div className="threeColumn__column__image">
+                                        <img src={el.threeColumnImage.link} alt={el.threeColumnImage.altText} />
+                                    </div>
+                                    <div className="threeColumn__column__content">
+                                        <div dangerouslySetInnerHTML={{ __html: el.threeColumnContent }}></div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        )
-                    })}
-
-                </Slider>
+                            )
+                        })}
+                    </Slider>
+                </div>
             </div>
         </div>
     )
