@@ -3,17 +3,21 @@ import Slider from "react-slick"
 
 const ThreeColumn = ({columns, title}) => {
     const settings = {
-        dots: false,
+        dots: true,
         arrows: false,
-        infinite: false,
+        centerMode: true,
+        centerPadding: '0px',
         slidesToScroll: 3,
         slidesToShow: 3,
+
         responsive: [
             {
-                breakpoint: 920,
+                breakpoint: 767,
                 settings: {
-                    slidesToShow: 1,
+                 slidesToShow: 1,
                     slidesToScroll: 1,
+                    centerMode: true,
+                    centerPadding: '20px'
                 },
             },
         ],

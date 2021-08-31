@@ -110,4 +110,9 @@
             }
         }
     }
+    .intro-copy, .intro {
+        margin-top: -5rem;
+        border-top: 5px solid $blue;
+        box-shadow: $box-shadow;
+    }    
 }

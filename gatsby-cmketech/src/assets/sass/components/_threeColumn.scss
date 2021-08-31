@@ -1,7 +1,7 @@
 .threeColumn {
     background-color: $navy_blue;
-    padding-block-start: 2.5rem;
-    padding-block-end: 2.5rem;
+    padding-block-start: 3.125rem;
+    padding-block-end: 3.125rem;
     @media #{$mq-mediumScreen}{
         padding-block-start: 3.125rem;
         padding-block-end: 3.125rem;
@@ -10,12 +10,6 @@
         color: $white;
         text-align: center;
         margin-block-start: 0;
-    }
-    .slick-slider {
-        .slick-slide {
-            margin-left: -8px;
-        }
-        
     }
     &__container {
         max-width: 1440px;
@@ -42,6 +36,10 @@
             p {
                 margin-block: 14px;
             }
+            min-height: 30vh;
         }
+    }
+    .slick-dots {
+        margin-bottom: -2rem;
     }
 }

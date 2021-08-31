@@ -119,12 +119,19 @@ a {
 
 .container  {
     width: 100%;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    margin-block-end: 2.5rem;
-    margin-block-start: 2.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-block-end: 1.5rem;
+    margin-block-start: 1.5rem;
     .row {
         margin: 0 -40px;
         padding: 0 40px;
+    }
+
+    @media #{$mq-largeScreen}{
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        margin-block-end: 2.5rem;
+        margin-block-start: 2.5rem;
     }
 }

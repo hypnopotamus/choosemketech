@@ -6,10 +6,12 @@
     background-color: $white;
     padding-block-start: 2.5rem;
     padding-block-end: 2.5rem;
+    padding-inline-start: 2.5rem;
+    padding-inline-end: 2.5rem;
 
     &--hero{
         z-index: 1;
-        max-width: 85%;
+        max-width: 90%;
     }
 
     button,
