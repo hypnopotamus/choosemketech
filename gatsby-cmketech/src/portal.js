@@ -21,6 +21,30 @@ export default class Portal extends Component {
     componentDidMount = () => {
         portalRoot.appendChild(this.el)
         window.MemberStack.reload();
+
+        let table = document.querySelector('.comparison-map--table');
+
+        [].forEach.call(document.querySelectorAll('path.selectedState'), function(item) {
+          item.addEventListener('mousemove', function(e) {
+            // var sel = this,
+      
+            let x = e.clientX,
+                y = e.clientY;
+            
+            table.style.display = 'block';
+            table.style.top = (y + 20) + 'px';
+            table.style.left = (x + 20) + 'px';
+      
+            // pos = sel.getBoundingClientRect()
+            // table.style.display = 'block';
+            // table.style.top = pos.top + 'px';
+            // table.style.left = pos.left + 'px';
+          });
+      
+          item.addEventListener('mouseleave', function(){
+            table.style.display = 'none';
+          });
+        });        
     }
 
     componentWillUnmount = () => {

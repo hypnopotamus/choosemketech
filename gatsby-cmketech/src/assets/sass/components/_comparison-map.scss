@@ -39,16 +39,93 @@
     .comparison-map--table {
         position: absolute;
         display: none;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-        border:#d3d3d3 solid 1px;
-        background: #fff;
-        color: black;
-        font-family: Comfortaa, Verdana;
-        font-size: smaller;
-        padding: 8px;
-        pointer-events:none;
-        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+        background: $white;
+        color: $black;
+        box-shadow: $box-shadow;
+        font-family: 'Inter';
+        width: 100%;
+
+        @media #{$mq-largeScreen}{
+            width: 75%;
+            position: relative;
+            margin: 0 auto;            
+        }
+
+        .table-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        &:before, &:after {
+            content: "";
+            left: 45%;
+            display: block;
+            position: absolute;
+            @media #{$mq-largeScreen}{
+                left: 44.4%;
+            }
+        }
+        &:before {
+            border-left: 24px solid transparent;
+            border-right: 24px solid transparent;
+            border-top: 24px solid rgba(0,0,0,0.2);
+            bottom: -24px;
+            filter: blur(2px);
+            left: 44%;
+        }
+        &:after {
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid $white;
+            bottom: -17px;
+        }
+        .comparison-map__header {
+            background-color: $navy_blue;
+            padding: 1rem;
+            h2 {
+                color: $white;
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                margin: 0;
+            }
+        }
+        table {
+            width: 100%;
+            thead {
+                background-color: $light_blue;
+                color: $white;
+                text-align: center;
+                th {
+                    padding: 1rem;
+                    font-weight: 500;
+                    &:first-child {
+                        text-align: left;
+                        position: sticky;
+                        left: 0;
+                        background: linear-gradient(90deg, rgba(40,83,142,1) 69%, rgba(255,255,255,0) 100%);
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    border-bottom: 1px solid $medium_gray;
+                    td {
+                        padding: 1rem;
+                        text-align: center;
+                        &:first-child {
+                            text-align: left;
+                            white-space: nowrap;
+                            position: sticky;
+                            left: 0;
+                            background: linear-gradient(90deg, rgba(255,255,255,1) 69%, rgba(255,255,255,0) 100%);
+
+                        }
+                        &:nth-child(2) {
+                            color: $light_blue;
+                        }
+                    }
+                }
+            }
+        }
       }    
 }
