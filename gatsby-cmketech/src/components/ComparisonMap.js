@@ -2,6 +2,26 @@ import React from "react";
 
 const ComparisonMap = () => {
 
+  let table = document.querySelector('.comparison-map--table');
+
+  [].forEach.call(document.querySelectorAll('path.selectedState'), function(item) {
+    item.addEventListener('mousemove', function(e) {
+      // var sel = this,
+
+      let x = e.clientX,
+          y = e.clientY;
+      
+      table.style.display = 'block';
+      table.style.top = (y + 20) + 'px';
+      table.style.left = (x + 20) + 'px';
+
+    });
+
+    item.addEventListener('mouseleave', function(){
+      table.style.display = 'none';
+    });
+  });
+
   return (
     <div className="comparison-map">
         <div className="comparison-map__heading">

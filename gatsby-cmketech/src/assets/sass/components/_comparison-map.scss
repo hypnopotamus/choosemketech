@@ -37,8 +37,9 @@
     }
 
     .comparison-map--table {
-        position: absolute;
-        display: none;
+        position: absolute !important;
+        top: -7rem;
+        left: 16rem;
         background: $white;
         color: $black;
         box-shadow: $box-shadow;
