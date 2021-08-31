@@ -14,8 +14,8 @@ const About = () => {
             aboutIntroCopySubheader
             aboutIntroCopyContent
             aboutImageCopyRepeater {
-                aboutCarouselCopy
-                aboutCarouselImage {
+                copy
+                image {
                 altText
                 link
                 }

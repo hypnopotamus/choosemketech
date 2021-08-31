@@ -25,10 +25,6 @@ const ThreeColumn = ({header, headline, copy, background, content}) => {
 
     let threeColumnTitle;
 
-    if (title) {
-        threeColumnTitle = <div className="threeColumn__heading"><h2 dangerouslySetInnerHTML={ {__html : title} }></h2></div>;
-    }
-
     return (
         <div className={`threeColumn ${background === "blue" ? "blue" : "white"}`}>
             <div className="container">
