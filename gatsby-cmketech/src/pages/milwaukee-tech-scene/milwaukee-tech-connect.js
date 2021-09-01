@@ -2,17 +2,17 @@ import React from "react"
 import Seo from "../../components/Seo"
 import Layout from "../../components/Layout"
 
-const TechPrograms = () =>{
+const Connect = () =>{
 
     return (
         <Layout>
             <Seo title="Tech Programs Page" />
             <div className="container">
-                <h1>Tech Programs Header</h1>
+                <h1>Milwaukee Tech Connect</h1>
             </div>
         </Layout>
     )
 
 }
 
-export default TechPrograms
+export default Connect

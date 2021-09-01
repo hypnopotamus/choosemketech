@@ -61,40 +61,6 @@ const Footer = ({}) => {
         <p className="footer--copyright">&copy; 2021 MKE Tech Hub Coalition. All Rights Reserved. | Visit <a href="https://www.mketech.org" target="_blank">mketech.org</a> | Photos courtesy of <a href="https://www.mketech.org" target="_blank">Visit Milwaukee</a></p>
       </div>            
     </footer>
-    // <footer id="site-footer" role="contentinfo" className="header-footer-group">
-    //   <div className="section-inner">
-    //     <div className="footer-credits">
-    //       <p className="footer-copyright">
-    //         © {new Date().getFullYear()}{" "}
-    //         <Link to={"/"}>Gatsby Starter WordPress Twenty Twenty</Link>
-    //       </p>
-    //       <p>
-    //         <a
-    //           className="powered-by-wordpress"
-    //           href="https://www.henrikwirth.com"
-    //           rel="noreferrer noopener"
-    //         >
-    //           Proudly presented by Henrik Wirth
-    //         </a>
-    //       </p>
-    //     </div>
-
-    //     <a className="to-the-top" href="#site-header">
-    //       <span className="to-the-top-long">
-    //         To the top{" "}
-    //         <span className="arrow" aria-hidden="true">
-    //           ↑
-    //         </span>
-    //       </span>
-    //       <span className="to-the-top-short">
-    //         Up{" "}
-    //         <span className="arrow" aria-hidden="true">
-    //           ↑
-    //         </span>
-    //       </span>
-    //     </a>
-    //   </div>
-    // </footer>
   )
 }
 
