@@ -102,7 +102,7 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
                         </Link>
                     </li>
                     <li className="nav__link">
-                        <Link to="#">
+                        <Link to="/#/ms/logout">
                             Log Out
                         </Link>
                     </li>

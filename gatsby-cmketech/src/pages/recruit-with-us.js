@@ -2,7 +2,7 @@ import React from "react";
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 
-const Pricing = () => {
+const RecruitWithUs = () => {
 
   return (
     <Layout>
@@ -25,5 +25,5 @@ const Pricing = () => {
 
 }
   
-export default Pricing;
+export default RecruitWithUs;
   
