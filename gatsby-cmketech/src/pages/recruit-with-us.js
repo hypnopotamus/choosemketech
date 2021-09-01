@@ -48,7 +48,7 @@ const RecruitWithUs = () => {
 
   const RecruitWithUsData = data.wpPage.RecruitWithUs_CF;
 
-  console.log(RecruitWithUsData)
+  console.log(RecruitWithUsData.cardCollectionRqu)
 
   return (
     <Layout>

@@ -37,7 +37,6 @@ const About = () => {
 `)
 
 let About = data.wpPage.About_CF;
-console.log(About)
 
   return (
     <Layout>
