@@ -25,7 +25,7 @@ const ImageCopy = ({cards, title, flip}) => {
       cardTitle = <div className="imageCopy__heading"><h2 dangerouslySetInnerHTML={ {__html : title} }></h2></div>;
   }
 
-  console.log(title)
+  console.log(cards)
 
 
   
@@ -42,7 +42,7 @@ const ImageCopy = ({cards, title, flip}) => {
               cardCta = <div className="imageCopy__copy__ctas"><Link to={card.buttonUrl} className="button button--primary">{card.buttonLabel}</Link><Link to={card.linkUrl} className="linked">{card.linkLabel}</Link></div>
             }
 
-            if (card.featured) {
+            if (card.featured === "true") {
               cardFeatured = <span className="tag tag--gold tag--gold--featured">Featured</span>
             }
 
