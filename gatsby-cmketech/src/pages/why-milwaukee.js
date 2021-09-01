@@ -12,7 +12,7 @@ import ImageCopy from "../components/ImageCopy";
 const WhyMilwaukee = () => {
 
   const data = useStaticQuery(graphql`
-    query WhyMilwakueeQuery {
+        query WhyMilwakueeQuery {
       wpPage(databaseId: {eq: 25}) {
         WhyMilwaukee_CF {
           cardCollectionWmke {
@@ -35,7 +35,7 @@ const WhyMilwaukee = () => {
               sourceUrl
             }
           }
-          headerText
+          cardHeaderText
           subHeroButtonLabel
           subHeroButtonUrl
           subHeroContent
@@ -74,7 +74,6 @@ const WhyMilwaukee = () => {
         }
       }
     }
-
   `)
 
   const WhyMKEData = data.wpPage.WhyMilwaukee_CF;
@@ -100,7 +99,10 @@ const WhyMilwaukee = () => {
           title={WhyMKEData.threeColumnHeaderText2}
         />
         <div className="container">
-          <ImageCopy />
+          <ImageCopy 
+            cards={WhyMKEData.cardCollectionWmke}
+            title={WhyMKEData.cardHeaderText}
+          />
         </div>
         <IntroCopy intro={TertiaryIntroData}/>
         <ImageGrid gallery={WhyMKEData.gridImagesWmke} />

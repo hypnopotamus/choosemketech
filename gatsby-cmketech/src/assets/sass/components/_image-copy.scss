@@ -75,6 +75,10 @@
                 margin-block:  10px;
                 min-width: unset;
                 text-align: center;
+                &:last-of-type {
+                    margin-inline-start: 0;
+                    margin-inline-end: 0
+                }
                 @media #{$mq-largeScreen}{
                     margin-inline: 10px;
                 }

@@ -80,8 +80,6 @@ const IndexPage = () => {
         }
       }
     }
-
-
   `)
 
   const IndexPageData = data.wpPage.Pages_CF;

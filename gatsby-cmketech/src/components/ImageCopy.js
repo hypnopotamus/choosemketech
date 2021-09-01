@@ -25,9 +25,6 @@ const ImageCopy = ({cards, title, flip}) => {
       cardTitle = <div className="imageCopy__heading"><h2 dangerouslySetInnerHTML={ {__html : title} }></h2></div>;
   }
 
-  console.log(cards)
-
-
   
   return (
     <div className="imageCopy" className={flip ? `imageCopy imageCopy--reversed` : `imageCopy`}>
@@ -35,11 +32,16 @@ const ImageCopy = ({cards, title, flip}) => {
       <Slider {...settings}>
         {cards.map((card, index) => {
 
-          let cardCta,
+          let cardButton,
+              cardLink,
               cardFeatured;
 
-            if (card.buttonLabel || card.buttonUrl || card.linkUrl || card.linkLabel ) {
-              cardCta = <div className="imageCopy__copy__ctas"><Link to={card.buttonUrl} className="button button--primary">{card.buttonLabel}</Link><Link to={card.linkUrl} className="linked">{card.linkLabel}</Link></div>
+            if (card.buttonLabel || card.buttonUrl) {
+                cardButton = <Link to={card.buttonUrl} className="button button--primary">{card.buttonLabel}</Link>
+            }
+
+            if (card.linkUrl || card.linkLabel ) {
+                cardLink = <Link to={card.linkUrl} className="linked">{card.linkLabel}</Link>
             }
 
             if (card.featured === "true") {
@@ -54,11 +56,15 @@ const ImageCopy = ({cards, title, flip}) => {
                   <img src={card.image.sourceUrl} alt={card.altText}/>
                 </div>
                 <div className="imageCopy__copy">
-                  <h3>{card.title}</h3>
+                  <h3>{ card.title }</h3>
                   <p>
-                      {card.content}
+                      { card.content }
                   </p>
-                  {cardCta}
+                  <div className="imageCopy__copy__ctas">
+                    { cardButton }
+                    { cardLink }
+                  </div>
+                  
                 </div>
               </div>
             </div>
