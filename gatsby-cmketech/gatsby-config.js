@@ -52,6 +52,9 @@ module.exports = {
         // this example is for wp-graphql-gutenberg.
         // since we can get block data on the `block` field
         // we don't need these fields
+        production: {
+          allow404Images: true
+        },        
         excludeFieldNames: [`blocksJSON`, `saveContent`],
         type: {
           Post: {
