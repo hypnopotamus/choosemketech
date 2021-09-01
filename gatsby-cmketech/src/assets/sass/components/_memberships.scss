@@ -6,7 +6,7 @@
         position: relative;
         overflow-x: auto;
         overflow-y: hidden;
-        
+
         @media #{$mq-largeScreen}{
             width: 75%;
         }
