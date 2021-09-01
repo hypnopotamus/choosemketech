@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import SubHero from "../components/SubHero";
 import ImageCopy from "../components/ImageCopy";
 import Memberships from "../components/Memberships";
+import ImageGrid from "../components/ImageGrid";
 
 const RecruitWithUs = () => {
   const data = useStaticQuery(graphql`
@@ -65,6 +66,7 @@ const RecruitWithUs = () => {
             </thead>
           </table> */}
           <ImageCopy cards={RecruitWithUsData.cardCollectionRqu}/>
+          <ImageGrid gallery={RecruitWithUsData.gridImagesRqu} />
         </div>
 
     </Layout>
