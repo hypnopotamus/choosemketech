@@ -34,7 +34,7 @@ const Footer = ({}) => {
               <li>
                 <p><strong>About</strong></p>
                 <ul>
-                    <li><Link to="/"><span>About Choose MKE Tech</span></Link></li>
+                    <li><Link to="/about"><span>About Choose MKE Tech</span></Link></li>
                     <li><a href="https://www.mketech.org/" target="_blank"><span>MKE Tech Coalition <i className="fas fa-external-link-square-alt"></i></span></a></li>
                     <li><a href="https://www.mketech.org/" target="_blank"><span>Reverse Pitch MKE <i className="fas fa-external-link-square-alt"></i></span></a></li>
                     <li><a href="https://www.mketech.org/" target="_blank"><span>RPM: High School Edition <i className="fas fa-external-link-square-alt"></i></span></a></li>
@@ -43,16 +43,16 @@ const Footer = ({}) => {
               <li>
                 <p><strong>Help</strong></p>
                 <ul>
-                    <li><Link to="/"><span>Contact Us</span></Link></li>
-                    <li><Link to="/"><span>FAQ</span></Link></li>
+                    <li><Link to="/contact"><span>Contact Us</span></Link></li>
+                    <li><Link to="/help#faq"><span>FAQ</span></Link></li>
                 </ul>
               </li>
               <li>
                 <p><strong>Legal</strong></p>
                 <ul>
-                    <li><Link to="/"><span>Terms of Use</span></Link></li>
-                    <li><Link to="/"><span>Accessibility</span></Link></li>
-                    <li><Link to="/"><span>Privacy Policy</span></Link></li>
+                    <li><Link to="/terms-of-use"><span>Terms of Use</span></Link></li>
+                    <li><Link to="/accessibility"><span>Accessibility</span></Link></li>
+                    <li><Link to="/privacy-policy"><span>Privacy Policy</span></Link></li>
                 </ul>
               </li>
           </ul>
