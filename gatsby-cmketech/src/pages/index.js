@@ -11,7 +11,7 @@ import ThreeColumn from "../components/ThreeColumn";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
-    query HomePageQuery {
+   query HomePageQuery {
       wpPage(databaseId: {eq: 102}) {
         Pages_CF {
           heroSubText
@@ -49,7 +49,7 @@ const IndexPage = () => {
               sourceUrl
             }
           }
-          headerText
+          
           cardCollectionHp {
             buttonLabel
             buttonUrl
@@ -62,7 +62,7 @@ const IndexPage = () => {
               sourceUrl
             }
           }
-          headerText2
+          
           cardCollectionHp2 {
             buttonLabel
             buttonUrl
@@ -75,9 +75,12 @@ const IndexPage = () => {
               sourceUrl
             }
           }
+          cardHeaderText2
+          cardHeaderText
         }
       }
     }
+
 
   `)
 
@@ -94,10 +97,17 @@ const IndexPage = () => {
       <div className="container">
         <ImageCopy 
           cards={IndexPageData.cardCollectionHp} 
-          title={IndexPageData.headerText} 
+          title={IndexPageData.cardHeaderText} 
         />
       </div>
       <JobCarousel />
+      <div className="container">
+        <ImageCopy 
+          cards={IndexPageData.cardCollectionHp} 
+          title={IndexPageData.cardHeaderText}
+          flip={true} 
+        />
+      </div>
       <SubHero hero={IndexPageData} />
       <ImageGrid gallery={IndexPageData.gridImages} />
     </Layout>
