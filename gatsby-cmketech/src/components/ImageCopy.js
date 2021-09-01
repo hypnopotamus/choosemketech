@@ -25,6 +25,7 @@ const ImageCopy = ({cards, title, flip}) => {
       cardTitle = <div className="imageCopy__heading"><h2 dangerouslySetInnerHTML={ {__html : title} }></h2></div>;
   }
 
+  console.log(cards)
   
   return (
     <div className="imageCopy" className={flip ? `imageCopy imageCopy--reversed` : `imageCopy`}>

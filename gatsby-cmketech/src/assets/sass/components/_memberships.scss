@@ -1,0 +1,106 @@
+.memberships  {
+    &.table {
+        margin: 2.5rem auto;
+        font-family: "Inter";
+        width: 100%;
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden;
+        
+        @media #{$mq-largeScreen}{
+            width: 75%;
+        }
+        .header {
+            font-size: 18px;
+            font-weight: 500;
+            span {
+                display: block;
+                border-bottom: 2px solid $teal;
+                padding: 1rem 0 0.5rem 0;
+            }
+        }
+        .fa-check {
+            color: $success_green;
+        }
+        .fa-times {
+            color: $warning_red;
+        }
+        hr {
+            border: 0;
+            background-color: $medium_gray;
+            height: 2px;
+        }
+        th, td {
+            padding: 0 1.5rem;
+            text-align: center;
+            vertical-align: middle;
+            small {
+                display: block;
+            }
+            &:nth-child(2) {
+                padding: 1rem;
+                background-color: transparent;
+            }
+        }
+        thead {
+            th {
+                background-color: $teal;
+                color: $white;
+                line-height: 1.25rem;
+                padding-top: 1.2rem;
+                padding-bottom: 1.2rem;
+                small {
+                    font-size: 0.85rem;
+                }
+                &:first-child {
+                    text-align: left;
+                    padding-bottom: 0;
+                    position: sticky;
+                    left: 0;
+                    small {
+                        display: block;
+                        border-bottom: 2px solid $teal;
+                        padding: 1rem 0 0.5rem 0;
+                    }
+                }
+                :not(small) {
+                    font-size: 20px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                }
+                &:first-child {
+                    background-color: $navy_blue;
+                }
+            }
+        }
+        tbody {
+            tr {
+                &:first-child {
+                    td {
+                        padding-top: 1.2rem;
+                    }
+                }
+                td {
+                    padding-bottom: 1.5rem;
+                    &:first-child {
+                        background-color: $navy_blue;
+                        color: $white;
+                        text-align: left;
+                        white-space: nowrap;
+                        position: sticky;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+    &__cta {
+        padding: 2.5rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .button {
+            margin-inline-end: 1rem;
+        }
+    }
+}
