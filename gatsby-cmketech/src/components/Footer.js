@@ -35,9 +35,9 @@ const Footer = ({}) => {
                 <p><strong>About</strong></p>
                 <ul>
                     <li><Link to="/about"><span>About Choose MKE Tech</span></Link></li>
-                    <li><a href="https://www.mketech.org/" target="_blank"><span>MKE Tech Coalition <i className="fas fa-external-link-square-alt"></i></span></a></li>
-                    <li><a href="https://www.mketech.org/" target="_blank"><span>Reverse Pitch MKE <i className="fas fa-external-link-square-alt"></i></span></a></li>
-                    <li><a href="https://www.mketech.org/" target="_blank"><span>RPM: High School Edition <i className="fas fa-external-link-square-alt"></i></span></a></li>
+                    <li><a href="https://www.mketech.org" target="_blank"><span>MKE Tech Coalition <i className="fas fa-external-link-square-alt"></i></span></a></li>
+                    <li><a href="https://mketech.org/reverse-pitch-mke/" target="_blank"><span>Reverse Pitch MKE <i className="fas fa-external-link-square-alt"></i></span></a></li>
+                    <li><a href="https://mketech.org/reverse-pitch-mke-highschool/" target="_blank"><span>RPM: High School Edition <i className="fas fa-external-link-square-alt"></i></span></a></li>
                 </ul>
               </li>
               <li>
@@ -58,7 +58,7 @@ const Footer = ({}) => {
           </ul>
         </div>
         <Link to="/" className="footer--logo mobile"><span>MKE Tech</span></Link>
-        <p className="footer--copyright">&copy; 2021 MKE Tech Hub Coalition. All Rights Reserved. | Visit <a href="https://www.mketech.org" target="_blank">mketech.org</a> | Photos courtesy of <a href="https://www.mketech.org" target="_blank">Visit Milwaukee</a></p>
+        <p className="footer--copyright">&copy; 2021 MKE Tech Hub Coalition. All Rights Reserved. | Visit <a href="https://www.mketech.org" target="_blank">mketech.org</a> | Photos courtesy of <a href="https://www.visitmilwaukee.org/" target="_blank">Visit Milwaukee</a></p>
       </div>            
     </footer>
   )
