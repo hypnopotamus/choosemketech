@@ -98,15 +98,15 @@ const IndexPage = () => {
           title={IndexPageData.cardHeaderText} 
         />
       </div>
-      <JobCarousel />
+      {/* <JobCarousel /> */}
+      <SubHero hero={IndexPageData} />
       <div className="container">
         <ImageCopy 
-          cards={IndexPageData.cardCollectionHp} 
-          title={IndexPageData.cardHeaderText}
+          cards={IndexPageData.cardCollectionHp2} 
+          title={IndexPageData.cardHeaderText2}
           flip={true} 
         />
       </div>
-      <SubHero hero={IndexPageData} />
       <ImageGrid gallery={IndexPageData.gridImages} />
     </Layout>
   )
