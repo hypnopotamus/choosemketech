@@ -1,87 +1,96 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../../components/Layout"
+import React, { useState, useEffect } from 'react'
+import { Link } from 'gatsby'
 import Seo from "../../components/Seo"
-import ContentTypePagination from "../../components/ContentTypePagination"
-import AuthorBio from "../../components/AuthorBio"
-import PostMeta from "../../components/PostMeta"
-import PostCategories from "../../components/PostCategories"
-import FeaturedMedia from "../../components/FeaturedMedia"
+import Layout from "../../components/Layout"
+import ProfileHero from "../../components/ProfileHero"
+import ImageCopy from "../../components/ImageCopy"
+import Accordion from "../../components/Accordion"
 
-const post = ({ data }) => {
-  const { nextPage, previousPage, page } = data
-  const {
-    title,
-    uri,
-    content,
-    featuredImage,
-    categories,
-    excerpt,
-    databaseId,
-    author,
-    date,
-  } = page
+const CompanyProfile = () => {
 
+  const [data, setMemberData] = useState("");
+  useEffect(() => {
+    if(window.MemberStack.onReady){
+      window.MemberStack.onReady.then(function(member){
+        setMemberData(member) 
+      });
+    }
+  }, [])
+
+  const featuredStory = [
+    {
+      title : "Embrace Diversity and Inclusion",
+      content : data['featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion'],
+      image: {
+        sourceUrl: "https://edit.choosemketech.org/wp-content/uploads/2021/09/header-alt-09.jpg"
+      }
+    },
+    {
+      title : "Emerging Tech",
+      content : data['featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech'],
+      image: {
+        sourceUrl: "https://edit.choosemketech.org/wp-content/uploads/2021/09/header-alt-05.jpg"
+      }
+    },
+    {
+      title : "Place for Tech Talent To Work",
+      content : data['featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work'],
+      image: {
+        sourceUrl: "https://edit.choosemketech.org/wp-content/uploads/2021/09/company-profile-05_hero.jpg"
+      }
+    },
+    {
+      title : "Company's Environment",
+      content : data['featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir'],
+      image: {
+        sourceUrl: "https://edit.choosemketech.org/wp-content/uploads/2021/09/header-alt-04.jpg"
+      }
+    },
+  ]
+/* test */
   return (
-    <Layout
-      bodyClass={`post-template-default single single-post postid-${databaseId} single-format-standard wp-embed-responsive singular has-post-thumbnail has-single-pagination showing-comments footer-top-visible customize-support`}
-    >
-      <Seo title={title} description={excerpt} socialImage={featuredImage?.node} uri={uri} />
-      <div className="container">
-      <article
-        className={`post-${databaseId} post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized`}
-        id={`post-${databaseId}`}
-      >
-          <div className="entry-header-inner section-inner medium">
-            <PostCategories categories={categories} />
-            <h1
-              className="entry-title"
-              dangerouslySetInnerHTML={{ __html: title }}
-            />
-            <div
-              className="intro-text section-inner max-percentage small"
-              dangerouslySetInnerHTML={{ __html: excerpt }}
-            />
-            <PostMeta title={title} author={author} date={date} />
+    <Layout>
+        <Seo title="Company Profile" />
+
+        <ProfileHero profile={data} />
+        
+        <div className="profiles container">
+          <div className="row profile__layout">
+            <div className="sidebar">
+              <ul>
+                <li className="address"><i className="fas fa-map-marker-alt"></i> <span>{data.address}</span></li>
+                <li className="phone"><i className="fas fa-phone-alt"></i> <span>{data['phone-number']}</span></li>
+                <li><i className="fab fa-linkedin-in"></i> <a href="" className="link">{data.linkedin}</a></li>
+                <li><i className="fab fa-facebook-f"></i> <a href="" className="link">{data.facebook}</a></li>
+                <li><i className="fab fa-twitter"></i> <a href="" className="link">{data.twitter}</a></li>
+                <li><Link to="/contact" className="button button--primary">Contact Us</Link></li>
+              </ul>
+            </div>
+            <div className="content">
+              <div className="content__header">
+                <h1>Welcome {data['company-name']}!</h1>
+                <ul>
+                  <li><i className="fas fa-users"></i> <span>Employees {data['total-of-employees']}</span></li>
+                  <li><i className="fas fa-briefcase"></i> <span>Industry Type {data.industry}</span></li>
+                  <li><i className="fas fa-external-link-square-alt"></i> <a href={data['company-url']}>{data['company-url']}</a></li>
+                </ul>
+              </div>
+              <div className="content__description">
+                <h2>Company Description</h2>
+                <p>{data['company-description']}</p>
+              </div>
+            </div>
           </div>
-
-        <FeaturedMedia image={featuredImage} />
-
-        <div className="post-inner thin">
-          <div
-            className="entry-content"
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
+          {/* <div className="accordions--wrapper">
+            <h2>Company Benefits + Perks</h2>
+            <Accordion items={data['perks-benefits']} />
+          </div> */}
+          <ImageCopy cards={featuredStory} flip={true}/>
         </div>
-
-        <div className="section-inner">
-          <AuthorBio author={author} />
-          <ContentTypePagination
-            previousPage={previousPage}
-            nextPage={nextPage}
-            contentType={"Post"}
-          />
-        </div>
-      </article>
-      </div>
     </Layout>
   )
+
 }
-
-export const query = graphql`
-  query post($id: String!, $nextPage: String, $previousPage: String) {
-    page: wpPost(id: { eq: $id }) {
-      ...PostContent
-    }
-    nextPage: wpPost(id: { eq: $nextPage }) {
-      title
-      uri
-    }
-    previousPage: wpPost(id: { eq: $previousPage }) {
-      title
-      uri
-    }
-  }
-`
-
-export default post;
+  
+export default CompanyProfile;
+  
