@@ -1,7 +1,7 @@
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
 import Seo from "../components/Seo";
 import Layout from "../components/Layout";
-import { graphql, useStaticQuery } from "gatsby";
 import ImageCopy from "../components/ImageCopy";
 import SubHero from "../components/SubHero";
 
