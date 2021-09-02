@@ -2,6 +2,10 @@
     font-family: 'Inter';
    .row:first-child {
         display: flex;
+        flex-direction: column-reverse;
+        @media #{$mq-largeScreen} {
+            flex-direction: row;
+        }
         .sidebar {
             margin-inline-end: 3.75rem;
             ul {
@@ -29,10 +33,43 @@
             }
         }
         .content {
-            margin-block-start: -6rem;
+            @media #{$mq-largeScreen} {
+                margin-block-start: -6rem;
+            }
             .content__header {
+                h1 {
+                    text-align: center;
+                    @media #{$mq-largeScreen} {
+                        text-align: left;
+                    }
+                }
                 a {
                     text-decoration: none;
+                }
+                ul {
+                    display: inline-block;
+                    text-align: center;
+                    @media #{$mq-largeScreen} {
+                        display: flex;
+                        text-align: left;
+                    }
+                    margin: 1.5rem 0;
+                    li {
+                        width: 100%;
+                        font-size: 1.2rem;
+                        font-weight: 600;
+                        display: inline-block;
+                        align-items: center;
+                        padding: 0.25rem;
+                        @media #{$mq-largeScreen} {
+                            display: flex;
+                        }
+                        i {
+                            margin-inline-end: 1rem;
+                            font-size: 1.5rem;  
+                            color: $teal;                  
+                        }                    
+                    }
                 }
             }
             h2 {
@@ -42,21 +79,11 @@
                 color: $light_blue;
                 font-size: 1.6rem;
                 letter-spacing: 0.2rem;
-                margin: 3rem 0 1.2rem 0;            }
-            ul {
-                display: flex;
-                margin: 1.5rem 0;
-                li {
-                    width: 100%;
-                    font-size: 1.2rem;
-                    font-weight: 600;
-                    display: flex;
-                    align-items: center;                    
-                    i {
-                        margin-inline-end: 1rem;
-                        font-size: 1.5rem;  
-                        color: $teal;                  
-                    }                    
+                margin: 1rem 0 1.2rem 0;            
+                text-align: center;
+                @media #{$mq-largeScreen} {
+                    margin: 3rem 0 1.2rem 0;            
+                    text-align: left;
                 }
             }
         }
