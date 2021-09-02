@@ -4,10 +4,7 @@
         list-style-type: none;
         margin: 0;
         padding: 0;
-        transition: 500ms;
         z-index: 20;
-        &--primary {
-        }
         &--secondary {
             overflow: hidden
         }
@@ -26,7 +23,6 @@
         width: 100%;
         text-decoration: none;
         text-transform: uppercase;
-        transition: background-color 300ms;
         font-family: "Inter-Bold", sans-serif;
         font-weight: 800;
         letter-spacing: 2px;
@@ -60,7 +56,6 @@
             -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
             height: 100%;
-            transition: background-color 300ms;
             display: flex;
             align-items: center;
             .svg-inline--fa {
@@ -90,7 +85,6 @@
             &--secondary {
                 pointer-events: none;
                 opacity: 0;
-                transition: opacity 300ms;
                 position: absolute;
                 right: 0;
                 min-width: 100%;
@@ -167,7 +161,6 @@
 
 .hasChild {
     .nav__list--secondary {
-        transition: 500ms;
         max-height: 0;
         @media #{$mq-largeScreen} {
             max-height: none;
