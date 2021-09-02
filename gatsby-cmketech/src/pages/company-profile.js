@@ -47,7 +47,7 @@ const CompanyProfile = () => {
       }
     },
   ]
-
+/* test */
   return (
     <Layout>
         <Seo title="Company Profile" />
