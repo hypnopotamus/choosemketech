@@ -99,7 +99,6 @@ const IndexPage = () => {
         />
       </div>
       {/* <JobCarousel /> */}
-      <SubHero hero={IndexPageData} />
       <div className="container">
         <ImageCopy 
           cards={IndexPageData.cardCollectionHp2} 
@@ -107,6 +106,7 @@ const IndexPage = () => {
           flip={true} 
         />
       </div>
+      <SubHero hero={IndexPageData} />
       <ImageGrid gallery={IndexPageData.gridImages} />
     </Layout>
   )
