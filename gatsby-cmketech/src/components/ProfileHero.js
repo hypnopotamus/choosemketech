@@ -2,13 +2,13 @@ import React from "react";
 
 const ProfileHero = ({profile}) => {
 
-    const logoBgColor = {
-        backgroundColor : profile['logo-background-color']
-    }
+    // const logoBgColor = {
+    //     backgroundColor : profile['logo-background-color']
+    // }
 
-    const imageBgColor = {
-        backgroundColor : profile['background-color']
-    }
+    // const imageBgColor = {
+    //     backgroundColor : profile['background-color']
+    // }
 
     let backgroundImage,
         logoImage
@@ -26,10 +26,10 @@ const ProfileHero = ({profile}) => {
     return (
         <div className="profile-hero">
             <div className="row">
-                <div className="profile-hero--banner" style={imageBgColor}>
+                <div className="profile-hero--banner">
                     { backgroundImage }
                 </div>
-                <div className="profile-hero--logo" style={logoBgColor}>
+                <div className="profile-hero--logo">
                     { logoImage }
                 </div>
             </div>
