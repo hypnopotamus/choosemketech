@@ -40,14 +40,14 @@ let About = data.wpPage.About_CF;
 
   return (
     <Layout>
-        <Seo title="About" />
-          <SubHero hero={About} />
-          <div className="container">
-          <ImageCopy
-            cards={About.cardCollectionAbt}
-            title={About.headerText} 
-          />
-        </div>
+      <Seo title="About" />
+      <SubHero hero={About} />
+      <div className="container">
+        <ImageCopy
+        cards={About.cardCollectionAbt}
+        title={About.headerText} 
+        />
+      </div>
     </Layout>
   )
   
