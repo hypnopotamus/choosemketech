@@ -55,7 +55,7 @@ const CompanyProfile = () => {
         <ProfileHero profile={data} />
         
         <div className="profiles container">
-          <div className="row">
+          <div className="row profile__layout">
             <div className="sidebar">
               <ul>
                 <li className="address"><i className="fas fa-map-marker-alt"></i> <span>{data.address}</span></li>

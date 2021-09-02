@@ -1,6 +1,6 @@
 .profiles {
     font-family: 'Inter';
-   .row:first-child {
+   .profile__layout {
         display: flex;
         flex-direction: column-reverse;
         @media #{$mq-largeScreen} {

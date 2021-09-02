@@ -88,7 +88,7 @@ const WhyMilwaukee = () => {
     <Layout>
         <Seo title="Why Milwaukee Page" />
         <SubHero hero={WhyMKEData} />
-        <ComparisonMap />
+        {/* <ComparisonMap /> */}
         <ThreeColumn 
           columns={WhyMKEData.threeColumnCardsWmke} 
           title={WhyMKEData.threeColumnHeaderText}
