@@ -159,7 +159,7 @@ const ModalModules = forwardRef((props, ref) => {
         return (
             <div className="user-signup__form user-signup__form--job">
                 <div className="user-signup__content">
-                    <img className="user-signup__logo" src={userLogo} />
+                    <img className="user-signup__logo" src={userLogo} alt="" role="presentation" />
                     <h3>Create a Profile</h3>
                 </div>
                 <form className="form">
@@ -220,7 +220,7 @@ const ModalModules = forwardRef((props, ref) => {
         return (
             <div className="user-signup__form user-signup__form--recruit">
                 <div className="user-signup__content">
-                    <img className="user-signup__logo" src={recruitLogo} />
+                    <img className="user-signup__logo" src={recruitLogo} alt="" role="presentation"/>
                     <h3>Recruit with Us</h3>
                 </div>
                 <form className="form">

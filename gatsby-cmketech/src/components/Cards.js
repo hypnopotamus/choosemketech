@@ -67,7 +67,7 @@ const Cards = ({cards}) => {
 
       <div className="card company-card company-card--minimal ">
         <div className="company-card__left">
-          <img src="https://via.placeholder.com/225x125" />
+          <img src="https://via.placeholder.com/225x125" alt=""/>
         </div>
         <div className="company-card__center">
           <h3>Company Name</h3>
@@ -101,7 +101,7 @@ const Cards = ({cards}) => {
 
       <div className="card company-card">
         <div className="company-card__left">
-          <img src="https://via.placeholder.com/225x125" />
+          <img src="https://via.placeholder.com/225x125" alt=""/>
         </div>
         <div className="company-card__center">
           <h3>Company Name</h3>
@@ -160,7 +160,7 @@ const Cards = ({cards}) => {
 
       <div className="card company-card company-card--featured">
         <div className="company-card__left">
-          <img src="https://via.placeholder.com/225x125" />
+          <img src="https://via.placeholder.com/225x125" alt=""/>
         </div>
         <div className="company-card__center">
           <h3>Company Name</h3>

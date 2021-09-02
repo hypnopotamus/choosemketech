@@ -49,7 +49,7 @@ const ImageCopy = ({cards, title, flip}) => {
             }
 
             if (card.image.sourceUrl) {
-              cardImage = <img src={card.image.sourceUrl} alt={card.altText}/>
+              cardImage = <img src={card.image.sourceUrl} alt={card.altText} alt="" role="presentation"/>
             }
 
             return (

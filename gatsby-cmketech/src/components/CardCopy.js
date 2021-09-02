@@ -10,7 +10,6 @@ const CardCopy = ({}) => {
                 <div className="tile col">
                     <div className="tile--image">
                         <Tags />
-                        <img src="" />
                     </div>
                     <div className="tile--content">
                         <h4>SUBHEADING</h4>

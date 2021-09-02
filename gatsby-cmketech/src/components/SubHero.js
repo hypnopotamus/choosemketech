@@ -9,7 +9,7 @@ const SubHero = ({hero}) => {
         <>
         <div className="sub-hero sub-hero--banner">
             <div className="row">
-                <img src={placeholderImage} />
+                <img src={placeholderImage} role="presentation" alt=""/>
             </div>
             <SubIntroCopy heroModifier={true} intro={hero} />
         </div>
