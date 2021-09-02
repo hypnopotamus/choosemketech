@@ -4,7 +4,7 @@ const Aatt = () => {
 
     return (
         <>
-            <p>Testing</p>
+            <p>This is just a test</p>
         </>
     )
 }
