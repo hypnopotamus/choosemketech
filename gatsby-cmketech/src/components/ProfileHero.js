@@ -20,6 +20,8 @@ const ProfileHero = ({profile}) => {
     if(profile['background-image']) {
         backgroundImage = <img src={profile['background-image']} alt={profile['company-name']} />
     }
+
+    console.log(profile)
         
     return (
         <div className="profile-hero">

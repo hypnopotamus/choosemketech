@@ -48,8 +48,6 @@ const CompanyProfile = () => {
     },
   ]
 
-  console.log(data)
-
   return (
     <Layout>
         <Seo title="Company Profile" />
