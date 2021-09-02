@@ -1,12 +1,12 @@
 .cta {
     padding: 3rem;
-    @media #{$mq-largeScreen} {
+    background-repeat: no-repeat;
+    background-size: cover;
+@media #{$mq-largeScreen} {
         padding: 10rem;
     }
     &--background-default {
         background-image: url('../images/cta-background-dfault.png');
-        background-repeat: no-repeat;
-        background-size: cover;
     }
     h2 {
         color: $white;

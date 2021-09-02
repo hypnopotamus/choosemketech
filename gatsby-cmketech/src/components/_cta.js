@@ -16,19 +16,16 @@ const CallToAction = ({cta}) => {
     }
 
     if(cta.ctaLinkLabel) {
-        ctaLink = <Link to={cta.ctaLinkUrl} className="button button--primary">{cta.ctaLinkLabel}</Link>
+        ctaLink = <Link to={cta.ctaLinkUrl} className="link">{cta.ctaLinkLabel}</Link>
     }
 
     if(cta.ctaBackgroundImage) {
         ctaBackground = true;
     }
-    const ctaBgImage = {
-        backgroundImage : cta.ctaBackgroundImage
-    }
 
     return (
         <>
-            <div className={ctaBackground ? `cta` : `cta cta--background-default`} style={ctaBgImage}>
+            <div className={ctaBackground ? `cta` : `cta cta--background-default`} style={{ backgroundImage : `url(${cta.ctaBackgroundImage.sourceUrl})` }}>
                 <div className="cta__header">
                     { ctaHeader }
                 </div>
