@@ -1,21 +1,38 @@
 import React from "react";
-import { useHeroQuery } from "../hooks/useProfileHeroQuery";
 
-const ProfileHero = () => {
+const ProfileHero = ({profile}) => {
 
+    const logoBgColor = {
+        backgroundColor : profile['logo-background-color']
+    }
+
+    const imageBgColor = {
+        backgroundColor : profile['background-color']
+    }
+
+    let backgroundImage,
+        logoImage
+
+    if(profile.logo) {
+        logoImage = <img src={profile.logo} alt={profile['company-name']} />
+    }
+    
+    if(profile['background-image']) {
+        backgroundImage = <img src={profile['background-image']} alt={profile['company-name']} />
+    }
+        
     return (
         <div className="profile-hero">
             <div className="row">
-                <div className="profile-hero--banner">
-                    <img src="https://picsum.photos/id/171/1500/1000" />
+                <div className="profile-hero--banner" style={imageBgColor}>
+                    { backgroundImage }
                 </div>
-                <div className="profile-hero--logo">
-                    <img src="https://picsum.photos/282" />
+                <div className="profile-hero--logo" style={logoBgColor}>
+                    { logoImage }
                 </div>
             </div>
         </div>
     )
-
 }
 
 export default ProfileHero

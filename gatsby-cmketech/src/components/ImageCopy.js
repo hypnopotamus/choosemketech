@@ -33,7 +33,8 @@ const ImageCopy = ({cards, title, flip}) => {
 
           let cardButton,
               cardLink,
-              cardFeatured;
+              cardFeatured,
+              cardImage;
 
             if (card.buttonLabel || card.buttonUrl) {
                 cardButton = <Link to={card.buttonUrl} className="button button--primary">{card.buttonLabel}</Link>
@@ -47,12 +48,16 @@ const ImageCopy = ({cards, title, flip}) => {
               cardFeatured = <span className="tag tag--gold tag--gold--featured">Featured</span>
             }
 
+            if (card.image.sourceUrl) {
+              cardImage = <img src={card.image.sourceUrl} alt={card.altText}/>
+            }
+
             return (
               <div className="imageCopy__container imageCopy__featured" key={index}>
               <div className="row imageCopy__row">
                 <div className="imageCopy__image">
                   { cardFeatured }
-                  <img src={card.image.sourceUrl} alt={card.altText}/>
+                  { cardImage }
                 </div>
                 <div className="imageCopy__copy">
                   <h3>{ card.title }</h3>

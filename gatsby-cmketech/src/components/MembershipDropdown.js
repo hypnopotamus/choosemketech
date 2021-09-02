@@ -23,6 +23,7 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
         }
     }, [toggleNav])
     useEffect(() => {
+        
         if(window.MemberStack.onReady){
             window.MemberStack.onReady.then(function(member){
                 let membershipType = member.membership.name;
@@ -102,9 +103,9 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
                         </Link>
                     </li>
                     <li className="nav__link">
-                        <Link to="/#/ms/logout">
+                        <a href="/#/ms/logout">
                             Log Out
-                        </Link>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -200,9 +201,9 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
                         </Link>
                     </li>
                     <li className="nav__link">
-                        <Link to="/#/ms/logout">
+                        <a href="/#/ms/logout">
                             Log Out
-                        </Link>
+                        </a>
                     </li>
                 </ul>
             </div>
