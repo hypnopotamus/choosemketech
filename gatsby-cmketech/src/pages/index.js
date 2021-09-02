@@ -8,10 +8,11 @@ import JobCarousel from "../components/JobCarousel";
 import ImageGrid from "../components/ImageGrid";
 import ImageCopy from "../components/ImageCopy";
 import ThreeColumn from "../components/ThreeColumn";
+import CallToAction from "../components/_cta";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
-   query HomePageQuery {
+    query HomePageQuery {
       wpPage(databaseId: {eq: 102}) {
         Pages_CF {
           heroSubText
@@ -49,7 +50,6 @@ const IndexPage = () => {
               sourceUrl
             }
           }
-          
           cardCollectionHp {
             buttonLabel
             buttonUrl
@@ -62,7 +62,6 @@ const IndexPage = () => {
               sourceUrl
             }
           }
-          
           cardCollectionHp2 {
             buttonLabel
             buttonUrl
@@ -77,9 +76,15 @@ const IndexPage = () => {
           }
           cardHeaderText2
           cardHeaderText
+          ctaHeader
+          ctaButtonLabel
+          ctaButtonUrl
+          ctaLinkLabel
+          ctaLinkUrl
         }
       }
     }
+
   `)
 
   const IndexPageData = data.wpPage.Pages_CF;
@@ -99,6 +104,7 @@ const IndexPage = () => {
         />
       </div>
       {/* <JobCarousel /> */}
+      <CallToAction cta={IndexPageData}/>
       <div className="container">
         <ImageCopy 
           cards={IndexPageData.cardCollectionHp2} 

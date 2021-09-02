@@ -1,0 +1,36 @@
+.cta {
+    padding: 3rem;
+    @media #{$mq-largeScreen} {
+        padding: 10rem;
+    }
+    &--background-default {
+        background-image: url('../images/cta-background-dfault.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    h2 {
+        color: $white;
+        line-height: 4rem;
+    }
+    .button {
+        margin-inline-end: 0;
+        width: 100%;
+        @media #{$mq-largeScreen} {
+            margin-inline-end: 2rem;
+            width: inherit;
+        }
+    }
+    .link {
+        color: $white;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px 20px;
+        @media #{$mq-largeScreen} {
+            width: inherit;
+            display: inline;
+            text-align: inherit;
+            padding: inherit;
+        }
+    }
+}
