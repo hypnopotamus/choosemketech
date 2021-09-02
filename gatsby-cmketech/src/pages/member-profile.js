@@ -8,7 +8,7 @@ const MemberProfile = () => {
   return (
     <Layout>
         <Seo title="Member Profile" />
-        <ProfileHero />
+        {/* <ProfileHero /> */}
         <div className="container">
           <h1>Welcome Back <span data-ms-member="first-name"></span>!</h1>
         </div>
