@@ -89,7 +89,7 @@ const WhyMilwaukee = () => {
         <Seo title="Why Milwaukee Page" />
         <SubHero hero={WhyMKEData} />
         {/* <ComparisonMap /> */}
-        {/* <ThreeColumn 
+        <ThreeColumn 
           columns={WhyMKEData.threeColumnCardsWmke} 
           title={WhyMKEData.threeColumnHeaderText}
           content={WhyMKEData.threeColumnContent} 
@@ -97,15 +97,15 @@ const WhyMilwaukee = () => {
         <ThreeColumn 
           columns={WhyMKEData.threeColumnCardsWmke2} 
           title={WhyMKEData.threeColumnHeaderText2}
-        /> */}
+        />
         <div className="container">
           <ImageCopy 
             cards={WhyMKEData.cardCollectionWmke}
             title={WhyMKEData.cardHeaderText}
           />
         </div>
-        {/* <IntroCopy intro={TertiaryIntroData}/>
-        <ImageGrid gallery={WhyMKEData.gridImagesWmke} /> */}
+        <IntroCopy intro={TertiaryIntroData}/>
+        <ImageGrid gallery={WhyMKEData.gridImagesWmke} />
     </Layout>
   )
   
