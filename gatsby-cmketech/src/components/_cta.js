@@ -5,7 +5,8 @@ const CallToAction = ({cta}) => {
 
     let ctaHeader,
         ctaButton,
-        ctaLink;
+        ctaLink,
+        ctaBackground;
 
     if(cta.ctaHeader) {
         ctaHeader = <h2>{cta.cta.Header}</h2>
@@ -18,9 +19,16 @@ const CallToAction = ({cta}) => {
         ctaLink = <Link to={cta.ctaLinkUrl} className="button button--primary">{cta.ctaLinkLabel}</Link>
     }
 
+    if(cta.ctaBackgroundImage) {
+        ctaBackground = true;
+    }
+    const ctaBgImage = {
+        backgroundImage : cta.ctaBackgroundImage
+    }
+
     return (
         <>
-            <div className="cta cta--background-default">
+            <div className={ctaBackground ? `cta` : `cta cta--background-default`} style={ctaBgImage}>
                 <div className="cta__header">
                     { ctaHeader }
                 </div>

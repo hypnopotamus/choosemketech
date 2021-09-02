@@ -81,10 +81,12 @@ const IndexPage = () => {
           ctaButtonUrl
           ctaLinkLabel
           ctaLinkUrl
+          ctaBackgroundImage {
+            sourceUrl
+          }
         }
       }
     }
-
   `)
 
   const IndexPageData = data.wpPage.Pages_CF;
