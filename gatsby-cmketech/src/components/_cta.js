@@ -9,7 +9,7 @@ const CallToAction = ({cta}) => {
         ctaBackground;
 
     if(cta.ctaHeader) {
-        ctaHeader = <h2>{cta.cta.Header}</h2>
+        ctaHeader = <h2>{cta.ctaHeader}</h2>
     }
     if(cta.ctaButtonLabel) {
         ctaButton = <Link to={cta.ctaButtonUrl} className="button button--primary">{cta.ctaButtonLabel}</Link>
