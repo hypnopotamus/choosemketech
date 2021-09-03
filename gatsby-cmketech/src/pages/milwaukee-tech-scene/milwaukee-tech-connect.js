@@ -73,7 +73,7 @@ return (
 
       <Accordion 
           items={Connect.connectAccordions} 
-          headline={Lead.accordionHeadline} 
+          headline={Connect.accordionHeadline} 
       />
       </div>
   </Layout>
