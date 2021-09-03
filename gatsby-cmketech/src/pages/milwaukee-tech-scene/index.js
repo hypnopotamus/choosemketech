@@ -6,60 +6,81 @@ import ThreeColumn from "../../components/ThreeColumn";
 import SubHero from "../../components/SubHero";
 import ImageGrid from "../../components/ImageGrid";
 import IntroCopy from "../../components/SubIntroCopy";
+import ImageCopy from "../../components/ImageCopy";
 
 const TechScene = () => {
   
   const data = useStaticQuery(graphql`
-    query MKETechSceneQuery {
-      wpPage(databaseId: {eq: 31}) {
-        seo {
-          title
-          metaDesc
-          opengraphTitle
-          opengraphDescription
-          opengraphType
-          canonical
-        }
-        featuredImage {
-          node {
-            link
-          }
-        }
-        MilwaukeeTechScene_CF {
-          threeColumnHeaderText
-          threeColumnCardsMts {
-            title
-            content
-            linkLabel
-            link
-            image {
-              sourceUrl
-            }
-          }
-          subHeroTitle
-          subHeroSubTitle
-          subHeroContent
-          subHeroButtonUrl
-          subHeroButtonLabel
-          subHeroImage {
-            sourceUrl
-          }
-          gridImagesMts {
-            title
-            altText
-            gridArea
-            imagePath {
-              sourceUrl
-            }
-          }
-          tertiaryIntroSubHeader
-          tertiaryIntroSubContent
-          tertiaryIntroSubButtonUrl
-          tertiaryIntroSubButtonLabel
-          tertiaryIntroHeader
-        }
+query MKETechSceneQuery {
+  wpPage(databaseId: {eq: 31}) {
+    seo {
+      title
+      metaDesc
+      opengraphTitle
+      opengraphDescription
+      opengraphType
+      canonical
+    }
+    featuredImage {
+      node {
+        link
       }
     }
+    MilwaukeeTechScene_CF {
+      threeColumnHeaderText
+      threeColumnCardsMts {
+        title
+        content
+        linkLabel
+        link
+        image {
+          sourceUrl
+        }
+      }
+      subHeroTitle
+      subHeroSubTitle
+      subHeroContent
+      subHeroButtonUrl
+      subHeroButtonLabel
+      subHeroImage {
+        sourceUrl
+      }
+      gridImagesMts {
+        title
+        altText
+        gridArea
+        imagePath {
+          sourceUrl
+        }
+      }
+      tertiaryIntroSubHeader
+      tertiaryIntroSubContent
+      tertiaryIntroSubButtonUrl
+      tertiaryIntroSubButtonLabel
+      tertiaryIntroHeader
+      ctaContent
+      ctaButtonLink
+      ctaButtonLabel
+      contentCarouselHeaderText
+      contentCarouselTechScene {
+        title
+        content
+        buttonLabel
+        buttonUrl
+        linkUrl
+        linkLabel
+        featured
+        image {
+          sourceUrl
+        }
+      }
+      ctaImage {
+        sourceUrl
+      }
+    }
+  }
+}
+
 
   `)
 
@@ -88,6 +109,10 @@ const TechScene = () => {
           title={TechPageData.threeColumnHeaderText} 
         />
         <div className="container">
+        <ImageCopy
+                cards={TechPageData.contentCarouselTechScene}
+                title={TechPageData.contentCarouselHeaderText} 
+            />
         </div>
         <IntroCopy intro={TertiaryIntroData}/>
         <ImageGrid gallery={TechPageData.gridImagesMts} />
