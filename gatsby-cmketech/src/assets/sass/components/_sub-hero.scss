@@ -10,8 +10,10 @@
 
         img {
             width: 100%;
-            height: 566px;
             object-fit: cover;
+            @media #{$mq-largeScreen} {
+                height: 566px;
+            }
         }
     }
     .sub-intro-copy, .sub-intro {
