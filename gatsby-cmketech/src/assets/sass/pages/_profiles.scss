@@ -94,4 +94,14 @@
             text-align: center;
         }
     }
+
+    .form-field {
+        input, textarea {
+            padding: 2rem;
+            font-size: 1rem;
+        }
+        label {
+            font-weight: 600;
+        }
+    }
 }

@@ -1,7 +1,6 @@
 const path = require(`path`)
 const glob = require(`glob`)
 
-
 const createContentTypes = require(`./create/createContentTypes`)
 const createCategories = require(`./create/createCategories`)
 const createAuthors = require(`./create/createAuthors`)
