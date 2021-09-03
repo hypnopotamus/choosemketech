@@ -13,7 +13,20 @@ import CallToAction from "../components/CTA";
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query HomePageQuery {
-      wpPage(databaseId: {eq: 102}) {
+        wpPage(databaseId: {eq: 102}) {
+        seo {
+          title
+          metaDesc
+          opengraphTitle
+          opengraphDescription
+          opengraphType
+          canonical
+        }
+        featuredImage {
+          node {
+            link
+          }
+        }
         Pages_CF {
           heroSubText
           heroText
@@ -90,10 +103,16 @@ const IndexPage = () => {
   `)
 
   const IndexPageData = data.wpPage.Pages_CF;
+  const seoData = data.wpPage.seo;
+  const featuredImage = data.wpPage.featuredImage.node.link;
 
   return (
     <Layout>
-      <Seo title="Choose MKE Tech" />
+      <Seo 
+      title={seoData.title}
+      description={seoData.metaDesc}
+      uri={seoData.canonical}
+      socialImage={featuredImage} />
       <Hero hero={IndexPageData}/>
       <ThreeColumn 
         columns={IndexPageData.threeColumnCards} 

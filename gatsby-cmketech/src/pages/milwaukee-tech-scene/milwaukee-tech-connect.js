@@ -10,6 +10,19 @@ const Connect = () => {
   const data = useStaticQuery(graphql`
   query ConnectQuery {
   wpPage(databaseId: {eq: 45}) {
+    seo {
+      title
+      metaDesc
+      opengraphTitle
+      opengraphDescription
+      opengraphType
+      canonical
+    }
+    featuredImage {
+      node {
+        link
+      }
+    }
     Connect_CF {
       subHeroTitle
       subHeroSubTitle
@@ -40,10 +53,16 @@ const Connect = () => {
 `)
 
 let Connect = data.wpPage.Connect_CF;
+const seoData = data.wpPage.seo;
+const featuredImage = data.wpPage.featuredImage.node.link;
 
 return (
   <Layout>
-      <Seo title="Connect" />
+      <Seo 
+      title={seoData.title}
+      description={seoData.metaDesc}
+      uri={seoData.canonical}
+      socialImage={featuredImage} />
       <SubHero hero={Connect} />
       <div className="container">
       <ImageCopy

@@ -11,6 +11,19 @@ const Lead = () =>{
     const data = useStaticQuery(graphql`
         query LeadQuery {
         wpPage(databaseId: {eq: 703}) {
+            seo {
+                title
+                metaDesc
+                opengraphTitle
+                opengraphDescription
+                opengraphType
+                canonical
+            }
+            featuredImage {
+                node {
+                    link
+                }
+            }
             Lead_CF {
             subHeroTitle
             subHeroContent
@@ -41,10 +54,16 @@ const Lead = () =>{
     `)
   
   let Lead = data.wpPage.Lead_CF;
+  const seoData = data.wpPage.seo;
+  const featuredImage = data.wpPage.featuredImage.node.link;
 
     return (
         <Layout>
-            <Seo title="Lead" />
+            <Seo 
+            title={seoData.title}
+            description={seoData.metaDesc}
+            uri={seoData.canonical}
+            socialImage={featuredImage} />
             <SubHero hero={Lead} />
             <div className="container">
             <ImageCopy

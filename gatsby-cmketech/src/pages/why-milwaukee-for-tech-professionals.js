@@ -14,6 +14,19 @@ const WhyMilwaukee = () => {
   const data = useStaticQuery(graphql`
         query WhyMilwakueeQuery {
       wpPage(databaseId: {eq: 25}) {
+        seo {
+          title
+          metaDesc
+          opengraphTitle
+          opengraphDescription
+          opengraphType
+          canonical
+        }
+        featuredImage {
+          node {
+            link
+          }
+        }
         WhyMilwaukee_CF {
           cardCollectionWmke {
             buttonLabel
@@ -77,6 +90,8 @@ const WhyMilwaukee = () => {
   `)
 
   const WhyMKEData = data.wpPage.WhyMilwaukee_CF;
+  const seoData = data.wpPage.seo;
+  const featuredImage = data.wpPage.featuredImage.node.link;
 
   let TertiaryIntroData = {
     subHeroTitle : data.wpPage.WhyMilwaukee_CF.tertiaryIntroHeader,
@@ -86,7 +101,11 @@ const WhyMilwaukee = () => {
 
   return (
     <Layout>
-        <Seo title="Why Milwaukee Page" />
+        <Seo 
+        title={seoData.title}
+        description={seoData.metaDesc}
+        uri={seoData.canonical}
+        socialImage={featuredImage} />
         <SubHero hero={WhyMKEData} />
         {/* <ComparisonMap /> */}
         <ThreeColumn 
