@@ -43,6 +43,10 @@ const ThreeColumn = ({columns, title, content}) => {
             <div className="threeColumn__container">
                 <Slider {...settings}>
                     {columns.map((col, index) => {
+                        let threeColumnLink;
+                        if(col.linkLabel && col.link) {
+                            threeColumnLink = <a href={col.link} className="linked">{col.linkLabel}</a>
+                        }
                         return (
                             <div className="threeColumn__column" key={index}>
                             <div className="threeColumn__column__container" tabIndex="0" aria-labelledby={`header${index}, content${index}`}>
@@ -53,9 +57,7 @@ const ThreeColumn = ({columns, title, content}) => {
                                     <h4 dangerouslySetInnerHTML={ {__html : col.title} } id={`header${index}`}></h4>
                                     <p dangerouslySetInnerHTML={ {__html : col.content } } id={`content${index}`}></p>
                                     <div className="threeColumn__column__ctas">
-                                        <a href={col.link} className="linked">
-                                            {col.linkLabel}
-                                        </a>
+                                        { threeColumnLink }
                                     </div>
                                 </div>
                             </div>
