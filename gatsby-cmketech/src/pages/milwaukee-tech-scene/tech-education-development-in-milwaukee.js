@@ -10,6 +10,19 @@ const Grow = () => {
   const data = useStaticQuery(graphql`
   query GrowQuery {
   wpPage(databaseId: {eq: 34}) {
+    seo {
+      title
+      metaDesc
+      opengraphTitle
+      opengraphDescription
+      opengraphType
+      canonical
+    }
+    featuredImage {
+      node {
+        link
+      }
+    }
     Grow_CF {
       subHeroTitle
       subHeroSubTitle
@@ -40,10 +53,16 @@ const Grow = () => {
 `)
 
 let Grow = data.wpPage.Grow_CF;
+const seoData = data.wpPage.seo;
+const featuredImage = data.wpPage.featuredImage.node.link;
 
 return (
   <Layout>
-      <Seo title="Grow" />
+      <Seo 
+      title={seoData.title}
+      description={seoData.metaDesc}
+      uri={seoData.canonical}
+      socialImage={featuredImage} />
       <SubHero hero={Grow} />
       <div className="container">
       <ImageCopy

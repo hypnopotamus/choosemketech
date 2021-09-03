@@ -9,6 +9,19 @@ const About = () => {
   const data = useStaticQuery(graphql`
   query AboutCFQuery {
     wpPage(databaseId: {eq: 52}) {
+      seo {
+        title
+        metaDesc
+        opengraphTitle
+        opengraphDescription
+        opengraphType
+        canonical
+      }
+      featuredImage {
+        node {
+          link
+        }
+      }
       About_CF {
         subHeroTitle
         subHeroSubTitle
@@ -37,10 +50,16 @@ const About = () => {
 `)
 
 let About = data.wpPage.About_CF;
+let seoData = data.wpPage.seo;
+let featuredImage = data.wpPage.featuredImage.node.link;
 
   return (
     <Layout>
-      <Seo title="About" />
+      <Seo 
+      title={seoData.title}
+      description={seoData.metaDesc}
+      uri={seoData.canonical}
+      socialImage={featuredImage} />
       <SubHero hero={About} />
       <div className="container">
         <ImageCopy

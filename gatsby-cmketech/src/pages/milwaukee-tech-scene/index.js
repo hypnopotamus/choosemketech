@@ -12,6 +12,19 @@ const TechScene = () => {
   const data = useStaticQuery(graphql`
     query MKETechSceneQuery {
       wpPage(databaseId: {eq: 31}) {
+        seo {
+          title
+          metaDesc
+          opengraphTitle
+          opengraphDescription
+          opengraphType
+          canonical
+        }
+        featuredImage {
+          node {
+            link
+          }
+        }
         MilwaukeeTechScene_CF {
           threeColumnHeaderText
           threeColumnCardsMts {
@@ -51,6 +64,8 @@ const TechScene = () => {
   `)
 
   const TechPageData = data.wpPage.MilwaukeeTechScene_CF;
+  const seoData = data.wpPage.seo;
+  const featuredImage = data.wpPage.featuredImage.node.link;
   
   let TertiaryIntroData = {
     subHeroTitle : data.wpPage.MilwaukeeTechScene_CF.tertiaryIntroHeader,
@@ -62,7 +77,11 @@ const TechScene = () => {
   
   return (
     <Layout>
-        <Seo title="Tech Scene Page" />
+        <Seo 
+        title={seoData.title}
+        description={seoData.metaDesc}
+        uri={seoData.canonical}
+        socialImage={featuredImage} />
         <SubHero hero={TechPageData} />
         <ThreeColumn 
           columns={TechPageData.threeColumnCardsMts} 

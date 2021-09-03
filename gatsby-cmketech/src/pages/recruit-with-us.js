@@ -11,6 +11,19 @@ const RecruitWithUs = () => {
   const data = useStaticQuery(graphql`
     query RecruitWithUsQuery {
       wpPage(databaseId: {eq: 19}) {
+        seo {
+          title
+          metaDesc
+          opengraphTitle
+          opengraphDescription
+          opengraphType
+          canonical
+        }
+        featuredImage {
+          node {
+            link
+          }
+        }
         RecruitWithUs_CF {
           subHeroTitle
           subHeroSubTitle
@@ -47,10 +60,16 @@ const RecruitWithUs = () => {
   `)
 
   const RecruitWithUsData = data.wpPage.RecruitWithUs_CF;
+  const seoData = data.wpPage.seo;
+  const featuredImage = data.wpPage.featuredImage.node.link;
 
   return (
     <Layout>
-        <Seo title="Pricing Page" />
+        <Seo 
+        title={seoData.title}
+        description={seoData.metaDesc}
+        uri={seoData.canonical}
+        socialImage={featuredImage} />
         <SubHero hero={RecruitWithUsData} />
         <div className="container">
           <Memberships />
