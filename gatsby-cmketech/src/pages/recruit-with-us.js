@@ -82,6 +82,7 @@ const RecruitWithUs = () => {
               <th><a href="#/ms/signup/60e7016d824c410004285960" className="button button--secondary">Premium</a></th>
             </thead>
           </table> */}
+
           <ImageCopy cards={RecruitWithUsData.cardCollectionRqu}/>
           <ImageGrid gallery={RecruitWithUsData.gridImagesRqu} />
         </div>
