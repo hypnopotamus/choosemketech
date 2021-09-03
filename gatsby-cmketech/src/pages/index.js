@@ -8,7 +8,7 @@ import JobCarousel from "../components/JobCarousel";
 import ImageGrid from "../components/ImageGrid";
 import ImageCopy from "../components/ImageCopy";
 import ThreeColumn from "../components/ThreeColumn";
-import CallToAction from "../components/_cta";
+import CallToAction from "../components/CTA";
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
