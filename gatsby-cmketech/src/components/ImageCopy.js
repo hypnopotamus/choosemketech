@@ -61,9 +61,7 @@ const ImageCopy = ({cards, title, flip}) => {
                 </div>
                 <div className="imageCopy__copy">
                   <h3>{ card.title }</h3>
-                  <p>
-                      { card.content }
-                  </p>
+                  <p dangerouslySetInnerHTML={{ __html: card.content }} />
                   <div className="imageCopy__copy__ctas">
                     { cardButton }
                     { cardLink }
