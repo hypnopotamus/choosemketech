@@ -9,9 +9,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Choose MKE Tech`,
-    description: `Tech Website`,
-    author: `@stephendeo`,
+    author: `@MKETechHub`,
     siteUrl: process.env.SITE_URL,
   },
   plugins: [
