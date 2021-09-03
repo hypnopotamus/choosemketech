@@ -5,8 +5,9 @@ import Layout from "../components/Layout"
 import ProfileHero from "../components/ProfileHero"
 import ImageCopy from "../components/ImageCopy"
 import Accordion from "../components/Accordion"
+import FormInput from "../components/FormInput"
 
-const CompanyProfile = () => {
+const CompanyProfileEdit = () => {
 
   const [data, setMemberData] = useState("");
   useEffect(() => {
@@ -50,6 +51,7 @@ const CompanyProfile = () => {
 
   return (
     <Layout>
+        <form data-ms-form="profile">
         <Seo title="Company Profile" />
 
         <ProfileHero profile={data} />
@@ -64,14 +66,19 @@ const CompanyProfile = () => {
                 <li><i className="fab fa-facebook-f"></i> <a href="" className="link">{data.facebook}</a></li>
                 <li><i className="fab fa-twitter"></i> <a href="" className="link">{data.twitter}</a></li>
                 <li><Link to="/contact" className="button button--primary">Contact Us</Link></li>
-                <li><Link to="/company-profile-edit" className="button button--secondary">Edit Profile</Link></li>
+                <li><button type="submit" className="button button--secondary">Save Profile</button></li>
+                <li><Link to="/company-profile" className="link">Back to My Profile</Link></li>
               </ul>
             </div>
+            
             <div className="content">
               <div className="content__header">
                 <h1>Welcome {data['company-name']}!</h1>
+                <FormInput name="company-name" type="text" required="true" label="Edit Your Company Name" memberstack="company-name" />
                 <ul>
-                  <li><i className="fas fa-users"></i> <span>Employees {data['total-of-employees']}</span></li>
+                  <li>
+                      <i className="fas fa-users"></i> <span>Employees {data['total-of-employees']}</span>
+                  </li>
                   <li><i className="fas fa-briefcase"></i> <span>Industry Type {data.industry}</span></li>
                   <li><i className="fas fa-external-link-square-alt"></i> <a href={data['company-url']}>{data['company-url']}</a></li>
                 </ul>
@@ -79,6 +86,7 @@ const CompanyProfile = () => {
               <div className="content__description">
                 <h2>Company Description</h2>
                 <p>{data['company-description']}</p>
+                <FormInput name="company-description" type="textarea" required="true" label="Edit Your Company Description" memberstack="company-description" />
               </div>
             </div>
           </div>
@@ -87,11 +95,16 @@ const CompanyProfile = () => {
             <Accordion items={data['perks-benefits']} />
           </div> */}
           <ImageCopy cards={featuredStory} flip={true}/>
+          <FormInput name="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" type="textarea" required="true" label="Edit Embrace Diversity and Inclusion" memberstack="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" />
+          <FormInput name="featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech" type="textarea" required="true" label="Edit Emerging Tech" memberstack="featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech" />
+          <FormInput name="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" type="textarea" required="true" label="Edit Place for Tech Talent To Work" memberstack="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" />
+          <FormInput name="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" type="textarea" required="true" label="Edit Company's Environment" memberstack="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" />
         </div>
+        </form>
     </Layout>
   )
 
 }
   
-export default CompanyProfile;
+export default CompanyProfileEdit;
   

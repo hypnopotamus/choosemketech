@@ -18,6 +18,7 @@ const FormInput = ({
     number,
     tel,
     memberstack,
+    required,
     ...props
 }) => {
     const [passwordShown, setPasswordShown] = useState(false)
@@ -63,6 +64,7 @@ const FormInput = ({
                             className={className}
                             style={error && { border: "solid 1px #B11030" }}
                             data-ms-member={memberstack}
+                            required={required}
                         />
                         {error && (
                             <i className="fas fa-exclamation-triangle"></i>
