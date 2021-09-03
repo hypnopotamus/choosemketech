@@ -73,7 +73,7 @@ return (
 
       <Accordion 
           items={Grow.growAccordions} 
-          headline={Lead.accordionHeadline} 
+          headline={Grow.accordionHeadline} 
       />
       </div>
   </Layout>

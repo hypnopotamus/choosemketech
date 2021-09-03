@@ -11,6 +11,9 @@
         img {
             width: 100%;
             object-fit: cover;
+            @media #{$mq-largeScreen} {
+                height: 566px;
+            }
         }
     }
     .sub-intro-copy, .sub-intro {
