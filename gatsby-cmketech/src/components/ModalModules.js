@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react"
+import React, { forwardRef, useState, useEffect } from "react"
 import FormInput from "./FormInput"
 import { recruitLogo, userLogo } from "../assets/assets"
 
@@ -23,6 +23,11 @@ const ModalModules = forwardRef((props, ref) => {
             setFormDisplayed(forgotForm)
         }
     }
+    useEffect(() => {
+        if(window.MemberStack){
+            window.MemberStack.reload();
+        }
+    }, [formDisplayed])
     const Login = () => {
         return (
             <div className="loginModal">
@@ -156,26 +161,36 @@ const ModalModules = forwardRef((props, ref) => {
     }
 
     const JobForm = () => {
+        if(window.MemberStack){
+            window.MemberStack.reload();
+        }
         return (
             <div className="user-signup__form user-signup__form--job">
                 <div className="user-signup__content">
                     <img className="user-signup__logo" src={userLogo} alt="" role="presentation" />
                     <h3>Create a Profile</h3>
                 </div>
-                <form className="form">
-                    <FormInput
-                        name="email"
-                        type="text"
-                        required
-                        label="Email"
-                        halfLength={true}
-                    />
+                <form className="form" data-ms-form="signup" data-ms-membership="611f2f880c5af90004207432">
+                    <div className={`form-field half-length`}>
+                        <label htmlFor="email">Email</label>
+                        <span className="form-field__input-container">
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                required
+                                data-ms-member="email"
+                            />
+                        </span>
+                    </div>
+                    
                     <FormInput
                         name="password"
                         type="password"
                         required
                         label="Password"
                         halfLength={true}
+                        memberstack="password"
                     />
                     <FormInput
                         name="passwordConfirm"
@@ -188,11 +203,13 @@ const ModalModules = forwardRef((props, ref) => {
                         name="Job Opportunities"
                         type="checkbox"
                         label="I agree to recieve emails from employers about potential job oppotunities"
+                        memberstack="job-opportunities-opt-in"
                     />
                     <FormInput
                         name="Latest News"
                         type="checkbox"
                         label="Sign me up for Chooose MKE Tech news, such as meetups, tech related news, and more."
+                        memberstack="subscription-notifications"
                     />
                     <div className="user-signup__content">
                         <a href="#" onClick={(e) => handleFormChange(e, "login")}>
@@ -200,7 +217,7 @@ const ModalModules = forwardRef((props, ref) => {
                         </a>
                     </div>
                     <div className="user-signup__actions">
-                        <button className="button button--primary">
+                        <button className="button button--primary"  type="submit">
                             Create My Profile
                         </button>
                         <a
