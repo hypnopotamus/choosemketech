@@ -30,6 +30,7 @@ const Connect = () => {
       subHeroImage {
         sourceUrl
       }
+      accordionHeadline
       connectAccordions {
         accordionTitle
         accordionContent
@@ -72,6 +73,7 @@ return (
 
       <Accordion 
           items={Connect.connectAccordions} 
+          headline={Lead.accordionHeadline} 
       />
       </div>
   </Layout>

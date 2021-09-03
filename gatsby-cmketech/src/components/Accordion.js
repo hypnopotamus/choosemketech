@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-const Accordion = ({items}) => {
+const Accordion = ({items, headline}) => {
     const [selectedAction, setSelectedAction] = useState(null)
 
     const handleAccordionClick = (i) => {
@@ -12,6 +12,10 @@ const Accordion = ({items}) => {
 
     return (
         <div className="accordions--wrapper">
+            {headline && (
+                <h2>{headline}</h2>
+                )
+            }
             {items.map((el, idx) => {
                 console.log(el, idx)
                 return (

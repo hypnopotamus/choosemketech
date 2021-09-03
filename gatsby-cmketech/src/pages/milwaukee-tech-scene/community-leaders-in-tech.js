@@ -31,6 +31,7 @@ const Lead = () =>{
             subHeroImage {
                 sourceUrl
             }
+            accordionHeadline
             engageAccordions {
                 accordionTitle
                 accordionContent
@@ -70,9 +71,9 @@ const Lead = () =>{
                 cards={Lead.cardCollectionEngage}
                 title={Lead.headerText} 
             />
-
             <Accordion 
                 items={Lead.engageAccordions} 
+                headline={Lead.accordionHeadline} 
             />
             </div>
         </Layout>

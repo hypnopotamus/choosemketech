@@ -30,6 +30,7 @@ const Grow = () => {
       subHeroImage {
         sourceUrl
       }
+      accordionHeadline
       growAccordions {
         accordionTitle
         accordionContent
@@ -72,6 +73,7 @@ return (
 
       <Accordion 
           items={Grow.growAccordions} 
+          headline={Lead.accordionHeadline} 
       />
       </div>
   </Layout>
