@@ -28,6 +28,10 @@
             background-color: $white;
             padding: 25px;
             margin: 0px 15px;
+            @media #{$mq-largeScreen} {
+                min-height: 585px;
+                max-height: 585px;
+            }
         }
         &__image {
             margin-block: 0px 15px;
@@ -43,6 +47,14 @@
             }
             p {
                 margin-block: 14px;
+                @media #{$mq-largeScreen} {
+                    height: 200px;
+                    display: block;
+                    overflow-y: hidden;
+                    &:hover {
+                        overflow-y: auto;
+                    }
+                }                
             }
         }
     }

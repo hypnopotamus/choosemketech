@@ -45,7 +45,7 @@
 
 .gallery {
 	display: none;
-	@media #{$mq-mediumScreen}{
+	@media #{$mq-largeScreen}{
 		display: grid;
 	}
 	grid-auto-flow: dense;
