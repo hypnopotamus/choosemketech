@@ -17,7 +17,6 @@ const Accordion = ({items, headline}) => {
                 )
             }
             {items.map((el, idx) => {
-                console.log(el, idx)
                 return (
                     <div className="accordions" key={idx}>
                         <div className={selectedAction == idx ? `accordion--active` : `accordion` } key={idx} onClick={() => handleAccordionClick(idx)}> 

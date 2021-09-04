@@ -82,11 +82,11 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
                             Profile Settings
                         </Link>
                     </li>
-                    <li className="nav__link">
+                    {/* <li className="nav__link">
                         <Link to="#">
                             New Job Listings
                         </Link>
-                    </li>
+                    </li> */}
                     <li className="nav__link-group__title">
                         <h4>
                             Other
@@ -103,9 +103,9 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
                         </Link>
                     </li>
                     <li className="nav__link">
-                        <a href="/#/ms/logout">
+                        <Link to="/#/ms/logout">
                             Log Out
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>
@@ -155,7 +155,7 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
                             Company Profile
                         </Link>
                     </li>
-                    <li className="nav__link">
+                    {/* <li className="nav__link">
                         <Link to="#">
                             Job Postings
                         </Link>
@@ -169,7 +169,7 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
                         <Link to="#">
                             Listing + Credits
                         </Link>
-                    </li>
+                    </li> */}
                     <li className="nav__link-group__title">
                         <h4>
                             Your Account
@@ -180,11 +180,11 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
                             Settings
                         </Link>
                     </li>
-                    <li className="nav__link">
+                    {/* <li className="nav__link">
                         <Link to="/faq">
                             Notifications
                         </Link>
-                    </li>
+                    </li> */}
                     <li className="nav__link-group__title">
                         <h4>
                             Other
@@ -201,9 +201,9 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
                         </Link>
                     </li>
                     <li className="nav__link">
-                        <a href="/#/ms/logout">
+                        <Link to="/#/ms/logout">
                             Log Out
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>
