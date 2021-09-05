@@ -6,8 +6,10 @@ import ProfileHero from "../components/ProfileHero"
 import ImageCopy from "../components/ImageCopy"
 import Accordion from "../components/Accordion"
 import FormInput from "../components/FormInput"
+import Breadcrumbs from "../components/Breadcrumbs";
+import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
 
-const CompanyProfileEdit = () => {
+const CompanyProfileEdit = ({location}) => {
 
   const [data, setMemberData] = useState("");
   useEffect(() => {
@@ -49,11 +51,16 @@ const CompanyProfileEdit = () => {
     },
   ]
 
+  const { crumbs } = useBreadcrumb({
+    location,
+    crumbLabel: 'Company Profile Edit'
+  })  
+
   return (
     <Layout>
         <form data-ms-form="profile">
         <Seo title="Company Profile" />
-
+        <Breadcrumbs crumbs={crumbs} />
         <ProfileHero profile={data} />
         
         <div className="profiles container">

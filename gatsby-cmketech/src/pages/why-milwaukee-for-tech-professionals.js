@@ -8,8 +8,10 @@ import ThreeColumn from "../components/ThreeColumn";
 import IntroCopy from "../components/SubIntroCopy";
 import ImageGrid from "../components/ImageGrid";
 import ImageCopy from "../components/ImageCopy";
+import Breadcrumbs from "../components/Breadcrumbs";
+import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
 
-const WhyMilwaukee = () => {
+const WhyMilwaukee = ({location}) => {
 
   const data = useStaticQuery(graphql`
         query WhyMilwakueeQuery {
@@ -98,6 +100,10 @@ const WhyMilwaukee = () => {
     subHeroSubTitle : data.wpPage.WhyMilwaukee_CF.tertiaryIntroSubHeader,
   };
 
+  const { crumbs } = useBreadcrumb({
+    location,
+    crumbLabel: 'Why Milwaukee'
+  })  
 
   return (
     <Layout>
@@ -106,6 +112,7 @@ const WhyMilwaukee = () => {
         description={seoData.metaDesc}
         uri={seoData.canonical}
         socialImage={featuredImage} />
+        <Breadcrumbs crumbs={crumbs} />
         <SubHero hero={WhyMKEData} />
         {/* <ComparisonMap /> */}
         <ThreeColumn 

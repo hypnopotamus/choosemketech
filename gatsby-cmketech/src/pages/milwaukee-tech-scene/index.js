@@ -7,8 +7,10 @@ import SubHero from "../../components/SubHero";
 import ImageGrid from "../../components/ImageGrid";
 import IntroCopy from "../../components/SubIntroCopy";
 import ImageCopy from "../../components/ImageCopy";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import { useBreadcrumb } from 'gatsby-plugin-breadcrumb';
 
-const TechScene = () => {
+const TechScene = ({location}) => {
   
   const data = useStaticQuery(graphql`
 query MKETechSceneQuery {
@@ -95,6 +97,13 @@ query MKETechSceneQuery {
     subHeroButtonUrl : data.wpPage.MilwaukeeTechScene_CF.tertiaryIntroSubButtonUrl,
     subHeroButtonLabel : data.wpPage.MilwaukeeTechScene_CF.tertiaryIntroSubButtonLabel
   };
+
+
+  const { crumbs } = useBreadcrumb({
+    location,
+    crumbLabel: 'Tech Scene'
+  })  
+
   
   return (
     <Layout>
@@ -103,6 +112,7 @@ query MKETechSceneQuery {
         description={seoData.metaDesc}
         uri={seoData.canonical}
         socialImage={featuredImage} />
+        <Breadcrumbs crumbs={crumbs} />
         <SubHero hero={TechPageData} />
         <ThreeColumn 
           columns={TechPageData.threeColumnCardsMts} 

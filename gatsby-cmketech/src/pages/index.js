@@ -9,11 +9,13 @@ import ImageGrid from "../components/ImageGrid";
 import ImageCopy from "../components/ImageCopy";
 import ThreeColumn from "../components/ThreeColumn";
 import CallToAction from "../components/CTA";
+import { useBreadcrumb } from 'gatsby-plugin-breadcrumb';
 
-const IndexPage = () => {
+const IndexPage = ({location}) => {
   const data = useStaticQuery(graphql`
     query HomePageQuery {
         wpPage(databaseId: {eq: 102}) {
+        databaseId
         seo {
           title
           metaDesc
@@ -105,9 +107,14 @@ const IndexPage = () => {
   const IndexPageData = data.wpPage.Pages_CF;
   const seoData = data.wpPage.seo;
   const featuredImage = data.wpPage.featuredImage.node.link;
-
+  
+  const { crumbs } = useBreadcrumb({
+    location,
+    crumbLabel: 'Home'
+  })  
+  
   return (
-    <Layout>
+    <Layout bodyClass={`page page-id-${data.wpPage.databaseId}`}>
       <Seo 
       title={seoData.title}
       description={seoData.metaDesc}

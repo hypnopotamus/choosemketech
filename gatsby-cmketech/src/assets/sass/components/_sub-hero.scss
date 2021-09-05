@@ -4,9 +4,6 @@
     padding-bottom: 3.125rem;
     &.sub-hero--banner {
         margin-block-start: 0;
-        @media #{$mq-mediumScreen} {
-            margin-block-start: 0.5rem;
-        }
 
         img {
             width: 100%;

@@ -5,8 +5,10 @@ import Layout from "../components/Layout"
 import ProfileHero from "../components/ProfileHero"
 import ImageCopy from "../components/ImageCopy"
 import Accordion from "../components/Accordion"
+import Breadcrumbs from "../components/Breadcrumbs";
+import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
 
-const CompanyProfile = () => {
+const CompanyProfile = ({location}) => {
 
   const [data, setMemberData] = useState("");
   useEffect(() => {
@@ -48,10 +50,15 @@ const CompanyProfile = () => {
     },
   ]
 
+  const { crumbs } = useBreadcrumb({
+    location,
+    crumbLabel: 'Company Profile'
+  })  
+  
   return (
     <Layout>
         <Seo title="Company Profile" />
-
+        <Breadcrumbs crumbs={crumbs} />
         <ProfileHero profile={data} />
         
         <div className="profiles container">

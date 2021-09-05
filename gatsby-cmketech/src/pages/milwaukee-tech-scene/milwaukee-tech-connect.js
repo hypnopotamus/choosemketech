@@ -4,9 +4,11 @@ import Seo from "../../components/Seo";
 import Layout from "../../components/Layout";
 import ImageCopy from "../../components/ImageCopy";
 import SubHero from "../../components/SubHero";
-import Accordion from "../../components/Accordion"
+import Accordion from "../../components/Accordion";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import { useBreadcrumb } from 'gatsby-plugin-breadcrumb';
 
-const Connect = () => {
+const Connect = ({location}) => {
   const data = useStaticQuery(graphql`
   query ConnectQuery {
   wpPage(databaseId: {eq: 45}) {
@@ -57,6 +59,12 @@ let Connect = data.wpPage.Connect_CF;
 const seoData = data.wpPage.seo;
 const featuredImage = data.wpPage.featuredImage.node.link;
 
+const { crumbs } = useBreadcrumb({
+  location,
+  crumbLabel: 'Connect'
+})  
+
+
 return (
   <Layout>
       <Seo 
@@ -64,6 +72,7 @@ return (
       description={seoData.metaDesc}
       uri={seoData.canonical}
       socialImage={featuredImage} />
+      <Breadcrumbs crumbs={crumbs} />
       <SubHero hero={Connect} />
       <div className="container">
       <ImageCopy

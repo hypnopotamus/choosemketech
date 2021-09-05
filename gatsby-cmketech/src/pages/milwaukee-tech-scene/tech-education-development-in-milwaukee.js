@@ -4,9 +4,11 @@ import Seo from "../../components/Seo";
 import Layout from "../../components/Layout";
 import ImageCopy from "../../components/ImageCopy";
 import SubHero from "../../components/SubHero";
-import Accordion from "../../components/Accordion"
+import Accordion from "../../components/Accordion";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import { useBreadcrumb } from 'gatsby-plugin-breadcrumb';
 
-const Grow = () => {
+const Grow = ({location}) => {
   const data = useStaticQuery(graphql`
   query GrowQuery {
   wpPage(databaseId: {eq: 34}) {
@@ -57,6 +59,12 @@ let Grow = data.wpPage.Grow_CF;
 const seoData = data.wpPage.seo;
 const featuredImage = data.wpPage.featuredImage.node.link;
 
+const { crumbs } = useBreadcrumb({
+  location,
+  crumbLabel: 'Grow'
+})  
+
+
 return (
   <Layout>
       <Seo 
@@ -64,6 +72,7 @@ return (
       description={seoData.metaDesc}
       uri={seoData.canonical}
       socialImage={featuredImage} />
+      <Breadcrumbs crumbs={crumbs} />
       <SubHero hero={Grow} />
       <div className="container">
       <ImageCopy

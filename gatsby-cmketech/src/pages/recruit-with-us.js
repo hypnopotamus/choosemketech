@@ -6,8 +6,11 @@ import SubHero from "../components/SubHero";
 import ImageCopy from "../components/ImageCopy";
 import Memberships from "../components/Memberships";
 import ImageGrid from "../components/ImageGrid";
+import Breadcrumbs from "../components/Breadcrumbs";
+import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
 
-const RecruitWithUs = () => {
+
+const RecruitWithUs = ({location}) => {
   const data = useStaticQuery(graphql`
     query RecruitWithUsQuery {
       wpPage(databaseId: {eq: 19}) {
@@ -63,6 +66,11 @@ const RecruitWithUs = () => {
   const seoData = data.wpPage.seo;
   const featuredImage = data.wpPage.featuredImage.node.link;
 
+  const { crumbs } = useBreadcrumb({
+    location,
+    crumbLabel: 'Recruit With Us'
+  })  
+
   return (
     <Layout>
         <Seo 
@@ -70,6 +78,7 @@ const RecruitWithUs = () => {
         description={seoData.metaDesc}
         uri={seoData.canonical}
         socialImage={featuredImage} />
+        <Breadcrumbs crumbs={crumbs} />
         <SubHero hero={RecruitWithUsData} />
         <div className="container">
           <Memberships />

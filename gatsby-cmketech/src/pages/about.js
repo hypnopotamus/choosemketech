@@ -4,8 +4,10 @@ import Seo from "../components/Seo";
 import Layout from "../components/Layout";
 import ImageCopy from "../components/ImageCopy";
 import SubHero from "../components/SubHero";
+import Breadcrumbs from "../components/Breadcrumbs";
+import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
 
-const About = () => {
+const About = ({location}) => {
   const data = useStaticQuery(graphql`
   query AboutCFQuery {
     wpPage(databaseId: {eq: 52}) {
@@ -53,13 +55,23 @@ let About = data.wpPage.About_CF;
 let seoData = data.wpPage.seo;
 let featuredImage = data.wpPage.featuredImage.node.link;
 
+const { crumbs } = useBreadcrumb({
+  location,
+  crumbLabel: 'About'
+})
+
+
   return (
     <Layout>
       <Seo 
-      title={seoData.title}
-      description={seoData.metaDesc}
-      uri={seoData.canonical}
-      socialImage={featuredImage} />
+        title={seoData.title}
+        description={seoData.metaDesc}
+        uri={seoData.canonical}
+        socialImage={featuredImage} 
+      />
+      
+      <Breadcrumbs crumbs={crumbs} />
+
       <SubHero hero={About} />
       <div className="container">
         <ImageCopy

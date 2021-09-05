@@ -5,9 +5,10 @@ import Layout from "../../components/Layout"
 import ImageCopy from "../../components/ImageCopy";
 import SubHero from "../../components/SubHero";
 import Accordion from "../../components/Accordion"
-  
+import Breadcrumbs from "../../components/Breadcrumbs";
+import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
 
-const Lead = () =>{
+const Lead = ({location}) =>{
     const data = useStaticQuery(graphql`
         query LeadQuery {
         wpPage(databaseId: {eq: 703}) {
@@ -58,6 +59,11 @@ const Lead = () =>{
   const seoData = data.wpPage.seo;
   const featuredImage = data.wpPage.featuredImage.node.link;
 
+  const { crumbs } = useBreadcrumb({
+    location,
+    crumbLabel: 'Lead'
+  })  
+
     return (
         <Layout>
             <Seo 
@@ -65,6 +71,7 @@ const Lead = () =>{
             description={seoData.metaDesc}
             uri={seoData.canonical}
             socialImage={featuredImage} />
+            <Breadcrumbs crumbs={crumbs} />
             <SubHero hero={Lead} />
             <div className="container">
             <ImageCopy

@@ -93,7 +93,7 @@
         table {
             width: 100%;
             thead {
-                background-color: $light_blue;
+                background-color: $blue;
                 color: $white;
                 text-align: center;
                 th {
@@ -122,7 +122,7 @@
 
                         }
                         &:nth-child(2) {
-                            color: $light_blue;
+                            color: $blue;
                         }
                     }
                 }
