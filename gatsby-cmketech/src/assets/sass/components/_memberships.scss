@@ -55,7 +55,6 @@
                 &:first-child {
                     text-align: left;
                     padding-bottom: 0;
-                    position: sticky;
                     left: 0;
                     small {
                         display: block;
@@ -87,7 +86,6 @@
                         color: $white;
                         text-align: left;
                         white-space: nowrap;
-                        position: sticky;
                         left: 0;
                     }
                 }

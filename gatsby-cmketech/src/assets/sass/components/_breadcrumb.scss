@@ -1,22 +1,32 @@
 .breadcrumb {
     background-color: $light_gray;
-    padding: 1rem 1.5rem;
+    padding: 0 1.5rem;
     margin-block-start: 4.5rem;
     @media #{$mq-mediumScreen} {
         padding: 1rem 2.5rem;
+        margin-block-start: 4.5rem;
+    }
+    @media #{$mq-largeScreen} {
         margin-block-start: 0.5rem;
     }
     &__list {
         display: flex;
         overflow-y: scroll;
+        padding: 1rem 0;
+        @media #{$mq-mediumScreen} {
+            padding: 0;
+        }
     }
     &__item {
         display: flex;
         justify-content: center;
         align-items: center;
         white-space: nowrap;
+        a {
+            color: $blue;
+        }
         &:after {
-            content: '>';
+            content: '\203A';
             margin: 0 0.5rem;
         }
         &:last-child {
@@ -25,6 +35,7 @@
             }
             a {
                 text-decoration: none;
+                color: $dark_gray;
             }
         }
     }

@@ -133,8 +133,8 @@ const Memberships = () => {
                 </tbody>
             </table>
             <div className="memberships__cta">
-                <Link to="" className="button button--primary">Create My Profile</Link>
-                <Link to="" className="link">I have addtional questions</Link>
+                <Link to="/recruit-with-us/" className="button button--primary">Create My Profile</Link>
+                <Link to="/help" className="link">I have addtional questions</Link>
             </div>
         </div>
     )

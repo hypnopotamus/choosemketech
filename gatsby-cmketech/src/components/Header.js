@@ -4,6 +4,8 @@ import Navigation from "./Navigation"
 import UtilityNav from "./UtilityNav"
 import { chooseMKELogo } from "../assets/assets"
 import MembershipDropdown from "./MembershipDropdown"
+import FormInput from "./FormInput"
+import Helmet from "react-helmet"
 
 const Header = ({ pageContext, toggleBackdrop, ...props }) => {
     const [displayMobileNav, setDisplayedMobileNav] = useState(false)
@@ -16,14 +18,12 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
         e.preventDefault();
     }
 
-
     return (
-        <header
-            id="site-header"
-            className={`header-footer-group container header ${
-                displayMobileNav ? "opened-nav" : ""
-            }`}
-        >
+        <>
+        
+        <Helmet bodyAttributes={displayMobileNav ? {class:'navigation-opened'} : {class: ''}}/>
+
+        <header id="site-header" className={`header-footer-group container header ${ displayMobileNav ? "opened-nav" : "" }`} >
             <div className="header__utility-nav">
                 <UtilityNav />
             </div>
@@ -63,14 +63,12 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
                         
                     </span>
                 </button>
-                <Navigation 
-                    toggleNav={displayMobileNav} />
-                <MembershipDropdown 
-                    toggleNav={displayMobileNav} 
-                    onDropdownOpen={setDisplayedMobileNav}/>
+                <Navigation toggleNav={displayMobileNav} />
+                <MembershipDropdown toggleNav={displayMobileNav} onDropdownOpen={setDisplayedMobileNav} />
                 <a className="header__global-search" href="#" onClick={(e)=>handleSearchToggle(e)}><i className="fas fa-search"></i></a>
             </div>
         </header>
+        </>
     )
 }
 

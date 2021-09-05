@@ -20,18 +20,21 @@
             background-color: $light_gray;
             margin-top: 5px;
             display: flex;
+            padding: 1rem 2rem;
+            
             a {
-                padding: 0 25px 0 0;
                 font-size: 0.90rem;
             }
             @media #{$mq-largeScreen} {
                 padding-block: 15px;
                 margin-top: 0;
+                padding: 1rem 25px 1rem 0;
             }
         }
         &--members {
             position: relative;
             font-weight: 500;
+            padding: 0;
             #membershipDropdown__close, .membershipDropdown__close {
                 @media #{$mq-largeScreen} {
                     display: none;
@@ -98,6 +101,29 @@
                 background-color: $navy_blue;
                 z-index: 10;
                 width: 120%;
+                bottom: 80px !important;
+    
+                &:before {
+                    content: '';
+                    display: block;
+                    height: 80px;
+                    background-image: url('../images/menu-bg.svg');
+                    background-size: 25px;
+                }        
+        
+                .nav__user {
+                    display: flex;
+                    align-items: center;
+                    .fa-user-circle {
+                        font-size: 1.5rem;
+                    }
+                    span {
+                        font-family: 'Inter-Bold', sans-serif;
+                    }
+                }
+                li {
+                    margin-left: 0;
+                }
             }
         }
         li {
