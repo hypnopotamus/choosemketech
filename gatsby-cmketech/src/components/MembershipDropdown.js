@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby'
+import Helmet from 'react-helmet';
 
 const MembershipDropdown = ({toggleNav, ...props}) => {
     const [profileType, setProfileType] = useState(null);  
@@ -114,7 +115,6 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
 
     const CompanyView = () => {
         return (
-
             <li role="menuitem" className="utilityNav__item utilityNav__item--primary utilityNav__item--members" data-ms-content="members">
                 <a href="#" onClick={(e) => handleDropdownClick(e)} className="utilityNav__link utilityNav__link--primary" >
                 {subNavShow  && (
@@ -136,6 +136,8 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
     }
     const CompanySubnav = () => {
         return (
+            <>
+            
             <div className="utilityNav__member__subnav--container">
                 <ul 
                     onMouseLeave={()=>handleMouseLeaveSubNav()}
@@ -207,6 +209,7 @@ const MembershipDropdown = ({toggleNav, ...props}) => {
                     </li>
                 </ul>
             </div>
+            </>
         )
     }
 

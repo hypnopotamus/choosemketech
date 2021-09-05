@@ -20,7 +20,6 @@ const Header = ({ pageContext, toggleBackdrop, ...props }) => {
 
     return (
         <>
-        
         <Helmet bodyAttributes={displayMobileNav ? {class:'navigation-opened'} : {class: ''}}/>
 
         <header id="site-header" className={`header-footer-group container header ${ displayMobileNav ? "opened-nav" : "" }`} >
