@@ -18,6 +18,18 @@ module.exports = {
     `gatsby-plugin-notifications`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        defaultCrumb: {
+          location: {
+            pathname: "/",
+          },
+          crumbLabel: "Home",
+          crumbSeparator: " / "
+        },
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
