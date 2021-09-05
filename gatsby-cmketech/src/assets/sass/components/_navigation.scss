@@ -218,8 +218,16 @@
     height: 100vh;
     overflow-y: hidden;
     position: relative;
+    @media #{$mq-largeScreen}{
+        height: inherit;
+        overflow-y: inherit;
+        position: inherit;
+    }
     main {
         filter: blur(5px);
+        @media #{$mq-largeScreen}{
+            filter: inherit;
+        }
     }
     .navigation-backdrop {
         background-color: rgba(0,0,0,0.5);
@@ -227,5 +235,8 @@
         width: 100%;
         position: absolute;
         top: 0;
+        @media #{$mq-largeScreen}{
+            display: none;
+        }
     }
 }
