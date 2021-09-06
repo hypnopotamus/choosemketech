@@ -15,7 +15,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-notifications`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-breadcrumb`,
@@ -25,9 +24,9 @@ module.exports = {
             pathname: "/",
           },
           crumbLabel: "Home",
-          crumbSeparator: " / "
+          crumbSeparator: " / ",
         },
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -43,7 +42,7 @@ module.exports = {
           htaccess: {
             username: "choosemketechedit",
             password: "eK3yHSinoVqN",
-          }
+          },
         },
         url: process.env.WPGRAPHQL_URL,
         verbose: true,
@@ -63,8 +62,8 @@ module.exports = {
         // since we can get block data on the `block` field
         // we don't need these fields
         production: {
-          allow404Images: true
-        },        
+          allow404Images: true,
+        },
         excludeFieldNames: [`blocksJSON`, `saveContent`],
         type: {
           Post: {
@@ -88,7 +87,7 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /\.inline\.svg$/, 
+          include: /\.inline\.svg$/,
         },
       },
     },
