@@ -132,7 +132,7 @@ const ModalModules = forwardRef((props, ref) => {
           <img className="user-signup__logo" src={userLogo} alt="" role="presentation" />
           <h3>Create a Profile</h3>
         </div>
-        <form className="form" data-ms-form="signup">
+        <form className="form" data-ms-form="signup" data-ms-membership="611f2f880c5af90004207432">
           <div className={`form-field half-length`}>
             <label htmlFor="email">Email</label>
             <span className="form-field__input-container">
