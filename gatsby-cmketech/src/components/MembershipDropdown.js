@@ -93,7 +93,7 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
             <Link to="/help">Help</Link>
           </li>
           <li className="nav__link">
-            <Link to="/faq">FAQs</Link>
+            <Link to="/help">FAQs</Link>
           </li>
           <li className="nav__link">
             <Link to="/#/ms/logout">Log Out</Link>
@@ -164,7 +164,7 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
               <Link to="/help">Settings</Link>
             </li>
             {/* <li className="nav__link">
-                        <Link to="/faq">
+                        <Link to="/help">
                             Notifications
                         </Link>
                     </li> */}
@@ -175,7 +175,7 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
               <Link to="/help">Help</Link>
             </li>
             <li className="nav__link">
-              <Link to="/faq">FAQs</Link>
+              <Link to="/help">FAQs</Link>
             </li>
             <li className="nav__link">
               <Link to="/#/ms/logout">Log Out</Link>
