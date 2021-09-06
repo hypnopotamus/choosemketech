@@ -6,6 +6,7 @@ export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
         <noscript key="ssr2"><meta httpEquiv="refresh" content="0; url=https://dev.choosemketech.org/no-script/" /></noscript>,
    ]);
    setPostBodyComponents([
-        <div id="portal" key="ssr3"></div>
+        <div id="portal" key="ssr3"></div>,
+        <div className="navigation-backdrop" key="ssr4"></div>
    ])
 }
