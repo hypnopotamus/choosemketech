@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import MultiSelect from "react-multi-select-component"
 import Textarea from "./Textarea"
 
-const FormInput = ({ name, type, placeholder, onChange, className, value, error, children, label, email, hidden, file, number, tel, memberstack, required, accept, maxlength, story, ...props }) => {
+const FormInput = ({ name, type, placeholder, onChange, className, value, error, children, label, email, hidden, file, number, tel, memberstack, required, accept, maxlength, story, icon, ...props }) => {
   const [passwordShown, setPasswordShown] = useState(false)
   const [selected, setSelected] = useState([])
   const handlePasswordClick = (i) => {
@@ -41,6 +41,17 @@ const FormInput = ({ name, type, placeholder, onChange, className, value, error,
         <div className={`form-field ${props.halfLength ? "half-length" : ""}`}>
           <label htmlFor={name}>{label}</label>
           <span className="form-field__input-container">
+            <input id={name} name={name} type={type} placeholder={placeholder} onChange={onChange} defaultValue={value} className={className} style={error && { border: "solid 1px #B11030" }} data-ms-member={memberstack} required={required} />
+            {error && <i className="fas fa-exclamation-triangle"></i>}
+          </span>
+          {error && <p className="form-field--error"> {error}</p>}
+        </div>
+      )
+    case "textgroup":
+      return (
+        <div className={`form-field ${props.halfLength ? "half-length" : ""}`}>
+          <span className="form-field__input-container">
+            <i className={icon}></i>
             <input id={name} name={name} type={type} placeholder={placeholder} onChange={onChange} defaultValue={value} className={className} style={error && { border: "solid 1px #B11030" }} data-ms-member={memberstack} required={required} />
             {error && <i className="fas fa-exclamation-triangle"></i>}
           </span>
@@ -156,7 +167,7 @@ FormInput.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
   placeholder: PropTypes.string,
-  type: PropTypes.oneOf(["text", "number", "password", "checkbox", "select", "email", "textarea", "file", "radio", "dropdown"]),
+  type: PropTypes.oneOf(["text", "number", "password", "checkbox", "select", "email", "textarea", "file", "radio", "dropdown", "textgroup"]),
   className: PropTypes.string,
   value: PropTypes.any,
   onChange: PropTypes.func,

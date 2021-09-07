@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import FormInput from "./FormInput"
 
 const CompanyProfileRightbar = ({ rightbar }) => {
   return (
@@ -7,25 +8,16 @@ const CompanyProfileRightbar = ({ rightbar }) => {
       <div className="sidebar">
         <ul>
           <li className="phone">
-            <i className="fas fa-phone-alt"></i> <span>{rightbar["phone-number"]}</span>
+            <FormInput type="textgroup" id="phonenumber" name="phonenumber" icon="fas fa-phone-alt" memberstack="phone-number" />
           </li>
           <li>
-            <i className="fab fa-linkedin-in"></i>{" "}
-            <a href="" className="link">
-              {rightbar.linkedin}
-            </a>
+            <FormInput type="textgroup" id="linkedin" name="linkedin" icon="fab fa-linkedin-in" memberstack="linkedin" />
           </li>
           <li>
-            <i className="fab fa-facebook-f"></i>{" "}
-            <a href="" className="link">
-              {rightbar.facebook}
-            </a>
+            <FormInput type="textgroup" id="facebook" name="facebook" icon="fab fa-facebook-f" memberstack="facebook" />
           </li>
           <li>
-            <i className="fab fa-twitter"></i>{" "}
-            <a href="" className="link">
-              {rightbar.twitter}
-            </a>
+            <FormInput type="textgroup" id="twitter" name="twitter" icon="fab fa-twitter" memberstack="twitter" />
           </li>
           <li>
             <Link to="/contact" className="button button--primary">
