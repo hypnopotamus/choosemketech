@@ -5,9 +5,6 @@ import { recruitLogo, userLogo } from "../assets/assets"
 const ModalModules = forwardRef((props, ref) => {
   const [formDisplayed, setFormDisplayed] = useState(props.formDisplayed)
   const [formMembership, setFormMembership] = useState(props.formMembership)
-
-  console.log(formMembership)
-
   const handleFormChange = (e, form) => {
     e.preventDefault()
     const jobForm = "job-form"

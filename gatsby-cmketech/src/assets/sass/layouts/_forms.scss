@@ -48,10 +48,10 @@
                 }
             }
         }
-        textarea, input {
+        textarea, input, select {
             padding: 10px;
             border: 1px solid $medium_gray;
-            margin-block: 10px;
+            margin-block: 1rem;
             @include fluid-type(320px, 768px, 16px, 16px);
             min-height: 40px;
             font-family: 'Inter', sans-serif;
@@ -177,6 +177,9 @@
         }
         &.dropdown {
             .rmsc {
+                .dropdown-container {
+                    border-radius: 0;
+                }
                 .dropdown-heading {
                     &:after {
                         content: '';
@@ -190,7 +193,7 @@
                     }
                 }
                 &.multi-select {
-                    margin-block: 10px 0px;
+                    margin-block: 1rem;
                 }
             }
             
@@ -199,7 +202,7 @@
                 
             }
             .rmsc .gray {
-                color: $teal;
+                color: $gray;
             }
             .rmsc .clear-selected-button {
                 justify-content: flex-end;
@@ -210,7 +213,6 @@
             .select-container {
                 width: 100%;
                 position: relative;
-                margin-block: 10px;
                 display: flex;
                 align-items: center;
                 &__select {
@@ -227,7 +229,7 @@
                         background-repeat: no-repeat;
                         position: absolute;
                         right: 5px;
-                        top: 3px;
+                        top: 20px;
                     }
                 }
                 

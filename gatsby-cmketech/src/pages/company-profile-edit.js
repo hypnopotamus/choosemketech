@@ -8,6 +8,8 @@ import Accordion from "../components/Accordion"
 import FormInput from "../components/FormInput"
 import Breadcrumbs from "../components/Breadcrumbs"
 import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
+import Sidebar from "../components/CompanyProfileSidebar"
+import Rightbar from "../components/CompanyProfileRightbar"
 
 const CompanyProfileEdit = ({ location }) => {
   const [data, setMemberData] = useState("")
@@ -59,6 +61,70 @@ const CompanyProfileEdit = ({ location }) => {
     crumbLabel: "Company Profile Edit",
   })
 
+  let membershipName
+
+  if (data) {
+    membershipName = data.membership.name
+  }
+
+  const changeLogo = (e) => {
+    var logoImage = document.getElementById("logoImage")
+    logoImage.src = URL.createObjectURL(e.target.files[0])
+    logoImage.onload = function () {
+      URL.revokeObjectURL(logoImage.src)
+    }
+  }
+  const changeBackground = (e) => {
+    var backgroundImage = document.getElementById("backgroundImage")
+    backgroundImage.src = URL.createObjectURL(e.target.files[0])
+    backgroundImage.onload = function () {
+      URL.revokeObjectURL(backgroundImage.src)
+    }
+    console.log(backgroundImage)
+  }
+
+  const options = [
+    { label: "Education", value: "Education" },
+    { label: "Finance / Insurance", value: "Finance / Insurance" },
+    { label: "Healthcare", value: "Healthcare" },
+    { label: "Logistics", value: "Logistics" },
+    { label: "Manufacturing", value: "Manufacturing" },
+    { label: "News / Entertainment", value: "News / Entertainment" },
+    { label: "Retail", value: "Retail" },
+    { label: "Tech Services", value: "Tech Services" },
+    { label: "Travel / Hospitality", value: "Travel / Hospitality" },
+    { label: "Utilities / Water Tech", value: "Utilities / Water Tech" },
+    { label: "Other", value: "Other" },
+  ]
+
+  const companySize = [
+    { label: "1-50", value: "1-50" },
+    { label: "51-250", value: "51-250" },
+    { label: "251-500", value: "251-500" },
+    { label: "501-1000", value: "501-1000" },
+    { label: "100+", value: "100+" },
+  ]
+
+  const perksBenefits = [
+    { label: "Flexible Schedule", value: "Flexible Schedule" },
+    { label: "Remote Work Options", value: "Remote Work Options" },
+    { label: "Diversity Employee Resource Groups", value: "Diversity Employee Resource Groups" },
+    { label: "Health Benefits", value: "Health Benefits" },
+    { label: "Dental & Vision Benefits", value: "Dental & Vision Benefits" },
+    { label: "401k / HSA / Retirement", value: "401k / HSA / Retirement" },
+    { label: "Paid Time Off", value: "Paid Time Off" },
+    { label: "Wellness Programs", value: "Wellness Programs" },
+    { label: "Mental Health Resources (EPA)", value: "Mental Health Resources (EPA)" },
+    { label: "Company Outings", value: "Company Outings" },
+    { label: "Food / Stock Kitchen", value: "Food / Stock Kitchen" },
+    { label: "Games Recreation", value: "Games Recreation" },
+    { label: "Business Casual Attire", value: "Business Casual Attire" },
+    { label: "Training Budget", value: "Training Budget" },
+    { label: "Stock Options", value: "Stock Options" },
+    { label: "Parking + Transportation Options", value: "Parking + Transportation Options" },
+    { label: "Relocation Packages", value: "Relocation Packages" },
+  ]
+
   return (
     <Layout>
       <form data-ms-form="profile">
@@ -66,84 +132,55 @@ const CompanyProfileEdit = ({ location }) => {
         <Breadcrumbs crumbs={crumbs} />
         <ProfileHero profile={data} />
 
-        <div className="profiles container">
+        <div className="profiles profiles--edit container">
           <div className="row profile__layout">
-            <div className="sidebar">
-              <ul>
-                <li className="address">
-                  <i className="fas fa-map-marker-alt"></i> <span>{data.address}</span>
-                </li>
-                <li className="phone">
-                  <i className="fas fa-phone-alt"></i> <span>{data["phone-number"]}</span>
-                </li>
-                <li>
-                  <i className="fab fa-linkedin-in"></i>{" "}
-                  <a href="" className="link">
-                    {data.linkedin}
-                  </a>
-                </li>
-                <li>
-                  <i className="fab fa-facebook-f"></i>{" "}
-                  <a href="" className="link">
-                    {data.facebook}
-                  </a>
-                </li>
-                <li>
-                  <i className="fab fa-twitter"></i>{" "}
-                  <a href="" className="link">
-                    {data.twitter}
-                  </a>
-                </li>
-                <li>
-                  <Link to="/contact" className="button button--primary">
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <button type="submit" className="button button--secondary">
-                    Save Profile
-                  </button>
-                </li>
-                <li>
-                  <Link to="/company-profile" className="link">
-                    Back to My Profile
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <Sidebar sidebar={data} />
 
             <div className="content">
               <div className="content__header">
                 <h1>Welcome {data["company-name"]}!</h1>
-                <FormInput name="company-name" type="text" required="true" label="Edit Your Company Name" memberstack="company-name" />
-                <ul>
-                  <li>
-                    <i className="fas fa-users"></i> <span>Employees {data["total-of-employees"]}</span>
-                  </li>
-                  <li>
-                    <i className="fas fa-briefcase"></i> <span>Industry Type {data.industry}</span>
-                  </li>
-                  <li>
-                    <i className="fas fa-external-link-square-alt"></i> <a href={data["company-url"]}>{data["company-url"]}</a>
-                  </li>
-                </ul>
+                <h3>{membershipName}</h3>
+                <div className="upload--file">
+                  <div className="uploaded--file">
+                    <label htmlFor="upload-logo" className="image--file">
+                      <img src={data.logo} alt={data["company-name"]} id="logoImage" />
+                    </label>
+                    <FormInput name="upload-logo" type="file" label="Upload Logo" onChange={changeLogo} accept="image/jpeg, image/png, image/svg+xml" />
+                  </div>
+                  <div className="uploaded--file">
+                    <label htmlFor="upload-background-image" className="image--file">
+                      <img src={data["background-image"]} alt={data["company-name"]} id="backgroundImage" />
+                    </label>
+                    <FormInput name="upload-background-image" type="file" label="Background Image" onChange={changeBackground} accept="image/jpeg, image/png" />
+                  </div>
+                </div>
               </div>
-              <div className="content__description">
-                <h2>Company Description</h2>
-                <p>{data["company-description"]}</p>
-                <FormInput name="company-description" type="textarea" required="true" label="Edit Your Company Description" memberstack="company-description" />
+              <FormInput name="company-name" type="text" required={true} label="Company Name" memberstack="company-name" />
+              <FormInput name="industry" type="dropdown" label="Industry" memberstack="industry" children={options} halfLength={true} />
+              <FormInput name="address" type="text" label="Address" memberstack="address" />
+              <FormInput name="general-contact-email-address" type="text" label="Contact Email" memberstack="general-contact-email-address" halfLength={true} />
+              <FormInput name="company-url" type="text" required={true} label="Company URL" memberstack="company-url" halfLength={true} />
+              <FormInput name="total-of-employees" type="dropdown" label="Company Size" memberstack="total-of-employees" children={companySize} halfLength={true} />
+              <FormInput name="company-description" type="textarea" label="Company Description" story={data["company-description"]} />
+              <FormInput name="perks-benefits" type="dropdown" label="Perks + Benefits" memberstack="perks-benefits" children={perksBenefits} halfLength={true} multiSelect />
+
+              <FormInput name="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" type="textarea" label="Embrace Diversity and Inclusion" story={data["featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion"]} />
+              <FormInput name="featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech" type="textarea" label="Emerging Tech" story={data["featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech"]} />
+              <FormInput name="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" type="textarea" label="Place for Tech Talent To Work" story={data["featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work"]} />
+              <FormInput name="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" type="textarea" label="Company's Environment" story={data["featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir"]} />
+
+              <div className="form-controls">
+                <button type="submit" className="button button--primary">
+                  Save Profile
+                </button>
+                <Link to="/company-profile" className="link">
+                  Back to My Profile
+                </Link>
               </div>
             </div>
+
+            <Rightbar rightbar={data} />
           </div>
-          {/* <div className="accordions--wrapper">
-            <h2>Company Benefits + Perks</h2>
-            <Accordion items={data['perks-benefits']} />
-          </div> */}
-          <ImageCopy cards={featuredStory} flip={true} />
-          <FormInput name="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" type="textarea" required="true" label="Edit Embrace Diversity and Inclusion" memberstack="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" />
-          <FormInput name="featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech" type="textarea" required="true" label="Edit Emerging Tech" memberstack="featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech" />
-          <FormInput name="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" type="textarea" required="true" label="Edit Place for Tech Talent To Work" memberstack="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" />
-          <FormInput name="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" type="textarea" required="true" label="Edit Company's Environment" memberstack="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" />
         </div>
       </form>
     </Layout>
