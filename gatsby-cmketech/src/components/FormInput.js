@@ -22,18 +22,20 @@ const FormInput = ({ name, type, placeholder, onChange, className, value, error,
         </div>
       )
     case "textarea":
-      if (story) {
-        return (
-          <div className="form-field">
-            <label htmlFor={name}>{label}</label>
-            <span className="form-field__input-container">
-              <Textarea limit={700} value={story} memberstack={memberstack} className={className} style={error && { border: "solid 1px #B11030" }} maxlength="700" />
-              {error && <i className="fas fa-exclamation-triangle"></i>}
-            </span>
-            {error && <p className="form-field--error"> {error}</p>}
-          </div>
-        )
-      }
+      return (
+        <div className="form-field">
+          <label htmlFor={name}>{label}</label>
+          <span className="form-field__input-container">
+            {/* <div className="textarea--container"> */}
+            {/* <textarea id={name} name={name} placeholder={placeholder} maxLength={maxlength} onChange={onChange} defaultValue={value} className={className} style={error && { border: "solid 1px #B11030" }} data-ms-member={memberstack}></textarea>
+              <p> characters remain</p> */}
+            <Textarea limit={700} memberstack={memberstack} id={name} name={name} src={story} maxlength={maxlength} />
+            {/* </div> */}
+            {error && <i className="fas fa-exclamation-triangle"></i>}
+          </span>
+          {error && <p className="form-field--error"> {error}</p>}
+        </div>
+      )
     case "text":
       return (
         <div className={`form-field ${props.halfLength ? "half-length" : ""}`}>

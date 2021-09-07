@@ -1,20 +1,33 @@
 import React, { useState, useCallback } from "react"
 
-const Textarea = ({ rows, cols, value, limit, maxlength, memberstack }) => {
-  const [content, setContent] = useState(value.slice(0, limit))
+const Textarea = ({ rows, cols, value, limit, maxlength, memberstack, id, name }) => {
+  if (name && name != null) {
+    if (document.getElementById(name) != null) {
+      value = document.getElementById(name).value
+    }
+  }
+
+  let [content, textCount] = useState()
 
   const setTextareaCharacter = useCallback(
     (text) => {
-      setContent(text.slice(0, limit))
+      textCount(text.slice(0, limit))
     },
-    [limit, setContent]
+    [limit, textCount]
   )
 
-  let remainingContent = Math.abs(content.length - limit)
+  let remainingContent
+  if (value) {
+    remainingContent = Math.abs(value.length - limit)
+  }
+
+  if (!remainingContent) {
+    remainingContent = limit
+  }
 
   return (
     <div className="textarea--container">
-      <textarea rows={rows} cols={cols} onChange={(event) => setTextareaCharacter(event.target.value)} defaultValue={content} maxLength={maxlength} data-ms-member={memberstack} />
+      <textarea id={id} name={name} rows={rows} cols={cols} onChange={(event) => setTextareaCharacter(event.target.value)} defaultValue={value} maxLength={maxlength} data-ms-member={memberstack} />
       <p>{remainingContent} characters remain</p>
     </div>
   )

@@ -155,19 +155,24 @@ const CompanyProfileEdit = ({ location }) => {
                   </div>
                 </div>
               </div>
+              <h3>Company Information</h3>
               <FormInput name="company-name" type="text" required={true} label="Company Name" memberstack="company-name" />
               <FormInput name="industry" type="dropdown" label="Industry" memberstack="industry" children={options} halfLength={true} />
               <FormInput name="address" type="text" label="Address" memberstack="address" />
               <FormInput name="general-contact-email-address" type="text" label="Contact Email" memberstack="general-contact-email-address" halfLength={true} />
               <FormInput name="company-url" type="text" required={true} label="Company URL" memberstack="company-url" halfLength={true} />
               <FormInput name="total-of-employees" type="dropdown" label="Company Size" memberstack="total-of-employees" children={companySize} halfLength={true} />
-              <FormInput name="company-description" type="textarea" label="Company Description" story={data["company-description"]} />
-              <FormInput name="perks-benefits" type="dropdown" label="Perks + Benefits" memberstack="perks-benefits" children={perksBenefits} halfLength={true} multiSelect />
+              <FormInput name="company-description" type="textarea" label="Company Description" memberstack="company-description" maxlength="700" />
+              <FormInput name="perks-benefits" type="dropdown" label="Perks + Benefits" memberstack="perks-benefits" children={perksBenefits} halfLength={true} />
 
-              <FormInput name="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" type="textarea" label="Embrace Diversity and Inclusion" story={data["featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion"]} />
-              <FormInput name="featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech" type="textarea" label="Emerging Tech" story={data["featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech"]} />
-              <FormInput name="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" type="textarea" label="Place for Tech Talent To Work" story={data["featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work"]} />
-              <FormInput name="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" type="textarea" label="Company's Environment" story={data["featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir"]} />
+              <div className="profiles__company-story">
+                <h3>Company Stories</h3>
+                <p>Help candidates get to know you better by adding a brief story about emerging tech applications, community involvement, diversity initiatives, and more to your profile.</p>
+                <FormInput name="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" memberstack="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" type="textarea" label="Embrace Diversity and Inclusion" />
+                <FormInput name="featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech" memberstack="featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech" type="textarea" label="Emerging Tech" />
+                <FormInput name="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" memberstack="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" type="textarea" label="Place for Tech Talent To Work" />
+                <FormInput name="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" memberstack="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" type="textarea" label="Company's Environment" />
+              </div>
 
               <div className="form-controls">
                 <button type="submit" className="button button--primary">
