@@ -14,7 +14,7 @@ const ProfileHero = ({ profile }) => {
   let backgroundImage, logoImage
 
   if (profile.logo) {
-    logoImage = <img src={logoDefault} alt={profile["company-name"]} />
+    logoImage = <img src={profile.logo} alt={profile["company-name"]} />
   } else {
     logoImage = <img src={logoDefault} alt={profile["company-name"]} />
   }
