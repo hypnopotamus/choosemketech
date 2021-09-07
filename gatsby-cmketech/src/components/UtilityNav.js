@@ -23,12 +23,12 @@ const UtilityNav = () => {
             </li>
           ) : null
         )}
-        <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="!members">
+        {/* <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="!members">
           <a href="#" className="utilityNav__link utilityNav__link--primary" onClick={() => modalRef2.current.openModal()}>
             <i className="fas fa-suitcase"></i>
             <span>Find a Job</span>
           </a>
-        </li>
+        </li> */}
         <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="!members">
           <a href="#" className="utilityNav__link utilityNav__link--primary" onClick={() => modalRef1.current.openModal()}>
             <i className="fas fa-sign-in-alt"></i>
