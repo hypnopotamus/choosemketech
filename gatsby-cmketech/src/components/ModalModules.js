@@ -49,7 +49,7 @@ const ModalModules = forwardRef((props, ref) => {
           <a href="#" onClick={(e) => handleFormChange(e, "job-form")}>
             <h3>Create Your Account</h3>
           </a>
-          <button className="button button--tertiary" onClick={(e) => handleFormChange(e, "recruit-form")}>
+          <button className="button button--tertiary" onClick={(e) => handleFormChange(e, "job-form")}>
             Sign Up Now
           </button>
         </div>
@@ -102,18 +102,18 @@ const ModalModules = forwardRef((props, ref) => {
           </button>
         </div>
         <div className="user-signup__tab-group">
-          {/* <div className="user-signup__tab-group-tab">
+          <div className="user-signup__tab-group-tab">
             <a href="#" className={formDisplayed === "job-form" ? "active" : ""} onClick={(e) => handleFormChange(e, "job-form")}>
               I'm Looking for a Job
             </a>
-          </div> */}
+          </div>
           <div className="user-signup__tab-group-tab">
             <a className={formDisplayed === "recruit-form" ? "active" : ""} onClick={(e) => handleFormChange(e, "recruit-form")} href="#">
               I'm Looking to Recruit
             </a>
           </div>
         </div>
-        {/* {formDisplayed === "job-form" && <JobForm />} */}
+        {formDisplayed === "job-form" && <JobForm />}
         {formDisplayed === "recruit-form" && <RecruitForm />}
       </div>
     )

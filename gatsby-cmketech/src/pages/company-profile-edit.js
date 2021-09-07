@@ -25,37 +25,6 @@ const CompanyProfileEdit = ({ location }) => {
     }
   }, [])
 
-  const featuredStory = [
-    {
-      title: "Embrace Diversity and Inclusion",
-      content: data["featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion"],
-      image: {
-        sourceUrl: "https://edit.choosemketech.org/wp-content/uploads/2021/09/header-alt-09.jpg",
-      },
-    },
-    {
-      title: "Emerging Tech",
-      content: data["featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech"],
-      image: {
-        sourceUrl: "https://edit.choosemketech.org/wp-content/uploads/2021/09/header-alt-05.jpg",
-      },
-    },
-    {
-      title: "Place for Tech Talent To Work",
-      content: data["featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work"],
-      image: {
-        sourceUrl: "https://edit.choosemketech.org/wp-content/uploads/2021/09/company-profile-05_hero.jpg",
-      },
-    },
-    {
-      title: "Company's Environment",
-      content: data["featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir"],
-      image: {
-        sourceUrl: "https://edit.choosemketech.org/wp-content/uploads/2021/09/header-alt-04.jpg",
-      },
-    },
-  ]
-
   const { crumbs } = useBreadcrumb({
     location,
     crumbLabel: "Company Profile Edit",

@@ -1,20 +1,20 @@
-import React from "react";
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Seo from "../components/Seo";
-import Layout from "../components/Layout";
-import Hero from "../components/Hero";
-import SubHero from "../components/SubHero";
-import JobCarousel from "../components/JobCarousel";
-import ImageGrid from "../components/ImageGrid";
-import ImageCopy from "../components/ImageCopy";
-import ThreeColumn from "../components/ThreeColumn";
-import CallToAction from "../components/CTA";
-import { useBreadcrumb } from 'gatsby-plugin-breadcrumb';
+import Seo from "../components/Seo"
+import Layout from "../components/Layout"
+import Hero from "../components/Hero"
+import SubHero from "../components/SubHero"
+import JobCarousel from "../components/JobCarousel"
+import ImageGrid from "../components/ImageGrid"
+import ImageCopy from "../components/ImageCopy"
+import ThreeColumn from "../components/ThreeColumn"
+import CallToAction from "../components/CTA"
+import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
 
-const IndexPage = ({location}) => {
+const IndexPage = ({ location }) => {
   const data = useStaticQuery(graphql`
     query HomePageQuery {
-        wpPage(databaseId: {eq: 102}) {
+      wpPage(databaseId: { eq: 102 }) {
         databaseId
         seo {
           title
@@ -104,47 +104,31 @@ const IndexPage = ({location}) => {
     }
   `)
 
-  const IndexPageData = data.wpPage.Pages_CF;
-  const seoData = data.wpPage.seo;
-  const featuredImage = data.wpPage.featuredImage.node.link;
-  
+  const IndexPageData = data.wpPage.Pages_CF
+  const seoData = data.wpPage.seo
+  const featuredImage = data.wpPage.featuredImage.node.link
+
   const { crumbs } = useBreadcrumb({
     location,
-    crumbLabel: 'Home'
-  })  
-  
+    crumbLabel: "Home",
+  })
   return (
     <Layout bodyClass={`page page-id-${data.wpPage.databaseId}`}>
-      <Seo 
-      title={seoData.title}
-      description={seoData.metaDesc}
-      uri={seoData.canonical}
-      socialImage={featuredImage} />
-      <Hero hero={IndexPageData}/>
-      <ThreeColumn 
-        columns={IndexPageData.threeColumnCards} 
-        title={IndexPageData.threeColumnHeaderText} 
-      />
+      <Seo title={seoData.title} description={seoData.metaDesc} uri={seoData.canonical} socialImage={featuredImage} />
+      <Hero hero={IndexPageData} />
+      <ThreeColumn columns={IndexPageData.threeColumnCards} title={IndexPageData.threeColumnHeaderText} />
       <div className="container">
-        <ImageCopy 
-          cards={IndexPageData.cardCollectionHp} 
-          title={IndexPageData.cardHeaderText} 
-        />
+        <ImageCopy cards={IndexPageData.cardCollectionHp} title={IndexPageData.cardHeaderText} />
       </div>
       {/* <JobCarousel /> */}
-      <CallToAction cta={IndexPageData}/>
+      <CallToAction cta={IndexPageData} />
       <div className="container">
-        <ImageCopy 
-          cards={IndexPageData.cardCollectionHp2} 
-          title={IndexPageData.cardHeaderText2}
-          flip={true} 
-        />
+        <ImageCopy cards={IndexPageData.cardCollectionHp2} title={IndexPageData.cardHeaderText2} flip={true} />
       </div>
       <SubHero hero={IndexPageData} />
       <ImageGrid gallery={IndexPageData.gridImages} />
     </Layout>
   )
-  
 }
 
 export default IndexPage
