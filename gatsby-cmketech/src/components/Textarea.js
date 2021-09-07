@@ -1,13 +1,11 @@
-import React, { useState, useCallback, useEffect } from "react"
+import React, { useState, useCallback } from "react"
 
 const Textarea = ({ rows, cols, value, limit, maxlength, memberstack, id, name }) => {
-  useEffect(() => {
-    if (name && name != null) {
-      if (document.getElementById(name) != null) {
-        value = document.getElementById(name).value
-      }
+  if (name && name != null) {
+    if (document.getElementById(name) != null) {
+      value = document.getElementById(name).value
     }
-  }, [])
+  }
 
   let [content, textCount] = useState()
 

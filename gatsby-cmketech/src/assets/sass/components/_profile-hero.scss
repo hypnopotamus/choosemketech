@@ -22,17 +22,21 @@
             margin: -10rem 0 0 2rem;
             width: 282px;
             height: 282px;
+            
         }
         @media #{$mq-mediumScreen} {
             margin: -10rem 0 0 2rem;
         }
         img {
             display: block;
-            object-fit: contain;
+            object-fit: cover;
             height: 100%;
+            width: 100%;
+            border-radius: 50%;
             @media #{$mq-mediumScreen} {
-                object-fit: contain;
+                object-fit: cover;
                 height: 100%;
+                width: 100%;
             }
         }
     }
