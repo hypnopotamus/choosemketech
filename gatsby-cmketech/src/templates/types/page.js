@@ -15,18 +15,18 @@ const page = ({ data }) => {
     crumbLabel: title,
   })
 
-  const heroData = {
-    subHeroTitle: title,
-    subHeroImage: {
-      sourceUrl: featuredImage.node.localFile.publicURL,
-    },
-  }
+  // const heroData = {
+  //   subHeroTitle: title,
+  //   subHeroImage: {
+  //     sourceUrl: featuredImage.node.localFile.publicURL,
+  //   },
+  // }
 
   return (
     <Layout bodyClass={`page-template-default page page-id-${databaseId} wp-embed-responsive singular missing-post-thumbnail has-no-pagination not-showing-comments footer-top-visible customize-support`}>
       <Seo title={title} description={excerpt} socialImage={featuredImage?.node} uri={uri} />
       <Breadcrumbs crumbs={crumbs} />
-      <SubHero hero={heroData} />
+      {/* <SubHero hero={heroData} /> */}
       <div className="container">
         <h1 className="entry-title" dangerouslySetInnerHTML={{ __html: title }} />
         <div className="entry-content" dangerouslySetInnerHTML={{ __html: content }} />
