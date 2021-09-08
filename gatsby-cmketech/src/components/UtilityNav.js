@@ -26,7 +26,7 @@ const UtilityNav = () => {
         {/* Inserted this way because Gatsby Link should only be used for internal routing */}
         <li role="menuitem" className="utilityNav__item utilityNav__item--primary">
           <a className="utilityNav__link utilityNav__link--primary" href="mailto:contact@mketech.org">
-            <i class="fas fa-envelope"></i>
+            <i className="fas fa-envelope"></i>
             <span>Contact Us</span>
           </a>
         </li>
