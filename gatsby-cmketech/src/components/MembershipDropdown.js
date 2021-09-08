@@ -18,6 +18,12 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
   const handleMouseLeaveSubNav = () => {
     setsubNavShow(false)
   }
+  const handleUserLogout = (e) => {
+    e.preventDefault();
+    if(window.MemberStack){
+      window.MemberStack.logout();
+    }
+  }
   useEffect(() => {
     if (toggleNav && subNavShow) {
       setsubNavShow(false)
@@ -98,7 +104,7 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
             <Link to="/help">FAQs</Link>
           </li>
           <li className="nav__link">
-            <Link to="/#/ms/logout">Log Out</Link>
+            <a href="#" onClick={(e) => handleUserLogout(e)}>Log Out</a>
           </li>
         </ul>
       </div>
@@ -180,7 +186,7 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
               <Link to="/help">FAQs</Link>
             </li>
             <li className="nav__link">
-              <Link to="/#/ms/logout">Log Out</Link>
+              <a href="#" onClick={(e) => handleUserLogout(e)}>Log Out</a>
             </li>
           </ul>
         </div>
