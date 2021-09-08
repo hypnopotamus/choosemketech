@@ -18,6 +18,12 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
   const handleMouseLeaveSubNav = () => {
     setsubNavShow(false)
   }
+  const handleUserLogout = (e) => {
+    e.preventDefault();
+    if(window.MemberStack){
+      window.MemberStack.logout();
+    }
+  }
   useEffect(() => {
     if (toggleNav && subNavShow) {
       setsubNavShow(false)
@@ -27,15 +33,17 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
     if (window.MemberStack.onReady) {
       window.MemberStack.onReady
         .then(function (member) {
-          let membershipType = member.membership.name
-          if (membershipType != "Candidate") {
-            membershipType = "premium-plan"
-            setUserName(member["company-name"])
-          } else {
-            setFirstName(member["first-name"])
-            setUserName(member["first-name"] + " " + member["last-name"])
+          if(member.membership){
+            let membershipType = member.membership.name
+            if (membershipType != "Candidate") {
+              membershipType = "premium-plan"
+              setUserName(member["company-name"])
+            } else {
+              setFirstName(member["first-name"])
+              setUserName(member["first-name"] + " " + member["last-name"])
+            }
+            setProfileType(membershipType)
           }
-          setProfileType(membershipType)
         })
         .catch((e) => {
           console.log(e)
@@ -96,7 +104,7 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
             <Link to="/help">FAQs</Link>
           </li>
           <li className="nav__link">
-            <Link to="/#/ms/logout">Log Out</Link>
+            <a href="#" onClick={(e) => handleUserLogout(e)}>Log Out</a>
           </li>
         </ul>
       </div>
@@ -178,7 +186,7 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
               <Link to="/help">FAQs</Link>
             </li>
             <li className="nav__link">
-              <Link to="/#/ms/logout">Log Out</Link>
+              <a href="#" onClick={(e) => handleUserLogout(e)}>Log Out</a>
             </li>
           </ul>
         </div>

@@ -43,7 +43,7 @@ const Footer = ({}) => {
               <li>
                 <p><strong>Help</strong></p>
                 <ul>
-                    <li><Link to="/contact"><span>Contact Us</span></Link></li>
+                    <li><a href="mailto:contact@mketech.org"><span>Contact Us</span></a></li>
                     <li><Link to="/help#faq"><span>FAQ</span></Link></li>
                 </ul>
               </li>

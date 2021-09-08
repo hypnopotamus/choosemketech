@@ -23,6 +23,13 @@ const UtilityNav = () => {
             </li>
           ) : null
         )}
+        {/* Inserted this way because Gatsby Link should only be used for internal routing */}
+        <li role="menuitem" className="utilityNav__item utilityNav__item--primary">
+          <a className="utilityNav__link utilityNav__link--primary" href="mailto:contact@mketech.org">
+            <i className="fas fa-envelope"></i>
+            <span>Contact Us</span>
+          </a>
+        </li>
         {/* <li role="menuitem" className="utilityNav__item utilityNav__item--primary" data-ms-content="!members">
           <a href="#" className="utilityNav__link utilityNav__link--primary" onClick={() => modalRef2.current.openModal()}>
             <i className="fas fa-suitcase"></i>
