@@ -21,10 +21,6 @@ const Textarea = ({ rows, cols, value, limit, maxlength, memberstack, id, name }
     remainingContent = Math.abs(value.length - limit)
   }
 
-  if (!remainingContent) {
-    remainingContent = limit
-  }
-
   return (
     <div className="textarea--container">
       <textarea id={id} name={name} rows={rows} cols={cols} onChange={(event) => setTextareaCharacter(event.target.value)} defaultValue={value} maxLength={maxlength} data-ms-member={memberstack} />
