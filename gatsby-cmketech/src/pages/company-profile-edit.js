@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import Seo from "../components/Seo"
 import Layout from "../components/Layout"
-import ProfileHero from "../components/ProfileHero"
-import ImageCopy from "../components/ImageCopy"
-import Accordion from "../components/Accordion"
 import FormInput from "../components/FormInput"
 import Breadcrumbs from "../components/Breadcrumbs"
 import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
 import Sidebar from "../components/CompanyProfileSidebar"
 import Rightbar from "../components/CompanyProfileRightbar"
+import UploadImages from "../components/UploadImage"
 
 const CompanyProfileEdit = ({ location }) => {
   const [data, setMemberData] = useState("")
@@ -36,21 +34,7 @@ const CompanyProfileEdit = ({ location }) => {
     membershipName = data.membership.name
   }
 
-  const changeLogo = (e) => {
-    var logoImage = document.getElementById("logoImage")
-    logoImage.src = URL.createObjectURL(e.target.files[0])
-    logoImage.onload = function () {
-      URL.revokeObjectURL(logoImage.src)
-    }
-  }
-  const changeBackground = (e) => {
-    var backgroundImage = document.getElementById("backgroundImage")
-    backgroundImage.src = URL.createObjectURL(e.target.files[0])
-    backgroundImage.onload = function () {
-      URL.revokeObjectURL(backgroundImage.src)
-    }
-    console.log(backgroundImage)
-  }
+  /* start These should probably be in a ACF */
 
   const options = [
     { label: "Education", value: "Education" },
@@ -94,13 +78,13 @@ const CompanyProfileEdit = ({ location }) => {
     { label: "Relocation Packages", value: "Relocation Packages" },
   ]
 
+  /* end These should probably be in a ACF */
+
   return (
     <Layout>
       <form data-ms-form="profile">
         <Seo title="Company Profile" />
         <Breadcrumbs crumbs={crumbs} />
-        <ProfileHero profile={data} />
-
         <div className="profiles profiles--edit container">
           <div className="row profile__layout">
             <Sidebar sidebar={data} />
@@ -109,20 +93,7 @@ const CompanyProfileEdit = ({ location }) => {
               <div className="content__header">
                 <h1>Welcome {data["company-name"]}!</h1>
                 <h3>{membershipName}</h3>
-                <div className="upload--file">
-                  <div className="uploaded--file">
-                    <label htmlFor="upload-logo" className="image--file">
-                      <img src={data.logo} alt={data["company-name"]} id="logoImage" />
-                    </label>
-                    <FormInput name="upload-logo" type="file" label="Upload Logo" onChange={changeLogo} accept="image/jpeg, image/png, image/svg+xml" />
-                  </div>
-                  <div className="uploaded--file">
-                    <label htmlFor="upload-background-image" className="image--file">
-                      <img src={data["background-image"]} alt={data["company-name"]} id="backgroundImage" />
-                    </label>
-                    <FormInput name="upload-background-image" type="file" label="Background Image" onChange={changeBackground} accept="image/jpeg, image/png" />
-                  </div>
-                </div>
+                <UploadImages upload={data} />
               </div>
               <h3>Company Information</h3>
               <FormInput name="company-name" type="text" required={true} label="Company Name" memberstack="company-name" />

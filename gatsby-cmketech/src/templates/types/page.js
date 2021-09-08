@@ -14,8 +14,8 @@ const page = ({ data }) => {
       <Seo title={title} description={excerpt} socialImage={featuredImage?.node} uri={uri} />
       {/* <SubHero hero={data} /> */}
       <div className="container">
-          <h1 className="entry-title" dangerouslySetInnerHTML={{ __html: title }} />
-          <div className="entry-content" dangerouslySetInnerHTML={{ __html: content }} />
+        <h1 className="entry-title" dangerouslySetInnerHTML={{ __html: title }} />
+        <div className="entry-content" dangerouslySetInnerHTML={{ __html: content }} />
       </div>
       {/* <ImageGrid gallery={data.gridImagesWmke} /> */}
     </Layout>
@@ -38,4 +38,4 @@ export const query = graphql`
   }
 `
 
-export default page;
+export default page
