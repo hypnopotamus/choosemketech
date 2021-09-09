@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useCallback, useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import Seo from "../components/Seo"
 import Layout from "../components/Layout"
@@ -8,8 +8,13 @@ import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
 import Sidebar from "../components/CompanyProfileSidebar"
 import Rightbar from "../components/CompanyProfileRightbar"
 import UploadImages from "../components/UploadImage"
+import Modal from "../components/Modal"
+import ModalModules from "../components/ModalModules"
 
 const CompanyProfileEdit = ({ location }) => {
+  const logoModal = useRef()
+  const headerModal = useRef()
+
   const [data, setMemberData] = useState("")
   useEffect(() => {
     if (window.MemberStack.onReady) {
@@ -78,8 +83,25 @@ const CompanyProfileEdit = ({ location }) => {
     { label: "Relocation Packages", value: "Relocation Packages" },
   ]
 
-  /* end These should probably be in a ACF */
+  const imageData = [
+    {
+      logo: {
+        src: data.logo,
+        bgcolor: data["logo-background-color"],
+        class: "uploaded-image--logo",
+      },
+    },
+    {
+      header: {
+        src: data["background-image"],
+        bgcolor: data["background-color"],
+        class: "uploaded-image--header",
+      },
+    },
+  ]
 
+  /* end These should probably be in a ACF */
+  console.log(imageData)
   return (
     <Layout>
       <form data-ms-form="profile">
@@ -93,7 +115,18 @@ const CompanyProfileEdit = ({ location }) => {
               <div className="content__header">
                 <h1>Welcome {data["company-name"]}!</h1>
                 <h3>{membershipName}</h3>
-                <UploadImages upload={data} />
+                <div className="upload--file">
+                  <div className="uploaded--file">
+                    <label htmlFor="upload-logo" className="image--file" onClick={() => logoModal.current.openModal()}>
+                      <img src={data.logo} alt={data["company-name"]} id="logoImage" />
+                    </label>
+                  </div>
+                  <div className="uploaded--file">
+                    <label htmlFor="upload-background-image" className="image--file" onClick={() => headerModal.current.openModal()}>
+                      <img src={data["background-image"]} alt={data["company-name"]} id="backgroundImage" />
+                    </label>
+                  </div>
+                </div>
               </div>
               <h3>Company Information</h3>
               <FormInput name="company-name" type="text" required={true} label="Company Name" memberstack="company-name" />
@@ -128,6 +161,12 @@ const CompanyProfileEdit = ({ location }) => {
           </div>
         </div>
       </form>
+      <Modal ref={logoModal}>
+        <ModalModules ref={logoModal} formDisplayed="logoUpload" data={imageData[0].logo} />
+      </Modal>
+      <Modal ref={headerModal}>
+        <ModalModules ref={headerModal} formDisplayed="headerUpload" data={imageData[1].header} />
+      </Modal>
     </Layout>
   )
 }

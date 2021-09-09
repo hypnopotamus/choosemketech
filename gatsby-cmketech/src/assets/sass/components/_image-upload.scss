@@ -1,0 +1,63 @@
+.uploaded-image {
+  display: flex;
+  background-color: $white;
+  flex-direction: column;
+  &__close {
+    display: flex;
+    justify-content: flex-end;
+    button {
+      background-color: transparent;
+    }
+  }
+
+  &.uploaded-image--logo {
+    img {
+      object-fit: contain;
+      height: 250px;
+    }
+  }
+
+  &__actions {
+    padding: 2rem;
+    border-top: 1px solid $medium_gray;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .button {
+      margin-right: 1.5rem;
+    }
+  }
+  &__update {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    label, button {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;    
+      &:hover {
+        background-color: $white;
+      }
+    }
+    label {
+      input[type="file"] {
+        display: none;
+      }
+    }
+  }
+  &__settings {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 450px;
+  }
+}

@@ -1,8 +1,9 @@
 import React, { forwardRef, useState, useEffect } from "react"
 import FormInput from "./FormInput"
 import { recruitLogo, userLogo } from "../assets/assets"
+import UploadImages from "./UploadImage"
 
-const ModalModules = forwardRef((props, ref) => {
+const ModalModules = forwardRef((props, ref, data) => {
   const [formDisplayed, setFormDisplayed] = useState(props.formDisplayed)
   const [formMembership, setFormMembership] = useState(props.formMembership)
   const handleFormChange = (e, form) => {
@@ -11,6 +12,9 @@ const ModalModules = forwardRef((props, ref) => {
     const recruitForm = "recruit-form"
     const loginForm = "login"
     const forgotForm = "forgotLogin"
+    const logoUpload = "logoUpload"
+    const headerUpload = "headerUpload"
+
     if (form === formDisplayed) {
       return
     } else if (form === jobForm) {
@@ -21,6 +25,10 @@ const ModalModules = forwardRef((props, ref) => {
       setFormDisplayed(loginForm)
     } else if (form === forgotForm) {
       setFormDisplayed(forgotForm)
+    } else if (form === logoUpload) {
+      setFormDisplayed(logoUpload)
+    } else if (form === headerUpload) {
+      setFormDisplayed(headerUpload)
     }
   }
 
@@ -90,6 +98,14 @@ const ModalModules = forwardRef((props, ref) => {
           </a>
         </div>
       </form>
+    )
+  }
+
+  const UploadForm = () => {
+    return (
+      <>
+        <UploadImages upload={props.data} modal={ref} />
+      </>
     )
   }
 
@@ -188,6 +204,10 @@ const ModalModules = forwardRef((props, ref) => {
         </form>
       </div>
     )
+  }
+
+  if (formDisplayed === "logoUpload" || formDisplayed === "headerUpload") {
+    return <UploadForm />
   }
 
   if (formDisplayed === "job-form" || formDisplayed === "recruit-form") {

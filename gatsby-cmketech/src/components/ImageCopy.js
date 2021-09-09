@@ -44,7 +44,6 @@ const ImageCopy = ({ cards, title, flip }) => {
                 {card.buttonLabel}
               </Link>
             )
-            console.log(card.buttonUrl)
           }
 
           if (card.linkUrl || card.linkLabel) {
