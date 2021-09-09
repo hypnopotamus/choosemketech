@@ -36,7 +36,7 @@ const Accessibility = ({ location }) => {
 
   const { crumbs } = useBreadcrumb({
     location,
-    crumbLabel: "Terms of Services",
+    crumbLabel: "Accessibility",
   })
 
   const pageData = {
@@ -45,11 +45,10 @@ const Accessibility = ({ location }) => {
       sourceUrl: featuredImage,
     },
   }
-
+  console.log(featuredImage)
   return (
     <Layout>
       <Seo title={seoData.title} description={seoData.metaDesc} uri={seoData.canonical} socialImage={featuredImage} />
-
       <Breadcrumbs crumbs={crumbs} />
       <SubHero hero={pageData} />
       <div className="container">
