@@ -7,10 +7,10 @@ import SubHero from "../components/SubHero"
 import Breadcrumbs from "../components/Breadcrumbs"
 import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
 
-const TermsOfServices = ({ location }) => {
+const SetYourPassword = ({ location }) => {
   const data = useStaticQuery(graphql`
-    query TermsOfServicesQuery {
-      wpPage(databaseId: { eq: 61 }) {
+    query SetYourPasswordQuery {
+      wpPage(databaseId: { eq: 1571 }) {
         id
         seo {
           title
@@ -36,11 +36,14 @@ const TermsOfServices = ({ location }) => {
 
   const { crumbs } = useBreadcrumb({
     location,
-    crumbLabel: "Terms of Services",
+    crumbLabel: "Set Your Password",
   })
 
   const pageData = {
     subHeroTitle: data.wpPage.title,
+    subHeroContent: data.wpPage.content,
+    subHeroButtonUrl: "/#/ms/password-reset",
+    subHeroButtonLabel: "Reset Password",
     subHeroImage: {
       sourceUrl: featuredImage,
     },
@@ -52,11 +55,8 @@ const TermsOfServices = ({ location }) => {
 
       <Breadcrumbs crumbs={crumbs} />
       <SubHero hero={pageData} />
-      <div className="container">
-        <div dangerouslySetInnerHTML={{ __html: data.wpPage.content }} />
-      </div>
     </Layout>
   )
 }
 
-export default TermsOfServices
+export default SetYourPassword
