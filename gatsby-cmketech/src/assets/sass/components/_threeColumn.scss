@@ -27,7 +27,7 @@
         &__container {
             background-color: $white;
             padding: 25px;
-            margin: 0px 15px;
+            margin: 15px;
             @media #{$mq-largeScreen} {
                 min-height: 585px;
                 max-height: 585px;
