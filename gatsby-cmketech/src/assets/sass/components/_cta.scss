@@ -2,8 +2,8 @@
     padding: 3rem;
     background-repeat: no-repeat;
     background-size: cover;
-@media #{$mq-largeScreen} {
-        padding: 10rem;
+    @media #{$mq-largeScreen} {
+        padding: 10rem 11.5rem;
     }
     &--background-default {
         background-image: url('../images/cta-background-dfault.png');

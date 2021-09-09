@@ -17,5 +17,8 @@
         margin-top: -5rem;
         border-top: 5px solid $blue;
         box-shadow: $box-shadow;
+        @media #{$mq-largeScreen} {
+            max-width: 1415px;
+        }
     }
 }

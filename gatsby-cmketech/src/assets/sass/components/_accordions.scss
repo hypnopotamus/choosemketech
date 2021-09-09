@@ -1,3 +1,9 @@
+.accordions--wrapper {
+    @media #{$mq-largeScreen} {
+        max-width: 1415px;
+        margin: 4rem auto;
+    }
+}
 .accordions {
     padding: 0 40px;
     margin: 0 -40px;

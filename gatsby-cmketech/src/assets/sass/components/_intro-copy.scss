@@ -7,13 +7,13 @@
     padding-block-end: 2.5rem;
     padding-inline-start: 1.5rem;
     padding-inline-end: 1.5rem;
-
+    
     &--hero{
         z-index: 1;
         max-width: 90%;
     
         @media #{$mq-largeScreen} {
-            max-width: 100%;
+            max-width: 1415px;
             box-shadow: none;
         }
     }

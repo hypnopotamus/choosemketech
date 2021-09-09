@@ -112,6 +112,7 @@ const IndexPage = ({ location }) => {
     location,
     crumbLabel: "Home",
   })
+  console.log(IndexPageData.cardCollectionHp)
   return (
     <Layout bodyClass={`page page-id-${data.wpPage.databaseId}`}>
       <Seo title={seoData.title} description={seoData.metaDesc} uri={seoData.canonical} socialImage={featuredImage} />
