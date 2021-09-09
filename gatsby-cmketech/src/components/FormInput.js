@@ -50,7 +50,7 @@ const FormInput = ({ name, type, placeholder, onChange, className, value, error,
     case "textgroup":
       return (
         <div className={`form-field ${props.halfLength ? "half-length" : ""}`}>
-          <span className="form-field__input-container">
+          <span className="form-field__input-container input-group">
             <i className={icon}></i>
             <input id={name} name={name} type={type} placeholder={placeholder} onChange={onChange} defaultValue={value} className={className} style={error && { border: "solid 1px #B11030" }} data-ms-member={memberstack} required={required} />
             {error && <i className="fas fa-exclamation-triangle"></i>}
