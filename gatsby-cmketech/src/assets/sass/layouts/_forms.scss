@@ -23,6 +23,21 @@
         &__input-container {
             display: flex;
             align-items: center;
+            i {
+                display: flex;
+                background-color: $teal;
+                width: 60px;
+                height: 40px;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                &::before {
+                    color: $white;
+                }
+            }
+            i + input {
+                margin: 0;
+            }
         }
         .fa-exclamation-triangle {
             color: $warning_red;
@@ -270,4 +285,5 @@
             }
         }
     }
+    
 }

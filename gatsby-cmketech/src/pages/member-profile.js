@@ -80,7 +80,6 @@ const MemberProfile = ({ location }) => {
     backgroundImage.onload = function () {
       URL.revokeObjectURL(backgroundImage.src)
     }
-    console.log(backgroundImage)
   }
 
   const options = [

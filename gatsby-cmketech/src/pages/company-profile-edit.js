@@ -101,7 +101,6 @@ const CompanyProfileEdit = ({ location }) => {
   ]
 
   /* end These should probably be in a ACF */
-  console.log(imageData)
   return (
     <Layout>
       <form data-ms-form="profile">
@@ -117,7 +116,7 @@ const CompanyProfileEdit = ({ location }) => {
                 <h3>{membershipName}</h3>
                 <div className="upload--file">
                   <div className="uploaded--file">
-                    <label htmlFor="upload-logo" className="image--file" onClick={() => logoModal.current.openModal()}>
+                    <label htmlFor="upload-logo" className="image--file" onClick={() => logoModal.current.openModal()} style={{ backgroundColor: `${data["logo-background-color"]}` }}>
                       <img src={data.logo} alt={data["company-name"]} id="logoImage" />
                     </label>
                   </div>

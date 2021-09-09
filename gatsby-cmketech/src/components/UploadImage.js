@@ -1,6 +1,5 @@
 import React, { useState, useCallback, useEffect, useRef } from "react"
 import axios from "axios"
-import { SketchPicker } from "react-color"
 
 const UploadImages = ({ itemid, upload, modal }) => {
   const imgUpload = useRef()
@@ -92,9 +91,9 @@ const UploadImages = ({ itemid, upload, modal }) => {
               <i class="fas fa-camera"></i>
               <input id="imgUpload" type="file" ref={imgUpload} onChange={previewImage} />
             </label>
-            <button className="button button--primary">
+            {/* <button className="button button--primary">
               <i class="fas fa-palette"></i>
-            </button>
+            </button> */}
           </div>
         </div>
         <div className="uploaded-image__actions">

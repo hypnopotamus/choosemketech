@@ -4,10 +4,10 @@ import { Link } from "gatsby"
 const CompanyProfileSidebar = ({ sidebar }) => {
   return (
     <>
-      <div className="sidebar">
+      <div className="sidebar left">
         <ul>
           <li>
-            <h3>Company</h3>
+            <h4>Company</h4>
           </li>
           <li>
             <a href="" className="link">
@@ -30,7 +30,7 @@ const CompanyProfileSidebar = ({ sidebar }) => {
             </a>
           </li>
           <li>
-            <h3>Your Account</h3>
+            <h4>Your Account</h4>
           </li>
           <li>
             <a href="" className="link">

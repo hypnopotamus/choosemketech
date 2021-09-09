@@ -1,5 +1,12 @@
 .profiles {
     font-family: 'Inter';
+    ul {
+       margin: 0;
+       li {
+           margin: 0;
+           list-style: none;
+       } 
+    }
    .profile__layout {
         display: flex;
         flex-direction: column-reverse;
@@ -8,22 +15,58 @@
         }
         .sidebar {
             min-width: 14rem;
+            &.left {
+                background-color: $navy_blue;
+                ul {
+                    li {
+                        padding-inline: 1rem 0px;
+                        letter-spacing: normal;
+                        font-size: 1rem;
+                        position: relative;
+                        display: block;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font-family: "Inter-Bold", sans-serif;
+                        font-weight: 800;
+                        letter-spacing: 2px;                                                                        
+                        h4 {
+                            color: $white;
+                            margin: 5px 0;
+                            font-family: "Inter", sans-serif;
+                            font-size: 15px;
+                            border-bottom: 1px solid $teal;
+                            padding: 10px 0px;
+                            text-transform: capitalize;
+                            font-weight: 400;
+                            width: 100%;
+                        }
+                        a {
+                            color: $white;
+                        }
+        
+                    }
+                }
+            }
+            &.right {
+                background-color: $light_gray;
+                padding: 1rem;
+                h3 {
+                    white-space: nowrap;
+                }
+            }
             ul {
+                margin: 0;
                 li {
                     padding: 0.55rem 0;
                     line-height: 1.5rem;
                     display: flex;
                     color: $navy_blue;
                     align-items: center;
+                    margin: 0;
+                    list-style: none;
                     .link {
                         color: $blue;
                         text-decoration: none;
-                    }
-                    i {
-                        margin-inline-end: 1rem;
-                        width: 30px;
-                        font-size: 1.5rem;  
-                        color: $teal;                  
                     }
                     &.address, &.phone {
                         font-size: 1.2rem;
@@ -36,10 +79,6 @@
             margin-inline-start: 3.75rem;
             margin-inline-end: 3.75rem;
             width: 100%;
-            @media #{$mq-largeScreen} {
-                margin-inline-start: 9.75rem;
-                margin-inline-end: 9.75rem;
-            }
             .content__header {
                 .upload--file {
                     display: flex;
