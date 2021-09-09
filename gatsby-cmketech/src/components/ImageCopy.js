@@ -37,7 +37,7 @@ const ImageCopy = ({ cards, title, flip }) => {
           let cardButton, cardLink, cardFeatured, cardImage
 
           if (!card.buttonLabel || !card.buttonUrl) {
-            return
+            null
           } else {
             cardButton = (
               <Link to={card.buttonUrl} className="button button--primary">
