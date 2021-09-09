@@ -1,7 +1,7 @@
 const path = require(`path`)
 const glob = require(`glob`)
 
-const createContentTypes = require(`./create/createContentTypes`)
+// const createContentTypes = require(`./create/createContentTypes`)
 const createCategories = require(`./create/createCategories`)
 const createAuthors = require(`./create/createAuthors`)
 
@@ -25,7 +25,7 @@ exports.createPages = async (props) => {
   const blogURI = "/"
   const templates = getTemplates()
 
-  await createContentTypes(props, { templates })
+  // await createContentTypes(props, { templates })
 
   await createCategories(props, { perPage })
   await createAuthors(props, { perPage })
@@ -34,14 +34,7 @@ exports.createPages = async (props) => {
 const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
 // We do this, because the Avatar doesn't get handled as a File from the gatsby-source plugin yet. This might change in the future.
-exports.createResolvers = async ({
-  actions,
-  cache,
-  createNodeId,
-  createResolvers,
-  store,
-  reporter,
-}) => {
+exports.createResolvers = async ({ actions, cache, createNodeId, createResolvers, store, reporter }) => {
   const { createNode } = actions
 
   await createResolvers({

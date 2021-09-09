@@ -20,16 +20,12 @@ module.exports = async ({ actions, graphql }, options) => {
     }
   `)
 
-  const contentTypeTemplates = templates.filter((path) =>
-    path.includes(`./src/templates/types/`)
-  )
+  const contentTypeTemplates = templates.filter((path) => path.includes(`./src/templates/types/`))
 
   for (const contentType of allWpContentType.nodes) {
     const { graphqlSingleName } = contentType
 
-    const contentTypeTemplate = contentTypeTemplates.find(
-      (path) => path === `./src/templates/types/${graphqlSingleName}.js`
-    )
+    const contentTypeTemplate = contentTypeTemplates.find((path) => path === `./src/templates/types/${graphqlSingleName}.js`)
 
     if (!contentTypeTemplate) {
       continue
@@ -56,7 +52,7 @@ module.exports = async ({ actions, graphql }, options) => {
       nodes.map(async (node, i) => {
         await actions.createPage({
           component: resolve(contentTypeTemplate),
-          path: node.isFrontPage ? "/" : node.uri,
+          path: node.isFrontPage ? "/home-page" : node.uri,
           context: {
             id: node.id,
             nextPage: (nodes[i - 1] || {}).id,
