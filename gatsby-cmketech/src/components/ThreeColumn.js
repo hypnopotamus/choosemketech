@@ -5,15 +5,17 @@ const ThreeColumn = ({columns, title, content}) => {
     const settings = {
         dots: true,
         arrows: false,
-        centerMode: true,
+        centerMode: false,
         centerPadding: '0px',
-        slidesToShow: 3,
+        slidesPerRow: 3,
+        rows: 2,
 
         responsive: [
             {
                 breakpoint: 767,
                 settings: {
-                 slidesToShow: 1,
+                    slidesPerRow: 1,
+                    rows: 1,
                     slidesToScroll: 1,
                     centerMode: true,
                     centerPadding: '20px'
