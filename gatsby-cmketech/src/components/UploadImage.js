@@ -16,7 +16,7 @@ const UploadImages = ({ itemid, upload, modal }) => {
 
       let headers = {}
       headers["Content-Disposition"] = "form-data; filename='" + file.name + "'"
-      headers["X-WP-Nonce"] = nonce
+      headers["X-WP-Nonce"] = wpApiSettings
 
       let url = "https://edit.choosemketech.org"
       axios
