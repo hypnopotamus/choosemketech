@@ -89,11 +89,12 @@ const Footer = ({}) => {
                     <span>Contact Us</span>
                   </a>
                 </li>
+              {/* Commented out until page is ready
                 <li>
                   <Link to="/help#faq">
                     <span>FAQ</span>
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </li>
             <li>

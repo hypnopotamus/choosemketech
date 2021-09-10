@@ -98,11 +98,15 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
             <h4>Other</h4>
           </li>
           <li className="nav__link">
+            <a href="mailto:contact@mketech.org">Help</a>
+          </li>
+          {/* Commented out until page is ready
+          <li className="nav__link">
             <Link to="/help">Help</Link>
           </li>
           <li className="nav__link">
             <Link to="/help">FAQs</Link>
-          </li>
+          </li> */}
           <li className="nav__link">
             <a href="#" onClick={(e) => handleUserLogout(e)}>Log Out</a>
           </li>
@@ -180,11 +184,15 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
               <h4>Other</h4>
             </li>
             <li className="nav__link">
+              <a href="mailto:contact@mketech.org">Help</a>
+            </li>
+            {/* Commented out until Page is ready
+            <li className="nav__link">
               <Link to="/help">Help</Link>
             </li>
             <li className="nav__link">
               <Link to="/help">FAQs</Link>
-            </li>
+            </li> */}
             <li className="nav__link">
               <a href="#" onClick={(e) => handleUserLogout(e)}>Log Out</a>
             </li>
