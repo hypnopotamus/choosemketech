@@ -1,4 +1,6 @@
 .imageCopy {
+    max-width: 1415px;
+    margin: 0 auto;
     &__heading {
         text-align: center;
     }
@@ -108,7 +110,7 @@
             }
             @media #{$mq-xxLargeScreen}{
                 max-width: 45%;
-                bottom: 15px;
+                bottom: 55px;
                 top: unset;
             }
             li {
