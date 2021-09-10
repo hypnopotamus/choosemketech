@@ -30,6 +30,7 @@ query MKETechSceneQuery {
     }
     MilwaukeeTechScene_CF {
       threeColumnHeaderText
+      backgroundColor
       threeColumnCardsMts {
         title
         content
@@ -117,6 +118,7 @@ query MKETechSceneQuery {
         <ThreeColumn 
           columns={TechPageData.threeColumnCardsMts} 
           title={TechPageData.threeColumnHeaderText} 
+          background={TechPageData.backgroundColor}
         />
         <div className="container">
         <ImageCopy

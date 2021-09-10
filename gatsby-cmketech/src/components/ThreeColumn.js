@@ -1,7 +1,7 @@
 import React from "react"
 import Slider from "react-slick"
 
-const ThreeColumn = ({columns, title, content}) => {
+const ThreeColumn = ({columns, title, content, background}) => {
     const settings = {
         dots: true,
         arrows: false,
@@ -36,7 +36,7 @@ const ThreeColumn = ({columns, title, content}) => {
     }
 
     return (
-        <div className="threeColumn">
+        <div className={`threeColumn ${background}`}>
             
             { threeColumnTitle }
 

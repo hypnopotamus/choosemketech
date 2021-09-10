@@ -56,6 +56,7 @@ const IndexPage = ({ location }) => {
             }
           }
           threeColumnHeaderText
+          backgroundColor
           threeColumnCards {
             content
             link
@@ -112,12 +113,12 @@ const IndexPage = ({ location }) => {
     location,
     crumbLabel: "Home",
   })
-  console.log(IndexPageData.cardCollectionHp)
+  
   return (
     <Layout bodyClass={`page page-id-${data.wpPage.databaseId}`}>
       <Seo title={seoData.title} description={seoData.metaDesc} uri={seoData.canonical} socialImage={featuredImage} />
       <Hero hero={IndexPageData} />
-      <ThreeColumn columns={IndexPageData.threeColumnCards} title={IndexPageData.threeColumnHeaderText} />
+      <ThreeColumn columns={IndexPageData.threeColumnCards} title={IndexPageData.threeColumnHeaderText} background={IndexPageData.backgroundColor}/>
       <div className="container">
         <ImageCopy cards={IndexPageData.cardCollectionHp} title={IndexPageData.cardHeaderText} />
       </div>

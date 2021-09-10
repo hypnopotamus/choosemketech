@@ -64,6 +64,7 @@ const WhyMilwaukee = ({location}) => {
           tertiaryIntroSubButtonUrl
           tertiaryIntroSubContent
           tertiaryIntroSubHeader
+          backgroundColor
           threeColumnCardsWmke {
             content
             link
@@ -73,6 +74,7 @@ const WhyMilwaukee = ({location}) => {
               sourceUrl
             }
           }
+          backgroundColor2
           threeColumnCardsWmke2 {
             content
             title
@@ -119,10 +121,12 @@ const WhyMilwaukee = ({location}) => {
           columns={WhyMKEData.threeColumnCardsWmke} 
           title={WhyMKEData.threeColumnHeaderText}
           content={WhyMKEData.threeColumnContent} 
+          background={WhyMKEData.backgroundColor}
         />
         <ThreeColumn 
           columns={WhyMKEData.threeColumnCardsWmke2} 
           title={WhyMKEData.threeColumnHeaderText2}
+          background={WhyMKEData.backgroundColor2}
         />
         <div className="container">
           <ImageCopy 

@@ -1,5 +1,4 @@
 .threeColumn {
-    background-color: $navy_blue;
     padding-block-start: 3.125rem;
     padding-block-end: 3.125rem;
     @media #{$mq-mediumScreen}{
@@ -7,16 +6,43 @@
         padding-block-end: 3.125rem;
     }
     &__heading h2{
-        color: $white;
         text-align: center;
         margin-block-start: 0;
     }
     &__content {
         p {
-            color: $white;
             text-align: center;
             width: 75%;
             margin: 0 auto 2.5rem;
+        }
+    }
+    &.blue {
+        background-color: $navy_blue;
+        .threeColumn {
+            &__heading h2 {
+                color: $white;
+            }
+            &__content {
+                p {
+                    color: $white;
+                }
+            }
+        }
+    }
+    &.white {
+        background-color: $white;
+        .threeColumn {
+            &__heading h2 {
+                color: $navy_blue;
+            }
+            &__content {
+                p {
+                    color: $navy_blue;
+                }
+            }
+            &__column__container {
+                box-shadow: $box-shadow;
+            }
         }
     }
     &__container {
