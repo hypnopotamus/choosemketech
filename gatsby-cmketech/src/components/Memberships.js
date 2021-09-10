@@ -199,51 +199,18 @@ const Memberships = () => {
               <i className="fas fa-times"></i>
             </td>
           </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td>
-              <a href="#" className="button button--primary" onClick={() => modalRef1.current.openModal()}>
-                Select
-              </a>
-            </td>
-            <td>
-              <a href="#" className="button button--primary" onClick={() => modalRef2.current.openModal()}>
-                Select
-              </a>
-            </td>
-            <td>
-              <a href="#" className="button button--primary" onClick={() => modalRef3.current.openModal()}>
-                Select
-              </a>
-            </td>
-            <td>
-              <a href="#" className="button button--primary" onClick={() => modalRef4.current.openModal()}>
-                Select
-              </a>
-            </td>
-          </tr>
         </tbody>
       </table>
       <Modal ref={modalRef1}>
-        <ModalModules ref={modalRef1} formDisplayed="recruit-form" formMembership="60e7016d824c410004285960" />
-      </Modal>
-      <Modal ref={modalRef2}>
-        <ModalModules ref={modalRef2} formDisplayed="recruit-form" formMembership="60e7015d824c41000428595f" />
-      </Modal>
-      <Modal ref={modalRef3}>
-        <ModalModules ref={modalRef3} formDisplayed="recruit-form" formMembership="60e6fb7305ad7e00048129c9" />
-      </Modal>
-      <Modal ref={modalRef4}>
-        <ModalModules ref={modalRef4} formDisplayed="recruit-form" formMembership="60e7014e9a642e000469aee9" />
+        <ModalModules ref={modalRef1} formDisplayed="recruit-form" formMembership="60e6fb7305ad7e00048129c9" />
       </Modal>
       <div className="memberships__cta">
-        <Link to="" className="button button--primary">
+        <a href="#" className="button button--primary" onClick={() => modalRef1.current.openModal()}>
           Create My Profile
-        </Link>
-        <Link to="" className="link">
+        </a>
+        <a href="mailto:contact@mketech.org" className="link">
           I have addtional questions
-        </Link>
+        </a>
       </div>
     </div>
   )
