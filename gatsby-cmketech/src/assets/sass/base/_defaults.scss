@@ -134,6 +134,9 @@ a {
         margin-block-end: 2.5rem;
         margin-block-start: 2.5rem;
     }
+    &.text-center {
+        text-align: center;
+    }
 }
 main {
     ul {
