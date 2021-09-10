@@ -52,7 +52,7 @@ const UploadImages = ({ itemid, upload, modal }) => {
 
   // const [logo, setLogoImage] = useState("")
   // useEffect(() => {
-  //   fetch(`https://edit.choosemketech.org/wp-json/wp/v2/${logo}`)
+  //   fetch(`https://api.memberstack.com/v1/members/`)
   //     .then((res) => res.json())
   //     .then((json) => console.log(json))
   // }, [logo])
@@ -88,11 +88,11 @@ const UploadImages = ({ itemid, upload, modal }) => {
           })()}
           <div className="uploaded-image__settings">
             <label htmlFor="imgUpload" className="button button--primary">
-              <i class="fas fa-camera"></i>
+              <i className="fas fa-camera"></i>
               <input id="imgUpload" type="file" ref={imgUpload} onChange={previewImage} />
             </label>
             {/* <button className="button button--primary">
-              <i class="fas fa-palette"></i>
+              <i className="fas fa-palette"></i>
             </button> */}
           </div>
         </div>
