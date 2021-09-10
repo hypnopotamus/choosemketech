@@ -62,6 +62,12 @@
                 border-radius: 0;
             }
         }
+        .ctct-form-success {
+            h2 {
+            color: $white !important;
+            line-height: 2rem !important;
+            }
+        }
     }
 }
 

@@ -237,6 +237,14 @@ const Memberships = () => {
       <Modal ref={modalRef4}>
         <ModalModules ref={modalRef4} formDisplayed="recruit-form" formMembership="60e7014e9a642e000469aee9" />
       </Modal>
+      <div className="memberships__cta">
+        <Link to="" className="button button--primary">
+          Create My Profile
+        </Link>
+        <Link to="" className="link">
+          I have addtional questions
+        </Link>
+      </div>
     </div>
   )
 }
