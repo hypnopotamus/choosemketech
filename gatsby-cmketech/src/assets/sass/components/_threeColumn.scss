@@ -48,16 +48,18 @@
     &__container {
         max-width: 1440px;
         margin: 0 auto;
+        .slick-slide {
+            > div {
+                display: flex;
+            }
+        }
     }
     &__column {
         &__container {
             background-color: $white;
             padding: 25px;
             margin: 15px;
-            @media #{$mq-largeScreen} {
-                min-height: 585px;
-                max-height: 585px;
-            }
+            min-height: 97%;
         }
         &__image {
             margin-block: 0px 15px;
@@ -72,15 +74,7 @@
                 margin-block-start: 21px;
             }
             p {
-                margin-block: 14px;
-                @media #{$mq-largeScreen} {
-                    height: 200px;
-                    display: block;
-                    overflow-y: hidden;
-                    &:hover {
-                        overflow-y: auto;
-                    }
-                }                
+                margin-block: 14px;                
             }
         }
     }
