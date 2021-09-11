@@ -266,7 +266,7 @@ const Memberships = (membership, current, topTierMember) => {
           </tr>
         </tbody>
       </table>
-      <a href="#/ms/signup/60e7014e9a642e000469aee9">test sign up</a>
+
       <div className="memberships__cta" data-ms-content="!members">
         <a href="#" className="button button--primary" onClick={() => modalRef2.current.openModal()}>
           Create My Profile
