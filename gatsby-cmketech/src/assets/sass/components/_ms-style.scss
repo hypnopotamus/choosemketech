@@ -1,0 +1,66 @@
+.ms-style {
+  &.ms-style-override {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    .ms-checkout-padding {
+      padding: 5rem;
+    }    
+    .ms-white-bg-override {
+      justify-content: center;
+      .ms-checkout-header-text {
+        color: $blue;
+        @include fluid-type(320px, 768px, 22px, 23px);
+        letter-spacing: 2.3px;
+        font-family: "Inter-Bold", serif;
+        text-transform: uppercase;
+        margin-block-start: 0.625rem;
+        margin-block-end: 0.625rem;
+        font-weight: 600;
+        opacity: 1;
+        &:before {
+          content: "";
+          background-image: url('../images/recruit-icon.png');
+          max-width: 150px;
+          height: 150px;
+          display: block;
+          background-repeat: no-repeat;
+          background-size: cover;
+          margin: 1rem auto;          
+        }
+      }
+    }
+    .ms-container-override {
+      border: 0;
+      border-radius: 0;
+      max-width: 1080px;
+    }
+    #stripe-checkout-form {
+      display: grid;
+    }
+    .ms-button-override {
+      display: inline-block;
+      padding: 15px 20px;
+      margin-inline-start: 5px;
+      margin-inline-end: 5px;
+      font: inherit;
+      font-family: 'Inter-Bold';
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-align: center;
+      border: none;
+      transition: all 0.15s linear;
+      letter-spacing: 0.8px;
+      background-color: $blue !important;
+      border: 2px solid $blue;
+      border-radius: 0;
+      margin-block-start: 4rem;
+      width: auto;
+      justify-self: end;
+      &:hover {
+        background-color: $white !important;
+        color: $blue;
+      }      
+    }
+  }
+}
