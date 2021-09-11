@@ -1,19 +1,18 @@
-import React from "react";
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Seo from "../components/Seo";
-import Layout from "../components/Layout";
-import SubHero from "../components/SubHero";
-import ImageCopy from "../components/ImageCopy";
-import Memberships from "../components/Memberships";
-import ImageGrid from "../components/ImageGrid";
-import Breadcrumbs from "../components/Breadcrumbs";
-import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
+import Seo from "../components/Seo"
+import Layout from "../components/Layout"
+import SubHero from "../components/SubHero"
+import ImageCopy from "../components/ImageCopy"
+import Memberships from "../components/Memberships"
+import ImageGrid from "../components/ImageGrid"
+import Breadcrumbs from "../components/Breadcrumbs"
+import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
 
-
-const RecruitWithUs = ({location}) => {
+const RecruitWithUs = ({ location }) => {
   const data = useStaticQuery(graphql`
     query RecruitWithUsQuery {
-      wpPage(databaseId: {eq: 19}) {
+      wpPage(databaseId: { eq: 19 }) {
         seo {
           title
           metaDesc
@@ -62,44 +61,27 @@ const RecruitWithUs = ({location}) => {
     }
   `)
 
-  const RecruitWithUsData = data.wpPage.RecruitWithUs_CF;
-  const seoData = data.wpPage.seo;
-  const featuredImage = data.wpPage.featuredImage.node.link;
+  const RecruitWithUsData = data.wpPage.RecruitWithUs_CF
+  const seoData = data.wpPage.seo
+  const featuredImage = data.wpPage.featuredImage.node.link
 
   const { crumbs } = useBreadcrumb({
     location,
-    crumbLabel: 'Recruit With Us'
-  })  
+    crumbLabel: "Recruit With Us",
+  })
 
   return (
     <Layout>
-        <Seo 
-        title={seoData.title}
-        description={seoData.metaDesc}
-        uri={seoData.canonical}
-        socialImage={featuredImage} />
-        <Breadcrumbs crumbs={crumbs} />
-        <SubHero hero={RecruitWithUsData} />
-        <div className="container">
-          <Memberships />
-          {/* <table>
-            <thead>
-              <th><a href="#/ms/signup/60e6fb7305ad7e00048129c9" className="button button--secondary">Entry</a></th>
-              <th><a href="#/ms/signup/60e7014e9a642e000469aee9" className="button button--secondary">Base</a></th>
-              <th><a href="#/ms/signup/611f2f880c5af90004207432" className="button button--primary">Free</a></th>
-              <th><a href="#/ms/signup/60e7015d824c41000428595f" className="button button--secondary">Enhanced</a></th>
-              <th><a href="#/ms/signup/60e7016d824c410004285960" className="button button--secondary">Premium</a></th>
-            </thead>
-          </table> */}
-
-          <ImageCopy cards={RecruitWithUsData.cardCollectionRqu}/>
-          <ImageGrid gallery={RecruitWithUsData.gridImagesRqu} />
-        </div>
-
+      <Seo title={seoData.title} description={seoData.metaDesc} uri={seoData.canonical} socialImage={featuredImage} />
+      <Breadcrumbs crumbs={crumbs} />
+      <SubHero hero={RecruitWithUsData} />
+      <div className="container">
+        <Memberships />
+        <ImageCopy cards={RecruitWithUsData.cardCollectionRqu} />
+        <ImageGrid gallery={RecruitWithUsData.gridImagesRqu} />
+      </div>
     </Layout>
   )
-
 }
-  
-export default RecruitWithUs;
-  
+
+export default RecruitWithUs

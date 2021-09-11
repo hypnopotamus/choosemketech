@@ -1,6 +1,9 @@
 .imageCopy {
     max-width: 1415px;
     margin: 0 auto;
+    @media #{$mq-largeScreen} {
+        padding: 2.5rem 0;
+    }
     &__heading {
         text-align: center;
     }

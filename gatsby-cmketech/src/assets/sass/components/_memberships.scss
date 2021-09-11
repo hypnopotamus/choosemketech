@@ -8,7 +8,10 @@
         overflow-y: hidden;
 
         @media #{$mq-largeScreen}{
-            width: 75%;
+            max-width: 1415px;
+            table {
+                width: 100%;
+            }
         }
         .header {
             font-size: 18px;

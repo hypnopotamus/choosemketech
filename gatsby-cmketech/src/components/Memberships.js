@@ -1,13 +1,54 @@
-import React, { useState, useRef } from "react"
+import React, { useState, useCallback, useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import Modal from "./Modal"
 import ModalModules from "./ModalModules"
 
-const Memberships = () => {
+const Memberships = (membership, current, topTierMember) => {
   const modalRef1 = useRef()
   const modalRef2 = useRef()
   const modalRef3 = useRef()
   const modalRef4 = useRef()
+  const [data, setMemberData] = useState("")
+  useEffect(() => {
+    window.MemberStack.onReady
+      .then(function (member) {
+        setMemberData(member)
+      })
+      .catch((e) => {
+        console.log(e)
+      })
+  }, [data])
+
+  if (data) {
+    const membershipData = [
+      {
+        name: "Premium",
+        status: false,
+      },
+      {
+        name: "Enhanced",
+        status: false,
+      },
+      {
+        name: "Base",
+        status: false,
+      },
+      {
+        name: "Entry",
+        status: false,
+      },
+    ]
+    let membershipName = document.getElementById(data.membership.name)
+    console.log(data.membership.name)
+    membershipData.forEach((item) => {
+      if (item.name === data.membership.name) {
+        item.status = true
+        if (item.status && membershipName) {
+          membershipName.innerHTML = "Current Membership"
+        }
+      }
+    })
+  }
 
   return (
     <div className="memberships table">
@@ -199,19 +240,44 @@ const Memberships = () => {
               <i className="fas fa-times"></i>
             </td>
           </tr>
+          <tr data-ms-content="members">
+            <td></td>
+            <td></td>
+            <td id="Premium">
+              <a href="mailto:contact@mketech.org" className="button button--primary">
+                Contact Us
+              </a>
+            </td>
+            <td id="Enhanced">
+              <a href="mailto:contact@mketech.org" className="button button--primary">
+                Contact Us
+              </a>
+            </td>
+            <td id="Base">
+              <a href="/#/ms/signup/60e7014e9a642e000469aee9" data-ms-content="members" className="button button--primary">
+                Select
+              </a>
+            </td>
+            <td id="Entry">
+              <a href="/#/ms/signup/60e6fb7305ad7e00048129c9" data-ms-content="members" className="button button--primary">
+                Select
+              </a>
+            </td>
+          </tr>
         </tbody>
       </table>
-      <Modal ref={modalRef1}>
-        <ModalModules ref={modalRef1} formDisplayed="recruit-form" formMembership="60e6fb7305ad7e00048129c9" />
-      </Modal>
-      <div className="memberships__cta">
-        <a href="#" className="button button--primary" onClick={() => modalRef1.current.openModal()}>
+      <a href="#/ms/signup/60e7014e9a642e000469aee9">test sign up</a>
+      <div className="memberships__cta" data-ms-content="!members">
+        <a href="#" className="button button--primary" onClick={() => modalRef2.current.openModal()}>
           Create My Profile
         </a>
         <a href="mailto:contact@mketech.org" className="link">
           I have addtional questions
         </a>
       </div>
+      <Modal ref={modalRef2}>
+        <ModalModules ref={modalRef2} formDisplayed="recruit-form" formMembership="60e6fb7305ad7e00048129c9" />
+      </Modal>
     </div>
   )
 }
