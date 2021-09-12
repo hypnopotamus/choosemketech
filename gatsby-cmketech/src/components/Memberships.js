@@ -38,8 +38,9 @@ const Memberships = (membership, current, topTierMember) => {
         status: false,
       },
     ]
+
     let membershipName = document.getElementById(data.membership.name)
-    console.log(data.membership.name)
+
     membershipData.forEach((item) => {
       if (item.name === data.membership.name) {
         item.status = true

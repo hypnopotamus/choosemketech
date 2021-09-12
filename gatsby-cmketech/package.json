@@ -4,8 +4,8 @@
   "license": "SEE LICENSE IN <LICENSE>",
   "version": "0.0.1",
   "author": {
-    "name": "Henrik Wirth",
-    "email": "info@henrikwirth.de"
+    "name": "Stephen Mahadeo",
+    "email": "smahadeo@nvisia.com"
   },
   "scripts": {
     "develop": "gatsby develop",

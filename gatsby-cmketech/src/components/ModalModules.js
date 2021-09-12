@@ -3,7 +3,7 @@ import FormInput from "./FormInput"
 import { recruitLogo, userLogo } from "../assets/assets"
 import UploadImages from "./UploadImage"
 
-const ModalModules = forwardRef((props, ref, data) => {
+const ModalModules = forwardRef((props, ref) => {
   const [formDisplayed, setFormDisplayed] = useState(props.formDisplayed)
   const [formMembership, setFormMembership] = useState(props.formMembership)
   const handleFormChange = (e, form) => {

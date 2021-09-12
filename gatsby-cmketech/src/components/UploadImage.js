@@ -11,16 +11,16 @@ const UploadImages = ({ itemid, upload, modal }) => {
       let file = imgUpload.current.files[0]
 
       formData.append("file", file)
-      formData.append("title", file.name)
-      formData.append("post", itemid) //coming from props
 
       let headers = {}
-      headers["Content-Disposition"] = "form-data; filename='" + file.name + "'"
-      headers["X-WP-Nonce"] = wpApiSettings
+      headers["Access-Control-Allow-Origin"] = "*"
+      headers["Access-Control-Allow-Origin"] = "http://localhost:8000/"
+      headers["Content-Disposition"] = "attachment; filename='" + file.name + "'"
+      headers["Authorization"] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvZWRpdC5jaG9vc2Vta2V0ZWNoLm9yZyIsImlhdCI6MTYzMTQ3Mzk1MCwibmJmIjoxNjMxNDczOTUwLCJleHAiOjE2MzIwNzg3NTAsImRhdGEiOnsidXNlciI6eyJpZCI6MSwiZGV2aWNlIjoiIiwicGFzcyI6IjVkOGI2ZWY1OGE3MTY3ZDNiMjQxNmMwNTM3NGE0YjMyIn19fQ.v04r5ia66wR_I1kEBpn2Q4swCq9-7aDlnCmcL3-GVBs"
 
       let url = "https://edit.choosemketech.org"
       axios
-        .post(url + "/wp-json/wp/v2/media/?featured=" + itemid, formData, headers)
+        .post(url + "/wp-json/wp/v2/media", formData, headers)
         .then(function (resp) {
           deleteOrigImg()
           getItems() //callback to parent's this.getItems(),
