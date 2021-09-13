@@ -12,20 +12,34 @@ const UploadImages = ({ itemid, upload, modal }) => {
 
       formData.append("file", file)
 
-      let headers = {}
+      let url = "https://edit.choosemketech.org"
 
-      headers["Content-Disposition"] = "attachment; filename='" + file.name + "'"
-      headers["Authorization"] = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvZWRpdC5jaG9vc2Vta2V0ZWNoLm9yZyIsImlhdCI6MTYzMTQ3Mzk1MCwibmJmIjoxNjMxNDczOTUwLCJleHAiOjE2MzIwNzg3NTAsImRhdGEiOnsidXNlciI6eyJpZCI6MSwiZGV2aWNlIjoiIiwicGFzcyI6IjVkOGI2ZWY1OGE3MTY3ZDNiMjQxNmMwNTM3NGE0YjMyIn19fQ.v04r5ia66wR_I1kEBpn2Q4swCq9-7aDlnCmcL3-GVBs"
+      //const formData = new FormData()
+      // const fileField = document.querySelector('input[type="file"]')
 
-      let url = "https://dev.choosemketech.org"
-      axios
-        .post(url + "/wp-json/wp/v2/media", formData, headers)
-        .then(function (resp) {
-          deleteOrigImg()
-          getItems() //callback to parent's this.getItems(),
+      // // formData.append("admin", "Wbcb2739!@#$")
+      // formData.append("avatar", fileField.files[0])
+
+      console.log(formData)
+
+      fetch("https://edit.choosemketech.org/wp-json/wp/v2/media", {
+        method: "POST",
+        mode: "no-cors",
+        headers: new Headers({
+          "Content-Disposition": "attachment; filename='" + file.name + "'",
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "image/png",
+          // Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvZWRpdC5jaG9vc2Vta2V0ZWNoLm9yZyIsImlhdCI6MTYzMTQ3Mzk1MCwibmJmIjoxNjMxNDczOTUwLCJleHAiOjE2MzIwNzg3NTAsImRhdGEiOnsidXNlciI6eyJpZCI6MSwiZGV2aWNlIjoiIiwicGFzcyI6IjVkOGI2ZWY1OGE3MTY3ZDNiMjQxNmMwNTM3NGE0YjMyIn19fQ.v04r5ia66wR_I1kEBpn2Q4swCq9-7aDlnCmcL3-GVBs",
+          Authorization: "Basic '+btoa('admin:Wbcb2739!@#$')",
+        }),
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log("Success:", result)
         })
-        .catch((e) => {
-          console.log(e)
+        .catch((error) => {
+          console.error("Error:", error)
         })
     }
   }
