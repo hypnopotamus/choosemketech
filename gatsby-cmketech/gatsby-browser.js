@@ -5,6 +5,5 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
     return
   } else {
     window.MemberStack.reload()
-    console.log("test")
   }
 }
