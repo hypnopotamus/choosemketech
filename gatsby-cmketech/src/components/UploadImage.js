@@ -29,8 +29,6 @@ const UploadImages = ({ itemid, upload, modal }) => {
           "Content-Disposition": "attachment; filename='" + file.name + "'",
           "Access-Control-Allow-Origin": "*",
           "Content-Type": "image/png",
-          Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvZWRpdC5jaG9vc2Vta2V0ZWNoLm9yZyIsImlhdCI6MTYzMTQ3Mzk1MCwibmJmIjoxNjMxNDczOTUwLCJleHAiOjE2MzIwNzg3NTAsImRhdGEiOnsidXNlciI6eyJpZCI6MSwiZGV2aWNlIjoiIiwicGFzcyI6IjVkOGI2ZWY1OGE3MTY3ZDNiMjQxNmMwNTM3NGE0YjMyIn19fQ.v04r5ia66wR_I1kEBpn2Q4swCq9-7aDlnCmcL3-GVBs",
-          // Authorization: "Basic '+btoa('admin:Wbcb2739!@#$')",
         }),
         body: formData,
       })
