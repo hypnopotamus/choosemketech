@@ -1,153 +1,175 @@
-*, *:before, *:after {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    overflow-x: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-html, body {
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 0.5px;
-    @include fluid-type(320px, 768px, 14px, 16px);
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.5px;
+  @include fluid-type(320px, 768px, 14px, 16px);
 }
 
 body {
-    background-color: $white;
+  background-color: $white;
 }
 
-h1, .h1, .heading-1 {
-    font-family: 'Roboto Bold', sans-serif;
-    @include fluid-type(320px, 768px, 33px, 40px);
-    color: $navy_blue;
+h1,
+.h1,
+.heading-1 {
+  font-family: "Roboto Bold", sans-serif;
+  @include fluid-type(320px, 768px, 33px, 40px);
+  color: $navy_blue;
+  margin-block-end: 1rem;
 }
 
-h2, .h2, .heading-2 {
-    font-family: 'Roboto', sans-serif;
-    @include fluid-type(320px, 768px, 33px, 40px);
-    margin-block-start: 1.875rem;
-    margin-block-end: 1.875rem;
-    color: $navy_blue;
+h2,
+.h2,
+.heading-2 {
+  font-family: "Roboto", sans-serif;
+  @include fluid-type(320px, 768px, 33px, 40px);
+  margin-block-start: 1.875rem;
+  margin-block-end: 1.875rem;
+  color: $navy_blue;
 }
 
-h3, .h3, .heading-3, 
-h4, .h4, .heading-4, 
-h5, .h5, .heading-5, 
-h6, .h6, .heading-6 {
-    font-family: 'Inter-Bold', serif;
-    text-transform: uppercase;
-    margin-block-start: 0.625rem;
-    margin-block-end: 0.625rem;
-    font-weight: 600;
+h3,
+.h3,
+.heading-3,
+h4,
+.h4,
+.heading-4,
+h5,
+.h5,
+.heading-5,
+h6,
+.h6,
+.heading-6 {
+  font-family: "Inter-Bold", serif;
+  text-transform: uppercase;
+  margin-block-start: 0.625rem;
+  margin-block-end: 0.625rem;
+  font-weight: 600;
 }
 
-h3, .h3, .heading-3{
-    @include fluid-type(320px, 768px, 22px, 23px);
-    color: $blue;
-    letter-spacing: 2.3px;
+h3,
+.h3,
+.heading-3 {
+  @include fluid-type(320px, 768px, 22px, 23px);
+  color: $blue;
+  letter-spacing: 2.3px;
 }
 
-h4, .h4, .heading-4 {
-    @include fluid-type(320px, 768px, 18px, 20px);
-    color: $navy_blue;
-    letter-spacing: 1.2px;
-} 
+h4,
+.h4,
+.heading-4 {
+  @include fluid-type(320px, 768px, 18px, 20px);
+  color: $navy_blue;
+  letter-spacing: 1.2px;
+}
 
-h5, .h5, .heading-5 {
-    @include fluid-type(320px, 768px, 15.5px, 18px);
-    color: $navy_blue;
+h5,
+.h5,
+.heading-5 {
+  @include fluid-type(320px, 768px, 15.5px, 18px);
+  color: $navy_blue;
 }
 
 p {
-    @include fluid-type(320px, 768px, 16px, 16px);
-    line-height: 24px;
-    margin-block-start: 0.75rem;
-    margin-block-end: 0.75rem;
-    font-family: 'Inter', sans-serif;
+  @include fluid-type(320px, 768px, 16px, 16px);
+  line-height: 24px;
+  margin-block-start: 0.75rem;
+  margin-block-end: 0.75rem;
+  font-family: "Inter", sans-serif;
 }
 
-span[style*=underline] {
-    background-color: $light_yellow;
-    padding: 3px 5px;
-    margin-inline-start: 3px;
-    margin-inline-end: 3px;
-    text-decoration: none !important;
+span[style*="underline"] {
+  background-color: $light_yellow;
+  padding: 3px 5px;
+  margin-inline-start: 3px;
+  margin-inline-end: 3px;
+  text-decoration: none !important;
 }
 
 strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-span[style*=italic] {
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
+span[style*="italic"] {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
 }
 
 a {
-    font-family: 'Inter', sans-serif;
-    text-decoration: underline;
-    letter-spacing: 0.1px;
-    color: $blue;
-    position: relative;
+  font-family: "Inter", sans-serif;
+  text-decoration: underline;
+  letter-spacing: 0.1px;
+  color: $blue;
+  position: relative;
+  &:hover {
+    color: $navy_blue;
+  }
+  &:visited {
+    color: $dark_gray;
+  }
+  &.linked {
+    &:after {
+      content: "\f30b";
+      font-family: "Font Awesome 5 Free";
+      position: absolute;
+      right: -25px;
+      font-size: 20px;
+      transition: all linear 0.15s;
+    }
     &:hover {
-        color: $navy_blue;
+      &:after {
+        right: -30px;
+      }
     }
-    &:visited {
-        color: $dark_gray;
-    }
-    &.linked {
-        &:after {
-            content: '\f30b';
-            font-family: 'Font Awesome 5 Free';
-            position: absolute;
-            right: -25px;
-            font-size: 20px;
-            transition: all linear 0.15s;
-        }
-        &:hover {
-            &:after {
-                right: -30px;
-            }
-        }
-    }
+  }
 }
 
-.container  {
-    width: 100%;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    margin-block-end: 1.5rem;
-    margin-block-start: 1.5rem;
-    .row {
-        margin: 0 -40px;
-        padding: 0 40px;
-    }
+.container {
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-block-end: 1.5rem;
+  margin-block-start: 1.5rem;
+  .row {
+    margin: 0 -40px;
+    padding: 0 40px;
+  }
 
-    @media #{$mq-largeScreen}{
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
-        margin-block-end: 2.5rem;
-        margin-block-start: 2.5rem;
-    }
-    &.text-center {
-        text-align: center;
-    }
+  @media #{$mq-largeScreen} {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    margin-block-end: 2.5rem;
+    margin-block-start: 2.5rem;
+  }
+  &.text-center {
+    text-align: center;
+  }
 }
 main {
-    ul {
-        margin-block: 2rem;
-        font-family: 'Inter', sans-serif;
-        li {
-            line-height: 1.5rem;
-            margin-bottom: 1rem;
-            padding-left: 1rem;
-            list-style: disc;
-            margin-left: 2rem;            
-        }
+  ul {
+    margin-block: 2rem;
+    font-family: "Inter", sans-serif;
+    li {
+      line-height: 1.5rem;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      list-style: disc;
+      margin-left: 2rem;
     }
+  }
 }
