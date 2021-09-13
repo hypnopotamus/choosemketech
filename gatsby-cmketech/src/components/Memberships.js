@@ -41,16 +41,18 @@ const Memberships = (membership, current, topTierMember) => {
       },
     ]
 
-    let membershipName = document.getElementById(data.membership.name)
+    if (data.membership) {
+      let membershipName = document.getElementById(data.membership.name)
 
-    membershipData.forEach((item) => {
-      if (item.name === data.membership.name) {
-        item.status = true
-        if (item.status && membershipName) {
-          membershipName.innerHTML = "Current Membership"
+      membershipData.forEach((item) => {
+        if (item.name === data.membership.name) {
+          item.status = true
+          if (item.status && membershipName) {
+            membershipName.innerHTML = "Current Membership"
+          }
         }
-      }
-    })
+      })
+    }
   }
 
   return (
