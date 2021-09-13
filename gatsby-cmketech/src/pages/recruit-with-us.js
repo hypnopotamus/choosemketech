@@ -61,15 +61,10 @@ const RecruitWithUs = ({ location }) => {
     }
   `)
 
-  let RecruitWithUsData
-  let seoData
-  let featuredImage
+  const RecruitWithUsData = data.wpPage.RecruitWithUs_CF
+  const seoData = data.wpPage.seo
+  const featuredImage = data.wpPage.featuredImage.node.link
 
-  if (data) {
-    RecruitWithUsData = data.wpPage.RecruitWithUs_CF
-    seoData = data.wpPage.seo
-    featuredImage = data.wpPage.featuredImage.node.link
-  }
   const { crumbs } = useBreadcrumb({
     location,
     crumbLabel: "Recruit With Us",
