@@ -19,8 +19,8 @@ const IntroCopy = ({ heroModifier, intro }) => {
   return (
     <div className="row">
       <section className={heroModifier ? `sub-intro sub-intro-copy--hero` : `sub-intro-copy`}>
-        <h2 dangerouslySetInnerHTML={{ __html: intro.subHeroTitle }}></h2>
-        <h3 dangerouslySetInnerHTML={{ __html: intro.subHeroSubTitle }}></h3>
+        <h1 dangerouslySetInnerHTML={{ __html: intro.subHeroTitle }}></h1>
+        <h2 dangerouslySetInnerHTML={{ __html: intro.subHeroSubTitle }}></h2>
         {subContent}
         {linkButton}
       </section>
