@@ -10,13 +10,15 @@ const Memberships = (membership, current, topTierMember) => {
   const modalRef4 = useRef()
   const [data, setMemberData] = useState("")
   useEffect(() => {
-    window.MemberStack.onReady
-      .then(function (member) {
-        setMemberData(member)
-      })
-      .catch((e) => {
-        console.log(e)
-      })
+    if (window.MemberStack.onReady) {
+      window.MemberStack.onReady
+        .then(function (member) {
+          setMemberData(member)
+        })
+        .catch((e) => {
+          console.log(e)
+        })
+    }
   }, [data])
 
   if (data) {
@@ -42,16 +44,13 @@ const Memberships = (membership, current, topTierMember) => {
     let membershipName = document.getElementById(data.membership.name)
 
     membershipData.forEach((item) => {
-      if (data.membership) {
-        if (item.name === data.membership.name) {
-          item.status = true
-          if (item.status && membershipName) {
-            membershipName.innerHTML = "Current Membership"
-          }
+      if (item.name === data.membership.name) {
+        item.status = true
+        if (item.status && membershipName) {
+          membershipName.innerHTML = "Current Membership"
         }
       }
     })
-    console.log(data)
   }
 
   return (
