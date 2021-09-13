@@ -1,36 +1,37 @@
-.sub-intro-copy, .sub-intro {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    background-color: $white;
-    padding-block-start: 2.5rem;
-    padding-block-end: 2.5rem;
-    padding-inline-start: 2.5rem;
-    padding-inline-end: 2.5rem;
+.sub-intro-copy,
+.sub-intro {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: $white;
+  padding-block-start: 2.5rem;
+  padding-block-end: 2.5rem;
+  padding-inline-start: 2.5rem;
+  padding-inline-end: 2.5rem;
 
-    &--hero{
-        z-index: 1;
-        max-width: 90%;
-    }
+  &--hero {
+    z-index: 1;
+    max-width: 90%;
+  }
 
-    button,
-    .button {
-        &:first-of-type {
-            margin-inline-start: 0;
-        }
+  button,
+  .button {
+    &:first-of-type {
+      margin-inline-start: 0;
     }
-    p {
-        margin-bottom: 1.75rem;
-        color: $black;
+  }
+  p {
+    margin-bottom: 1.75rem;
+    color: $black;
 
-        @media #{$mq-largeScreen} {
-            width: 80%;
-            margin: 1rem auto;
-        }
+    @media #{$mq-largeScreen} {
+      width: 80%;
+      margin: 1rem auto;
     }
+  }
 
-    h2 {
-        margin: 0;
-    }
+  h2 {
+    margin: 0 0 1rem 0;
+  }
 }
