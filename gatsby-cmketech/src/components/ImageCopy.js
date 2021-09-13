@@ -40,7 +40,7 @@ const ImageCopy = ({ cards, title, flip }) => {
             null
           } else {
             cardButton = (
-              <Link to={card.buttonUrl} className="button button--primary">
+              <Link to={card.buttonUrl} className="button button--primary" target={card.targetUrl}>
                 {card.buttonLabel}
               </Link>
             )
@@ -48,7 +48,7 @@ const ImageCopy = ({ cards, title, flip }) => {
 
           if (card.linkUrl || card.linkLabel) {
             cardLink = (
-              <Link to={card.linkUrl} className="linked">
+              <Link to={card.linkUrl} className="linked" target={card.targetUrl}>
                 {card.linkLabel}
               </Link>
             )

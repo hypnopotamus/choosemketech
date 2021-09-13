@@ -5,7 +5,7 @@ import Textarea from "./Textarea"
 
 const FormInput = ({ name, type, placeholder, onChange, className, value, error, children, label, email, hidden, file, number, tel, memberstack, required, accept, maxlength, story, icon, ...props }) => {
   const [passwordShown, setPasswordShown] = useState(false)
-  const [selected, setSelected] = useState([])
+  const [selected, setSelected] = useState()
   const handlePasswordClick = (i) => {
     setPasswordShown(!passwordShown)
   }

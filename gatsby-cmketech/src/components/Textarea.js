@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from "react"
 
 const Textarea = ({ rows, cols, value, limit, maxlength, memberstack, id, name }) => {
   const [count, setCharacterCount] = useState(700)
-  const [textCount, setTextCount] = useState([])
+  const [textCount, setTextCount] = useState()
 
   useEffect(() => {
     if (name && name != null) {
