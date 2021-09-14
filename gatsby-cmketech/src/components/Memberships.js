@@ -125,7 +125,7 @@ const Memberships = (membership, current, topTierMember) => {
             <td>Premium Placement</td>
             <td>Featured</td>
             <td>Limited Details</td>
-            <td>Name and Location only</td>
+            <td>Logo only</td>
           </tr>
           <tr>
             <td>Top Job Search Placement</td>
@@ -149,7 +149,9 @@ const Memberships = (membership, current, topTierMember) => {
             <td>12/month</td>
             <td>7/month</td>
             <td>2/month</td>
-            <td>2/month</td>
+            <td>
+              <i className="fas fa-times"></i>
+            </td>
           </tr>
           <tr>
             <td className="header">
