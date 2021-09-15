@@ -136,14 +136,32 @@ const ModalModules = forwardRef((props, ref) => {
   }
 
   const JobForm = () => {
+    const [passwordMatches, setpasswordMatches] = useState()
+    let userPassword;
+    let userConfirmPassword;
     if (window.MemberStack) {
       window.MemberStack.reload()
+    }
+    const handlePasswordMatch = () => {
+      userPassword = document.getElementById("password").value
+      userConfirmPassword = document.getElementById("passwordConfirm").value;
+      if(userPassword !== '' && userConfirmPassword !== '') {
+        if(userPassword !== userConfirmPassword) {
+          setpasswordMatches("Passwords do not match")
+        }else {
+          setpasswordMatches(undefined)
+        }
+      }
+      
     }
     return (
       <div className="user-signup__form user-signup__form--job">
         <div className="user-signup__content">
           <img className="user-signup__logo" src={userLogo} alt="" role="presentation" />
           <h3>Create a Profile</h3>
+          <a href="#" onClick={(e) => handleFormChange(e, "login")}>
+            Already have an account? Login
+          </a>
         </div>
         <form className="form" data-ms-form="signup" data-ms-membership="611f2f880c5af90004207432">
           <div className={`form-field half-length`}>
@@ -153,17 +171,17 @@ const ModalModules = forwardRef((props, ref) => {
             </span>
           </div>
 
-          <FormInput name="password" type="password" required label="Password" halfLength={true} memberstack="password" />
-          <FormInput name="passwordConfirm" type="password" required label="Confirm Password" halfLength={true} />
+          <FormInput name="password" type="password" required label="Password" halfLength={true} memberstack="password" value={userPassword} onChange={() => handlePasswordMatch("password")} error={passwordMatches}/>
+          <FormInput name="passwordConfirm" type="password" required label="Confirm Password" halfLength={true} value={userConfirmPassword} onChange={() => handlePasswordMatch("passwordConfirm")} error={passwordMatches}/>
           <FormInput name="Job Opportunities" type="checkbox" label="I agree to recieve emails from employers about potential job oppotunities" memberstack="job-opportunities-opt-in" />
           <FormInput name="Latest News" type="checkbox" label="Sign me up for Chooose MKE Tech news, such as meetups, tech related news, and more." memberstack="subscription-notifications" />
           <div className="user-signup__content">
-            <a href="#" onClick={(e) => handleFormChange(e, "login")}>
-              Already have an account? Login
-            </a>
+            <p>
+              By signing up, you are agreeing to the Choose MKE Tech's <a href="/terms-of-use" onClick={() => ref.current.closeModal()}>Privacy Policy</a>
+            </p>
           </div>
           <div className="user-signup__actions">
-            <button className="button button--primary" type="submit">
+            <button id="submitButton" className="button button--primary" type="submit" disabled={passwordMatches != undefined}>
               Create My Profile
             </button>
             <a href="#" className="link--plain" onClick={() => ref.current.closeModal()}>
