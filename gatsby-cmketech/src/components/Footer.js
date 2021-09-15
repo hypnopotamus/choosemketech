@@ -1,8 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 import Subscribe from "./Subscription"
+import { useFooterMenuQuery } from "../hooks/useFooterMenuQuery"
 
-const Footer = ({}) => {
+const Footer = () => {
+  const { wpMenu } = useFooterMenuQuery()
+
+  console.log(wpMenu)
+
   return (
     <footer className="container">
       <div className="footer--social">
@@ -46,79 +51,26 @@ const Footer = ({}) => {
           </ul>
           <div className="divider"></div>
           <ul className="footer--main__navigation">
-            <li>
-              <p>
-                <strong>About</strong>
-              </p>
-              <ul>
-                <li>
-                  <Link to="/about">
-                    <span>About Choose MKE Tech</span>
-                  </Link>
+            {wpMenu.menuItems.nodes.map((mainItem) =>
+              !mainItem.parentId ? (
+                <li key={mainItem.id}>
+                  <p>
+                    <strong>{mainItem.label}</strong>
+                  </p>
+                  <ul>
+                    {mainItem.childItems.nodes.map((mainItem, idx) => {
+                      return (
+                        <li key={mainItem.id}>
+                          <Link to={mainItem.url}>
+                            <span>{mainItem.label}</span>
+                          </Link>
+                        </li>
+                      )
+                    })}
+                  </ul>
                 </li>
-                <li>
-                  <a href="https://www.mketech.org" target="_blank">
-                    <span>
-                      MKE Tech Coalition <i className="fas fa-external-link-square-alt"></i>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://mketech.org/reverse-pitch-mke/" target="_blank">
-                    <span>
-                      Reverse Pitch MKE <i className="fas fa-external-link-square-alt"></i>
-                    </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://mketech.org/reverse-pitch-mke-highschool/" target="_blank">
-                    <span>
-                      RPM: High School Edition <i className="fas fa-external-link-square-alt"></i>
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>
-                <strong>Help</strong>
-              </p>
-              <ul>
-                <li>
-                  <a href="mailto:contact@mketech.org">
-                    <span>Contact Us</span>
-                  </a>
-                </li>
-              {/* Commented out until page is ready
-                <li>
-                  <Link to="/help#faq">
-                    <span>FAQ</span>
-                  </Link>
-                </li> */}
-              </ul>
-            </li>
-            <li>
-              <p>
-                <strong>Legal</strong>
-              </p>
-              <ul>
-                <li>
-                  <Link to="/terms-of-use">
-                    <span>Terms of Use</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/accessibility">
-                    <span>Accessibility</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/terms-of-use">
-                    <span>Privacy Policy</span>
-                  </Link>
-                </li>
-              </ul>
-            </li>
+              ) : null
+            )}
           </ul>
         </div>
         <Link to="/" className="footer--logo mobile">
