@@ -6,6 +6,7 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
 import ImageCopy from "../components/ImageCopy";
 import Accordion from "../components/Accordion";
+import SubHero from "../components/SubHero";
 
 const Help = ({location}) => {
   const data = useStaticQuery(graphql`
@@ -25,6 +26,12 @@ const Help = ({location}) => {
           }
         }
         Help_CF {
+          subHeroTitle
+          subHeroContent
+          subHeroSubTitle
+          subHeroImage {
+              sourceUrl
+          }
           cardHeaderText
           cardCollectionHelp {
             title
@@ -70,6 +77,7 @@ const Help = ({location}) => {
           uri={seoData.canonical}
           socialImage={featuredImage} />
         <Breadcrumbs crumbs={crumbs} />
+        <SubHero hero={Help} />
         <div className="container">
           <ImageCopy 
             cards={Help.cardCollectionHelp}
