@@ -15,8 +15,12 @@ export const useFooterMenuQuery = () => {
                 url
                 id
                 label
+                cssClasses
+                target
               }
             }
+            cssClasses
+            target
           }
         }
       }

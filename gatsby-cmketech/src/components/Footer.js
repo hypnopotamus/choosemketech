@@ -61,7 +61,7 @@ const Footer = () => {
                     {mainItem.childItems.nodes.map((mainItem, idx) => {
                       return (
                         <li key={mainItem.id}>
-                          <Link to={mainItem.url}>
+                          <Link to={mainItem.url} className={mainItem.cssClasses} target={mainItem.target}>
                             <span>{mainItem.label}</span>
                           </Link>
                         </li>
