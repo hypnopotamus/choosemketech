@@ -11,7 +11,7 @@
             color: $warning_red;
             font-family: "Inter-Bold", sans-serif;
             font-style: italic;
-            margin: 0;
+            margin: 0px 0px 10px;
         }
         &.half-length {
             width: 100%;
@@ -40,6 +40,10 @@
                 i + input {
                     margin: 0;
                 }
+            }
+            &--password {
+                display: flex;
+                align-items: center;
             }
         }
         .fa-exclamation-triangle {

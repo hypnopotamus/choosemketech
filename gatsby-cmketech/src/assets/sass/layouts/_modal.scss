@@ -23,6 +23,7 @@
             margin: 0 auto;
             width: 90%;
             height: 90%;
+            overflow: scroll;
             @media #{$mq-largeScreen} {
                 max-width: 1000px;
                 height: auto;

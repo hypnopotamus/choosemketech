@@ -73,7 +73,7 @@ const FormInput = ({ name, type, placeholder, onChange, className, value, error,
       return (
         <div className={`form-field ${props.halfLength ? "half-length" : ""}`}>
           <label htmlFor={name}>{label}</label>
-          <span className="form-field__input-container">
+          <span className="form-field__input-container form-field__input-container--password">
             <span className="form-field__password-field">
               <input id={name} name={name} type={passwordShown ? "text" : "password"} placeholder={placeholder} onChange={onChange} defaultValue={value} className={className} style={error && { border: "solid 1px #B11030" }} data-ms-member={memberstack} />
               {passwordShown ? (

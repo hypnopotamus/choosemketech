@@ -2,11 +2,10 @@
     background-color: $white;
     border-top: 8px solid $blue;
     padding: 0px 0px 20px 0px;
-    height: 100%;
+    height: 95vh;
     overflow: auto;
     @media #{$mq-largeScreen} {
         width: 800px;
-        height: auto;
         margin: 0 auto;
     }
     &__close {
@@ -61,6 +60,9 @@
         flex-direction: column;
         align-items: center;
         padding: 20px 0px 0px;
+        a {
+            color: $blue;
+        }
     }
     &__logo {
         max-width: 150px;
