@@ -1,17 +1,17 @@
-import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import Seo from "../components/Seo";
-import Layout from "../components/Layout";
-import Breadcrumbs from "../components/Breadcrumbs";
-import { useBreadcrumb } from 'gatsby-plugin-breadcrumb'
-import ImageCopy from "../components/ImageCopy";
-import Accordion from "../components/Accordion";
-import SubHero from "../components/SubHero";
+import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import Seo from "../components/Seo"
+import Layout from "../components/Layout"
+import Breadcrumbs from "../components/Breadcrumbs"
+import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
+import ImageCopy from "../components/ImageCopy"
+import Accordion from "../components/Accordion"
+import SubHero from "../components/SubHero"
 
-const Help = ({location}) => {
+const Help = ({ location }) => {
   const data = useStaticQuery(graphql`
     query HelpQuery {
-      wpPage(databaseId: {eq: 16}) {
+      wpPage(databaseId: { eq: 16 }) {
         seo {
           title
           metaDesc
@@ -30,7 +30,7 @@ const Help = ({location}) => {
           subHeroContent
           subHeroSubTitle
           subHeroImage {
-              sourceUrl
+            sourceUrl
           }
           cardHeaderText
           cardCollectionHelp {
@@ -55,7 +55,7 @@ const Help = ({location}) => {
           helpEmployerAccordions {
             accordionContent
             accordionTitle
-          } 
+          }
         }
       }
     }
@@ -63,40 +63,24 @@ const Help = ({location}) => {
 
   const { crumbs } = useBreadcrumb({
     location,
-    crumbLabel: 'Help'
-  })  
-  const seoData = data.wpPage.seo;
-  const featuredImage = data.wpPage.featuredImage.node.link;
-  let Help = data.wpPage.Help_CF;
-  
+    crumbLabel: "Help",
+  })
+  const seoData = data.wpPage.seo
+  const featuredImage = data.wpPage.featuredImage.node.link
+  let Help = data.wpPage.Help_CF
+
   return (
     <Layout>
-        <Seo 
-          title={seoData.title}
-          description={seoData.metaDesc}
-          uri={seoData.canonical}
-          socialImage={featuredImage} />
-        <Breadcrumbs crumbs={crumbs} />
-        <SubHero hero={Help} />
-        <div className="container">
-          <ImageCopy 
-            cards={Help.cardCollectionHelp}
-            title={Help.cardHeaderText}
-          />
-          <Accordion 
-            items={Help.helpCandidateAccordions}
-            headline={Help.accordionCandidateHeadline}
-          />
-          <Accordion 
-            items={Help.helpEmployerAccordions}
-            headline={Help.accordionEmployerHeadline}
-          />
-        </div>
-
+      <Seo title={seoData.title} description={seoData.metaDesc} uri={seoData.canonical} socialImage={featuredImage} />
+      <Breadcrumbs crumbs={crumbs} />
+      <SubHero hero={Help} />
+      <ImageCopy cards={Help.cardCollectionHelp} title={Help.cardHeaderText} />
+      <div className="container">
+        <Accordion items={Help.helpCandidateAccordions} headline={Help.accordionCandidateHeadline} />
+        <Accordion items={Help.helpEmployerAccordions} headline={Help.accordionEmployerHeadline} />
+      </div>
     </Layout>
   )
-  
 }
-  
-export default Help;
-  
+
+export default Help
