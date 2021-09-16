@@ -12,30 +12,29 @@ const UploadImages = ({ itemid, upload, modal }) => {
 
       formData.append("file", file)
 
+      // let headers = {}
+
+      // headers["Content-Disposition"] = "attachment; filename='" + file.name + "'"
+      // headers["Content-Type"] = "image/png"
+      // headers["Access-Control-Allow-Origin"] = "*"
+      // headers["Authorization"] = `Bearer ${process.env.WPTOKEN}`
+
       let url = "https://edit.choosemketech.org"
-
-      //const formData = new FormData()
-      // const fileField = document.querySelector('input[type="file"]')
-
-      // // formData.append("admin", "Wbcb2739!@#$")
-      // formData.append("avatar", fileField.files[0])
-
-      fetch("https://edit.choosemketech.org/wp-json/wp/v2/media", {
-        method: "POST",
-        mode: "no-cors",
-        headers: new Headers({
-          "Content-Disposition": "attachment; filename='" + file.name + "'",
-          "Access-Control-Allow-Origin": "*",
-          "Content-Type": "image/png",
-        }),
-        body: formData,
-      })
-        .then((response) => response.json())
-        .then((result) => {
-          console.log("Success:", result)
+      axios
+        .post(url + "/wp-json/wp/v2/media", formData, {
+          headers: {
+            "Content-Disposition": "attachment; filename='" + file.name + "'",
+            "Content-Type": "image/png",
+            "Access-Control-Allow-Origin": "*",
+            Authorization: "Bearer'" + process.env.WPTOKEN + "'",
+          },
         })
-        .catch((error) => {
-          console.error("Error:", error)
+        .then(function (resp) {
+          deleteOrigImg()
+          getItems() //callback to parent's this.getItems(),
+        })
+        .catch((e) => {
+          console.log(e)
         })
     }
   }
