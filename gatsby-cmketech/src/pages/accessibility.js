@@ -45,7 +45,6 @@ const Accessibility = ({ location }) => {
       sourceUrl: featuredImage,
     },
   }
-  console.log(featuredImage)
   return (
     <Layout>
       <Seo title={seoData.title} description={seoData.metaDesc} uri={seoData.canonical} socialImage={featuredImage} />

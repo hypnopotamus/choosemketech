@@ -20,8 +20,6 @@ const UploadImages = ({ itemid, upload, modal }) => {
       // // formData.append("admin", "Wbcb2739!@#$")
       // formData.append("avatar", fileField.files[0])
 
-      console.log(formData)
-
       fetch("https://edit.choosemketech.org/wp-json/wp/v2/media", {
         method: "POST",
         mode: "no-cors",

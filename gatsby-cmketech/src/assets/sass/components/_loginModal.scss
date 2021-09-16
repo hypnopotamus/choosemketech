@@ -1,111 +1,107 @@
 .loginModal {
-    height: 100%;
-    overflow: auto;
-    display: flex;
-    flex-direction: column-reverse;
-    
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column-reverse;
+
+  @media #{$mq-largeScreen} {
+    min-width: 1000px;
+    height: auto;
+    align-items: center;
+    flex-direction: row;
+  }
+  &__form {
+    background-color: $white;
+    flex: 1;
+    padding: 25px 20px;
+    h5 {
+      text-transform: capitalize;
+    }
+    h3 {
+      border-bottom: 1px solid $medium_gray;
+      padding-block: 0px 15px;
+    }
+    a {
+      color: $blue;
+    }
     @media #{$mq-largeScreen} {
-        min-width: 1000px;
-        height: auto;
-        align-items: center;
-        flex-direction: row;
+      padding: 75px 90px;
+      max-height: 494px;
+      min-height: 494px;
     }
-    &__form {
-        background-color: $white;
-        flex: 1;
-        padding: 25px 20px;
-        h5 {
-            text-transform: capitalize;
-        }
-        h3 {
-            border-bottom: 1px solid $medium_gray;
-            padding-block: 0px 15px;
-        }
-        a {
-            color: $blue;
-        }
-        @media #{$mq-largeScreen} {
-            padding: 75px 90px;
-            max-height: 494px;
-            min-height: 494px;
-        }
-        
+  }
+  &__actions {
+    padding-block: 30px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    @media #{$mq-largeScreen} {
+      flex-direction: row;
+    }
+    button {
+      &:first-of-type {
+        margin-inline-start: 0;
+      }
+    }
+    a.link--plain {
+      text-align: center;
+      padding: 20px 0px 0px;
+      @media #{$mq-largeScreen} {
+        padding: 20px;
+      }
+    }
+  }
+  &__signup {
+    background-image: url("../images/lakefront-image-overlay.png");
+    flex: 1 1;
+    height: 100%;
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-height: 275px;
+    @media #{$mq-largeScreen} {
+      max-height: 0px;
+      min-height: 494px;
+      padding: 90px 75px;
+    }
+    &__close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      button {
+        appearance: none;
+        background: none;
+        min-width: 0;
+        color: $white;
+        font-size: 20px;
+      }
+    }
+    h5 {
+      color: $white;
+      text-transform: capitalize;
+    }
+    a {
+      text-decoration: underline;
+      text-decoration-color: $light_yellow;
+      @media #{$mq-largeScreen} {
+        text-decoration: none;
+      }
+      h3 {
+        color: $light_yellow;
+      }
+    }
 
+    .button--tertiary {
+      display: none;
+      @media #{$mq-largeScreen} {
+        display: inline-block;
+      }
     }
-    &__actions {
-        padding-block: 30px 0px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
-        @media #{$mq-largeScreen} {
-            flex-direction: row;
-            
-        }
-        button {
-            &:first-of-type{
-                margin-inline-start: 0;
-            }
-        }
-        a.link--plain {
-            text-align: center;
-            padding: 20px 0px 0px;
-            @media #{$mq-largeScreen} {
-                padding: 20px;
-            }
-        }
-    }
-    &__signup {
-        background-image: url("../images/lakefront-image-overlay.png");
-        flex: 1 1;
-        height: 100%;
-        width: 100%;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        max-height: 275px;
-        @media #{$mq-largeScreen} {
-            max-height: 0px;
-            min-height: 494px;
-            padding: 90px 75px;
-        }
-        &__close {
-            position: absolute;
-            top: 0;
-            right: 0;
-            button {
-                appearance: none;
-                background: none;
-                min-width: 0;
-                color: $white;
-                font-size: 20px;
-            }
-        }
-        h5 {
-            color: $white;
-            text-transform: capitalize;
-        }
-        a {
-            text-decoration: underline;
-            text-decoration-color: $light_yellow;
-            @media #{$mq-largeScreen} {
-                text-decoration: none;
-            }
-            h3 {
-                color: $light_yellow;
-            }
-
-        }
-        
-        .button--tertiary {
-            display: none;
-            @media #{$mq-largeScreen} {
-                display:inline-block;
-            }
-        }
-    }
+  }
 }

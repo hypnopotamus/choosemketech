@@ -6,8 +6,6 @@ import { useFooterMenuQuery } from "../hooks/useFooterMenuQuery"
 const Footer = () => {
   const { wpMenu } = useFooterMenuQuery()
 
-  console.log(wpMenu)
-
   return (
     <footer className="container">
       <div className="footer--social">

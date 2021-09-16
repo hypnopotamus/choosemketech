@@ -88,7 +88,7 @@ const Memberships = (membership, current, topTierMember) => {
         </thead>
         <tbody>
           <tr>
-            <td>Company Profile Listing</td>
+            <td>Company Listing</td>
             <td></td>
             <td>
               <i className="fas fa-check"></i>
@@ -120,15 +120,15 @@ const Memberships = (membership, current, topTierMember) => {
             </td>
           </tr>
           <tr>
-            <td>Tech Company Listing</td>
+            <td>Tech Company Page</td>
             <td></td>
-            <td>Premium Placement</td>
+            <td>Featured (Top Placement) </td>
             <td>Featured</td>
-            <td>Limited Details</td>
-            <td>Name and Location only</td>
+            <td>Limited Profile Details</td>
+            <td>Logo Only</td>
           </tr>
           <tr>
-            <td>Top Job Search Placement</td>
+            <td>Featured Placement In Job Searches</td>
             <td></td>
             <td>
               <i className="fas fa-check"></i>
@@ -142,14 +142,6 @@ const Memberships = (membership, current, topTierMember) => {
             <td>
               <i className="fas fa-times"></i>
             </td>
-          </tr>
-          <tr>
-            <td>Job listings</td>
-            <td></td>
-            <td>12/month</td>
-            <td>7/month</td>
-            <td>2/month</td>
-            <td>2/month</td>
           </tr>
           <tr>
             <td className="header">
@@ -163,30 +155,40 @@ const Memberships = (membership, current, topTierMember) => {
           <tr>
             <td>Profile Listing</td>
             <td></td>
-            <td>4/year</td>
-            <td>2/year</td>
-            <td>1/year</td>
+            <td>4x/Base</td>
+            <td>2x/Base</td>
             <td>
-              <i className="fas fa-times"></i>
-            </td>
-          </tr>
-          <tr>
-            <td>Featured Jobs</td>
-            <td></td>
-            <td>2/month</td>
-            <td>1/month</td>
-            <td>
-              <i className="fas fa-times"></i>
+              <i className="fas fa-check"></i>
             </td>
             <td>
               <i className="fas fa-times"></i>
             </td>
           </tr>
           <tr>
-            <td>Community Spotlight</td>
+            <td>Recent Jobs</td>
             <td></td>
-            <td>2/month</td>
-            <td>1/month</td>
+            <td>
+              <i className="fas fa-check"></i>
+            </td>
+            <td>
+              <i className="fas fa-check"></i>
+            </td>
+            <td>
+              <i className="fas fa-check"></i>
+            </td>
+            <td>
+              <i className="fas fa-times"></i>
+            </td>
+          </tr>
+          <tr>
+            <td>Story Spotlight</td>
+            <td></td>
+            <td>
+              <i className="fas fa-check"></i>
+            </td>
+            <td>
+              <i className="fas fa-check"></i>
+            </td>
             <td>
               <i className="fas fa-times"></i>
             </td>
@@ -196,7 +198,7 @@ const Memberships = (membership, current, topTierMember) => {
           </tr>
           <tr>
             <td className="header">
-              <span>Company Profile Features</span>
+              <span>Premium Profile</span>
             </td>
             <td></td>
             <td colSpan="4">
@@ -204,7 +206,7 @@ const Memberships = (membership, current, topTierMember) => {
             </td>
           </tr>
           <tr>
-            <td>Social Media Links</td>
+            <td>Social Links</td>
             <td></td>
             <td>
               <i className="fas fa-check"></i>
@@ -220,11 +222,11 @@ const Memberships = (membership, current, topTierMember) => {
             </td>
           </tr>
           <tr>
-            <td>Company Stories</td>
+            <td>Featured Stories</td>
             <td></td>
-            <td>5 stories</td>
-            <td>3 stories</td>
-            <td>1 stories</td>
+            <td>5 Stories</td>
+            <td>3 Stories</td>
+            <td>1 Story</td>
             <td>
               <i className="fas fa-times"></i>
             </td>
@@ -243,6 +245,35 @@ const Memberships = (membership, current, topTierMember) => {
             </td>
             <td>
               <i className="fas fa-times"></i>
+            </td>
+          </tr>
+          <tr>
+            <td className="header">
+              <span>Included Job Listings</span>
+            </td>
+            <td></td>
+            <td>
+              12/Month *
+              <small>
+                <em>* Additional job slots avail. at $100/Month</em>
+              </small>
+            </td>
+            <td>
+              7/Month *
+              <small>
+                <em>* Additional job slots avail. at $100/Month</em>
+              </small>
+            </td>
+            <td>
+              2/Month *
+              <small>
+                <em>* Additional job slots avail. at $100/Month</em>
+              </small>
+            </td>
+            <td>
+              <small>
+                <em>* Job slots avail. to purchase at $100/Month</em>
+              </small>
             </td>
           </tr>
           <tr data-ms-content="members">
