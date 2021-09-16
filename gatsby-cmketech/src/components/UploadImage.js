@@ -22,15 +22,13 @@ const UploadImages = ({ itemid, upload, modal }) => {
       let url = "https://edit.choosemketech.org"
       const sendGetRequest = async () => {
         try {
-          const resp = await axios.post(url + "/wp-json/wp/v2/media", {
+          const resp = await axios.post(url + "/wp-json/wp/v2/media", formData, {
             headers: {
               "Content-Disposition": "attachment; filename='" + file.name + "'",
-              "Access-Control-Allow-Origin": "*",
               "Content-Type": "image/png",
-              authorization: `Bearer ${process.env.WPTOKEN}`,
+              authorization: `Bearer ${process.env.GATSBY_WPTOKEN}`,
             },
           })
-
           console.log(resp.data)
         } catch (err) {
           // Handle Error Here

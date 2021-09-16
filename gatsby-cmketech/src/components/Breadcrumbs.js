@@ -7,7 +7,6 @@ const Breadcrumbs = ({ crumbs }) => {
       <nav className="breadcrumb" aria-label="Breadcrumb">
         <ol className="breadcrumb__list">
           {crumbs.map((crumb, index) => {
-            console.log(crumb)
             return (
               <li className="breadcrumb__item" key={index}>
                 <Link className="breadcrumb__link" to={crumb.pathname}>
