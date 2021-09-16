@@ -20,22 +20,25 @@ const UploadImages = ({ itemid, upload, modal }) => {
       // headers["Authorization"] = `Bearer ${process.env.WPTOKEN}`
 
       let url = "https://edit.choosemketech.org"
-      axios
-        .post(url + "/wp-json/wp/v2/media", formData, {
-          headers: {
-            "Content-Disposition": "attachment; filename='" + file.name + "'",
-            "Content-Type": "image/png",
-            "Access-Control-Allow-Origin": "*",
-            Authorization: "Bearer'" + process.env.WPTOKEN + "'",
-          },
-        })
-        .then(function (resp) {
-          deleteOrigImg()
-          getItems() //callback to parent's this.getItems(),
-        })
-        .catch((e) => {
-          console.log(e)
-        })
+      const sendGetRequest = async () => {
+        try {
+          const resp = await axios.post(url + "/wp-json/wp/v2/media", {
+            headers: {
+              "Content-Disposition": "attachment; filename='" + file.name + "'",
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "image/png",
+              authorization: `Bearer ${process.env.WPTOKEN}`,
+            },
+          })
+
+          console.log(resp.data)
+        } catch (err) {
+          // Handle Error Here
+          console.error(err)
+        }
+      }
+
+      sendGetRequest()
     }
   }
 
