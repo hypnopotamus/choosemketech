@@ -7,7 +7,6 @@ import Breadcrumbs from "../components/Breadcrumbs"
 import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
 import Sidebar from "../components/CompanyProfileSidebar"
 import Rightbar from "../components/CompanyProfileRightbar"
-import UploadImages from "../components/UploadImage"
 import Modal from "../components/Modal"
 import ModalModules from "../components/ModalModules"
 
@@ -16,6 +15,9 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
   const headerModal = useRef()
 
   const [data, setMemberData] = useState("")
+  const [transferedImage, setTransferedImage] = useState("")
+  const [transferedColor, setTransferedColor] = useState("")
+
   useEffect(() => {
     if (window.MemberStack.onReady) {
       window.MemberStack.onReady
@@ -89,6 +91,8 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
         src: data.logo,
         bgcolor: data["logo-background-color"],
         class: "uploaded-image--logo",
+        width: 298,
+        height: 298,
       },
     },
     {
@@ -96,9 +100,18 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
         src: data["background-image"],
         bgcolor: data["background-color"],
         class: "uploaded-image--header",
+        width: 1440,
+        height: 575,
       },
     },
   ]
+
+  if (transferedImage) {
+    data.logo = transferedImage
+  }
+  if (transferedColor) {
+    data["logo-background-color"] = transferedColor
+  }
 
   /* end These should probably be in a ACF */
   return (
@@ -117,6 +130,8 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
                 <div className="upload--file">
                   <div className="uploaded--file">
                     <label htmlFor="upload-logo" className="image--file" onClick={() => logoModal.current.openModal()} style={{ backgroundColor: `${data["logo-background-color"]}` }}>
+                      <input type="hidden" data-ms-member="logo" defaultValue={data.logo} />
+                      <input type="hidden" data-ms-member="logo-background-color" defaultValue={data["logo-background-color"]} />
                       <img src={data.logo} alt={data["company-name"]} id="logoImage" />
                     </label>
                   </div>
@@ -141,11 +156,11 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
                 <h3>Company Stories</h3>
                 <p>Help candidates get to know you better by adding a brief story about emerging tech applications, community involvement, diversity initiatives, and more to your profile.</p>
 
-                <FormInput name="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" memberstack="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" type="textarea" label="Embrace Diversity and Inclusion" />
-                <FormInput name="featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech" memberstack="featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech" type="textarea" label="Emerging Tech" />
-                <FormInput name="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" memberstack="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" type="textarea" label="Place for Tech Talent To Work" />
-                <FormInput name="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" memberstack="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" type="textarea" label="Company's Environment" />
-                <FormInput name="featured-story-5" memberstack="featured-story-5" type="textarea" label="Featureed Story 5" />
+                <FormInput name="Featured Story 1" memberstack="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" type="textarea" label="Featureed Story 1" />
+                <FormInput name="Featured Story 2" memberstack="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" type="textarea" label="Featureed Story 2" />
+                <FormInput name="Featured Story 3" memberstack="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" type="textarea" label="Featureed Story 3" />
+                <FormInput name="Featured Story 4" memberstack="featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech" type="textarea" label="Featureed Story 4" />
+                <FormInput name="Featured Story 5" memberstack="featured-story-5" type="textarea" label="Featureed Story 5" />
               </div>
 
               <div className="form-controls">
@@ -163,7 +178,7 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
         </div>
       </form>
       <Modal ref={logoModal}>
-        <ModalModules ref={logoModal} formDisplayed="logoUpload" data={imageData[0].logo} />
+        <ModalModules ref={logoModal} formDisplayed="logoUpload" data={imageData[0].logo} transferColor={(transferedColor) => setTransferedColor(transferedColor)} transferImage={(transferedImage) => setTransferedImage(transferedImage)} />
       </Modal>
       <Modal ref={headerModal}>
         <ModalModules ref={headerModal} formDisplayed="headerUpload" data={imageData[1].header} />

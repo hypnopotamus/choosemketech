@@ -31,16 +31,19 @@
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    label, button {
+    label,
+    button {
       border-radius: 50%;
       width: 40px;
       height: 40px;
       text-align: center;
       display: flex;
       justify-content: center;
-      align-items: center;    
-      &:hover {
-        background-color: $white;
+      align-items: center;
+      &:not(label.button--secondary) {
+        &:hover {
+          background-color: $white;
+        }
       }
     }
     label {
@@ -54,10 +57,63 @@
     justify-content: flex-end;
     align-items: center;
     margin-top: 1.5rem;
+    position: relative;
+    .button--secondary {
+      &:hover {
+        + .image--info-default {
+          opacity: 1;
+        }
+      }
+    }
   }
   img {
     object-fit: cover;
     width: 100%;
     height: 450px;
+  }
+  .image--info-default {
+    transition: all 0.25s linear;
+    opacity: 0;
+    background-color: $white;
+    padding: 1rem;
+    border-radius: 2px;
+    box-shadow: 5px 5px 5px rgb(0 0 0 / 20%);
+    position: absolute;
+    top: -70px;
+    right: 0;
+    &:before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid $white;
+      position: absolute;
+      bottom: -10px;
+      right: 18px;
+    }
+    p {
+      margin: 0;
+    }
+    &.errorMessage {
+      opacity: 1;
+    }
+  }
+}
+
+.bottomArrow {
+  top: inherit !important;
+  left: inherit !important;
+  bottom: -10px !important;
+  right: 70px !important;
+  transform: rotate(180deg);
+}
+
+.twitter-picker {
+  > div:nth-child(1) {
+    @extend .bottomArrow;
+    + div {
+      @extend .bottomArrow;
+    }
   }
 }

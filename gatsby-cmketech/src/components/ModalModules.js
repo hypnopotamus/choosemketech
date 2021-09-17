@@ -6,6 +6,9 @@ import UploadImages from "./UploadImage"
 const ModalModules = forwardRef((props, ref) => {
   const [formDisplayed, setFormDisplayed] = useState(props.formDisplayed)
   const [formMembership, setFormMembership] = useState(props.formMembership)
+  const [newLogoImage, setLogoImage] = useState("")
+  const [newBgColor, setNewBgColor] = useState("")
+
   const handleFormChange = (e, form) => {
     e.preventDefault()
     const jobForm = "job-form"
@@ -102,9 +105,19 @@ const ModalModules = forwardRef((props, ref) => {
   }
 
   const UploadForm = () => {
+    if (newLogoImage) {
+      useEffect(() => {
+        props.transferImage(newLogoImage)
+      }, [])
+    }
+    if (newBgColor) {
+      useEffect(() => {
+        props.transferColor(newBgColor)
+      }, [])
+    }
     return (
       <>
-        <UploadImages upload={props.data} modal={ref} />
+        <UploadImages upload={props.data} modal={ref} changeBgColor={(newBgColor) => setNewBgColor(newBgColor)} changeImage={(newLogoImage) => setLogoImage(newLogoImage)} />
       </>
     )
   }
@@ -137,22 +150,21 @@ const ModalModules = forwardRef((props, ref) => {
 
   const JobForm = () => {
     const [passwordMatches, setpasswordMatches] = useState()
-    let userPassword;
-    let userConfirmPassword;
+    let userPassword
+    let userConfirmPassword
     if (window.MemberStack) {
       window.MemberStack.reload()
     }
     const handlePasswordMatch = () => {
       userPassword = document.getElementById("password").value
-      userConfirmPassword = document.getElementById("passwordConfirm").value;
-      if(userPassword !== '' && userConfirmPassword !== '') {
-        if(userPassword !== userConfirmPassword) {
+      userConfirmPassword = document.getElementById("passwordConfirm").value
+      if (userPassword !== "" && userConfirmPassword !== "") {
+        if (userPassword !== userConfirmPassword) {
           setpasswordMatches("Passwords do not match")
-        }else {
+        } else {
           setpasswordMatches(undefined)
         }
       }
-      
     }
     return (
       <div className="user-signup__form user-signup__form--job">
@@ -171,13 +183,16 @@ const ModalModules = forwardRef((props, ref) => {
             </span>
           </div>
 
-          <FormInput name="password" type="password" required label="Password" halfLength={true} memberstack="password" value={userPassword} onChange={() => handlePasswordMatch("password")} error={passwordMatches}/>
-          <FormInput name="passwordConfirm" type="password" required label="Confirm Password" halfLength={true} value={userConfirmPassword} onChange={() => handlePasswordMatch("passwordConfirm")} error={passwordMatches}/>
+          <FormInput name="password" type="password" required label="Password" halfLength={true} memberstack="password" value={userPassword} onChange={() => handlePasswordMatch("password")} error={passwordMatches} />
+          <FormInput name="passwordConfirm" type="password" required label="Confirm Password" halfLength={true} value={userConfirmPassword} onChange={() => handlePasswordMatch("passwordConfirm")} error={passwordMatches} />
           <FormInput name="Job Opportunities" type="checkbox" label="I agree to recieve emails from employers about potential job oppotunities" memberstack="job-opportunities-opt-in" />
           <FormInput name="Latest News" type="checkbox" label="Sign me up for Chooose MKE Tech news, such as meetups, tech related news, and more." memberstack="subscription-notifications" />
           <div className="user-signup__content">
             <p>
-              By signing up, you are agreeing to the Choose MKE Tech's <a href="/terms-of-use" onClick={() => ref.current.closeModal()}>Privacy Policy</a>
+              By signing up, you are agreeing to the Choose MKE Tech's{" "}
+              <a href="/terms-of-use" onClick={() => ref.current.closeModal()}>
+                Privacy Policy
+              </a>
             </p>
           </div>
           <div className="user-signup__actions">
