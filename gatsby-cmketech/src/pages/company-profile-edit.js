@@ -18,6 +18,9 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
   const [transferedImage, setTransferedImage] = useState("")
   const [transferedColor, setTransferedColor] = useState("")
 
+  const [transferedBgImage, setTransferedBgImage] = useState("")
+  const [transferedBgColor, setTransferedBgColor] = useState("")
+
   useEffect(() => {
     if (window.MemberStack.onReady) {
       window.MemberStack.onReady
@@ -100,8 +103,8 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
         src: data["background-image"],
         bgcolor: data["background-color"],
         class: "uploaded-image--header",
-        width: 1440,
-        height: 575,
+        width: 1500,
+        height: 1000,
       },
     },
   ]
@@ -111,6 +114,13 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
   }
   if (transferedColor) {
     data["logo-background-color"] = transferedColor
+  }
+
+  if (transferedBgImage) {
+    data["background-image"] = transferedBgImage
+  }
+  if (transferedBgColor) {
+    data["background-color"] = transferedBgColor
   }
 
   /* end These should probably be in a ACF */
@@ -136,7 +146,9 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
                     </label>
                   </div>
                   <div className="uploaded--file">
-                    <label htmlFor="upload-background-image" className="image--file" onClick={() => headerModal.current.openModal()}>
+                    <input type="hidden" data-ms-member="background-image" defaultValue={data["background-image"]} />
+                    <input type="hidden" data-ms-member="background-color" defaultValue={data["background-color"]} />
+                    <label htmlFor="upload-background-image" className="image--file" onClick={() => headerModal.current.openModal()} style={{ backgroundColor: `${data["background-color"]}` }}>
                       <img src={data["background-image"]} alt={data["company-name"]} id="backgroundImage" />
                     </label>
                   </div>
@@ -181,7 +193,7 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
         <ModalModules ref={logoModal} formDisplayed="logoUpload" data={imageData[0].logo} transferColor={(transferedColor) => setTransferedColor(transferedColor)} transferImage={(transferedImage) => setTransferedImage(transferedImage)} />
       </Modal>
       <Modal ref={headerModal}>
-        <ModalModules ref={headerModal} formDisplayed="headerUpload" data={imageData[1].header} />
+        <ModalModules ref={headerModal} formDisplayed="headerUpload" data={imageData[1].header} transferColor={(transferedBgColor) => setTransferedBgColor(transferedBgColor)} transferImage={(transferedBgImage) => setTransferedBgImage(transferedBgImage)} />
       </Modal>
     </Layout>
   )

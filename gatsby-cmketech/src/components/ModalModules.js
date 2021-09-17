@@ -6,7 +6,7 @@ import UploadImages from "./UploadImage"
 const ModalModules = forwardRef((props, ref) => {
   const [formDisplayed, setFormDisplayed] = useState(props.formDisplayed)
   const [formMembership, setFormMembership] = useState(props.formMembership)
-  const [newLogoImage, setLogoImage] = useState("")
+  const [newImage, setLogoImage] = useState("")
   const [newBgColor, setNewBgColor] = useState("")
 
   const handleFormChange = (e, form) => {
@@ -105,9 +105,9 @@ const ModalModules = forwardRef((props, ref) => {
   }
 
   const UploadForm = () => {
-    if (newLogoImage) {
+    if (newImage) {
       useEffect(() => {
-        props.transferImage(newLogoImage)
+        props.transferImage(newImage)
       }, [])
     }
     if (newBgColor) {
@@ -117,7 +117,7 @@ const ModalModules = forwardRef((props, ref) => {
     }
     return (
       <>
-        <UploadImages upload={props.data} modal={ref} changeBgColor={(newBgColor) => setNewBgColor(newBgColor)} changeImage={(newLogoImage) => setLogoImage(newLogoImage)} />
+        <UploadImages upload={props.data} modal={ref} changeBgColor={(newBgColor) => setNewBgColor(newBgColor)} changeImage={(newImage) => setLogoImage(newImage)} />
       </>
     )
   }

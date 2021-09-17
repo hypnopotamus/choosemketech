@@ -36,6 +36,15 @@ const UploadImages = ({ itemid, upload, modal, newlogo, ...props }) => {
                   },
                 })
 
+                // const deleteResp = await axios.delete(url + "/wp-json/wp/v2/media/" + resp.data.id + "?force=true", formData, {
+                //   headers: {
+                //     "Content-Disposition": "attachment; filename='" + file.name + "'",
+                //     "Content-Type": "image/png, image/jpeg, image/svg+xml",
+                //     authorization: `Bearer ${process.env.GATSBY_WPTOKEN}`,
+                //   },
+                // })
+
+                console.log(resp.data.id)
                 newlogo = resp.data.source_url
 
                 modal.current.closeModal(props.changeImage(newlogo), props.changeBgColor(bgcolor))
