@@ -8,9 +8,6 @@ const CompanyProfileRightbar = ({ rightbar }) => {
       <div className="sidebar right">
         <h3>Social Media</h3>
         <ul>
-          <li className="phone">
-            <FormInput type="textgroup" id="phonenumber" name="phonenumber" icon="fas fa-phone-alt" memberstack="phone-number" className="input-group" />
-          </li>
           <li>
             <FormInput type="textgroup" id="linkedin" name="linkedin" icon="fab fa-linkedin-in" memberstack="linkedin" />
           </li>

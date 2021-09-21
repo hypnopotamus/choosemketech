@@ -3,12 +3,13 @@ import PropTypes from "prop-types"
 import { MultiSelect } from "react-multi-select-component"
 import Textarea from "./Textarea"
 
-const FormInput = ({ name, type, placeholder, onChange, className, value, error, children, label, email, hidden, file, number, tel, memberstack, required, accept, maxlength, story, icon, ...props }) => {
+const FormInput = ({ name, type, placeholder, onChange, className, value, error, children, label, email, hidden, file, number, tel, memberstack, required, accept, maxlength, story, icon, style, ...props }) => {
   const [passwordShown, setPasswordShown] = useState(false)
   const [selected, setSelected] = useState()
   const handlePasswordClick = (i) => {
     setPasswordShown(!passwordShown)
   }
+
   switch (type) {
     case "file":
       return (
@@ -23,7 +24,7 @@ const FormInput = ({ name, type, placeholder, onChange, className, value, error,
       )
     case "textarea":
       return (
-        <div className="form-field">
+        <div className="form-field" style={style}>
           <label htmlFor={name}>{label}</label>
           <span className="form-field__input-container">
             {/* <div className="textarea--container"> */}

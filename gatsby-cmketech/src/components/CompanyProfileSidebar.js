@@ -10,49 +10,49 @@ const CompanyProfileSidebar = ({ sidebar }) => {
             <h4>Company</h4>
           </li>
           <li>
-            <a href="" className="link">
+            <Link to="/company-profile" className="link">
               Company Profile
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="" className="link">
+            <Link to="/job-posting" className="link">
               Job Postings
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="" className="link">
+            <Link to="/candidate-pool" className="link">
               Candidate Pool
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="" className="link">
+            <Link to="/recruit-with-us" className="link">
               Tiers+ Billing
-            </a>
+            </Link>
           </li>
           <li>
             <h4>Your Account</h4>
           </li>
           <li>
-            <a href="" className="link">
+            <Link to="/settings" className="link">
               Account Settings
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="" className="link">
+            <Link to="/notifications" className="link">
               Notifications
-            </a>
+            </Link>
           </li>
         </ul>
         <ul>
           <li>
-            <a href="" className="link">
+            <Link to="/help" className="link">
               Help
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="" className="link">
+            <Link href="/help" className="link">
               FAQ
-            </a>
+            </Link>
           </li>
           <li>
             <a href="/#/ms/logout" className="link">

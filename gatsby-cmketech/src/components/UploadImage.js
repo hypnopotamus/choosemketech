@@ -44,7 +44,6 @@ const UploadImages = ({ itemid, upload, modal, newlogo, ...props }) => {
                 //   },
                 // })
 
-                console.log(resp.data.id)
                 newlogo = resp.data.source_url
 
                 modal.current.closeModal(props.changeImage(newlogo), props.changeBgColor(bgcolor))
