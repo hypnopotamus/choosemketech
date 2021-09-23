@@ -30,7 +30,7 @@
         background-color: $navy_blue;
         ul {
           li {
-            padding-inline: 1rem 0px;
+            padding-inline: 1rem;
             letter-spacing: normal;
             font-size: 1rem;
             position: relative;
@@ -53,6 +53,7 @@
             }
             a {
               color: $white;
+              letter-spacing: 1.5px;
             }
           }
         }
