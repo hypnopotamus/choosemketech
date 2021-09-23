@@ -122,6 +122,7 @@ const CompanyProfile = ({ location }) => {
             <div className="content__description">
               <h2>Company Description</h2>
               <p>{data["company-description"]}</p>
+              <ImageCopy cards={featuredStory} flip={true} />
             </div>
           </div>
         </div>
@@ -129,7 +130,6 @@ const CompanyProfile = ({ location }) => {
             <h2>Company Benefits + Perks</h2>
             <Accordion items={data['perks-benefits']} />
           </div> */}
-        <ImageCopy cards={featuredStory} flip={true} />
       </div>
     </Layout>
   )

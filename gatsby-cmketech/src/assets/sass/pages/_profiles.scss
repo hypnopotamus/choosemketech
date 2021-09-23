@@ -18,6 +18,17 @@
       }
     }
   }
+  .imageCopy__copy {
+    padding: 1.5rem 2.5rem 0 0;
+    margin: 0;
+  }
+  &.profiles--edit {
+    .profile__layout {
+      .content {
+        margin-top: 0;
+      }
+    }
+  }
   .profile__layout {
     display: flex;
     flex-direction: column-reverse;
@@ -97,6 +108,7 @@
       margin-inline-start: 3.75rem;
       margin-inline-end: 3.75rem;
       width: 100%;
+      margin-top: -4rem;
       .content__header {
         h3 {
           a {

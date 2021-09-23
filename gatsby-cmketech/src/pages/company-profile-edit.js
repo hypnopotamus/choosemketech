@@ -186,6 +186,7 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
               <div className="profiles__company-story">
                 <h3>Company Stories</h3>
                 <p>Help candidates get to know you better by adding a brief story about emerging tech applications, community involvement, diversity initiatives, and more to your profile.</p>
+
                 <FormInput name="Featured Story 1" memberstack="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" type="textarea" label="Featureed Story 1" />
                 <FormInput name="Featured Story 2" memberstack="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" type="textarea" label="Featureed Story 2" />
                 <FormInput name="Featured Story 3" memberstack="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" type="textarea" label="Featureed Story 3" />
