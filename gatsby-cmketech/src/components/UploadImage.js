@@ -25,6 +25,7 @@ const UploadImages = ({ itemid, upload, modal, newlogo, ...props }) => {
         imgFile.onload = function () {
           let defaultDimension = `${upload.width}, ${upload.height}`
           let fileUploadDimension = `${imgFile.width}, ${imgFile.height}`
+          console.log(process.env.GATSBY_WPTOKEN)
           if (defaultDimension === fileUploadDimension) {
             const sendGetRequest = async () => {
               try {
@@ -35,8 +36,6 @@ const UploadImages = ({ itemid, upload, modal, newlogo, ...props }) => {
                     authorization: `Bearer ${process.env.GATSBY_WPTOKEN}`,
                   },
                 })
-
-                console.log(process.env.GATSBY_WPTOKEN)
 
                 // const deleteResp = await axios.delete(url + "/wp-json/wp/v2/media/" + resp.data.id + "?force=true", formData, {
                 //   headers: {

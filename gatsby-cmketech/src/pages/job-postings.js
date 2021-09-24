@@ -7,7 +7,7 @@ import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
 import Sidebar from "../components/CompanyProfileSidebar"
 import axios from "axios"
 
-const JobPostings = () => {
+const JobPostings = ({ location }) => {
   const [data, setMemberData] = useState("")
 
   useEffect(() => {
