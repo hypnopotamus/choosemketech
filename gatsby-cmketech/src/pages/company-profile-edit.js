@@ -9,7 +9,6 @@ import Sidebar from "../components/CompanyProfileSidebar"
 import Rightbar from "../components/CompanyProfileRightbar"
 import Modal from "../components/Modal"
 import ModalModules from "../components/ModalModules"
-import { nominalTypeHack } from "prop-types"
 
 const CompanyProfileEdit = ({ location, featuredStories }) => {
   const logoModal = useRef()

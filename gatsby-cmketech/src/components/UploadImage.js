@@ -36,6 +36,8 @@ const UploadImages = ({ itemid, upload, modal, newlogo, ...props }) => {
                   },
                 })
 
+                console.log(process.env.GATSBY_WPTOKEN)
+
                 // const deleteResp = await axios.delete(url + "/wp-json/wp/v2/media/" + resp.data.id + "?force=true", formData, {
                 //   headers: {
                 //     "Content-Disposition": "attachment; filename='" + file.name + "'",

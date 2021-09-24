@@ -145,8 +145,12 @@
     &.form-slider {
       flex-direction: row-reverse;
       justify-content: flex-end;
+      align-items: center;
       label {
-        margin: 7px 10px 10px 10px;
+        margin: 0;
+        &:first-child {
+          margin-left: 1rem;
+        }
       }
       .form-field__toggle {
         display: inline-block;
@@ -265,7 +269,6 @@
         appearance: none;
         min-height: 40px;
         width: 100%;
-        padding: 10px;
         font-family: "Inter", sans-serif;
       }
       input {

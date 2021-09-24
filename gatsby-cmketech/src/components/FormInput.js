@@ -93,31 +93,29 @@ const FormInput = ({ name, type, placeholder, onChange, className, value, error,
           {error && <p className="form-field--error"> {error}</p>}
         </div>
       )
+    case "slider":
+      return (
+        <div className="form-field form-slider">
+          <label htmlFor={name}>{label}</label>
+          <label className="form-field__toggle" htmlFor={name}>
+            <input id={name} name={name} type="checkbox" placeholder={placeholder} onChange={onChange} defaultValue={value} className={className} style={error && { border: "solid 1px #B11030" }} data-ms-member={memberstack} />
+            <span className="slider-toggle"></span>
+            {error && <i className="fas fa-exclamation-triangle"></i>}
+          </label>
+          {error && <p className="form-field--error"> {error}</p>}
+        </div>
+      )
     case "checkbox":
-      if (props.slider) {
-        return (
-          <div className="form-field form-slider">
-            <label htmlFor={name}>{label}</label>
-            <span className="form-field__toggle">
-              <input id={name} name={name} type={type} placeholder={placeholder} onChange={onChange} defaultValue={value} className={className} style={error && { border: "solid 1px #B11030" }} data-ms-member={memberstack} />
-              <span className="slider-toggle"></span>
-              {error && <i className="fas fa-exclamation-triangle"></i>}
-            </span>
-            {error && <p className="form-field--error"> {error}</p>}
-          </div>
-        )
-      } else {
-        return (
-          <div className="form-field checkbox">
-            <label htmlFor={name}>{label}</label>
-            <span className="form-field__input-container">
-              <input id={name} name={name} type={type} placeholder={placeholder} onChange={onChange} defaultValue={value} className={className} style={error && { border: "solid 1px #B11030" }} data-ms-member={memberstack} />
-              {error && <i className="fas fa-exclamation-triangle"></i>}
-            </span>
-            {error && <p className="form-field--error"> {error}</p>}
-          </div>
-        )
-      }
+      return (
+        <div className="form-field checkbox">
+          <label htmlFor={name}>{label}</label>
+          <span className="form-field__input-container">
+            <input id={name} name={name} type={type} placeholder={placeholder} onChange={onChange} defaultValue={value} className={className} style={error && { border: "solid 1px #B11030" }} data-ms-member={memberstack} />
+            {error && <i className="fas fa-exclamation-triangle"></i>}
+          </span>
+          {error && <p className="form-field--error"> {error}</p>}
+        </div>
+      )
     case "radio":
       return (
         <div className="form-field radio">
@@ -134,7 +132,7 @@ const FormInput = ({ name, type, placeholder, onChange, className, value, error,
         return (
           <div className={`form-field dropdown ${props.halfLength ? "half-length" : ""}`}>
             <label htmlFor={name}>{label}</label>
-            <MultiSelect options={children} defaultValue={selected} onChange={setSelected} labelledBy="-- Select --" />
+            <MultiSelect options={children} defaultValue={selected} onChange={setSelected} labelledBy="- Select -" />
           </div>
         )
       } else {
@@ -144,7 +142,7 @@ const FormInput = ({ name, type, placeholder, onChange, className, value, error,
             <div className="select-container">
               <div className="select-container__select">
                 <select name={name} id={name} style={error && { border: "solid 1px #B11030" }} data-ms-member={memberstack}>
-                  <option defaultValue="">-- Select --</option>
+                  <option defaultValue="">- Select -</option>
                   {children.map((option) => (
                     <option key={option.value}> {option.label}</option>
                   ))}
@@ -168,7 +166,7 @@ FormInput.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
   placeholder: PropTypes.string,
-  type: PropTypes.oneOf(["text", "number", "password", "checkbox", "select", "email", "textarea", "file", "radio", "dropdown", "textgroup"]),
+  type: PropTypes.oneOf(["text", "slider", "number", "password", "checkbox", "select", "email", "textarea", "file", "radio", "dropdown", "textgroup"]),
   className: PropTypes.string,
   value: PropTypes.any,
   onChange: PropTypes.func,

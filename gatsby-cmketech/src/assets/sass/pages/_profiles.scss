@@ -22,6 +22,12 @@
     padding: 1.5rem 2.5rem 0 0;
     margin: 0;
   }
+  .content__description {
+    p {
+      font-size: 18px;
+      line-height: 2rem;
+    }
+  }
   &.profiles--edit {
     .profile__layout {
       .content {

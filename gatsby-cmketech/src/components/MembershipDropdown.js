@@ -19,9 +19,9 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
     setsubNavShow(false)
   }
   const handleUserLogout = (e) => {
-    e.preventDefault();
-    if(window.MemberStack){
-      window.MemberStack.logout();
+    e.preventDefault()
+    if (window.MemberStack) {
+      window.MemberStack.logout()
     }
   }
   useEffect(() => {
@@ -33,7 +33,7 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
     if (window.MemberStack.onReady) {
       window.MemberStack.onReady
         .then(function (member) {
-          if(member.membership){
+          if (member.membership) {
             let membershipType = member.membership.name
             if (membershipType != "Candidate") {
               membershipType = "premium-plan"
@@ -82,33 +82,31 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
             <i className="fas fa-user-circle"></i>
             <span>{userName}</span>
           </div>
-
           <li className="nav__link-group__title">
             <h4>User Profile</h4>
           </li>
           <li className="nav__link">
             <Link to="/member-profile">Profile Settings</Link>
           </li>
-          {/* <li className="nav__link">
-                        <Link to="#">
-                            New Job Listings
-                        </Link>
-                    </li> */}
+          <li className="nav__link">
+            <Link to="#">New Job Listings</Link>
+          </li>
           <li className="nav__link-group__title">
             <h4>Other</h4>
           </li>
           <li className="nav__link">
             <a href="mailto:contact@mketech.org">Help</a>
           </li>
-          {/* Commented out until page is ready
           <li className="nav__link">
             <Link to="/help">Help</Link>
           </li>
           <li className="nav__link">
             <Link to="/help">FAQs</Link>
-          </li> */}
+          </li>
           <li className="nav__link">
-            <a href="#" onClick={(e) => handleUserLogout(e)}>Log Out</a>
+            <a href="#" onClick={(e) => handleUserLogout(e)}>
+              Log Out
+            </a>
           </li>
         </ul>
       </div>
@@ -147,28 +145,21 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
               <i className="fas fa-user-circle"></i>
               <span>{userName}</span>
             </div>
-
             <li className="nav__link-group__title">
               <h4>Company</h4>
             </li>
             <li className="nav__link">
               <Link to="/company-profile">Company Profile</Link>
             </li>
-            {/* <li className="nav__link">
-                        <Link to="#">
-                            Job Postings
-                        </Link>
-                    </li>
-                    <li className="nav__link">
-                        <Link to="#">
-                            Candidate Pool
-                        </Link>
-                    </li>
-                    <li className="nav__link">
-                        <Link to="#">
-                            Listing + Credits
-                        </Link>
-                    </li> */}
+            <li className="nav__link">
+              <Link to="/job-postings">Job Postings</Link>
+            </li>
+            <li className="nav__link">
+              <Link to="#">Candidate Pool</Link>
+            </li>
+            <li className="nav__link">
+              <Link to="#">Listing + Credits</Link>
+            </li>
             <li className="nav__link-group__title">
               <h4>Your Account</h4>
             </li>
@@ -184,17 +175,15 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
               <h4>Other</h4>
             </li>
             <li className="nav__link">
-              <a href="mailto:contact@mketech.org">Help</a>
-            </li>
-            {/* Commented out until Page is ready
-            <li className="nav__link">
               <Link to="/help">Help</Link>
             </li>
             <li className="nav__link">
               <Link to="/help">FAQs</Link>
-            </li> */}
+            </li>
             <li className="nav__link">
-              <a href="#" onClick={(e) => handleUserLogout(e)}>Log Out</a>
+              <a href="#" onClick={(e) => handleUserLogout(e)}>
+                Log Out
+              </a>
             </li>
           </ul>
         </div>

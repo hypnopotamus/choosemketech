@@ -15,7 +15,7 @@ const CompanyProfileSidebar = ({ sidebar }) => {
             </Link>
           </li>
           <li>
-            <Link to="/job-posting" className="link">
+            <Link to="/job-postings" className="link">
               Job Postings
             </Link>
           </li>

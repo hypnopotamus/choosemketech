@@ -17,6 +17,9 @@ button,
     color: $white;
     background-color: $blue;
     border: 2px solid $blue;
+    &:last-of-type {
+      margin: 0 !important;
+    }
     &:visited {
       color: $white;
     }
