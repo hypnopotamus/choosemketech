@@ -33,6 +33,7 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
     if (window.MemberStack.onReady) {
       window.MemberStack.onReady
         .then(function (member) {
+          console.log(member)
           if (member.membership) {
             let membershipType = member.membership.name
             if (membershipType != "Candidate") {
@@ -154,9 +155,9 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
             <li className="nav__link">
               <Link to="/job-postings">Job Postings</Link>
             </li>
-            <li className="nav__link">
+            {/* <li className="nav__link">
               <Link to="#">Candidate Pool</Link>
-            </li>
+            </li> */}
             <li className="nav__link">
               <Link to="#">Listing + Credits</Link>
             </li>

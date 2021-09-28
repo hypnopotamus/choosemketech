@@ -15,7 +15,7 @@ const JobPostings = ({ location }) => {
       window.MemberStack.onReady
         .then(function (member) {
           setMemberData(member)
-          console.log(member)
+          //console.log(member)
         })
         .catch((e) => {
           console.log(e)
@@ -36,19 +36,30 @@ const JobPostings = ({ location }) => {
 
   const updateJobPost = (e) => {
     e.preventDefault()
-    let formData = new FormData()
+
+    let jobPostForm = e.target
+
+    let formData = new FormData(jobPostForm)
+
     let url = "https://edit.choosemketech.org"
+    let obj = {}
+
+    for (let entry of formData.entries()) {
+      obj[entry[0]] = entry[1]
+    }
 
     const sendGetRequest = async () => {
+      console.log(obj)
+
       try {
-        const resp = await axios.post(url + "/wp-json/wp/v2/job_postings", formData, {
+        const resp = await axios.post(url + "/wp-json/wp/v2/job_postings", obj, {
           headers: {
+            Accept: "application/json",
             "Content-Type": "application/json",
             authorization: `Bearer ${process.env.GATSBY_WPTOKEN}`,
           },
         })
-
-        console.log(resp)
+        console.log(resp.data)
       } catch (err) {
         console.error(err)
       }
@@ -85,7 +96,7 @@ const JobPostings = ({ location }) => {
 
   return (
     <Layout>
-      <form onSubmit={updateJobPost}>
+      <form onSubmit={updateJobPost} id="jobPost">
         <Seo title="Job Postings" />
         <Breadcrumbs crumbs={crumbs} />
         <div className="profiles profiles--edit container">
@@ -97,15 +108,15 @@ const JobPostings = ({ location }) => {
               </div>
               <div className="profiles__forms">
                 <div className="profiles__forms--cols">
-                  <FormInput name="job-title" type="text" required label="Job Title" />
-                  <FormInput name="posting-url" type="text" required label="Posting URL" />
+                  <FormInput name="job_title" type="text" required label="Job Title" />
+                  <FormInput name="url" type="text" required label="Posting URL" />
                 </div>
                 <div className="profiles__forms--cols">
-                  <FormInput name="role-category" type="dropdown" required label="Role Category" children={category} />
-                  <FormInput name="tech-stack" type="dropdown" required label="Tech Stack" children={techStack} />
+                  <FormInput name="role_category" type="dropdown" required label="Role Category" children={category} />
+                  <FormInput name="tech_stack" type="dropdown" required label="Tech Stack" children={techStack} />
                 </div>
               </div>
-              <FormInput name="job-description" type="textarea" required label="Job Description" />
+              <FormInput name="job_description" type="textarea" required label="Job Description" />
               <FormInput name="featured" type="slider" required label="Featured?" />
               <div className="form-controls">
                 <button type="submit" className="button button--primary">

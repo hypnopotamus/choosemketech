@@ -28,6 +28,9 @@ button,
       color: $blue;
     }
   }
+  + .link {
+    margin-left: 1rem;
+  }
   &--secondary {
     color: $navy_blue;
     background-color: $white;

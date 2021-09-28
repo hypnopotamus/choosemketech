@@ -19,11 +19,11 @@ const CompanyProfileSidebar = ({ sidebar }) => {
               Job Postings
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/candidate-pool" className="link">
               Candidate Pool
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/recruit-with-us" className="link">
               Tiers+ Billing
@@ -37,11 +37,11 @@ const CompanyProfileSidebar = ({ sidebar }) => {
               Account Settings
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/notifications" className="link">
               Notifications
             </Link>
-          </li>
+          </li> */}
         </ul>
         <ul>
           <li>
