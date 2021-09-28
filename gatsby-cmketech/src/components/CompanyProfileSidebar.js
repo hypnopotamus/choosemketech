@@ -33,7 +33,7 @@ const CompanyProfileSidebar = ({ sidebar }) => {
             <h4>Your Account</h4>
           </li>
           <li>
-            <Link to="/settings" className="link">
+            <Link to="/account-settings" className="link">
               Account Settings
             </Link>
           </li>
