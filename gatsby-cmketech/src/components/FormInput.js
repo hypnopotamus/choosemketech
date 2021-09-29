@@ -5,7 +5,7 @@ import Textarea from "./Textarea"
 
 const FormInput = ({ name, type, placeholder, onChange, className, value, error, children, label, email, hidden, file, number, tel, memberstack, required, accept, maxlength, story, icon, style, ...props }) => {
   const [passwordShown, setPasswordShown] = useState(false)
-  const [selected, setSelected] = useState()
+  const [selected, setSelected] = useState([])
   const handlePasswordClick = (i) => {
     setPasswordShown(!passwordShown)
   }
@@ -132,7 +132,7 @@ const FormInput = ({ name, type, placeholder, onChange, className, value, error,
         return (
           <div className={`form-field dropdown ${props.halfLength ? "half-length" : ""}`}>
             <label htmlFor={name}>{label}</label>
-            <MultiSelect options={children} defaultValue={selected} onChange={setSelected} labelledBy="- Select -" />
+            <MultiSelect options={children} value={selected} onChange={setSelected} labelledBy="- Select -" />
           </div>
         )
       } else {

@@ -15,7 +15,6 @@ const AccountSettings = ({ location }) => {
       window.MemberStack.onReady
         .then(function (member) {
           setMemberData(member)
-          //console.log(member)
         })
         .catch((e) => {
           console.log(e)
@@ -36,7 +35,7 @@ const AccountSettings = ({ location }) => {
 
   return (
     <Layout>
-      <form id="accountSettings">
+      <form id="accountSettings" noValidate>
         <Seo title="Account Settings" />
         <Breadcrumbs crumbs={crumbs} />
         <div className="profiles profiles--edit container">
@@ -47,7 +46,8 @@ const AccountSettings = ({ location }) => {
                 <h1>Account Settings</h1>
               </div>
               <h2>Set Secondary User</h2>
-              <FormInput name="primary_user" type="text" required label="Primary User" value={data.email} />
+              <div class="ctct-inline-form" data-form-id="f09a2568-07c1-43a4-bea7-5771f587e187"></div>
+              <FormInput name="primary_user" type="email" required label="Primary User" value={data.email} />
               <FormInput name="primary_userpassword" type="password" required label="Primary User Password" />
               <FormInput name="secondary_user" type="email" required label="Secondary User" placeholder="someone@domain.com" />
               <FormInput name="secondary_usernote" type="textarea" required label="Note" />
