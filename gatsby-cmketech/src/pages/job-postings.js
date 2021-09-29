@@ -5,10 +5,14 @@ import FormInput from "../components/FormInput"
 import Breadcrumbs from "../components/Breadcrumbs"
 import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
 import Sidebar from "../components/CompanyProfileSidebar"
+import { MultiSelect } from "react-multi-select-component"
 import axios from "axios"
 
 const JobPostings = ({ location }) => {
   const [data, setMemberData] = useState("")
+  const [selectCat, setCatSelected] = useState([])
+  const [selectStac, setStacSelected] = useState([])
+  const [selectPostType, setPostTypeSelected] = useState([])
 
   useEffect(() => {
     if (window.MemberStack.onReady) {
@@ -42,11 +46,11 @@ const JobPostings = ({ location }) => {
     let formData = new FormData(jobPostForm)
 
     let url = "https://edit.choosemketech.org"
-    // let obj = {}
+    let obj = {}
 
-    // for (let entry of formData.entries()) {
-    //   obj[entry[0]] = entry[1]
-    // }
+    for (let entry of formData.entries()) {
+      obj[entry[0]] = entry[1]
+    }
 
     // const sendGetRequest = async () => {
     //   try {
@@ -63,7 +67,8 @@ const JobPostings = ({ location }) => {
     //   }
     // }
 
-    console.log(obj)
+    console.log(selectCat)
+    console.log(selectStac)
 
     const sendGetRequest = () => {
       fetch(url + "/wp-json/wp/v2/job_postings/", {
@@ -79,6 +84,10 @@ const JobPostings = ({ location }) => {
             job_title: obj.job_title,
             job_description: obj.job_description,
             url: obj.url,
+            tech_stack: selectStac,
+            role_category: selectCat,
+            featured: obj.featured,
+            type_of_position: obj.type_of_position,
           },
           status: "publish",
         }),
@@ -108,17 +117,22 @@ const JobPostings = ({ location }) => {
   ]
 
   const techStack = [
-    { label: "Education", value: "Education" },
-    { label: "Finance/Insurance", value: "Finance/Insurance" },
-    { label: "Healthcare", value: "Healthcare" },
-    { label: "Retail", value: "Retail" },
-    { label: "Software", value: "Software" },
-    { label: "Logistics", value: "Logistics" },
-    { label: "Travel/Hospitality", value: "Travel/Hospitality" },
-    { label: "Manufacturing", value: "Manufacturing" },
-    { label: "Media", value: "Media" },
-    { label: "Tech Services", value: "Tech Services" },
-    { label: "Utilities/Water Tech", value: "Utilities/Water Tech" },
+    { label: "Java", value: "Java" },
+    { label: "Linux", value: "Linux" },
+    { label: "Python", value: "Python" },
+    { label: "C++", value: "C++" },
+    { label: ".Net", value: ".Net" },
+    { label: "JavaScript", value: "JavaScript" },
+    { label: "Front End", value: "Front End" },
+    { label: "DevOps", value: "DevOps" },
+    { label: "Other", value: "Other" },
+  ]
+
+  const positions = [
+    { label: "Full Time", value: "Full Time" },
+    { label: "Part Time", value: "Part Time" },
+    { label: "Remote", value: "Remote" },
+    { label: "Freelance", value: "Freelance" },
   ]
 
   return (
@@ -137,10 +151,17 @@ const JobPostings = ({ location }) => {
                 <div className="profiles__forms--cols">
                   <FormInput name="job_title" type="text" required label="Job Title" />
                   <FormInput name="url" type="text" required label="Posting URL" />
+                  <FormInput name="type_of_position" children={positions} value={selectPostType} onChange={setPostTypeSelected} type="dropdown" required label="Type of Position" />
                 </div>
                 <div className="profiles__forms--cols">
-                  <FormInput name="role_category" type="dropdown" multiSelect="true" required label="Role Category" children={category} value />
-                  <FormInput name="tech_stack" type="dropdown" multiSelect="true" required label="Tech Stack" children={techStack} value />
+                  <div className="form-field dropdown">
+                    <label htmlFor="category">Role Category</label>
+                    <MultiSelect id="category" name="role_category" options={category} value={selectCat} onChange={setCatSelected} labelledBy="- Select -" />
+                  </div>
+                  <div className="form-field dropdown">
+                    <label htmlFor="techStack">Tech Stack</label>
+                    <MultiSelect id="techStack" name="tech_stack" options={techStack} value={selectStac} onChange={setStacSelected} labelledBy="- Select -" />
+                  </div>
                 </div>
               </div>
               <FormInput name="job_description" type="textarea" required label="Job Description" />
