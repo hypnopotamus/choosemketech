@@ -1,4 +1,5 @@
 import React from "react"
+import MembershipJobPostings from "./MemberJobPostings"
 
 //todo consolidate into a single map with the job-postings page
 const jobCategories = [
@@ -105,11 +106,11 @@ const badgeFactory = (categories, categoryMap) =>
     })
 
 //todo need edit and delete callbacks
-//todo need the company data
 //todo fill in the rest of the data (even if it isn't being submitted)
+//todo address needs to wrap and stay within it's boundary
 
 //expecting roleCategory and techStack to be arrays
-const JobPostingCard = ({ posting, onEdit, onDelete }) => {
+const JobPostingCard = ({ posting, company, onEdit, onDelete }) => {
     const { jobPostings: job } = posting
 
     return (
@@ -132,24 +133,24 @@ const JobPostingCard = ({ posting, onEdit, onDelete }) => {
                     }
                 </div>
                 <div className="job-card__left__date">
-                    <span>Posted {new Date(posting.date).toDateString()}</span>
+                    <span>Posted {new Date(posting.date).toDateString()} this is not right</span>
                 </div>
             </div>
             <div className="job-card__right">
                 <div className="job-card__right__details">
                     <h5>
-                        <i className="fas fa-building" /> nvisia
+                        <i className="fas fa-building" /> {company.name}
                     </h5>
                     <h5>
                         <i className="fas fa-map-marker-alt" />{" "}
-                        Milwaukee, WI
+                        {company.location}
                     </h5>
                 </div>
                 <div className="job-card__right__cta">
                     <a className="button button--external button--primary" href={job.url}>
                         Apply For Jobs
                     </a>
-                    <a className="link">View Company Profile</a>
+                    <a className="link" href={`//${company.url}`}>View Company Profile</a>
                 </div>
             </div>
         </div>

@@ -98,7 +98,7 @@ const JobPostings = ({ location }) => {
         })
     }
 
-    //sendGetRequest()
+    sendGetRequest()
   }
 
   const category = [

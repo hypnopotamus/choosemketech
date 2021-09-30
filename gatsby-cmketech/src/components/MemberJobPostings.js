@@ -4,11 +4,8 @@ import JobPostingCard from "./JobPostingCard"
 
 const MembershipJobPostings = ({ data }) => {
     const [memberPosts, setMemberPosts] = useState([])
-    const {
-        allWpJobPost: {
-            nodes: postings
-        },
-    } = useStaticQuery(graphql`
+    const [company, setCompany] = useState()
+    const { allWpJobPost: { nodes: postings } } = useStaticQuery(graphql`
             query jobPostings {
               allWpJobPost {
                 nodes {
@@ -33,15 +30,19 @@ const MembershipJobPostings = ({ data }) => {
         if (window.MemberStack.onReady) {
             window.MemberStack.onReady
                 .then(member => {
-                    console.log(member)//fill in the company deets fro the member, if I can
+                    console.log(member)
+                    setCompany({
+                        name: member["company-name"],
+                        url: member["company-url"],
+                        location: member.address
+                    })
                     setMemberPosts(postings.filter(p => p.title === member.id))
                 })
                 .catch(e => console.log(e))
         }
     }, [])
 
-    //put this inside the container
-    return memberPosts.map(p => <JobPostingCard posting={p} />)
+    return memberPosts.map(p => <JobPostingCard posting={p} company={company} />)
 };
 
 export default MembershipJobPostings;
