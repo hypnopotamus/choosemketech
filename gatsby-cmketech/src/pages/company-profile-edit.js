@@ -9,6 +9,7 @@ import Sidebar from "../components/CompanyProfileSidebar"
 import Rightbar from "../components/CompanyProfileRightbar"
 import Modal from "../components/Modal"
 import ModalModules from "../components/ModalModules"
+import { nominalTypeHack } from "prop-types"
 
 const CompanyProfileEdit = ({ location, featuredStories }) => {
   const logoModal = useRef()
@@ -20,6 +21,8 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
 
   const [transferedBgImage, setTransferedBgImage] = useState("")
   const [transferedBgColor, setTransferedBgColor] = useState("")
+
+  const [wpData, setWpData] = useState()
 
   useEffect(() => {
     if (window.MemberStack.onReady) {
@@ -89,6 +92,29 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
     { label: "Relocation Packages", value: "Relocation Packages" },
   ]
 
+  const memberStackStories = [
+    {
+      featureStory: "featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work",
+      opacity: 1,
+    },
+    {
+      featureStory: "featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir",
+      opacity: 1,
+    },
+    {
+      featureStory: "featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion",
+      opacity: 1,
+    },
+    {
+      featureStory: "featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech",
+      opacity: 1,
+    },
+    {
+      featureStory: "featured-story-5",
+      opacity: 1,
+    },
+  ]
+
   const imageData = [
     {
       logo: {
@@ -124,7 +150,26 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
     data["background-color"] = transferedBgColor
   }
 
-  const featuredStory = [<FormInput name="Featured Story 1" memberstack="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" type="textarea" label="Featureed Story 1" />, <FormInput name="Featured Story 2" memberstack="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" type="textarea" label="Featureed Story 2" />, <FormInput name="Featured Story 3" memberstack="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" type="textarea" label="Featureed Story 3" />, <FormInput name="Featured Story 4" memberstack="featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech" type="textarea" label="Featureed Story 4" />, <FormInput name="Featured Story 5" memberstack="featured-story-5" type="textarea" label="Featureed Story 5" />]
+  const hideStory = {
+    display: "none",
+  }
+  let url = "https://edit.choosemketech.org"
+  fetch(url + "/wp-json/wp/v2/job_postings/", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      authorization: `Bearer ${process.env.GATSBY_WPTOKEN}`,
+    },
+  })
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (jobpost) {
+      for (let item of jobpost) {
+        console.log(item.acf)
+      }
+    })
 
   /* end These should probably be in a ACF */
   return (
@@ -186,11 +231,9 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
                 <h3>Company Stories</h3>
                 <p>Help candidates get to know you better by adding a brief story about emerging tech applications, community involvement, diversity initiatives, and more to your profile.</p>
 
-                <FormInput name="Featured Story 1" memberstack="featured-story-what-makes-your-company-a-great-place-for-tech-talent-to-work" type="textarea" label="Featureed Story 1" />
-                <FormInput name="Featured Story 2" memberstack="featured-story-what-skills-or-qualities-reflect-applicants-who-would-thrive-in-your-companys-envir" type="textarea" label="Featureed Story 2" />
-                <FormInput name="Featured Story 3" memberstack="featured-story-what-initiatives-is-your-company-doing-to-embrace-diversity-and-inclusion" type="textarea" label="Featureed Story 3" />
-                <FormInput name="Featured Story 4" memberstack="featured-story-what-is-something-your-company-is-currently-doing-in-emerging-tech" type="textarea" label="Featureed Story 4" />
-                <FormInput name="Featured Story 5" memberstack="featured-story-5" type="textarea" label="Featureed Story 5" />
+                {memberStackStories.map((item, index) => {
+                  return <FormInput key={index} name={`featured-story-${index}`} memberstack={item.featureStory} type="textarea" label={`Featured Story ${index + 1}`} />
+                })}
               </div>
 
               <div className="form-controls">
@@ -201,6 +244,8 @@ const CompanyProfileEdit = ({ location, featuredStories }) => {
                   Back to My Profile
                 </Link>
               </div>
+
+              <h2>Job Postings</h2>
             </div>
 
             <Rightbar rightbar={data} />

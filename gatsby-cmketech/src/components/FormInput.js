@@ -30,7 +30,7 @@ const FormInput = ({ name, type, placeholder, onChange, className, value, error,
             {/* <div className="textarea--container"> */}
             {/* <textarea id={name} name={name} placeholder={placeholder} maxLength={maxlength} onChange={onChange} defaultValue={value} className={className} style={error && { border: "solid 1px #B11030" }} data-ms-member={memberstack}></textarea>
               <p> characters remain</p> */}
-            <Textarea limit={700} memberstack={memberstack} id={name} name={name} src={story} maxlength={maxlength} />
+            <Textarea limit={700} memberstack={memberstack} id={name} name={name} src={story} maxlength={maxlength} style={style} />
             {/* </div> */}
             {error && <i className="fas fa-exclamation-triangle"></i>}
           </span>

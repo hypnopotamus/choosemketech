@@ -33,7 +33,6 @@ const MembershipDropdown = ({ toggleNav, ...props }) => {
     if (window.MemberStack.onReady) {
       window.MemberStack.onReady
         .then(function (member) {
-          console.log(member)
           if (member.membership) {
             let membershipType = member.membership.name
             if (membershipType != "Candidate") {
