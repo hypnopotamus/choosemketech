@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react"
 
-const Textarea = ({ rows, cols, value, limit, maxlength, memberstack, id, name }) => {
+const Textarea = ({ rows, cols, value, limit, maxlength, memberstack, id, name, style }) => {
   const [count, setCharacterCount] = useState(700)
   const [textCount, setTextCount] = useState()
 
@@ -12,10 +12,9 @@ const Textarea = ({ rows, cols, value, limit, maxlength, memberstack, id, name }
       setTextCount(Math.abs(value.length - limit))
     }
   }, [count])
-
   return (
     <div className="textarea--container">
-      <textarea id={id} name={name} rows={rows} cols={cols} onChange={(event) => setCharacterCount(event.target.value)} defaultValue={value} maxLength={maxlength} data-ms-member={memberstack} />
+      <textarea id={id} name={name} rows={rows} cols={cols} onChange={(event) => setCharacterCount(event.target.value)} defaultValue={value} maxLength={maxlength} data-ms-member={memberstack} style={style} />
       <p>{textCount} characters remain</p>
     </div>
   )

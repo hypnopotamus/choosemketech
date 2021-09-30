@@ -19,7 +19,6 @@ const JobPostings = ({ location }) => {
       window.MemberStack.onReady
         .then(function (member) {
           setMemberData(member)
-          //console.log(member)
         })
         .catch((e) => {
           console.log(e)
@@ -67,9 +66,6 @@ const JobPostings = ({ location }) => {
     //   }
     // }
 
-    console.log(selectCat)
-    console.log(selectStac)
-
     const sendGetRequest = () => {
       fetch(url + "/wp-json/wp/v2/job_postings/", {
         method: "POST",
@@ -81,6 +77,7 @@ const JobPostings = ({ location }) => {
         body: JSON.stringify({
           title: data.id,
           fields: {
+            memberstack_id: data.id,
             job_title: obj.job_title,
             job_description: obj.job_description,
             url: obj.url,
