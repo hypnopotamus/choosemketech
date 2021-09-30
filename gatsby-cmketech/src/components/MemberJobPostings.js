@@ -13,7 +13,7 @@ const MembershipJobPostings = ({ data }) => {
               allWpJobPost {
                 nodes {
                   id
-                  memberStackId
+                  title
                   date
                   jobPostings {
                     featured
@@ -32,11 +32,15 @@ const MembershipJobPostings = ({ data }) => {
     useEffect(() => {
         if (window.MemberStack.onReady) {
             window.MemberStack.onReady
-                .then(member => setMemberPosts(postings.filter(p => p.memberStackId === member.id)))
+                .then(member => {
+                    console.log(member)//fill in the company deets fro the member, if I can
+                    setMemberPosts(postings.filter(p => p.title === member.id))
+                })
                 .catch(e => console.log(e))
         }
     }, [])
 
+    //put this inside the container
     return memberPosts.map(p => <JobPostingCard posting={p} />)
 };
 

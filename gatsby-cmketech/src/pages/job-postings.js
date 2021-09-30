@@ -169,11 +169,11 @@ const JobPostings = ({ location }) => {
                   Submit Job Post
                 </button>
               </div>
+              {data && <MemberJobPostings />}
             </div>
           </div>
         </div>
       </form>
-      {data && <MemberJobPostings />}
     </Layout>
   )
 }
