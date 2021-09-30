@@ -6,6 +6,7 @@ import Breadcrumbs from "../components/Breadcrumbs"
 import { useBreadcrumb } from "gatsby-plugin-breadcrumb"
 import Sidebar from "../components/CompanyProfileSidebar"
 import axios from "axios"
+import MemberJobPostings from "../components/MemberJobPostings"
 
 const JobPostings = ({ location }) => {
   const [data, setMemberData] = useState("")
@@ -15,7 +16,6 @@ const JobPostings = ({ location }) => {
       window.MemberStack.onReady
         .then(function (member) {
           setMemberData(member)
-          //console.log(member)
         })
         .catch((e) => {
           console.log(e)
@@ -42,11 +42,11 @@ const JobPostings = ({ location }) => {
     let formData = new FormData(jobPostForm)
 
     let url = "https://edit.choosemketech.org"
-    // let obj = {}
+    const obj = {}
 
-    // for (let entry of formData.entries()) {
-    //   obj[entry[0]] = entry[1]
-    // }
+    for (let entry of formData.entries()) {
+      obj[entry[0]] = entry[1]
+    }
 
     // const sendGetRequest = async () => {
     //   try {
@@ -65,6 +65,11 @@ const JobPostings = ({ location }) => {
 
     console.log(obj)
 
+    //featured is null (not in form)
+    //roleCategory is null (not in form)
+    //tech stack is null (not in form)
+    //type of position is null (not in form)
+    //need to refresh the data after this post completes and reload the page
     const sendGetRequest = () => {
       fetch(url + "/wp-json/wp/v2/job_postings/", {
         method: "POST",
@@ -76,9 +81,7 @@ const JobPostings = ({ location }) => {
         body: JSON.stringify({
           title: data.id,
           fields: {
-            job_title: obj.job_title,
-            job_description: obj.job_description,
-            url: obj.url,
+            ...obj,
           },
           status: "publish",
         }),
@@ -91,7 +94,7 @@ const JobPostings = ({ location }) => {
         })
     }
 
-    sendGetRequest()
+    //sendGetRequest()
   }
 
   const category = [
@@ -154,6 +157,7 @@ const JobPostings = ({ location }) => {
           </div>
         </div>
       </form>
+      {data && <MemberJobPostings />}
     </Layout>
   )
 }
